@@ -1,0 +1,31 @@
+name: Seed history
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  seed:
+    if: contains(github.event.head_commit.message, 'bootstrap bundle for history import') || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Import original main history
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BUNDLE_URL: https://litter.catbox.moe/asznsy.bundle
+        run: |
+          set -euo pipefail
+          curl -fL --retry 5 --retry-delay 2 -o /tmp/xg.bundle "$BUNDLE_URL"
+          git bundle verify /tmp/xg.bundle
+          rm -rf /tmp/src
+          git clone /tmp/xg.bundle /tmp/src
+          cd /tmp/src
+          git checkout main
+          echo "Imported HEAD=$(git rev-parse HEAD)"
+          git remote add github "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git push --force github HEAD:refs/heads/main
+          gh api -X PATCH "repos/${GITHUB_REPOSITORY}" \
+            -f description='Open-source interactive genealogy of Chinese xiangsheng (crosstalk) masters — lineages, teacher–disciple ties, eras — for research and fans.' || true
+          printf '%s' '{"names":["xiangsheng","crosstalk","chinese-comedy","genealogy","visualization","threejs","react","open-data","cultural-heritage","ink-wash"]}' \
+            | gh api -X PUT "repos/${GITHUB_REPOSITORY}/topics" -H "Accept: application/vnd.github+json" --input - || true
