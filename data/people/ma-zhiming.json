@@ -1,0 +1,21 @@
+{
+  "birthYear": 1947,
+  "portraitKind": "placeholder",
+  "disputed": true,
+  "notes": [
+    "与马三立为父子；正式拜师边依维基表记为朱阔泉。"
+  ],
+  "works": [
+    "纠纷",
+    "卖挂票"
+  ],
+  "sources": [
+    "src-wiki-lineage"
+  ],
+  "id": "ma-zhiming",
+  "name": "马志明",
+  "generation": "宝",
+  "generationIndex": 6,
+  "school": "天津马家",
+  "bio": "马三立之子。维基师承表将其列于朱阔泉门下，故本库按谱记边，并加注家庭与师承的双重关系。"
+}

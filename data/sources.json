@@ -1,0 +1,84 @@
+{
+  "sources": [
+    {
+      "id": "src-wiki-lineage",
+      "title": "相声演员师承关系",
+      "url": "https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB",
+      "publisher": "维基百科",
+      "license": "CC BY-SA 4.0",
+      "accessed": "2026-09-08",
+      "note": "本库师承边的主表。字辈取「德寿宝文明」，不用「德寿喜哈」。"
+    },
+    {
+      "id": "src-wiki-zhu-kuoquan",
+      "title": "朱阔泉",
+      "url": "https://zh.wikipedia.org/wiki/%E6%9C%B1%E9%98%94%E6%B3%89",
+      "publisher": "维基百科",
+      "license": "CC BY-SA 4.0",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "src-wiki-hou-baolin",
+      "title": "侯宝林",
+      "url": "https://zh.wikipedia.org/wiki/%E4%BE%AF%E5%AE%9D%E6%9E%97",
+      "publisher": "维基百科",
+      "license": "CC BY-SA 4.0",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "src-wiki-ma-ji",
+      "title": "马季",
+      "url": "https://zh.wikipedia.org/wiki/%E9%A9%AC%E5%AD%A3",
+      "publisher": "维基百科",
+      "license": "CC BY-SA 4.0",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "src-wiki-ma-sanli",
+      "title": "马三立",
+      "url": "https://zh.wikipedia.org/wiki/%E9%A9%AC%E4%B8%89%E7%AB%8B",
+      "publisher": "维基百科",
+      "license": "CC BY-SA 4.0",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "src-wiki-jiang-kun",
+      "title": "姜昆",
+      "url": "https://zh.wikipedia.org/wiki/%E5%A7%9C%E6%98%86",
+      "publisher": "维基百科",
+      "license": "CC BY-SA 4.0",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "src-wiki-guo-degang",
+      "title": "郭德纲",
+      "url": "https://zh.wikipedia.org/wiki/%E9%83%AD%E5%BE%B7%E7%BA%B2",
+      "publisher": "维基百科",
+      "license": "CC BY-SA 4.0",
+      "accessed": "2026-09-08"
+    },
+    {
+      "id": "src-baike-generation",
+      "title": "德寿宝文明",
+      "url": "https://baike.baidu.com/item/%E5%BE%B7%E5%AF%BF%E5%AE%9D%E6%96%87%E6%98%8E/67401153",
+      "publisher": "百度百科",
+      "accessed": "2026-09-08",
+      "note": "字辈释义；条目文本版权归原站，仅作书目指引。"
+    },
+    {
+      "id": "src-baike-lineage-table",
+      "title": "相声师承关系总表",
+      "url": "https://baike.baidu.com/item/%E7%9B%B8%E5%A3%B0%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB%E6%80%BB%E8%A1%A8/822206",
+      "publisher": "百度百科",
+      "accessed": "2026-09-08",
+      "note": "殷文硕整理谱系的公开介绍，用作对照。"
+    },
+    {
+      "id": "src-zhihu-generation",
+      "title": "相声界是如何排辈的？",
+      "url": "https://web.archive.org/web/20190125073307/https://zhuanlan.zhihu.com/p/20580362",
+      "publisher": "知乎专栏（Internet Archive）",
+      "accessed": "2026-09-08"
+    }
+  ]
+}

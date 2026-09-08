@@ -1,0 +1,19 @@
+{
+  "birthYear": 1899,
+  "deathYear": 1970,
+  "portraitKind": "placeholder",
+  "works": [
+    "文章会",
+    "地理图"
+  ],
+  "sources": [
+    "src-wiki-lineage",
+    "src-zhihu-generation"
+  ],
+  "id": "zhang-shouchen",
+  "name": "张寿臣",
+  "generation": "寿",
+  "generationIndex": 5,
+  "school": "天津",
+  "bio": "焦德海门长，寿字辈代表。门下常宝堃、刘宝瑞等，是把「宝」字辈叫响的关键师傅。曾拟「德寿立仁义」，后通行「德寿宝文明」。"
+}

@@ -1,0 +1,23 @@
+{
+  "birthYear": 1973,
+  "portraitKind": "placeholder",
+  "disputed": true,
+  "notes": [
+    "主边：侯耀文。张文顺等为问艺/科名来源，不作第二条主师边。"
+  ],
+  "works": [
+    "论捧逗",
+    "我是黑社会",
+    "西征梦"
+  ],
+  "sources": [
+    "src-wiki-lineage",
+    "src-wiki-guo-degang"
+  ],
+  "id": "guo-degang",
+  "name": "郭德纲",
+  "generation": "明",
+  "generationIndex": 8,
+  "school": "北京德云社",
+  "bio": "维基表记为侯耀文弟子。创办德云社，以传统本子复兴著称。公开叙述中亦强调张文顺等问艺，故师承边标记争议。"
+}

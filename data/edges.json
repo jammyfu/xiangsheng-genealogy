@@ -1,0 +1,1033 @@
+{
+  "edges": [
+    {
+      "id": "zhang-sanlu--zhu-shaowen",
+      "from": "zhang-sanlu",
+      "to": "zhu-shaowen",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "与朱绍文是否直系尚待考证。"
+    },
+    {
+      "id": "zhang-sanlu--a-yantao",
+      "from": "zhang-sanlu",
+      "to": "a-yantao",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "三大派源头关系待考。"
+    },
+    {
+      "id": "zhang-sanlu--shen-chunhe",
+      "from": "zhang-sanlu",
+      "to": "shen-chunhe",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "三大派源头关系待考。"
+    },
+    {
+      "id": "zhu-shaowen--xu-youlu",
+      "from": "zhu-shaowen",
+      "to": "xu-youlu",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "zhu-shaowen--fan-youyuan",
+      "from": "zhu-shaowen",
+      "to": "fan-youyuan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "zhu-shaowen--fu-yougen",
+      "from": "zhu-shaowen",
+      "to": "fu-yougen",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "a-yantao--en-xu",
+      "from": "a-yantao",
+      "to": "en-xu",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "shen-chunhe--feng-kunzhi",
+      "from": "shen-chunhe",
+      "to": "feng-kunzhi",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "xu-youlu--jiao-dehai",
+      "from": "xu-youlu",
+      "to": "jiao-dehai",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "xu-youlu--liu-dezhi",
+      "from": "xu-youlu",
+      "to": "liu-dezhi",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "xu-youlu--lu-dejun",
+      "from": "xu-youlu",
+      "to": "lu-dejun",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "fan-youyuan--zhou-deshan",
+      "from": "fan-youyuan",
+      "to": "zhou-deshan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "fan-youyuan--guo-ruilin",
+      "from": "fan-youyuan",
+      "to": "guo-ruilin",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "fu-yougen--yu-delong",
+      "from": "fu-yougen",
+      "to": "yu-delong",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "en-xu--li-dexi",
+      "from": "en-xu",
+      "to": "li-dexi",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "feng-kunzhi--gao-deliang",
+      "from": "feng-kunzhi",
+      "to": "gao-deliang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "feng-kunzhi--gao-deming",
+      "from": "feng-kunzhi",
+      "to": "gao-deming",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "jiao-dehai--zhu-kuoquan",
+      "from": "jiao-dehai",
+      "to": "zhu-kuoquan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "jiao-dehai--zhang-shouchen",
+      "from": "jiao-dehai",
+      "to": "zhang-shouchen",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "jiao-dehai--chang-lianan",
+      "from": "jiao-dehai",
+      "to": "chang-lianan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "jiao-dehai--yu-junbo",
+      "from": "jiao-dehai",
+      "to": "yu-junbo",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "jiao-dehai--li-shouzeng",
+      "from": "jiao-dehai",
+      "to": "li-shouzeng",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "zhou-deshan--ma-sanli",
+      "from": "zhou-deshan",
+      "to": "ma-sanli",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "zhou-deshan--lian-xiuquan",
+      "from": "zhou-deshan",
+      "to": "lian-xiuquan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "liu-dezhi--guo-qiru",
+      "from": "liu-dezhi",
+      "to": "guo-qiru",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "guo-ruilin--hou-yichen",
+      "from": "guo-ruilin",
+      "to": "hou-yichen",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "guo-ruilin--tan-boru",
+      "from": "guo-ruilin",
+      "to": "tan-boru",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "lu-dejun--chen-yuting",
+      "from": "lu-dejun",
+      "to": "chen-yuting",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "lu-dejun--zhao-ailu",
+      "from": "lu-dejun",
+      "to": "zhao-ailu",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "gao-deliang--gao-fengshan",
+      "from": "gao-deliang",
+      "to": "gao-fengshan",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "此支部辈或有自降，文献不足。"
+    },
+    {
+      "id": "zhu-kuoquan--hou-baolin",
+      "from": "zhu-kuoquan",
+      "to": "hou-baolin",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "早年收养，后正式收徒。"
+    },
+    {
+      "id": "zhu-kuoquan--wang-fengshan",
+      "from": "zhu-kuoquan",
+      "to": "wang-fengshan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "zhu-kuoquan--ma-zhiming",
+      "from": "zhu-kuoquan",
+      "to": "ma-zhiming",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "马三立之子；谱表记拜朱阔泉。"
+    },
+    {
+      "id": "zhang-shouchen--chang-baokun",
+      "from": "zhang-shouchen",
+      "to": "chang-baokun",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "zhang-shouchen--liu-baorui",
+      "from": "zhang-shouchen",
+      "to": "liu-baorui",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "zhang-shouchen--tong-dafang",
+      "from": "zhang-shouchen",
+      "to": "tong-dafang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-sanli--yan-xiaoru",
+      "from": "ma-sanli",
+      "to": "yan-xiaoru",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-sanli--chang-baohua",
+      "from": "ma-sanli",
+      "to": "chang-baohua",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-sanli--chang-baofeng",
+      "from": "ma-sanli",
+      "to": "chang-baofeng",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-sanli--li-wenhua",
+      "from": "ma-sanli",
+      "to": "li-wenhua",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-sanli--ban-degui",
+      "from": "ma-sanli",
+      "to": "ban-degui",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "chang-lianan--gao-yuankun",
+      "from": "chang-lianan",
+      "to": "gao-yuankun",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "tan-boru--chen-yongquan",
+      "from": "tan-boru",
+      "to": "chen-yongquan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "tan-boru--zhao-shizhong",
+      "from": "tan-boru",
+      "to": "zhao-shizhong",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "jiao-shouhai--zhao-peiru",
+      "from": "jiao-shouhai",
+      "to": "zhao-peiru",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "yu-junbo--guo-quanbao",
+      "from": "yu-junbo",
+      "to": "guo-quanbao",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "guo-rongqi--chang-baoting",
+      "from": "guo-rongqi",
+      "to": "chang-baoting",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "guo-rongqi--yang-shaohua",
+      "from": "guo-rongqi",
+      "to": "yang-shaohua",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-delu--guo-rongqi",
+      "from": "ma-delu",
+      "to": "guo-rongqi",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "gao-fengshan--shi-fuquan",
+      "from": "gao-fengshan",
+      "to": "shi-fuquan",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "zhao-ailu--wang-changyou",
+      "from": "zhao-ailu",
+      "to": "wang-changyou",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "chen-yuting--wang-shichen",
+      "from": "chen-yuting",
+      "to": "wang-shichen",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "hou-baolin--ma-ji",
+      "from": "hou-baolin",
+      "to": "ma-ji",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "hou-baolin--shi-shengjie",
+      "from": "hou-baolin",
+      "to": "shi-shengjie",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "hou-baolin--ding-guangquan",
+      "from": "hou-baolin",
+      "to": "ding-guangquan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "hou-baolin--wu-zhaonan",
+      "from": "hou-baolin",
+      "to": "wu-zhaonan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "hou-baolin--hao-aimin",
+      "from": "hou-baolin",
+      "to": "hao-aimin",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "hou-baolin--jia-jiguang",
+      "from": "hou-baolin",
+      "to": "jia-jiguang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "hou-baolin--huang-tieliang",
+      "from": "hou-baolin",
+      "to": "huang-tieliang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "hou-baolin--yang-ziyang",
+      "from": "hou-baolin",
+      "to": "yang-ziyang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "chang-baokun--su-wenmao",
+      "from": "chang-baokun",
+      "to": "su-wenmao",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "liu-baorui--tang-jiezhong",
+      "from": "liu-baorui",
+      "to": "tang-jiezhong",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "liu-baorui--yin-wenshuo",
+      "from": "liu-baorui",
+      "to": "yin-wenshuo",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "zhao-peiru--hou-yaowen",
+      "from": "zhao-peiru",
+      "to": "hou-yaowen",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "zhao-peiru--li-boxiang",
+      "from": "zhao-peiru",
+      "to": "li-boxiang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "zhao-peiru--gao-yingpei",
+      "from": "zhao-peiru",
+      "to": "gao-yingpei",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "zhao-peiru--chang-guitian",
+      "from": "zhao-peiru",
+      "to": "chang-guitian",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "wang-changyou--zhao-zhenduo",
+      "from": "wang-changyou",
+      "to": "zhao-zhenduo",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "chang-baohua--hou-yaohua",
+      "from": "chang-baohua",
+      "to": "hou-yaohua",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "chang-baohua--niu-qun",
+      "from": "chang-baohua",
+      "to": "niu-qun",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "shi-fuquan--yu-qian",
+      "from": "shi-fuquan",
+      "to": "yu-qian",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "shi-fuquan--sun-yue",
+      "from": "shi-fuquan",
+      "to": "sun-yue",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "亦见赵小林门下记载。"
+    },
+    {
+      "id": "gao-yuankun--li-lishan",
+      "from": "gao-yuankun",
+      "to": "li-lishan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "tong-dafang--zhang-wenshun",
+      "from": "tong-dafang",
+      "to": "zhang-wenshun",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "wang-shichen--liu-hongyi",
+      "from": "wang-shichen",
+      "to": "liu-hongyi",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ban-degui--fan-zhenyu",
+      "from": "ban-degui",
+      "to": "fan-zhenyu",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-ji--jiang-kun",
+      "from": "ma-ji",
+      "to": "jiang-kun",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-ji--feng-gong",
+      "from": "ma-ji",
+      "to": "feng-gong",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-ji--zhao-yan",
+      "from": "ma-ji",
+      "to": "zhao-yan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-ji--liu-wei",
+      "from": "ma-ji",
+      "to": "liu-wei",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-ji--xiao-lin",
+      "from": "ma-ji",
+      "to": "xiao-lin",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-ji--wang-qianxiang",
+      "from": "ma-ji",
+      "to": "wang-qianxiang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-ji--li-zengrui",
+      "from": "ma-ji",
+      "to": "li-zengrui",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-ji--han-lancheng",
+      "from": "ma-ji",
+      "to": "han-lancheng",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-ji--huang-hong",
+      "from": "ma-ji",
+      "to": "huang-hong",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "hou-yaowen--guo-degang",
+      "from": "hou-yaowen",
+      "to": "guo-degang",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "公开叙述中另有张文顺等问艺。"
+    },
+    {
+      "id": "hou-yaowen--qi-zhi",
+      "from": "hou-yaowen",
+      "to": "qi-zhi",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "hou-yaowen--chen-hanbai",
+      "from": "hou-yaowen",
+      "to": "chen-hanbai",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "zhao-zhenduo--li-jindou",
+      "from": "zhao-zhenduo",
+      "to": "li-jindou",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "li-boxiang--dai-zhicheng",
+      "from": "li-boxiang",
+      "to": "dai-zhicheng",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "liu-hongyi--li-weijian",
+      "from": "liu-hongyi",
+      "to": "li-weijian",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "shi-shengjie--li-jing",
+      "from": "shi-shengjie",
+      "to": "li-jing",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "jiang-kun--ju-hao",
+      "from": "jiang-kun",
+      "to": "ju-hao",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "jiang-kun--da-shan",
+      "from": "jiang-kun",
+      "to": "da-shan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "feng-gong--jia-ling",
+      "from": "feng-gong",
+      "to": "jia-ling",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "guo-degang--yue-yunpeng",
+      "from": "guo-degang",
+      "to": "yue-yunpeng",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "guo-degang--luan-yunping",
+      "from": "guo-degang",
+      "to": "luan-yunping",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "guo-degang--cao-heyang",
+      "from": "guo-degang",
+      "to": "cao-heyang",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "后独立发展。"
+    },
+    {
+      "id": "guo-degang--zhang-yunlei",
+      "from": "guo-degang",
+      "to": "zhang-yunlei",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "yu-qian--guo-qilin",
+      "from": "yu-qian",
+      "to": "guo-qilin",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "li-jindou--da-bing",
+      "from": "li-jindou",
+      "to": "da-bing",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "li-zengrui--li-ding",
+      "from": "li-zengrui",
+      "to": "li-ding",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    }
+  ]
+}

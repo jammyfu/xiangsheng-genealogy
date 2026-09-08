@@ -1,0 +1,19 @@
+{
+  "birthYear": 1950,
+  "portraitKind": "placeholder",
+  "works": [
+    "如此照相",
+    "虎口遐想",
+    "电梯奇遇"
+  ],
+  "sources": [
+    "src-wiki-lineage",
+    "src-wiki-jiang-kun"
+  ],
+  "id": "jiang-kun",
+  "name": "姜昆",
+  "generation": "明",
+  "generationIndex": 8,
+  "school": "北京马季门",
+  "bio": "马季弟子，明字辈代表。与李文华合作《如此照相》《虎口遐想》。默认路径「传人」的第一站。"
+}

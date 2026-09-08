@@ -1,0 +1,24 @@
+{
+  "birthYear": 1917,
+  "deathYear": 1993,
+  "portraitKind": "placeholder",
+  "notes": [
+    "学艺过程中亦得郭启儒等前辈熏陶；责任师承以朱阔泉—侯宝林为主。"
+  ],
+  "works": [
+    "夜行记",
+    "戏剧杂谈",
+    "改行",
+    "关公战秦琼"
+  ],
+  "sources": [
+    "src-wiki-lineage",
+    "src-wiki-hou-baolin"
+  ],
+  "id": "hou-baolin",
+  "name": "侯宝林",
+  "generation": "宝",
+  "generationIndex": 6,
+  "school": "北京侯派",
+  "bio": "朱阔泉弟子（早年被其收养）。把相声带入剧场与广播，强调文学性与人物，是二十世纪最广为人知的宝字辈。"
+}

@@ -1,0 +1,21 @@
+{
+  "birthYear": 1948,
+  "deathYear": 2007,
+  "portraitKind": "placeholder",
+  "notes": [
+    "家庭传承与正式拜师表并不等同，本库以维基师承表为准。"
+  ],
+  "works": [
+    "京九演义",
+    "糖醋活鱼"
+  ],
+  "sources": [
+    "src-wiki-lineage"
+  ],
+  "id": "hou-yaowen",
+  "name": "侯耀文",
+  "generation": "文",
+  "generationIndex": 7,
+  "school": "北京侯派",
+  "bio": "侯宝林之子，谱表记为赵佩茹弟子。传郭德纲、奇志、陈寒柏等。是默认路径通向当代的关键节点。"
+}
