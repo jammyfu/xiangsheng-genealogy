@@ -198,10 +198,142 @@ button {
   color: #8b1e1e;
 }
 
+.paper-grain {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 3;
+  opacity: 0.18;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+}
+
+.studio {
+  position: relative;
+  z-index: 1;
+}
+
+.colophon {
+  margin: 0.45rem 0 0;
+  color: var(--ink-faint);
+  letter-spacing: 0.16em;
+  font-size: 0.82rem;
+}
+
+.masthead {
+  align-items: start;
+  position: relative;
+}
+
+.tools {
+  flex: 1;
+  display: grid;
+  gap: 0.75rem;
+  max-width: 36rem;
+}
+
+.search label {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.search span,
+.gen-filter legend {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: var(--ink-faint);
+}
+
+.search input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--hairline);
+  background: transparent;
+  padding: 0.35rem 0;
+  color: var(--ink);
+  outline: none;
+}
+
+.search-hits {
+  list-style: none;
+  margin: 0.35rem 0 0;
+  padding: 0;
+  border-top: 1px dashed var(--hairline);
+}
+
+.search-hits button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border: 0;
+  background: transparent;
+  padding: 0.28rem 0;
+  color: var(--ink);
+}
+
+.search-hits em {
+  color: var(--ink-faint);
+  font-style: normal;
+  font-size: 0.78rem;
+}
+
+.gen-filter,
+.path-switch,
+.path-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.gen-filter button,
+.path-switch button,
+.path-nav button {
+  border: 1px solid var(--hairline);
+  background: transparent;
+  color: var(--ink-mid);
+  min-width: 2.1rem;
+  padding: 0.15rem 0.55rem;
+}
+
+.gen-filter button.is-on,
+.path-switch button.is-on {
+  background: var(--seal);
+  border-color: var(--seal);
+  color: var(--paper);
+}
+
+.path-sub,
+.path-nav span {
+  margin: 0.2rem 0 0;
+  color: var(--ink-faint);
+  letter-spacing: 0.08em;
+}
+
+.mast-seal {
+  position: absolute;
+  right: 1.6rem;
+  top: 1.4rem;
+  transform: rotate(9deg);
+}
+
+.paper-graph {
+  width: 100%;
+  height: min(78vh, 920px);
+  display: block;
+}
+
 @media (max-width: 820px) {
   .masthead,
   .workspace {
     display: block;
+  }
+
+  .mast-seal {
+    position: static;
+    margin-top: 0.8rem;
   }
 
   .panel {
