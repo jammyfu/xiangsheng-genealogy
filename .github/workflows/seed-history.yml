@@ -13,11 +13,25 @@ jobs:
       - name: Import original main history
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BUNDLE_URL: https://litter.catbox.moe/asznsy.bundle
         run: |
           set -euo pipefail
-          curl -fL --retry 5 --retry-delay 2 -o /tmp/xg.bundle "$BUNDLE_URL"
-          git bundle verify /tmp/xg.bundle
+          urls=(
+            https://d.uguu.se/AdcLwlJz.bundle
+            https://filebin.net/f4c890755bee851c/xg.bundle
+            https://litter.catbox.moe/asznsy.bundle
+          )
+          ok=0
+          for url in "${urls[@]}"; do
+            echo "Trying $url"
+            if curl -fL --retry 3 --retry-delay 2 -A 'Mozilla/5.0' -o /tmp/xg.bundle "$url"; then
+              if git bundle verify /tmp/xg.bundle; then
+                ok=1
+                break
+              fi
+            fi
+            echo "URL failed: $url"
+          done
+          test "$ok" = 1
           rm -rf /tmp/src
           git clone /tmp/xg.bundle /tmp/src
           cd /tmp/src
