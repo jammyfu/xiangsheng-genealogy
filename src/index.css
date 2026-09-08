@@ -325,6 +325,14 @@ button {
   display: block;
 }
 
+.graph-fallback {
+  min-height: 68vh;
+  display: grid;
+  place-items: center;
+  letter-spacing: 0.28em;
+  color: var(--ink-faint);
+}
+
 @media (max-width: 820px) {
   .masthead,
   .workspace {

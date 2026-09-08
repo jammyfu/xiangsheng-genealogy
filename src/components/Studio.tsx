@@ -1,15 +1,19 @@
-import { useEffect, useMemo, useState } from 'react';
+import { lazy, Suspense, useEffect, useMemo, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { DEFAULT_PATH_ID, peopleById, tourPaths } from '../lib/catalog';
 import { usePrefersPlainGraph } from '../lib/useMedia';
 import { visibleIdSet } from '../lib/visibility';
 import type { GenerationName } from '../types';
 import { GenerationFilter } from './GenerationFilter';
-import { Graph3D } from './Graph3D';
 import { PaperGraph } from './PaperGraph';
 import { PathTour } from './PathTour';
 import { PersonPanel } from './PersonPanel';
 import { SearchBar } from './SearchBar';
+
+const Graph3D = lazy(async () => {
+  const module = await import('./Graph3D');
+  return { default: module.Graph3D };
+});
 
 export function Studio() {
   const { id } = useParams();
@@ -23,12 +27,21 @@ export function Studio() {
 
   const path = tourPaths.find((item) => item.id === pathId) ?? tourPaths[0];
   const pathIds = path.stops;
-  const visibleIds = useMemo(() => visibleIdSet(query, generations), [query, generations]);
+  const visibleIds = useMemo(
+    () => visibleIdSet(query, generations, [...pathIds, selected?.id ?? '']),
+    [query, generations, pathIds, selected],
+  );
 
   useEffect(() => {
     if (id) return;
     navigate(`/p/${path.stops[0]}`, { replace: true });
   }, [id, navigate, path.stops]);
+
+  useEffect(() => {
+    if (!id) return;
+    const idx = path.stops.indexOf(id);
+    if (idx >= 0) setStepIndex(idx);
+  }, [id, path.stops]);
 
   const onSelect = (next: string) => {
     navigate(`/p/${next}`);
@@ -39,6 +52,8 @@ export function Studio() {
   const onPath = (next: string) => {
     setPathId(next);
     setStepIndex(0);
+    setGenerations([]);
+    setQuery('');
     const first = tourPaths.find((item) => item.id === next)?.stops[0];
     if (first) navigate(`/p/${first}`);
   };
@@ -85,12 +100,14 @@ export function Studio() {
               onSelect={onSelect}
             />
           ) : (
-            <Graph3D
-              selectedId={selected?.id ?? null}
-              pathIds={pathIds}
-              visibleIds={visibleIds}
-              onSelect={onSelect}
-            />
+            <Suspense fallback={<div className="graph-fallback">宣纸铺开……</div>}>
+              <Graph3D
+                selectedId={selected?.id ?? null}
+                pathIds={pathIds}
+                visibleIds={visibleIds}
+                onSelect={onSelect}
+              />
+            </Suspense>
           )}
         </section>
         <PersonPanel person={selected} onSelect={onSelect} />

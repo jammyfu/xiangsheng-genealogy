@@ -1,0 +1,39 @@
+# Xiangsheng Genealogy / 相声家谱
+
+> Open-source ink-wash visualization of Chinese crosstalk (相声) master–disciple lineages.
+
+Xiangsheng Genealogy is a React + Vite + TypeScript + React Three Fiber
+app. It maps cited teacher–disciple edges, the generation poem
+德寿宝文明, biographies, work titles, and sources. It does not host audio.
+
+## Product
+
+- 3D lineage graph (people as ink nodes, mentor→disciple as ink strokes)
+- Camera fly-to and person panel (bio, 字辈, works titles, sources)
+- Default path: 朱阔泉 → 侯宝林 → 马季 → 传人
+- Optional contrast path: 马三立
+- Search + 德/寿/宝/文/明 filters
+- Mobile paper / SVG fallback
+- Deep links: /p/:id
+
+## Data
+
+- data/people/*.json
+- data/edges.json
+- data/sources.json
+- data/schemas/*.json
+
+Seeded from Wikipedia 「相声演员师承关系」 and cited biographies.
+Disputed rows are flagged. Portraits are placeholder / public-domain /
+external only.
+
+## License
+
+- Code: MIT (LICENSE)
+- Data facts: not copyrighted; prose and compilation attribution in NOTICE
+  and ATTRIBUTION.md
+- Wikipedia material: CC BY-SA 4.0
+
+## Repo
+
+https://github.com/jammyfu/xiangsheng-genealogy

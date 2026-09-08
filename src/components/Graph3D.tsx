@@ -1,6 +1,6 @@
 import { Html, Line, OrbitControls } from '@react-three/drei';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Vector3 } from 'three';
 import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib';
 import type { Edge, GraphNode } from '../types';
@@ -45,6 +45,7 @@ function LineageScene({
   visibleIds,
   onSelect,
 }: Graph3DProps & { nodes: GraphNode[] }) {
+  const [hovered, setHovered] = useState<string | null>(null);
   const lookup = useMemo(() => nodeMap(nodes), [nodes]);
   const visibleEdges = useMemo(
     () =>
@@ -76,6 +77,12 @@ function LineageScene({
             node={node}
             selected={selectedId === node.person.id}
             onPath={pathIds.includes(node.person.id)}
+            showLabel={
+              selectedId === node.person.id ||
+              pathIds.includes(node.person.id) ||
+              hovered === node.person.id
+            }
+            onHover={setHovered}
             onSelect={onSelect}
           />
         );
@@ -118,11 +125,15 @@ function PersonNode({
   node,
   selected,
   onPath,
+  showLabel,
+  onHover,
   onSelect,
 }: {
   node: GraphNode;
   selected: boolean;
   onPath: boolean;
+  showLabel: boolean;
+  onHover: (id: string | null) => void;
   onSelect: (id: string) => void;
 }) {
   const color = selected || onPath ? SEAL : INK;
@@ -134,6 +145,11 @@ function PersonNode({
           event.stopPropagation();
           onSelect(node.person.id);
         }}
+        onPointerOver={(event) => {
+          event.stopPropagation();
+          onHover(node.person.id);
+        }}
+        onPointerOut={() => onHover(null)}
       >
         <sphereGeometry args={[radius, 18, 18]} />
         <meshStandardMaterial color={color} roughness={0.92} metalness={0.02} />
@@ -144,11 +160,13 @@ function PersonNode({
           <meshStandardMaterial color={SEAL} roughness={1} />
         </mesh>
       ) : null}
-      <Html center distanceFactor={18} style={{ pointerEvents: 'none' }}>
-        <div className={`node-label ${selected ? 'is-selected' : ''} ${onPath ? 'is-path' : ''}`}>
-          {node.person.name}
-        </div>
-      </Html>
+      {showLabel ? (
+        <Html center distanceFactor={18} style={{ pointerEvents: 'none' }}>
+          <div className={`node-label ${selected ? 'is-selected' : ''} ${onPath ? 'is-path' : ''}`}>
+            {node.person.name}
+          </div>
+        </Html>
+      ) : null}
     </group>
   );
 }

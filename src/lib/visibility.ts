@@ -11,7 +11,10 @@ export function visiblePeople(
 export function visibleIdSet(
   query: string,
   generations: GenerationName[],
+  extras: string[] = [],
 ): Set<string> | null {
   if (!query.trim() && generations.length === 0) return null;
-  return new Set(visiblePeople(query, generations).map((person) => person.id));
+  const ids = new Set(visiblePeople(query, generations).map((person) => person.id));
+  for (const id of extras) ids.add(id);
+  return ids;
 }
