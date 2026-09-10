@@ -16,17 +16,19 @@
 - 继续在codex/ink-atlas-20260910逐阶段提交并同步。
 
 ## Task 1: 纯空间数学
-- [ ] 新建src/lib/scroll-space.ts及测试。cameraDistance定义38°投影视角；perspectiveAnchor保证静止投影与原布局一致；nodeDepth限制纵深。
-- [ ] scrollSurface输出有限曲面和可观察卷边变化；dampValue验证帧率独立，isSelectionGesture以6px区分点击拖动。
-- [ ] 运行对应Vitest，审查测试结果。
+- [x] 新建src/lib/scroll-space.ts及测试。cameraDistance定义38°投影视角；perspectiveAnchor保证静止投影与原布局一致；nodeDepth限制纵深。
+- [x] scrollSurface输出有限曲面和可观察卷边变化；dampValue验证帧率独立，isSelectionGesture以6px区分点击拖动。
+- [x] 运行对应Vitest，审查测试结果。
 
 ## Task 2: 长卷渲染与控制器接入
-- [ ] 新建ScrollScene.tsx与scroll-scene.css：透视Canvas、细分水墨卷面、3D关系线、真实空间锚定中文按钮。
-- [ ] AtlasGraph复用原图谱状态与控件，scroll动态加载新渲染器；tree保留精确谱系阅读。Studio传可见性，避免隐藏时消耗帧。
-- [ ] 悬停/聚焦提升名笺，拖动与点击分离，保留展开与来源说明；失效时回退可操作二维图。
-- [ ] 运行TypeScript与构建，提交并同步实现里程碑。
+- [x] 新建ScrollScene.tsx与scroll-scene.css：透视Canvas、细分水墨卷面、3D关系线、真实空间锚定中文按钮。
+- [x] AtlasGraph复用原图谱状态与控件，scroll动态加载新渲染器；tree保留精确谱系阅读。Studio传可见性，避免隐藏时消耗帧。
+- [x] 悬停/聚焦提升名笺，拖动与点击分离，保留展开与来源说明；失效时回退可操作二维图。
+- [x] 运行TypeScript与构建，提交并同步实现里程碑。
 
 ## Task 3: 真实浏览器验收
 - [ ] 对照左右鼠标位置截图及DOM节点坐标；核对真实canvas、可读标签、分支、搜索、缩放与模式状态。
 - [ ] 验证窄屏手势和减少动态模式、闲置帧停止及错误边界；修复具体问题。
-- [ ] 更新docs/design-qa.md和progress.md，运行全套测试，提交同步验收结果与PR。
+- [x] 更新docs/design-qa.md和progress.md，运行全套测试，提交同步验收结果与PR。
+
+**状态：部分阻塞。** 111项工程测试、生产构建、代码审查修复和云端二维降级浏览通过；云端禁用WebGL，真实GPU的左右指针截图、姓名遮挡、触摸观感及帧时间未验收。详细证据见 `../../spatial-scroll-qa.md`。实施提交 `03a2804` 已同步。
