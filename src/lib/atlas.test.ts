@@ -1,12 +1,44 @@
 import { describe, expect, it } from "vitest";
 import { loadEdgesFromDisk, loadPeopleFromDisk } from "./loadCatalog.node";
-import { buildAtlas, focusAtlasCamera, measureAtlasViewport } from "./atlas";
+import {
+  buildAtlas,
+  clampAtlasScale,
+  fitAtlasCamera,
+  focusAtlasCamera,
+  measureAtlasViewport,
+} from "./atlas";
 
 const people = loadPeopleFromDisk();
 const edges = loadEdgesFromDisk();
 const base = { people, edges, selectedId: "hou-baolin", mode: "tree" as const };
 
 describe("atlas genealogy", () => {
+  it.each(["tree", "scroll"] as const)(
+    "fits every catalog label within a 320px phone's %s stage",
+    (mode) => {
+      // The page reserves 4% on each side, leaving 294.4px for the graph.
+      const viewport = { width: 294.4, height: 580 };
+      const graph = buildAtlas({
+        ...base,
+        mode,
+        showAll: true,
+        viewportWidth: viewport.width,
+      });
+      const camera = fitAtlasCamera(viewport, graph.bounds);
+      expect(clampAtlasScale(camera.scale / 1.2)).toBeLessThan(camera.scale);
+      for (const node of graph.nodes) {
+        const left = camera.x + (node.x - node.width / 2) * camera.scale;
+        const right = camera.x + (node.x + node.width / 2) * camera.scale;
+        const top = camera.y + (node.y - node.height / 2) * camera.scale;
+        const bottom = camera.y + (node.y + node.height / 2) * camera.scale;
+        expect(left, node.person.name).toBeGreaterThanOrEqual(40);
+        expect(right, node.person.name).toBeLessThanOrEqual(viewport.width - 40);
+        expect(top, node.person.name).toBeGreaterThanOrEqual(50);
+        expect(bottom, node.person.name).toBeLessThanOrEqual(viewport.height - 50);
+      }
+    },
+  );
+
   it("opens a compact main lineage and reports the remaining direct disciples", () => {
     const graph = buildAtlas(base);
     const ids = new Set(graph.nodes.map((node) => node.person.id));

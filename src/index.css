@@ -1536,3 +1536,23 @@ h3 {
     scroll-behavior: auto !important;
   }
 }
+
+@media (max-width: 380px) {
+  .view-tabs button {
+    font-size: 13px;
+    margin: 0 8px;
+    white-space: nowrap;
+  }
+  .view-tabs button + button:before {
+    left: -8px;
+  }
+  .book-tabs {
+    gap: 0;
+    justify-content: space-between;
+  }
+  .book-tabs button {
+    font-size: 14px;
+    white-space: nowrap;
+    letter-spacing: 0.04em;
+  }
+}

@@ -10,6 +10,31 @@ export interface AtlasCamera {
   scale: number;
 }
 
+// The full catalog needs roughly 10% scale on a 320px phone, with room to
+// zoom out further after fitting. Keep Fit and manual zoom on the same range.
+export const MIN_ATLAS_SCALE = 0.05;
+export const MAX_ATLAS_SCALE = 2.4;
+export const clampAtlasScale = (scale: number) =>
+  Math.min(MAX_ATLAS_SCALE, Math.max(MIN_ATLAS_SCALE, scale));
+
+export function fitAtlasCamera(
+  viewport: AtlasViewport,
+  bounds: AtlasLayout["bounds"],
+): AtlasCamera {
+  const scale = clampAtlasScale(
+    Math.min(
+      (viewport.width - 80) / bounds.width,
+      (viewport.height - 100) / bounds.height,
+      1,
+    ),
+  );
+  return {
+    scale,
+    x: viewport.width / 2 - (bounds.x + bounds.width / 2) * scale,
+    y: viewport.height / 2 - (bounds.y + bounds.height / 2) * scale,
+  };
+}
+
 export function measureAtlasViewport(
   previous: AtlasViewport,
   measured: AtlasViewport,

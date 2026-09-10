@@ -4,8 +4,12 @@ import { ArrowsOut, Crosshair, Minus, Plus } from "@phosphor-icons/react";
 import { edges, people, peopleById, sourcesById } from "../lib/catalog";
 import {
   buildAtlas,
+  clampAtlasScale,
+  fitAtlasCamera,
   focusAtlasCamera,
+  MAX_ATLAS_SCALE,
   measureAtlasViewport,
+  MIN_ATLAS_SCALE,
 } from "../lib/atlas";
 import type { AtlasCamera, AtlasNode } from "../lib/atlas";
 import "./atlas-graph.css";
@@ -22,7 +26,6 @@ type Camera = AtlasCamera;
 type AtlasMode = AtlasGraphProps["mode"];
 const rememberedCameras: Partial<Record<AtlasMode, Camera>> = {};
 const initialCamera: Camera = { x: 0, y: 0, scale: 1 };
-const clampScale = (scale: number) => Math.min(2.4, Math.max(0.18, scale));
 
 function sourceLabel(ids: string[]) {
   return ids.length
@@ -158,7 +161,7 @@ export function AtlasGraph({
   const zoom = useCallback(
     (factor: number, point?: { x: number; y: number }) => {
       updateCamera((previous) => {
-        const scale = clampScale(previous.scale * factor);
+        const scale = clampAtlasScale(previous.scale * factor);
         const anchor = point ?? { x: size.width / 2, y: size.height / 2 };
         const ratio = scale / previous.scale;
         return {
@@ -188,19 +191,7 @@ export function AtlasGraph({
   }, [zoom]);
 
   const fitGraph = () => {
-    const { bounds } = graph;
-    const scale = clampScale(
-      Math.min(
-        (size.width - 80) / bounds.width,
-        (size.height - 100) / bounds.height,
-        1,
-      ),
-    );
-    updateCamera({
-      scale,
-      x: size.width / 2 - (bounds.x + bounds.width / 2) * scale,
-      y: size.height / 2 - (bounds.y + bounds.height / 2) * scale,
-    });
+    updateCamera(fitAtlasCamera(size, graph.bounds));
   };
 
   const toggleBranch = (node: AtlasNode) => {
@@ -551,7 +542,7 @@ export function AtlasGraph({
             title="缩小"
             aria-label="缩小图谱"
             onClick={() => zoom(1 / 1.2)}
-            disabled={camera.scale <= 0.18}
+            disabled={camera.scale <= MIN_ATLAS_SCALE}
           >
             <Minus size={18} />
           </button>
@@ -563,7 +554,7 @@ export function AtlasGraph({
             title="放大"
             aria-label="放大图谱"
             onClick={() => zoom(1.2)}
-            disabled={camera.scale >= 2.4}
+            disabled={camera.scale >= MAX_ATLAS_SCALE}
           >
             <Plus size={18} />
           </button>
