@@ -862,11 +862,12 @@
       "from": "hou-yaowen",
       "to": "guo-degang",
       "type": "mentor",
-      "disputed": true,
+      "disputed": false,
       "sources": [
-        "src-wiki-lineage"
+        "src-wiki-lineage",
+        "src-bjnews-guo-hou-2006"
       ],
-      "note": "公开叙述中另有张文顺等问艺。"
+      "note": "公开报道确认2004年拜侯耀文为师；其他问艺经历不构成本关系的争议依据。"
     },
     {
       "id": "hou-yaowen--qi-zhi",
@@ -983,11 +984,11 @@
       "from": "guo-degang",
       "to": "cao-heyang",
       "type": "mentor",
-      "disputed": true,
+      "disputed": false,
       "sources": [
         "src-wiki-lineage"
       ],
-      "note": "后独立发展。"
+      "note": "沿用现有鹤字科师承名录。移除原先由曹云金人物混同造成的“后独立发展”争议标记。"
     },
     {
       "id": "guo-degang--zhang-yunlei",
@@ -1028,6 +1029,41 @@
       "sources": [
         "src-wiki-lineage"
       ]
+    },
+    {
+      "id": "guo-degang--cao-yunjin",
+      "from": "guo-degang",
+      "to": "cao-yunjin",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-chinanews-cao-response-2016",
+        "src-ifeng-guo-response-2016"
+      ],
+      "note": "记录曾有的授艺与师徒历史，不代表目前仍列在德云社家谱；2010年组织退出与2016年家谱除名见独立事件。"
+    },
+    {
+      "id": "guo-degang--he-yunwei",
+      "from": "guo-degang",
+      "to": "he-yunwei",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-cri-he-li-interview-2010",
+        "src-chinanews-cao-response-2016"
+      ],
+      "note": "记录历史师徒关系；何云伟2010年退社后仍称师徒关系保持，2016年家谱除名另有事件，不删除历史边。"
+    },
+    {
+      "id": "guo-degang--yang-jiulang",
+      "from": "guo-degang",
+      "to": "yang-jiulang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-guo-degang"
+      ],
+      "note": "师承沿用百科名录。官方演出通报不作为正式拜师日期的证据。"
     }
   ]
 }

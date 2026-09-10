@@ -1,9 +1,10 @@
 {
   "birthYear": 1973,
   "portraitKind": "placeholder",
-  "disputed": true,
+  "disputed": false,
   "notes": [
-    "主边：侯耀文。张文顺等为问艺/科名来源，不作第二条主师边。"
+    "侯耀文师承有公开报道支持，不因另有问艺经历而标为争议。",
+    "事件中当事人的不同说法只归属于相应陈述者；家谱除名不抹去此前授艺与师徒历史。"
   ],
   "works": [
     "论捧逗",
@@ -12,12 +13,15 @@
   ],
   "sources": [
     "src-wiki-lineage",
-    "src-wiki-guo-degang"
+    "src-wiki-guo-degang",
+    "src-bjnews-guo-hou-2006",
+    "src-chinanews-cao-response-2016",
+    "src-ifeng-guo-response-2016"
   ],
   "id": "guo-degang",
   "name": "郭德纲",
   "generation": "明",
   "generationIndex": 8,
   "school": "北京德云社",
-  "bio": "维基表记为侯耀文弟子。创办德云社，以传统本子复兴著称。公开叙述中亦强调张文顺等问艺，故师承边标记争议。"
+  "bio": "相声演员，2004年拜侯耀文为师，是德云社创办人之一。本库保留有据可查的师承历史，并将弟子退社、家谱除名与公开分歧分别列入艺事年表。"
 }

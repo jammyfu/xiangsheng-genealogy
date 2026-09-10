@@ -15,7 +15,8 @@
       "url": "https://zh.wikipedia.org/wiki/%E6%9C%B1%E9%98%94%E6%B3%89",
       "publisher": "维基百科",
       "license": "CC BY-SA 4.0",
-      "accessed": "2026-09-08"
+      "accessed": "2026-09-08",
+      "note": ""
     },
     {
       "id": "src-wiki-hou-baolin",
@@ -23,7 +24,8 @@
       "url": "https://zh.wikipedia.org/wiki/%E4%BE%AF%E5%AE%9D%E6%9E%97",
       "publisher": "维基百科",
       "license": "CC BY-SA 4.0",
-      "accessed": "2026-09-08"
+      "accessed": "2026-09-08",
+      "note": ""
     },
     {
       "id": "src-wiki-ma-ji",
@@ -31,7 +33,8 @@
       "url": "https://zh.wikipedia.org/wiki/%E9%A9%AC%E5%AD%A3",
       "publisher": "维基百科",
       "license": "CC BY-SA 4.0",
-      "accessed": "2026-09-08"
+      "accessed": "2026-09-08",
+      "note": ""
     },
     {
       "id": "src-wiki-ma-sanli",
@@ -39,7 +42,8 @@
       "url": "https://zh.wikipedia.org/wiki/%E9%A9%AC%E4%B8%89%E7%AB%8B",
       "publisher": "维基百科",
       "license": "CC BY-SA 4.0",
-      "accessed": "2026-09-08"
+      "accessed": "2026-09-08",
+      "note": ""
     },
     {
       "id": "src-wiki-jiang-kun",
@@ -47,7 +51,8 @@
       "url": "https://zh.wikipedia.org/wiki/%E5%A7%9C%E6%98%86",
       "publisher": "维基百科",
       "license": "CC BY-SA 4.0",
-      "accessed": "2026-09-08"
+      "accessed": "2026-09-08",
+      "note": ""
     },
     {
       "id": "src-wiki-guo-degang",
@@ -55,7 +60,8 @@
       "url": "https://zh.wikipedia.org/wiki/%E9%83%AD%E5%BE%B7%E7%BA%B2",
       "publisher": "维基百科",
       "license": "CC BY-SA 4.0",
-      "accessed": "2026-09-08"
+      "accessed": "2026-09-08",
+      "note": ""
     },
     {
       "id": "src-baike-generation",
@@ -78,7 +84,128 @@
       "title": "相声界是如何排辈的？",
       "url": "https://web.archive.org/web/20190125073307/https://zhuanlan.zhihu.com/p/20580362",
       "publisher": "知乎专栏（Internet Archive）",
-      "accessed": "2026-09-08"
+      "accessed": "2026-09-08",
+      "note": ""
+    },
+    {
+      "id": "src-bjnews-guo-hou-2006",
+      "title": "师傅杨志刚细说与郭德纲的“恩恩怨怨”",
+      "url": "https://ent.sina.com.cn/h/2006-03-09/00511010008.html",
+      "publisher": "新京报（新浪转载）",
+      "accessed": "2026-09-10",
+      "note": "发布于2006-03-09，已读取正文。导语明确郭德纲2004年拜侯耀文为师；杨志刚采访中的其他争执与指控是其个人陈述，本库不将其转作已证实事实。"
+    },
+    {
+      "id": "src-jinghua-he-li-exit-2010",
+      "title": "何云伟李菁亲口解释退出德云社真正原因",
+      "url": "https://www.cbinews.com/desktop/PuxNQ",
+      "publisher": "京华时报（CBI转载）",
+      "accessed": "2026-09-10",
+      "note": "发布于2010-08-07，记者王铮；已读取全文。转载含8月6日凌晨退社声明及德云社王海回应。文章其他人物名与时间细节有疑似笔误，只用于所引声明与回应，不整篇采信。"
+    },
+    {
+      "id": "src-cri-he-li-interview-2010",
+      "title": "李菁何云伟否认落井下石 首度开口细谈退出隐情",
+      "url": "https://news.sina.com.cn/o/2010-09-14/173018111526s.shtml",
+      "publisher": "国际在线（新浪转载）",
+      "accessed": "2026-09-10",
+      "note": "发布于2010-09-14，正文称采访发生于前一天；事件保守记到2010年9月。已读取问答。何云伟表示退社后师徒关系仍保持；文内其他当事人评价均非独立事实认定。"
+    },
+    {
+      "id": "src-iqiyi-cao-exit-2010",
+      "title": "曹云金公开承认已经退出德云社 与郭德纲联系不多",
+      "url": "https://www.iq.com/album/曹云金公开承认已经退出德云社-与郭德纲联系不多-2010-19rrjdq970?lang=zh_cn",
+      "publisher": "爱奇艺国际站",
+      "accessed": "2026-09-10",
+      "note": "视频标注年份2010，页面说明明确12月4日新书签售时公开承认退出。页面具体发布日期未显示；说明已打开读取，视频播放有地区限制，未把页面说明冒充完整视频核验。只证明公开承认日期，不证明退出生效日期。"
+    },
+    {
+      "id": "src-chinanews-cao-response-2016",
+      "title": "曹云金痛陈与郭德纲恩怨：我最清楚你见不得光的往事",
+      "url": "https://www.chinanews.com/yl/2016/09-05/7994408.shtml",
+      "publisher": "中国新闻网",
+      "accessed": "2026-09-10",
+      "note": "发布于2016-09-05 13:47，已读取正文。报道明确8月30日公布新家谱、何云伟与曹云金未列入，并转载曹云金当日长文。文内具体费用、经历与动机为曹方陈述，不是媒体或本库查实结论。"
+    },
+    {
+      "id": "src-ifeng-guo-response-2016",
+      "title": "郭德纲发文首回应曹云金事件：落魄时还会管你",
+      "url": "https://ent.ifeng.com/a/20160925/42690369_0.shtml",
+      "publisher": "凤凰娱乐",
+      "accessed": "2026-09-10",
+      "note": "发布于2016-09-25 09:02:55，报道与长文全文已读。记录9月25日凌晨郭德纲回应。具体收费、演出安排及离开原因是郭方说法，本库不替代独立核验或裁定。"
+    },
+    {
+      "id": "src-qingdao-notice-2019",
+      "title": "“张云雷调侃事件”续：青岛官方责成德云社公开道歉",
+      "url": "https://m.bjnews.com.cn/detail/156213455014849.html",
+      "publisher": "青岛市文化市场行政执法局微信公众号（新京报转载）",
+      "accessed": "2026-09-10",
+      "note": "通报及转载发布于2019-07-03，已读取通报正文。区分2018-12-31演出、2019-06-26整改告知、2019-07-02处罚决定与7月3日公开通报。吊证、罚款对象分别为两家演出公司。"
+    },
+    {
+      "id": "src-cctv-qingdao-notice-2019",
+      "title": "青岛通报张云雷事件：责成德云社道歉 对演员批评教育",
+      "url": "https://news.cctv.com/2019/07/03/ARTIOn1C3svgrZALDXMYvjqw190703.shtml",
+      "publisher": "央视网（转载澎湃新闻）",
+      "accessed": "2026-09-10",
+      "note": "发布于2019-07-03，已打开。与src-qingdao-notice-2019同源于青岛执法局通报，只是另一转载入口，不计作独立交叉证据。"
+    },
+    {
+      "id": "src-deyunshe-zhang-statement-2019",
+      "title": "德云社就“张云雷调侃事件”致歉 暂停张云雷工作",
+      "url": "https://m.bjnews.com.cn/detail/156213612214888.html",
+      "publisher": "德云社（新京报转载）",
+      "accessed": "2026-09-10",
+      "note": "发布于2019-07-03 14:44，已打开标题、声明发布日期与归属；完整声明以图片呈现。这里只录入可明确核验的致歉与暂停工作，不推测停工期限、开除、永久禁演或师承终止。"
+    },
+    {
+      "id": "src-chinanews-south-africa-2025",
+      "title": "中国相声团体在南非约翰内斯堡公演",
+      "url": "https://finance.sina.com.cn/roll/2025-06-09/doc-inezmvxq1373317.shtml",
+      "publisher": "中国新闻网（新浪转载）",
+      "accessed": "2026-09-10",
+      "note": "发布于2025-06-09，记者孙翔；已读取正文。现场演出为南非当地时间2025-06-07，报道明确烧饼与曹鹤阳作为德云社成员搭档出演。不能据此推断其2026年的全部组织职务。"
+    },
+    {
+      "id": "src-people-meng-zhou-final-20181029",
+      "title": "《相声有新人》孟鹤堂周九良加冕桂冠泪洒当场",
+      "url": "https://web.archive.org/web/20211101143218/http://ent.people.com.cn/n1/2018/1029/c1012-30368895.html",
+      "publisher": "人民网（来源：环球网综合；Internet Archive存档）",
+      "accessed": "2026-09-10",
+      "note": "已打开并阅读2018-10-29报道的2021-11-01存档。原文 https://ent.people.com.cn/n1/2018/1029/c1012-30368895.html 本轮抓取超时。支持孟鹤堂、周九良的2018年比赛结果及金霏、陈曦的创作署名，不支持由此推定任何正式师承。只作简要事实摘要，未复制长段落。"
+    },
+    {
+      "id": "src-xinhua-zhihu-lineup-20210126",
+      "title": "知乎“答案奇遇夜”节目单公布：看明星与答主如何演绎知乎梗",
+      "url": "https://www.xinhuanet.com/ent/2021-01/26/c_1127027459.htm",
+      "publisher": "新华网（来源：大众网）",
+      "accessed": "2026-09-10",
+      "note": "已打开并阅读全文。2021-01-26节目预告列出德云社演员烧饼、孟鹤堂、周九良、郭霄汉及情景剧安排；预告不能单独证明节目最终实际播出。科名与相声行业字辈分开，不据该报道建立拜师关系。"
+    },
+    {
+      "id": "src-huanqiu-helun-20190121",
+      "title": "《欢乐喜剧人5》首播热度登顶 网友直呼张鹤伦太皮",
+      "url": "https://3w.huanqiu.com/a/c93cce/9CaKrnKhg8t?agt=20&s=a/c93cce/9CaKrnKhg8t",
+      "publisher": "环球网",
+      "accessed": "2026-09-10",
+      "note": "已打开并阅读全文。2019-01-21报道支持张鹤伦、郎鹤炎的德云社演出身份、搭档及《幸福生活》表演；不将其中引用的舞台台词作为正式师承的证据。未采用宣传性的收视、热度及评价数据。"
+    },
+    {
+      "id": "src-sohu-qingqu-shanghai-20140521",
+      "title": "《满腹经纶》青曲社抵沪 推苗阜王声相声专场",
+      "url": "https://yule.sohu.com/20140521/n399953840.shtml",
+      "publisher": "搜狐娱乐",
+      "accessed": "2026-09-10",
+      "note": "已打开并阅读全文。2014-05-21演出报道支持苗阜、王声的青曲社身份及此前《满腹经纶》《学富五车》的晚会演出。7月上海专场属于当时预告，不能由此单独证明最终如期举行；未采用宣传性排名与观众评价。"
+    },
+    {
+      "id": "src-cyol-comedian-round-20190314",
+      "title": "《欢乐喜剧人5》突围赛 王宁猫王造型放飞自我",
+      "url": "https://web.archive.org/web/20211116021143/https://shareapp.cyol.com/cmsfile/News/201903/14/share194886.html?nid=194886&t=1553511344",
+      "publisher": "中国青年报客户端（来源：北方网；Internet Archive存档）",
+      "accessed": "2026-09-10",
+      "note": "已打开并阅读全文。存档对应2019-03-14节目预告；原文 https://shareapp.cyol.com/cmsfile/News/201903/14/share194886.html 本轮未成功打开。支持张鹤伦/郎鹤炎、卢鑫/玉浩的当时搭档身份及节目安排，不代表当前关系状态，不补造作品名称或师承。"
     }
   ]
 }

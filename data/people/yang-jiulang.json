@@ -1,0 +1,18 @@
+{
+  "id": "yang-jiulang",
+  "name": "杨九郎",
+  "generation": null,
+  "generationIndex": 9,
+  "school": "德云社九字科",
+  "bio": "相声演员，见于郭德纲弟子名录，与张云雷共同参加2018年底青岛演出。2019年官方通报要求德云社对两人进行批评教育和严肃处理；通报中的吊证与罚款针对演出公司。",
+  "works": [],
+  "sources": [
+    "src-wiki-guo-degang",
+    "src-qingdao-notice-2019"
+  ],
+  "portraitKind": "placeholder",
+  "notes": [
+    "字科不等于相声传统字辈；generationIndex沿用郭德纲门下第九代的项目惯例。",
+    "人物师承暂据百科名录，官方通报只用于核验具体演出事件。"
+  ]
+}

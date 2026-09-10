@@ -1,0 +1,21 @@
+{
+  "id": "zhang-helun",
+  "name": "张鹤伦",
+  "generation": null,
+  "generationIndex": 10,
+  "school": "德云社",
+  "bio": "德云社相声演员，与郎鹤炎搭档。环球网报道记载，两人在2019年《欢乐喜剧人5》首期表演相声《幸福生活》；同年突围赛的节目报道继续列出这一组合。",
+  "works": [
+    "幸福生活"
+  ],
+  "sources": [
+    "src-huanqiu-helun-20190121",
+    "src-cyol-comedian-round-20190314"
+  ],
+  "portraitKind": "placeholder",
+  "notes": [
+    "字辈及世代尚未核定。",
+    "本轮核验范围为团体、搭档、节目及作品演出；未把报道引用的舞台“师傅”台词作为正式拜师证据。",
+    "作品列表表示有据可查的演出作品，不表示独家创作或版权归属。"
+  ]
+}

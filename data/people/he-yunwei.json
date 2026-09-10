@@ -1,0 +1,19 @@
+{
+  "id": "he-yunwei",
+  "name": "何云伟",
+  "generation": null,
+  "generationIndex": 9,
+  "school": "郭德纲门下学艺经历",
+  "bio": "相声演员，曾为郭德纲弟子、德云社演员。2010年与李菁声明退出德云社，同年采访称仍保持师徒关系；2016年未列入德云社新家谱。组织退出与家谱除名分开记载。",
+  "works": [],
+  "sources": [
+    "src-jinghua-he-li-exit-2010",
+    "src-cri-he-li-interview-2010",
+    "src-chinanews-cao-response-2016"
+  ],
+  "portraitKind": "placeholder",
+  "notes": [
+    "本批采用所引历史报道中的名字；其后姓名使用变化待另行核验。",
+    "保留曾有师徒关系的历史边，不把2010年退社直接标成师门除名。"
+  ]
+}
