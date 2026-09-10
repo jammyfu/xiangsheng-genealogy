@@ -1,0 +1,354 @@
+.atlas-graph {
+  --atlas-ink: #30332e;
+  --atlas-muted: #70756d;
+  --atlas-red: #8b2626;
+  --atlas-paper: #f8f5ee;
+  position: relative;
+  width: 100%;
+  height: min(72vh, 760px);
+  min-height: 560px;
+  color: var(--atlas-ink);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.atlas-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: grab;
+  touch-action: none;
+  outline: none;
+}
+.atlas-graph--dragging .atlas-canvas {
+  cursor: grabbing;
+}
+.atlas-canvas:focus-visible {
+  outline: 1px solid var(--atlas-red);
+  outline-offset: -4px;
+}
+.atlas-topline {
+  position: absolute;
+  top: 24px;
+  left: 28px;
+  right: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  pointer-events: none;
+  z-index: 2;
+}
+.atlas-direction {
+  font-family: var(--font-serif, "Noto Serif SC", "Songti SC", serif);
+  font-size: 12px;
+  color: var(--atlas-muted);
+  letter-spacing: 0.15em;
+}
+.atlas-scope {
+  pointer-events: auto;
+  border: 1px solid #30332e24;
+  background: #f8f5eedb;
+  padding: 9px 13px;
+  color: #51564e;
+  font: inherit;
+  font-size: 12px;
+  letter-spacing: 0.07em;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.atlas-scope:hover,
+.atlas-scope[aria-pressed="true"] {
+  color: var(--atlas-red);
+  border-color: #8b26264a;
+  background: #f8f5ee;
+}
+.atlas-column line {
+  stroke: #484c4120;
+  stroke-width: 1;
+  stroke-dasharray: 3 8;
+}
+.atlas-column text {
+  font-size: 14px;
+  fill: #6d7468;
+  font-family: var(--font-serif, "Noto Serif SC", serif);
+  letter-spacing: 0.15em;
+  paint-order: stroke;
+  stroke: var(--atlas-paper);
+  stroke-width: 6px;
+}
+.atlas-edge {
+  fill: none;
+  stroke: #8b9486;
+  stroke-width: 1;
+  opacity: 0.38;
+}
+.atlas-edge--active {
+  stroke: var(--atlas-red);
+  stroke-width: 1.2;
+  opacity: 0.65;
+}
+.atlas-edge--disputed {
+  stroke-dasharray: 5 5;
+  stroke: #96775e;
+}
+.atlas-edge--dimmed {
+  opacity: 0.15;
+}
+.atlas-person {
+  font-family: var(--font-serif, "Noto Serif SC", "Songti SC", serif);
+}
+.atlas-person-target {
+  cursor: pointer;
+  outline: none;
+}
+.atlas-node-paper {
+  fill: #f8f5eedb;
+  stroke: transparent;
+  stroke-width: 1.2;
+}
+.atlas-person-name {
+  fill: var(--atlas-ink);
+  font-size: 21px;
+  letter-spacing: 0.08em;
+}
+.atlas-person-meta {
+  fill: #777d71;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+}
+.atlas-person-target:hover .atlas-person-name,
+.atlas-person-target:focus-visible .atlas-person-name {
+  fill: var(--atlas-red);
+}
+.atlas-person-target:hover .atlas-node-paper {
+  fill: #f8f5ee;
+  stroke: #8b262648;
+}
+.atlas-person-target:focus-visible .atlas-node-paper {
+  stroke: var(--atlas-red);
+  stroke-width: 2;
+}
+.atlas-person--vertical .atlas-node-paper {
+  fill: #faf7f0e8;
+  stroke: #a59c7c70;
+  stroke-width: 1;
+}
+.atlas-person--selected .atlas-node-paper {
+  fill: #faf7f0ed;
+  stroke: var(--atlas-red);
+  stroke-width: 1.4;
+}
+.atlas-slip-name {
+  fill: var(--atlas-ink);
+  font-size: 26px;
+}
+.atlas-selected-name {
+  fill: var(--atlas-red);
+  font-size: 28px;
+}
+.atlas-slip-dot {
+  fill: #7c8678;
+  stroke: #f8f5ee;
+  stroke-width: 2;
+}
+.atlas-selected-dot {
+  fill: var(--atlas-red);
+}
+.atlas-selected-caption {
+  fill: var(--atlas-red);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  paint-order: stroke;
+  stroke: #f8f5eef0;
+  stroke-width: 4px;
+}
+.atlas-selected-dates {
+  fill: #5f655a;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}
+.atlas-person--dimmed {
+  opacity: 0.32;
+}
+.atlas-person--dimmed.atlas-person--selected {
+  opacity: 1;
+}
+.atlas-person--dimmed:hover,
+.atlas-person--dimmed:focus-within {
+  opacity: 1;
+}
+.atlas-branch {
+  cursor: pointer;
+  outline: none;
+}
+.atlas-branch-hit {
+  fill: transparent;
+  stroke: transparent;
+}
+.atlas-branch circle {
+  fill: #f8f5eee6;
+  stroke: #747b655e;
+  stroke-width: 1;
+}
+.atlas-branch path {
+  fill: none;
+  stroke: #737a66;
+  stroke-width: 1;
+}
+.atlas-branch text {
+  fill: #747b65;
+  font:
+    10px system-ui,
+    sans-serif;
+}
+.atlas-branch:hover circle,
+.atlas-branch:focus-visible circle {
+  stroke: var(--atlas-red);
+}
+.atlas-branch:focus-visible .atlas-branch-hit {
+  stroke: var(--atlas-red);
+}
+.atlas-branch:hover path,
+.atlas-branch:focus-visible path {
+  stroke: var(--atlas-red);
+}
+.atlas-bottomline {
+  position: absolute;
+  bottom: 20px;
+  left: 28px;
+  right: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+  pointer-events: none;
+  z-index: 2;
+}
+.atlas-notes {
+  color: #656c60;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-shadow:
+    0 1px 4px var(--atlas-paper),
+    0 0 8px var(--atlas-paper);
+}
+.atlas-notes p {
+  margin: 6px 0 0;
+  line-height: 1.5;
+}
+.atlas-legend {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.atlas-legend-line {
+  width: 22px;
+  height: 0;
+  border-top: 1px solid #626c55;
+}
+.atlas-legend-line--disputed {
+  border-top: 1px dashed #96775e;
+  margin-left: 8px;
+}
+.atlas-result {
+  color: #7c8277;
+}
+.atlas-camera {
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  background: #f8f5eee8;
+  border: 1px solid #494f3e29;
+  border-radius: 3px;
+  box-shadow: 0 3px 15px #3c44310a;
+  pointer-events: auto;
+  flex-shrink: 0;
+}
+.atlas-camera button {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 2px;
+  color: #505944;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+.atlas-camera button:hover {
+  color: var(--atlas-red);
+  background: #8b262609;
+}
+.atlas-camera button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+.atlas-camera output {
+  min-width: 41px;
+  text-align: center;
+  color: #68715d;
+  font:
+    11px system-ui,
+    sans-serif;
+}
+.atlas-camera-divider {
+  height: 17px;
+  width: 1px;
+  background: #494f3e24;
+  margin: 0 4px;
+}
+.atlas-camera button:focus-visible,
+.atlas-scope:focus-visible {
+  outline: 2px solid var(--atlas-red);
+  outline-offset: 2px;
+}
+
+@media (max-width: 760px) {
+  .atlas-graph {
+    min-height: 530px;
+    height: 64vh;
+    max-height: 720px;
+  }
+  .atlas-topline {
+    left: 16px;
+    right: 16px;
+    top: 16px;
+    gap: 8px;
+  }
+  .atlas-direction {
+    font-size: 10px;
+    letter-spacing: 0.02em;
+  }
+  .atlas-scope {
+    font-size: 10px;
+    padding: 9px;
+  }
+  .atlas-bottomline {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .atlas-notes {
+    font-size: 9px;
+  }
+  .atlas-camera {
+    margin-left: auto;
+  }
+  .atlas-camera button {
+    width: 37px;
+    height: 37px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .atlas-graph *,
+  .atlas-graph *::before,
+  .atlas-graph *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
