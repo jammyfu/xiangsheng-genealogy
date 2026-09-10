@@ -1,4 +1,12 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import {
+  lazy,
+  Suspense,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import type { KeyboardEvent, PointerEvent } from "react";
 import { ArrowsOut, Crosshair, Minus, Plus } from "@phosphor-icons/react";
 import { edges, people, peopleById, sourcesById } from "../lib/catalog";
@@ -14,7 +22,10 @@ import {
 import type { AtlasCamera, AtlasNode } from "../lib/atlas";
 import "./atlas-graph.css";
 
+const ScrollScene = lazy(() => import("./ScrollScene"));
+
 interface AtlasGraphProps {
+  active?: boolean;
   selectedId: string;
   mode: "scroll" | "tree";
   query: string;
@@ -47,11 +58,13 @@ function edgePath(from: AtlasNode, to: AtlasNode) {
 
 export function AtlasGraph({
   selectedId,
+  active = true,
   mode,
   query,
   generation,
   onSelect,
 }: AtlasGraphProps) {
+  const [webglUnavailable, setWebglUnavailable] = useState(false);
   const hostRef = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
   const [size, setSize] = useState({ width: 1120, height: 600 });
@@ -175,7 +188,7 @@ export function AtlasGraph({
   );
 
   useEffect(() => {
-    const svg = svgRef.current;
+    const svg = hostRef.current;
     if (!svg) return;
     const wheel = (event: WheelEvent) => {
       if (!event.ctrlKey && !event.metaKey) return;
@@ -210,7 +223,7 @@ export function AtlasGraph({
     });
   };
 
-  const startPan = (event: PointerEvent<SVGSVGElement>) => {
+  const startPan = (event: PointerEvent<SVGSVGElement | HTMLDivElement>) => {
     if (
       event.button !== 0 ||
       (event.target as Element).closest("[data-atlas-control]")
@@ -225,7 +238,7 @@ export function AtlasGraph({
     event.currentTarget.setPointerCapture(event.pointerId);
     setDragging(true);
   };
-  const movePan = (event: PointerEvent<SVGSVGElement>) => {
+  const movePan = (event: PointerEvent<SVGSVGElement | HTMLDivElement>) => {
     const start = drag.current;
     if (!start || event.pointerId !== start.pointer) return;
     updateCamera({
@@ -234,14 +247,14 @@ export function AtlasGraph({
       y: start.camera.y + event.clientY - start.y,
     });
   };
-  const endPan = (event: PointerEvent<SVGSVGElement>) => {
+  const endPan = (event: PointerEvent<SVGSVGElement | HTMLDivElement>) => {
     if (drag.current?.pointer !== event.pointerId) return;
     drag.current = null;
     setDragging(false);
     if (event.currentTarget.hasPointerCapture(event.pointerId))
       event.currentTarget.releasePointerCapture(event.pointerId);
   };
-  const onGraphKey = (event: KeyboardEvent<SVGSVGElement>) => {
+  const onGraphKey = (event: KeyboardEvent<SVGSVGElement | HTMLDivElement>) => {
     const shifts: Record<string, [number, number]> = {
       ArrowLeft: [70, 0],
       ArrowRight: [-70, 0],
@@ -274,6 +287,10 @@ export function AtlasGraph({
     action();
   };
   const revealFocusedNode = (node: AtlasNode) => {
+    if (camera.scale < 0.75) {
+      updateCamera(focusAtlasCamera(size, node));
+      return;
+    }
     const screenX = node.x * camera.scale + camera.x;
     const screenY = node.y * camera.scale + camera.y;
     if (
@@ -310,217 +327,247 @@ export function AtlasGraph({
           {showAll ? "收回当前一脉" : `展开全谱 · ${people.length} 人`}
         </button>
       </div>
-      <svg
-        ref={svgRef}
-        className="atlas-canvas"
-        viewBox={`0 0 ${size.width} ${size.height}`}
-        role="group"
-        aria-label={`${currentPerson.name}的${mode === "tree" ? "世代谱系" : "山水长卷"}，师承方向从左至右`}
-        aria-describedby="atlas-instructions"
-        tabIndex={0}
-        onKeyDown={onGraphKey}
-        onPointerDown={startPan}
-        onPointerMove={movePan}
-        onPointerUp={endPan}
-        onPointerCancel={endPan}
-      >
-        <title>相声历史师承图</title>
-        <desc>
-          人物按真实字辈分列。实线为已收录师承，虚线为存在不同说法的师承。历史师承不表示当前组织归属。人物可用
-          Tab 键选中，回车查看。
-        </desc>
-        <defs>
-          <marker
-            id="atlas-arrow"
-            markerWidth="6"
-            markerHeight="6"
-            refX="5"
-            refY="3"
-            orient="auto"
-            markerUnits="userSpaceOnUse"
-          >
-            <path
-              d="M 1 1 L 5 3 L 1 5"
-              fill="none"
-              stroke="context-stroke"
-              strokeWidth="1"
-            />
-          </marker>
-        </defs>
-        <g
-          transform={`translate(${camera.x} ${camera.y}) scale(${camera.scale})`}
+      {mode === "scroll" && !webglUnavailable ? (
+        <Suspense fallback={<div className="scroll-loading">山水正在舒展</div>}>
+          <ScrollScene
+            graph={graph}
+            view={camera}
+            viewport={size}
+            active={active}
+            onSelect={onSelect}
+            onBranch={toggleBranch}
+            onFocus={revealFocusedNode}
+            onFailure={() => setWebglUnavailable(true)}
+            onPointerDown={startPan}
+            onPointerMove={movePan}
+            onPointerUp={endPan}
+            onKeyDown={onGraphKey}
+          />
+        </Suspense>
+      ) : (
+        <svg
+          ref={svgRef}
+          className="atlas-canvas"
+          viewBox={`0 0 ${size.width} ${size.height}`}
+          role="group"
+          aria-label={`${currentPerson.name}的${mode === "tree" ? "世代谱系" : "山水长卷"}，师承方向从左至右`}
+          aria-describedby="atlas-instructions"
+          tabIndex={0}
+          onKeyDown={onGraphKey}
+          onPointerDown={startPan}
+          onPointerMove={movePan}
+          onPointerUp={endPan}
+          onPointerCancel={endPan}
         >
-          {mode === "tree" &&
-            graph.columns.map((column) => (
-              <g key={column.index} className="atlas-column" aria-hidden="true">
-                <line
-                  x1={column.x}
-                  x2={column.x}
-                  y1={graph.bounds.y}
-                  y2={graph.bounds.y + graph.bounds.height}
-                />
-                <text
-                  x={column.x}
-                  y={(85 - camera.y) / camera.scale}
-                  textAnchor="middle"
+          <title>相声历史师承图</title>
+          <desc>
+            人物按真实字辈分列。实线为已收录师承，虚线为存在不同说法的师承。历史师承不表示当前组织归属。人物可用
+            Tab 键选中，回车查看。
+          </desc>
+          <defs>
+            <marker
+              id="atlas-arrow"
+              markerWidth="6"
+              markerHeight="6"
+              refX="5"
+              refY="3"
+              orient="auto"
+              markerUnits="userSpaceOnUse"
+            >
+              <path
+                d="M 1 1 L 5 3 L 1 5"
+                fill="none"
+                stroke="context-stroke"
+                strokeWidth="1"
+              />
+            </marker>
+          </defs>
+          <g
+            transform={`translate(${camera.x} ${camera.y}) scale(${camera.scale})`}
+          >
+            {mode === "tree" &&
+              graph.columns.map((column) => (
+                <g
+                  key={column.index}
+                  className="atlas-column"
+                  aria-hidden="true"
                 >
-                  {column.label === "世代待考"
-                    ? column.label
-                    : `${column.label}字辈`}
-                </text>
-              </g>
-            ))}
-          <g className="atlas-relations">
-            {graph.edges.map((edge) => {
-              const from = lookup.get(edge.from)!;
-              const to = lookup.get(edge.to)!;
+                  <line
+                    x1={column.x}
+                    x2={column.x}
+                    y1={graph.bounds.y}
+                    y2={graph.bounds.y + graph.bounds.height}
+                  />
+                  <text
+                    x={column.x}
+                    y={(85 - camera.y) / camera.scale}
+                    textAnchor="middle"
+                  >
+                    {column.label === "世代待考"
+                      ? column.label
+                      : `${column.label}字辈`}
+                  </text>
+                </g>
+              ))}
+            <g className="atlas-relations">
+              {graph.edges.map((edge) => {
+                const from = lookup.get(edge.from)!;
+                const to = lookup.get(edge.to)!;
+                return (
+                  <path
+                    key={edge.id}
+                    d={edgePath(from, to)}
+                    markerEnd="url(#atlas-arrow)"
+                    className={`atlas-edge${edge.highlighted ? " atlas-edge--active" : ""}${edge.disputed ? " atlas-edge--disputed" : ""}${from.dimmed || to.dimmed ? " atlas-edge--dimmed" : ""}`}
+                  >
+                    <title>{`${from.person.name} → ${to.person.name}；历史师承${edge.disputed ? "；存在不同说法" : ""}${edge.note ? `；${edge.note}` : ""}。来源：${sourceLabel(edge.sources)}`}</title>
+                  </path>
+                );
+              })}
+            </g>
+            {graph.nodes.map((node) => {
+              const { person } = node;
+              const opening =
+                node.hiddenChildren > 0 || collapsedIds.has(person.id);
+              const branchX = node.width / 2 + 20;
+              const slipHeight = node.vertical
+                ? node.height - (node.selected ? 100 : 36)
+                : node.height;
               return (
-                <path
-                  key={edge.id}
-                  d={edgePath(from, to)}
-                  markerEnd="url(#atlas-arrow)"
-                  className={`atlas-edge${edge.highlighted ? " atlas-edge--active" : ""}${edge.disputed ? " atlas-edge--disputed" : ""}${from.dimmed || to.dimmed ? " atlas-edge--dimmed" : ""}`}
+                <g
+                  key={person.id}
+                  transform={`translate(${node.x} ${node.y})`}
+                  className={`atlas-person${node.vertical ? " atlas-person--vertical" : ""}${node.selected ? " atlas-person--selected" : ""}${node.dimmed ? " atlas-person--dimmed" : ""}`}
                 >
-                  <title>{`${from.person.name} → ${to.person.name}；历史师承${edge.disputed ? "；存在不同说法" : ""}${edge.note ? `；${edge.note}` : ""}。来源：${sourceLabel(edge.sources)}`}</title>
-                </path>
+                  <g
+                    className="atlas-person-target"
+                    data-atlas-control="person"
+                    role="button"
+                    tabIndex={0}
+                    aria-pressed={node.selected}
+                    aria-label={`${person.name}，${person.generation ? `${person.generation}字辈` : "字辈待考"}${person.disputed ? "，资料存在不同说法" : ""}，查看人物`}
+                    onFocus={() => revealFocusedNode(node)}
+                    onClick={() => onSelect(person.id)}
+                    onKeyDown={(event) =>
+                      activate(event, () => onSelect(person.id))
+                    }
+                  >
+                    <title>{`${person.name}${person.birthYear ? `（${person.birthYear}—${person.deathYear ?? ""}）` : ""}。来源：${sourceLabel(person.sources)}${person.disputed ? "。部分资料存在不同说法。" : ""}`}</title>
+                    <rect
+                      className="atlas-node-paper"
+                      x={-node.width / 2}
+                      y={-slipHeight / 2}
+                      width={node.width}
+                      height={slipHeight}
+                      rx={node.selected ? 2 : 3}
+                    />
+                    {node.vertical ? (
+                      <>
+                        <text
+                          className={`atlas-slip-name${node.selected ? " atlas-selected-name" : ""}`}
+                          textAnchor="middle"
+                        >
+                          {[...person.name].map((character, index) => (
+                            <tspan
+                              key={index}
+                              x="0"
+                              y={
+                                -(person.name.length - 1) * 16 + index * 32 + 10
+                              }
+                            >
+                              {character}
+                            </tspan>
+                          ))}
+                        </text>
+                        <circle
+                          className={`atlas-slip-dot${node.selected ? " atlas-selected-dot" : ""}`}
+                          cy={slipHeight / 2 + (mode === "tree" ? 2 : 17)}
+                          r="4"
+                        />
+                        {node.selected && (
+                          <text
+                            className={`atlas-selected-caption${mode === "tree" ? " atlas-selected-dates" : ""}`}
+                            x="0"
+                            y={slipHeight / 2 + (mode === "tree" ? 30 : 47)}
+                            textAnchor="middle"
+                          >
+                            {node.caption}
+                          </text>
+                        )}
+                      </>
+                    ) : (
+                      <>
+                        <text
+                          className="atlas-person-name"
+                          y="-2"
+                          dominantBaseline="middle"
+                          textAnchor="middle"
+                        >
+                          {person.name}
+                        </text>
+                        <text
+                          className="atlas-person-meta"
+                          y="19"
+                          textAnchor="middle"
+                        >
+                          {person.generation
+                            ? `${person.generation}字辈`
+                            : "字辈待考"}
+                          {person.disputed ? " · 存疑" : ""}
+                        </text>
+                      </>
+                    )}
+                  </g>
+                  {node.childCount > 0 && (
+                    <g
+                      className="atlas-branch"
+                      transform={`translate(${branchX} 0)`}
+                      data-atlas-control="branch"
+                      role="button"
+                      tabIndex={0}
+                      aria-label={`${opening ? "展开" : "收起"}${person.name}的弟子分支${opening && node.hiddenChildren ? `，另有 ${node.hiddenChildren} 人` : ""}`}
+                      aria-expanded={!opening}
+                      onFocus={() => revealFocusedNode(node)}
+                      onClick={() => toggleBranch(node)}
+                      onKeyDown={(event) =>
+                        activate(event, () => toggleBranch(node))
+                      }
+                    >
+                      <title>
+                        {opening
+                          ? `展开${person.name}门下${node.hiddenChildren ? `另外 ${node.hiddenChildren} 人` : ""}`
+                          : `收起${person.name}门下分支`}
+                      </title>
+                      <rect
+                        className="atlas-branch-hit"
+                        x="-18"
+                        y="-22"
+                        width="44"
+                        height="44"
+                        rx="8"
+                      />
+                      <circle r="11" />
+                      <path
+                        d={opening ? "M -4 0 H 4 M 0 -4 V 4" : "M -4 0 H 4"}
+                      />
+                      {opening && node.hiddenChildren > 0 && (
+                        <text x="18" y="4">
+                          {node.hiddenChildren}
+                        </text>
+                      )}
+                    </g>
+                  )}
+                </g>
               );
             })}
           </g>
-          {graph.nodes.map((node) => {
-            const { person } = node;
-            const opening =
-              node.hiddenChildren > 0 || collapsedIds.has(person.id);
-            const branchX = node.width / 2 + 20;
-            const slipHeight = node.vertical
-              ? node.height - (node.selected ? 100 : 36)
-              : node.height;
-            return (
-              <g
-                key={person.id}
-                transform={`translate(${node.x} ${node.y})`}
-                className={`atlas-person${node.vertical ? " atlas-person--vertical" : ""}${node.selected ? " atlas-person--selected" : ""}${node.dimmed ? " atlas-person--dimmed" : ""}`}
-              >
-                <g
-                  className="atlas-person-target"
-                  data-atlas-control="person"
-                  role="button"
-                  tabIndex={0}
-                  aria-pressed={node.selected}
-                  aria-label={`${person.name}，${person.generation ? `${person.generation}字辈` : "字辈待考"}${person.disputed ? "，资料存在不同说法" : ""}，查看人物`}
-                  onFocus={() => revealFocusedNode(node)}
-                  onClick={() => onSelect(person.id)}
-                  onKeyDown={(event) =>
-                    activate(event, () => onSelect(person.id))
-                  }
-                >
-                  <title>{`${person.name}${person.birthYear ? `（${person.birthYear}—${person.deathYear ?? ""}）` : ""}。来源：${sourceLabel(person.sources)}${person.disputed ? "。部分资料存在不同说法。" : ""}`}</title>
-                  <rect
-                    className="atlas-node-paper"
-                    x={-node.width / 2}
-                    y={-slipHeight / 2}
-                    width={node.width}
-                    height={slipHeight}
-                    rx={node.selected ? 2 : 3}
-                  />
-                  {node.vertical ? (
-                    <>
-                      <text
-                        className={`atlas-slip-name${node.selected ? " atlas-selected-name" : ""}`}
-                        textAnchor="middle"
-                      >
-                        {[...person.name].map((character, index) => (
-                          <tspan
-                            key={index}
-                            x="0"
-                            y={-(person.name.length - 1) * 16 + index * 32 + 10}
-                          >
-                            {character}
-                          </tspan>
-                        ))}
-                      </text>
-                      <circle
-                        className={`atlas-slip-dot${node.selected ? " atlas-selected-dot" : ""}`}
-                        cy={slipHeight / 2 + (mode === "tree" ? 2 : 17)}
-                        r="4"
-                      />
-                      {node.selected && (
-                        <text
-                          className={`atlas-selected-caption${mode === "tree" ? " atlas-selected-dates" : ""}`}
-                          x="0"
-                          y={slipHeight / 2 + (mode === "tree" ? 30 : 47)}
-                          textAnchor="middle"
-                        >
-                          {node.caption}
-                        </text>
-                      )}
-                    </>
-                  ) : (
-                    <>
-                      <text
-                        className="atlas-person-name"
-                        y="-2"
-                        dominantBaseline="middle"
-                        textAnchor="middle"
-                      >
-                        {person.name}
-                      </text>
-                      <text
-                        className="atlas-person-meta"
-                        y="19"
-                        textAnchor="middle"
-                      >
-                        {person.generation
-                          ? `${person.generation}字辈`
-                          : "字辈待考"}
-                        {person.disputed ? " · 存疑" : ""}
-                      </text>
-                    </>
-                  )}
-                </g>
-                {node.childCount > 0 && (
-                  <g
-                    className="atlas-branch"
-                    transform={`translate(${branchX} 0)`}
-                    data-atlas-control="branch"
-                    role="button"
-                    tabIndex={0}
-                    aria-label={`${opening ? "展开" : "收起"}${person.name}的弟子分支${opening && node.hiddenChildren ? `，另有 ${node.hiddenChildren} 人` : ""}`}
-                    aria-expanded={!opening}
-                    onFocus={() => revealFocusedNode(node)}
-                    onClick={() => toggleBranch(node)}
-                    onKeyDown={(event) =>
-                      activate(event, () => toggleBranch(node))
-                    }
-                  >
-                    <title>
-                      {opening
-                        ? `展开${person.name}门下${node.hiddenChildren ? `另外 ${node.hiddenChildren} 人` : ""}`
-                        : `收起${person.name}门下分支`}
-                    </title>
-                    <rect
-                      className="atlas-branch-hit"
-                      x="-18"
-                      y="-22"
-                      width="44"
-                      height="44"
-                      rx="8"
-                    />
-                    <circle r="11" />
-                    <path
-                      d={opening ? "M -4 0 H 4 M 0 -4 V 4" : "M -4 0 H 4"}
-                    />
-                    {opening && node.hiddenChildren > 0 && (
-                      <text x="18" y="4">
-                        {node.hiddenChildren}
-                      </text>
-                    )}
-                  </g>
-                )}
-              </g>
-            );
-          })}
-        </g>
-      </svg>
+        </svg>
+      )}
+      {webglUnavailable && mode === "scroll" && (
+        <p className="scroll-fallback-note" role="status">
+          当前设备未能启用立体画卷，已保留平面谱系阅读。
+        </p>
+      )}
       <div className="atlas-bottomline">
         <div className="atlas-notes">
           <div className="atlas-legend">
@@ -529,7 +576,11 @@ export function AtlasGraph({
             <span className="atlas-legend-line atlas-legend-line--disputed" />
             不同说法
           </div>
-          <p id="atlas-instructions">拖动移卷 · 方向键平移 · 点击人物读笺</p>
+          <p id="atlas-instructions">
+            {mode === "scroll" && !webglUnavailable
+              ? "移鼠展卷 · 拖动游谱 · 点选人物"
+              : "拖动移卷 · 方向键平移 · 点击人物读笺"}
+          </p>
           <p className="atlas-result" role="status">
             {graph.hasFilter
               ? `${graph.matchCount} 人符合筛选 · 浅墨保留师承上下文`

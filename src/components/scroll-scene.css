@@ -1,0 +1,226 @@
+.scroll-space {
+  position: absolute;
+  inset: 0;
+  outline: none;
+  touch-action: none;
+  cursor: grab;
+}
+.scroll-space:focus-visible {
+  outline: 1px solid #8b2626;
+  outline-offset: -3px;
+}
+.scroll-canvas-host {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.scroll-canvas-host canvas {
+  width: 100%;
+  height: 100%;
+}
+.scroll-space canvas {
+  display: block;
+}
+.scroll-loading {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 45%;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 0.25em;
+  color: #777767;
+  z-index: 20;
+}
+.spatial-label-anchor {
+  pointer-events: none;
+}
+.spatial-person {
+  position: relative;
+  pointer-events: none;
+  transform-origin: center center;
+  text-align: center;
+}
+.spatial-person-name {
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid transparent;
+  background: #f8f5eea6;
+  color: #30332e;
+  white-space: nowrap;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s;
+  cursor: pointer;
+}
+.spatial-person-name > span {
+  font-family: var(--font-serif);
+  font-size: 23px;
+  letter-spacing: 0.07em;
+}
+.spatial-person-name small {
+  font-size: 10px;
+  color: #6a7464;
+  letter-spacing: 0.07em;
+  margin-top: 2px;
+}
+.spatial-person-name:hover,
+.spatial-person-name:focus-visible {
+  border-color: #8b262650;
+  color: #8b2626;
+  background: #faf7f0;
+  box-shadow: 0 9px 22px #424b3820;
+  outline-offset: 3px;
+}
+.spatial-person.is-selected .spatial-person-name {
+  min-height: 116px;
+  width: 48px;
+  margin: auto;
+  border: 1px solid #8b2626;
+  background: #fbf8f0ed;
+  box-shadow: 5px 10px 17px #353d3126;
+}
+.spatial-person.is-selected .spatial-person-name > span {
+  writing-mode: vertical-rl;
+  letter-spacing: 0.12em;
+  font-size: 29px;
+  line-height: 1;
+}
+.spatial-person.is-selected::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 14px);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #8b2626;
+  transform: translateX(-50%);
+}
+.spatial-caption {
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 31px);
+  transform: translateX(-50%);
+  color: #8b2626;
+  font-size: 11px;
+  white-space: nowrap;
+  text-shadow: 0 1px 7px #f8f5ee;
+}
+.spatial-person.is-dimmed {
+  opacity: 0.35;
+}
+.spatial-person.is-dimmed:focus-within,
+.spatial-person.is-dimmed:hover {
+  opacity: 1;
+}
+.spatial-branch {
+  position: absolute;
+  pointer-events: auto;
+  left: calc(100% + 1px);
+  top: 50%;
+  transform: translateY(-50%);
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  color: #7a806d;
+}
+.spatial-branch svg {
+  border: 1px solid #80877760;
+  border-radius: 50%;
+  box-sizing: content-box;
+  padding: 4px;
+  background: #f8f5eecf;
+}
+.spatial-branch small {
+  font: 10px system-ui;
+}
+.spatial-branch:hover {
+  color: #8b2626;
+}
+.scroll-motion-toggle {
+  position: absolute;
+  top: 152px;
+  right: 24px;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: #66705d;
+  background: #f8f5eeba;
+  border: 1px solid #777f6330;
+  padding: 7px 10px;
+}
+.scroll-depth-note {
+  position: absolute;
+  bottom: 121px;
+  right: 27px;
+  z-index: 2;
+  color: #727966;
+  writing-mode: vertical-rl;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  pointer-events: none;
+}
+.atlas-graph--scroll .atlas-topline,
+.atlas-graph--scroll .atlas-bottomline {
+  z-index: 35;
+}
+.view-scroll:has(.scroll-space.is-ready) .landscape-art {
+  opacity: 0.2;
+}
+.scroll-overview-note {
+  position: absolute;
+  bottom: 116px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: #6a7464;
+  background: #f8f5eed9;
+  padding: 8px 14px;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.scroll-fallback-note {
+  position: absolute;
+  top: 155px;
+  left: 0;
+  font-size: 12px;
+  color: #736751;
+  z-index: 35;
+  max-width: 300px;
+  padding: 5px 8px;
+  background: #f8f5eef0;
+  pointer-events: none;
+}
+@media (max-width: 760px) {
+  .scroll-motion-toggle {
+    top: 65px;
+    right: 6px;
+    font-size: 10px;
+  }
+  .scroll-depth-note {
+    display: none;
+  }
+  .spatial-person-name > span {
+    font-size: 21px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .spatial-person-name {
+    transition: none;
+  }
+}

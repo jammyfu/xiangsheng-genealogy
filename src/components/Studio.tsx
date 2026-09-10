@@ -208,6 +208,7 @@ export function Studio() {
               </label>
             </div>
             <AtlasGraph
+              active={graph}
               selectedId={selected.id}
               mode={graphMode}
               query={state.query}
