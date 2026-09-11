@@ -8,6 +8,7 @@ import {
   EVENT_KIND_LABELS,
 } from "../lib/events";
 import { EventList } from "./EventList";
+import { TimelineJourney } from "./TimelineJourney";
 
 export function TimelineView({
   person,
@@ -18,6 +19,9 @@ export function TimelineView({
 }) {
   const [scope, setScope] = useState<"person" | "all">("person");
   const [kind, setKind] = useState("");
+  const [presentation, setPresentation] = useState<"journey" | "list">(
+    "journey",
+  );
   const kindRef = useRef<HTMLSelectElement>(null);
   const list = useMemo(() => {
     let result = scope === "all" ? events : eventsForPerson(person.id);
@@ -97,26 +101,50 @@ export function TimelineView({
           </select>
         </div>
       </header>
-      <EventList
-        items={list}
-        onSelect={scope === "all" ? onSelect : undefined}
-        emptyTitle={kind ? "没有匹配的事件" : undefined}
-        emptyMessage={
-          kind
-            ? `${scope === "all" ? "全部纪事" : `${person.name}的年表`}中尚未收录此类事件。可清除筛选查看其他记录。`
-            : scope === "all"
-              ? "事件资料尚待补充，可先在人物书笺中查阅已收录的小传与师承。"
+      <div className="text-switch" role="group" aria-label="年表阅法">
+        <button
+          aria-pressed={presentation === "journey"}
+          className={presentation === "journey" ? "active" : ""}
+          onClick={() => setPresentation("journey")}
+        >
+          立体回廊
+        </button>
+        <button
+          aria-pressed={presentation === "list"}
+          className={presentation === "list" ? "active" : ""}
+          onClick={() => setPresentation("list")}
+        >
+          纪事列表
+        </button>
+      </div>
+      {presentation === "journey" && list.length > 0 ? (
+        <TimelineJourney
+          key={`${scope}-${person.id}-${kind}`}
+          items={list}
+          onSelect={scope === "all" ? onSelect : undefined}
+        />
+      ) : (
+        <EventList
+          items={list}
+          onSelect={scope === "all" ? onSelect : undefined}
+          emptyTitle={kind ? "没有匹配的事件" : undefined}
+          emptyMessage={
+            kind
+              ? `${scope === "all" ? "全部纪事" : `${person.name}的年表`}中尚未收录此类事件。可清除筛选查看其他记录。`
+              : scope === "all"
+                ? "事件资料尚待补充，可先在人物书笺中查阅已收录的小传与师承。"
+                : undefined
+          }
+          onResetFilter={
+            kind
+              ? () => {
+                  setKind("");
+                  kindRef.current?.focus();
+                }
               : undefined
-        }
-        onResetFilter={
-          kind
-            ? () => {
-                setKind("");
-                kindRef.current?.focus();
-              }
-            : undefined
-        }
-      />
+          }
+        />
+      )}
     </section>
   );
 }

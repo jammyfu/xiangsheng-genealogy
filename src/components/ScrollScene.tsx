@@ -1,3 +1,4 @@
+import { gsap } from "gsap";
 import { createRoot, extend, useFrame, useThree } from "@react-three/fiber";
 import type { RootState } from "@react-three/fiber";
 import { Html, useTexture } from "@react-three/drei";
@@ -476,6 +477,7 @@ export function SpatialWorld({
           positions={positions}
           motion={motion}
           scale={view.scale}
+          running={running}
         />
       ))}
       {graph.nodes.map((node) => (
@@ -562,6 +564,7 @@ function SpatialEdge({
   positions,
   motion,
   scale,
+  running,
 }: {
   edge: AtlasLayout["edges"][number];
   from: AtlasNode;
@@ -569,7 +572,26 @@ function SpatialEdge({
   positions: Map<string, Vector3>;
   motion: MutableRefObject<Motion>;
   scale: number;
+  running: boolean;
 }) {
+  const growth = useRef({ value: 0 });
+  useEffect(() => {
+    const state = growth.current;
+    if (!running) {
+      state.value = 1;
+      motion.current.invalidate();
+      return;
+    }
+    const tween = gsap.to(state, {
+      value: 1,
+      duration: 0.55,
+      ease: "power2.out",
+      onUpdate: () => motion.current.invalidate(),
+    });
+    return () => {
+      tween.kill();
+    };
+  }, [running, motion]);
   const geometry = useMemo(() => {
     const g = new BufferGeometry();
     g.setAttribute(
@@ -632,6 +654,7 @@ function SpatialEdge({
       );
     }
     p.needsUpdate = true;
+    geometry.setDrawRange(0, Math.max(2, Math.ceil(33 * growth.current.value)));
     geometry.computeBoundingSphere();
     if (edge.disputed) {
       const distances = geometry.attributes.lineDistance;
