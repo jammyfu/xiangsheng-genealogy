@@ -1,0 +1,257 @@
+{
+  "events": [
+    {
+      "id": "guo-hou-apprenticeship-2004",
+      "title": "郭德纲拜侯耀文为师",
+      "date": "2004",
+      "datePrecision": "year",
+      "kind": "apprenticeship",
+      "people": [
+        "guo-degang",
+        "hou-yaowen"
+      ],
+      "summary": "新京报2006年的报道明确记载，郭德纲于2004年拜侯耀文为师。",
+      "status": "documented",
+      "sources": [
+        "src-bjnews-guo-hou-2006"
+      ],
+      "verifiedAt": "2026-09-10",
+      "notes": "只记来源支持的年份；不把报道发布日误作拜师日，也不据其他问艺经历将这条师承判为争议。"
+    },
+    {
+      "id": "he-li-deyunshe-exit-2010",
+      "title": "何云伟、李菁宣布退出德云社",
+      "date": "2010-08-06",
+      "datePrecision": "day",
+      "kind": "departure",
+      "people": [
+        "he-yunwei",
+        "li-jing"
+      ],
+      "summary": "何云伟、李菁通过博客发表声明，宣布已经正式退出北京德云社。王海接受采访时表示尊重二人的决定。",
+      "status": "documented",
+      "sources": [
+        "src-jinghua-he-li-exit-2010",
+        "src-cri-he-li-interview-2010"
+      ],
+      "verifiedAt": "2026-09-10",
+      "notes": "同期报道记为8月6日凌晨；9月采访中李菁口述为8月5日晚，属于跨午夜表述差异。此事件记录公开声明，非师门开除或离职手续生效日。",
+      "perspectives": [
+        {
+          "speaker": "何云伟、李菁",
+          "summary": "声明称离开经过考虑，并感谢德云社此前对二人成长的帮助。",
+          "sources": [
+            "src-jinghua-he-li-exit-2010"
+          ]
+        },
+        {
+          "speaker": "王海（时任德云社副总经理）",
+          "summary": "表示尊重二人的决定，当时不作进一步评论。",
+          "sources": [
+            "src-jinghua-he-li-exit-2010"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "he-apprenticeship-retained-2010",
+      "title": "何云伟谈退社后的师徒关系",
+      "date": "2010-09",
+      "datePrecision": "month",
+      "kind": "milestone",
+      "people": [
+        "he-yunwei",
+        "guo-degang"
+      ],
+      "summary": "何云伟在退出德云社后的采访中表示，与郭德纲的师徒关系仍然保持。",
+      "status": "attributed",
+      "sources": [
+        "src-cri-he-li-interview-2010"
+      ],
+      "verifiedAt": "2026-09-10",
+      "notes": "报道发表于9月14日，称采访在前一天进行；保守按月记录。这是何云伟当时对关系的表述，不代表此后始终没有变化。",
+      "perspectives": [
+        {
+          "speaker": "何云伟",
+          "summary": "在被问及退社后师徒关系是否保持时作肯定回答。",
+          "sources": [
+            "src-cri-he-li-interview-2010"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cao-exit-announcement-2010",
+      "title": "曹云金公开承认退出德云社",
+      "date": "2010-12-04",
+      "datePrecision": "day",
+      "kind": "departure",
+      "people": [
+        "cao-yunjin"
+      ],
+      "summary": "曹云金在北京《金声金事》签售活动接受媒体访问时，公开承认已经退出德云社。",
+      "status": "documented",
+      "sources": [
+        "src-iqiyi-cao-exit-2010"
+      ],
+      "verifiedAt": "2026-09-10",
+      "notes": "日期为页面明确说明的公开承认日期，不能据此推定退出生效日。视频页面说明已读取，完整视频因地区限制未观看。"
+    },
+    {
+      "id": "deyunshe-genealogy-removal-2016",
+      "title": "曹云金、何云伟被德云社家谱除名",
+      "date": "2016-08-30",
+      "datePrecision": "day",
+      "kind": "expulsion",
+      "people": [
+        "guo-degang",
+        "cao-yunjin",
+        "he-yunwei"
+      ],
+      "summary": "据中新网报道，郭德纲于8月30日公布德云社新家谱，曹云金、何云伟未列入，报道将此表述为除名。",
+      "status": "documented",
+      "sources": [
+        "src-chinanews-cao-response-2016"
+      ],
+      "verifiedAt": "2026-09-10",
+      "notes": "记录家谱除名，区别于二人2010年的组织退出。本条采用中新网所记8月30日公布日期，原始微博的网上传播日期另待复核；不采用单方道德评价，不删除历史师承边。"
+    },
+    {
+      "id": "cao-response-2016",
+      "title": "曹云金回应家谱与师徒分歧",
+      "date": "2016-09-05",
+      "datePrecision": "day",
+      "kind": "dispute",
+      "people": [
+        "cao-yunjin",
+        "guo-degang"
+      ],
+      "summary": "曹云金发表长文，对学艺费用、生活安排、演出及离开德云社的原因提出自己的解释，并否认部分有关其离开动机的指责。",
+      "status": "attributed",
+      "sources": [
+        "src-chinanews-cao-response-2016"
+      ],
+      "verifiedAt": "2026-09-10",
+      "notes": "这里只核验其发表回应这一事实；具体指控未经本库独立证实。郭德纲9月25日的回应另列事件。",
+      "perspectives": [
+        {
+          "speaker": "曹云金",
+          "summary": "称学艺期间曾承担费用，对演出安排和离开原因有不同解释，并否认将分歧简单归为其背弃师门的说法。",
+          "sources": [
+            "src-chinanews-cao-response-2016"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guo-cao-response-dispute-2016",
+      "title": "郭德纲回应，师徒双方说法存在分歧",
+      "date": "2016-09-25",
+      "datePrecision": "day",
+      "kind": "dispute",
+      "people": [
+        "guo-degang",
+        "cao-yunjin"
+      ],
+      "summary": "郭德纲发表长文回应曹云金此前陈述。双方对学艺收费、居住安排及离开德云社的原因存在不同说法；本库并列记录，不把单方陈述当作裁定。",
+      "status": "disputed",
+      "sources": [
+        "src-chinanews-cao-response-2016",
+        "src-ifeng-guo-response-2016"
+      ],
+      "verifiedAt": "2026-09-10",
+      "notes": "日期为郭德纲公开回应之日；曹方所列为9月5日先前陈述。本条不构成对所有费用或离开原因的独立事实认定。",
+      "perspectives": [
+        {
+          "speaker": "曹云金",
+          "summary": "9月5日称曾支付学艺及生活费用，并认为自己离开与待遇、演出安排等问题有关。",
+          "sources": [
+            "src-chinanews-cao-response-2016"
+          ]
+        },
+        {
+          "speaker": "郭德纲",
+          "summary": "9月25日否认曹方所述办学收费和被迫离开的叙述，解释部分支出为共同房租、仪式支出，称合同与演出安排涉及社团管理。",
+          "sources": [
+            "src-ifeng-guo-response-2016"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deyunshe-rectification-notice-2019",
+      "title": "青岛执法局向德云社提出整改要求",
+      "date": "2019-06-26",
+      "datePrecision": "day",
+      "kind": "discipline",
+      "people": [
+        "zhang-yunlei",
+        "yang-jiulang"
+      ],
+      "summary": "青岛市文化市场行政执法局向德云社下达整改意见告知函，要求公开道歉，对张云雷、杨九郎进行批评教育并严肃处理。",
+      "status": "documented",
+      "sources": [
+        "src-qingdao-notice-2019",
+        "src-cctv-qingdao-notice-2019"
+      ],
+      "verifiedAt": "2026-09-10",
+      "notes": "告知函日期为6月26日，通报发布日为7月3日。对象为德云社及有关演员的整改处置要求，不等于退社或师门除名；两转载同源。"
+    },
+    {
+      "id": "qingdao-organizer-penalties-2019",
+      "title": "青岛演出两家相关公司受行政处罚",
+      "date": "2019-07-02",
+      "datePrecision": "day",
+      "kind": "discipline",
+      "people": [
+        "zhang-yunlei",
+        "yang-jiulang"
+      ],
+      "summary": "因涉及2018年12月31日青岛演出的相关问题，执法机关吊销天津华娱天橙文化传播有限公司营业性演出许可证，并对青岛市艺人文化艺术有限公司罚款5万元。",
+      "status": "documented",
+      "sources": [
+        "src-qingdao-notice-2019",
+        "src-cctv-qingdao-notice-2019"
+      ],
+      "verifiedAt": "2026-09-10",
+      "notes": "7月2日为行政处罚决定日期，7月3日为公开通报日期。吊证与罚款的对象是两家公司，不是演员个人，也不是刑事有罪裁判；两转载同源。"
+    },
+    {
+      "id": "zhang-work-suspension-2019",
+      "title": "德云社致歉并暂停张云雷工作",
+      "date": "2019-07-03",
+      "datePrecision": "day",
+      "kind": "discipline",
+      "people": [
+        "zhang-yunlei"
+      ],
+      "summary": "德云社就张云雷相关不当言辞发布声明致歉，并宣布暂停其工作。",
+      "status": "documented",
+      "sources": [
+        "src-deyunshe-zhang-statement-2019"
+      ],
+      "verifiedAt": "2026-09-10",
+      "notes": "这是组织宣布的工作暂停，不能改写为开除、退社、师承终止或永久禁演；本批未核验暂停期限与恢复时间。"
+    },
+    {
+      "id": "deyunshe-south-africa-performance-2025",
+      "title": "曹鹤阳随德云社赴南非公演",
+      "date": "2025-06-07",
+      "datePrecision": "day",
+      "kind": "milestone",
+      "people": [
+        "guo-degang",
+        "yu-qian",
+        "cao-heyang",
+        "shao-bing"
+      ],
+      "summary": "中新网现场报道，德云社在南非约翰内斯堡公演，郭德纲、于谦及多组演员参加；烧饼与曹鹤阳搭档出演。",
+      "status": "documented",
+      "sources": [
+        "src-chinanews-south-africa-2025"
+      ],
+      "verifiedAt": "2026-09-10",
+      "notes": "演出日期为南非当地6月7日，报道发布于6月9日。支持曹鹤阳当时随德云社参演，不推断其截至2026年的所有组织职务。"
+    }
+  ]
+}

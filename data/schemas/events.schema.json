@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xiangsheng.genealogy/schemas/events.json",
+  "title": "Xiangsheng public professional life events",
+  "description": "Source-backed public professional events. Organization departure, organization expulsion, lineage expulsion, and performance suspension describe distinct actions in title and summary; none removes historical mentor edges. Store the actual event date, never a substitute publication date. Calendar validity and cross-file references are checked by validateEventReferences.",
+  "type": "object",
+  "required": ["events"],
+  "additionalProperties": false,
+  "properties": {
+    "events": { "type": "array", "items": { "$ref": "#/$defs/event" } }
+  },
+  "$defs": {
+    "text": { "type": "string", "minLength": 1, "pattern": "\\S" },
+    "references": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/text" }
+    },
+    "perspective": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["speaker", "summary", "sources"],
+      "properties": {
+        "speaker": { "$ref": "#/$defs/text", "description": "Named person or organization to whom this account is explicitly attributed." },
+        "summary": { "$ref": "#/$defs/text" },
+        "sources": { "$ref": "#/$defs/references" }
+      }
+    },
+    "event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "date", "datePrecision", "kind", "people", "summary", "status", "sources", "verifiedAt"],
+      "properties": {
+        "id": { "$ref": "#/$defs/text" },
+        "title": { "$ref": "#/$defs/text" },
+        "date": {
+          "type": "string",
+          "description": "Actual event date in YYYY, YYYY-MM, or YYYY-MM-DD; retain only the precision supported by cited evidence."
+        },
+        "datePrecision": { "type": "string", "enum": ["year", "month", "day"] },
+        "kind": {
+          "type": "string",
+          "enum": ["birth", "death", "apprenticeship", "departure", "expulsion", "discipline", "dispute", "work", "milestone"],
+          "description": "departure is an organization exit; expulsion must specify organization or lineage in title/summary; discipline must name the measure, such as a performance suspension. These records do not alter historical mentor edges."
+        },
+        "people": { "$ref": "#/$defs/references" },
+        "summary": { "$ref": "#/$defs/text" },
+        "status": { "type": "string", "enum": ["documented", "attributed", "disputed", "unverified"] },
+        "sources": { "$ref": "#/$defs/references" },
+        "perspectives": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/perspective" } },
+        "verifiedAt": {
+          "type": "string",
+          "pattern": "^(?!0000)[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$"
+        },
+        "notes": { "$ref": "#/$defs/text" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "enum": ["attributed", "disputed"] } }, "required": ["status"] },
+          "then": { "required": ["perspectives"] }
+        }
+      ],
+      "oneOf": [
+        {
+          "properties": {
+            "datePrecision": { "const": "year" },
+            "date": { "type": "string", "pattern": "^(?!0000)[0-9]{4}$" }
+          }
+        },
+        {
+          "properties": {
+            "datePrecision": { "const": "month" },
+            "date": { "type": "string", "pattern": "^(?!0000)[0-9]{4}-(0[1-9]|1[0-2])$" }
+          }
+        },
+        {
+          "properties": {
+            "datePrecision": { "const": "day" },
+            "date": { "type": "string", "pattern": "^(?!0000)[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$" }
+          }
+        }
+      ]
+    }
+  }
+}

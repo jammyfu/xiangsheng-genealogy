@@ -1,12 +1,44 @@
 /**
- * Emit data/people/*.json and data/edges.json from the cited seed catalog.
- * Run: node scripts/emit-seed.mjs
+ * Export the historical seed for reference, without modifying curated data.
+ * Run: node scripts/emit-seed.mjs [--out <new-directory-outside-data>]
+ * Default destination: a new xiangsheng-historical-seed-* system temp directory.
+ * This historical fixture is not a replacement for the maintained data catalog.
  */
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const usage = 'Usage: node scripts/emit-seed.mjs [--out <new-directory-outside-data>]\nExports the historical seed for reference. Curated data remains in data/; existing directories are never overwritten.';
+const args = process.argv.slice(2);
+if (args.length === 1 && args[0] === '--help') {
+  console.log(usage);
+  process.exit(0);
+}
+if (args.length !== 0 && (args.length !== 2 || args[0] !== '--out' || args[1].startsWith('--'))) {
+  console.error(usage);
+  process.exit(1);
+}
+
+function createExportDirectory() {
+  const requested = args.length === 0
+    ? path.join(os.tmpdir(), 'xiangsheng-historical-seed-')
+    : path.resolve(args[1]);
+  // Resolve the existing parent so a symlink cannot direct the export into data/.
+  const parent = fs.realpathSync(path.dirname(requested));
+  const destination = path.join(parent, path.basename(requested));
+  const dataDirectory = fs.realpathSync(path.join(root, 'data'));
+  const relative = path.relative(dataDirectory, destination);
+  if (relative === '' || (relative !== '..' && !relative.startsWith(`..${path.sep}`) && !path.isAbsolute(relative))) {
+    throw new Error('Historical seed exports cannot be written inside data/. Choose a new directory outside data/.');
+  }
+  if (args.length === 0) return fs.mkdtempSync(destination);
+  // Exclusive creation refuses existing directories/files, including symlinks.
+  fs.mkdirSync(destination);
+  return destination;
+}
+
 const W = ['src-wiki-lineage'];
 
 function p(partial) {
@@ -1030,13 +1062,10 @@ const people = [
   p({
     id: 'cao-heyang',
     name: '曹鹤阳',
-    aliases: ['曹云金'],
     generation: null,
     generationIndex: 9,
-    birthYear: 1986,
     school: '德云社鹤字科',
-    bio: '郭德纲鹤字科。后独立发展。师承边依维基「郭德纲」门，离社后的艺术归属不在本库裁定。',
-    disputed: true,
+    bio: '郭德纲门下鹤字科相声演员。曹鹤阳与曹云金是不同人物。',
   }),
   p({
     id: 'li-ding',
@@ -1156,7 +1185,7 @@ const pairs = [
   ['feng-gong', 'jia-ling'],
   ['guo-degang', 'yue-yunpeng'],
   ['guo-degang', 'luan-yunping'],
-  ['guo-degang', 'cao-heyang', true, '后独立发展。'],
+  ['guo-degang', 'cao-heyang'],
   ['guo-degang', 'zhang-yunlei'],
   ['yu-qian', 'guo-qilin'],
   ['li-jindou', 'da-bing'],
@@ -1173,9 +1202,21 @@ const edges = pairs.map(([from, to, disputed = false, note]) => ({
   ...(note ? { note } : {}),
 }));
 
-const peopleDir = path.join(root, 'data/people');
-fs.rmSync(peopleDir, { recursive: true, force: true });
-fs.mkdirSync(peopleDir, { recursive: true });
+const ids = new Set(people.map((x) => x.id));
+const missing = edges.flatMap((e) => [e.from, e.to].filter((id) => !ids.has(id)));
+if (missing.length) {
+  throw new Error(`Missing people: ${[...new Set(missing)].join(', ')}`);
+}
+
+let exportDirectory;
+try {
+  exportDirectory = createExportDirectory();
+} catch (error) {
+  console.error(`Seed export refused: ${error.message}\nChoose a new output directory whose parent already exists.\n${usage}`);
+  process.exit(1);
+}
+const peopleDir = path.join(exportDirectory, 'people');
+fs.mkdirSync(peopleDir);
 
 for (const person of people) {
   const clean = { ...person };
@@ -1188,18 +1229,15 @@ for (const person of people) {
   if (!clean.disputed) delete clean.disputed;
   if (clean.birthYear == null) delete clean.birthYear;
   if (clean.deathYear == null) delete clean.deathYear;
-  fs.writeFileSync(path.join(peopleDir, `${person.id}.json`), `${JSON.stringify(clean, null, 2)}\n`);
+  fs.writeFileSync(path.join(peopleDir, `${person.id}.json`), `${JSON.stringify(clean, null, 2)}\n`, { flag: 'wx' });
 }
 
 fs.writeFileSync(
-  path.join(root, 'data/edges.json'),
+  path.join(exportDirectory, 'edges.json'),
   `${JSON.stringify({ edges }, null, 2)}\n`,
+  { flag: 'wx' },
 );
 
-const ids = new Set(people.map((x) => x.id));
-const missing = edges.flatMap((e) => [e.from, e.to].filter((id) => !ids.has(id)));
-if (missing.length) {
-  throw new Error(`Missing people: ${[...new Set(missing)].join(', ')}`);
-}
-
+console.log(`Historical seed export: ${exportDirectory}`);
 console.log(`people=${people.length} edges=${edges.length}`);
+console.log('Reference fixture only; it omits later corrections, people, events, and source additions. Maintain and validate the curated data/ catalog directly.');

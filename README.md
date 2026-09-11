@@ -22,6 +22,10 @@ written down.
 
 本库 **不托管音频**。画像只用占位印、公有领域或外链。
 
+## 后续开发
+
+详见 [main 合并后的开发路线与效果验收](docs/next-development-roadmap.md)，包含 8 个阶段、逐步实施方法、验收标准、史料核验与下一轮开工清单。当前 GPU 视觉验收仍受环境限制，合并不代表设计稿复刻已通过验收。
+
 ## Quick start
 
 ```bash
@@ -44,13 +48,43 @@ npm run preview
 | People | `data/people/*.json` |
 | Edges | `data/edges.json` |
 | Sources | `data/sources.json` |
+| Life events | `data/events.json` |
 | Schemas | `data/schemas/` |
 
-Regenerate from the cited seed catalog (optional):
+The files under `data/` are the maintained catalog and the source of truth for
+the app. Update those files directly when correcting a person or relationship,
+adding a source, or recording a life event. Keep each claim tied to its sources;
+use named, sourced perspectives for attributed or disputed event accounts.
+Record organization departures, expulsions, and performance suspensions as
+distinct events without deleting historical teacher links.
+
+Validate catalog changes before committing:
+
+```bash
+npm test
+npm run build
+```
+
+The original seed is retained only as a historical reference fixture. It lacks
+later corrections, people, events, and source additions, so it must not replace
+the maintained catalog. The exporter writes `people/` and `edges.json` into a
+new system temporary directory and prints its location:
 
 ```bash
 node scripts/emit-seed.mjs
 ```
+
+To choose the export location, provide a new directory outside `data/` whose
+parent already exists:
+
+```bash
+node scripts/emit-seed.mjs --out /tmp/xiangsheng-seed-review
+```
+
+The script refuses existing output directories and destinations inside `data/`,
+including paths through symlinks. It never regenerates or clears the curated
+catalog. Review historical exports separately; apply source-checked corrections
+to the maintained files individually.
 
 Every person cites at least one source. Unsettled teacher links are
 `"disputed": true`.

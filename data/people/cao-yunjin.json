@@ -1,0 +1,20 @@
+{
+  "id": "cao-yunjin",
+  "name": "曹云金",
+  "generation": null,
+  "generationIndex": 9,
+  "school": "郭德纲门下学艺经历",
+  "bio": "相声演员，曾随郭德纲学习相声，2010年公开承认退出德云社。2016年未列入德云社新家谱，并就师徒分歧发表回应；本库保留历史师承，同时记录除名与双方说法。",
+  "works": [],
+  "sources": [
+    "src-chinanews-cao-response-2016",
+    "src-iqiyi-cao-exit-2010",
+    "src-ifeng-guo-response-2016"
+  ],
+  "portraitKind": "placeholder",
+  "notes": [
+    "与曹鹤阳不是同一人物。",
+    "中新网导语将2002年表述为拜师；郭德纲2016年回应另提2006年正式收徒仪式。两种来源口径尚未统一，本批不录精确拜师日期。",
+    "不将双方关于费用、待遇或离开原因的陈述写成已经裁定的事实。"
+  ]
+}
