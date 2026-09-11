@@ -16,4 +16,4 @@ Outstanding:
 - P2: Panorama seam, touch devices, and GPU frame rate require supported browser checks.
 - Fidelity gaps: generated historical portraits were intentionally not shipped as factual photos; interactive inset minimap is not implemented. Existing fit/reset/zoom remain available.
 
-No deployment or merge was performed. Branch contains reviewable implementation, not a certified visual match.
+No deployment was performed. The user requested integration into main on 2026-09-11; integration does not change this blocked visual-QA result. The code is a reviewable implementation, not a certified visual match.
