@@ -16,6 +16,7 @@ import { AtlasGraph } from "./AtlasGraph";
 import { PersonBook, lifespan } from "./PersonBook";
 import { TimelineView } from "./TimelineView";
 import { EvidencePanel } from "./EvidencePanel";
+import { useStudioMotion } from "../lib/useStudioMotion";
 
 export function Studio() {
   const { id } = useParams(),
@@ -24,6 +25,8 @@ export function Studio() {
   const state = readBrowseState(location.search);
   const knownPerson = id !== undefined && Object.hasOwn(peopleById, id);
   const selected = knownPerson ? peopleById[id] : peopleById["hou-baolin"];
+  const motionRoot = useRef<HTMLElement>(null);
+  const transitioning = useStudioMotion(motionRoot, state.view, selected.id);
   const [graphMode, setGraphMode] = useState<"scroll" | "tree">(
     state.view === "tree" ? "tree" : "scroll",
   );
@@ -77,7 +80,11 @@ export function Studio() {
   const mentors = mentorsOf(selected.id),
     personalEvents = eventsForPerson(selected.id);
   return (
-    <main className={`ink-app view-${state.view}`}>
+    <main
+      ref={motionRoot}
+      className={`ink-app view-${state.view}`}
+      data-transition={transitioning ? "moving" : "settled"}
+    >
       <a className="skip-link" href="#main-content">
         跳到浏览内容
       </a>
@@ -162,7 +169,9 @@ export function Studio() {
           ))}
         </nav>
         <span className="view-note">说学逗唱 · 传承有序</span>
-        <p className="current-person">
+        <p className="current-person" role="status" aria-live="polite">
+          {transitioning &&
+            `正在切换至${VIEWS.find((v) => v.id === state.view)?.label} · `}
           当前人物：{selected.name} ·{" "}
           {selected.generation ? `${selected.generation}字辈` : "字辈待考"}
         </p>

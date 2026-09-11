@@ -52,6 +52,7 @@ import {
 } from "../lib/scroll-space";
 import { sourcesById } from "../lib/catalog";
 import "./scroll-scene.css";
+import { revealScroll } from "../lib/motion";
 
 extend({ AmbientLight, DirectionalLight, Mesh, MeshStandardMaterial, Group });
 
@@ -100,6 +101,7 @@ export default function ScrollScene(props: Props) {
   );
   const [paused, setPaused] = useState(false);
   const [ready, setReady] = useState(false);
+  const [unfolding, setUnfolding] = useState(false);
   const [visible, setVisible] = useState(
     () => document.visibilityState !== "hidden",
   );
@@ -129,6 +131,15 @@ export default function ScrollScene(props: Props) {
     motion.current.target = { x: 0, y: 0 };
     motion.current.invalidate();
   }, [running]);
+  useEffect(() => {
+    if (!ready) return;
+    const tween = revealScroll(motion.current, running);
+    setUnfolding(Boolean(tween));
+    tween?.eventCallback("onComplete", () => setUnfolding(false));
+    return () => {
+      tween?.kill();
+    };
+  }, [ready, running]);
   return (
     <div
       className={`scroll-space ${ready ? "is-ready" : ""} ${running ? "is-moving" : "is-still"}`}
@@ -227,8 +238,13 @@ export default function ScrollScene(props: Props) {
       <div className="scroll-depth-note" aria-hidden="true">
         一纸山河 · 众声有序
       </div>
-      {props.view.scale < 0.65 && (
+      {props.view.scale < 0.65 && !unfolding && (
         <div className="scroll-overview-note">全谱总览 · 点击支系放大阅读</div>
+      )}
+      {unfolding && (
+        <div className="scroll-overview-note" role="status">
+          长卷正在舒展 · 可直接拖动与选人
+        </div>
       )}
     </div>
   );
@@ -393,7 +409,8 @@ export function SpatialWorld({
     const old = { ...m.pointer, open: m.open };
     m.pointer.x = running ? dampValue(m.pointer.x, target.x, dt, 6) : 0;
     m.pointer.y = running ? dampValue(m.pointer.y, target.y, dt, 6) : 0;
-    m.open = running ? dampValue(m.open, 1, dt, 4) : 1;
+    // GSAP owns the reveal; frame callbacks must not compete for its value.
+    if (!running) m.open = 1;
     m.moving =
       Math.abs(m.pointer.x - target.x) +
         Math.abs(m.pointer.y - target.y) +

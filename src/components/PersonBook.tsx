@@ -5,6 +5,7 @@ import { disciplesOf, mentorsOf, edges, peopleById } from "../lib/catalog";
 import { eventsForPerson } from "../lib/events";
 import { EventList } from "./EventList";
 import { SourceLinks } from "./SourceLinks";
+import { usePageMotion } from "../lib/useStudioMotion";
 
 export function lifespan(person: Person) {
   return person.birthYear
@@ -23,6 +24,8 @@ export function PersonBook({
 }) {
   const [tab, setTab] = useState<(typeof tabs)[number]>("小传");
   const tabId = useId();
+  const pageRef = useRef<HTMLDivElement>(null);
+  usePageMotion(pageRef, tab);
   const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const mentors = mentorsOf(person.id),
     disciples = disciplesOf(person.id),
@@ -90,6 +93,7 @@ export function PersonBook({
           </div>
           <div
             className="book-copy"
+            ref={pageRef}
             id={`${tabId}-content`}
             role="tabpanel"
             aria-labelledby={`${tabId}-${tabs.indexOf(tab)}`}
