@@ -3,11 +3,34 @@ import { act } from "react";
 import { createRoot } from "react-dom/client";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { gsap } from "gsap";
-import { TimelineJourney, journeyPose } from "./TimelineJourney";
+import { TimelineJourney } from "./TimelineJourney";
 import { events } from "../lib/events";
 (
   globalThis as typeof globalThis & { IS_REACT_ACT_ENVIRONMENT: boolean }
 ).IS_REACT_ACT_ENVIRONMENT = true;
+vi.mock("./InkWorld", () => ({
+  default: ({
+    items,
+    selectedId,
+    onSelect,
+  }: {
+    items: { id: string; title: string }[];
+    selectedId: string;
+    onSelect: (id: string) => void;
+  }) => (
+    <div>
+      {items.map((item) => (
+        <button
+          key={item.id}
+          aria-current={item.id === selectedId ? "true" : undefined}
+          onClick={() => onSelect(item.id)}
+        >
+          {item.title}
+        </button>
+      ))}
+    </div>
+  ),
+}));
 let host: HTMLDivElement;
 let root: ReturnType<typeof createRoot>;
 beforeEach(() => {
@@ -26,17 +49,6 @@ afterEach(async () => {
   vi.unstubAllGlobals();
   gsap.ticker.sleep();
 });
-it("keeps the selected event readable and contextual events behind it", () => {
-  expect(journeyPose(0)).toEqual({
-    xPercent: 0,
-    z: -0,
-    rotationY: 0,
-    opacity: 1,
-  });
-  expect(journeyPose(-1).z).toBeLessThan(0);
-  expect(journeyPose(1).xPercent).toBe(-journeyPose(-1).xPercent);
-  expect(journeyPose(3).opacity).toBe(0);
-});
 it("rapid next/previous navigation retains one current event and matching evidence", async () => {
   await act(async () =>
     root.render(<TimelineJourney items={events.slice(0, 4)} />),
@@ -52,16 +64,13 @@ it("rapid next/previous navigation retains one current event and matching eviden
   await act(async () =>
     gsap.globalTimeline.getChildren().forEach((tween) => tween.progress(1)),
   );
-  expect(host.querySelectorAll('[aria-current="step"]')).toHaveLength(1);
-  expect(host.querySelector('[aria-current="step"]')!.textContent).toContain(
+  expect(host.querySelectorAll('[aria-current="true"]')).toHaveLength(1);
+  expect(host.querySelector('[aria-current="true"]')!.textContent).toContain(
     events[1].title,
   );
   expect(host.querySelector(".event-heading")!.textContent).toContain(
     events[1].title,
   );
-  expect(
-    host.querySelector(".timeline-journey")!.getAttribute("data-motion"),
-  ).toBe("settled");
 });
 it("handles empty and singleton sets without invalid navigation", async () => {
   await act(async () => root.render(<TimelineJourney items={[]} />));

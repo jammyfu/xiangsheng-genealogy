@@ -22,6 +22,7 @@ import {
 import type { AtlasCamera, AtlasNode } from "../lib/atlas";
 import "./atlas-graph.css";
 
+const SpatialTree = lazy(() => import("./SpatialTree"));
 const ScrollScene = lazy(() => import("./ScrollScene"));
 
 interface AtlasGraphProps {
@@ -307,6 +308,7 @@ export function AtlasGraph({
     }));
   };
 
+  const [spatialTree, setSpatialTree] = useState(true);
   return (
     <div
       ref={hostRef}
@@ -314,6 +316,15 @@ export function AtlasGraph({
     >
       <div className="atlas-topline">
         <span className="atlas-direction">由师而徒，自左向右</span>
+        {mode === "tree" && (
+          <button
+            className="atlas-scope"
+            aria-pressed={spatialTree}
+            onClick={() => setSpatialTree(!spatialTree)}
+          >
+            {spatialTree ? "切换平面谱系" : "切换立体谱系"}
+          </button>
+        )}
         <button
           type="button"
           className="atlas-scope"
@@ -327,7 +338,27 @@ export function AtlasGraph({
           {showAll ? "收回当前一脉" : `展开全谱 · ${people.length} 人`}
         </button>
       </div>
-      {mode === "scroll" && !webglUnavailable ? (
+      {mode === "tree" && spatialTree ? (
+        <Suspense fallback={<div className="scroll-loading">山水正在舒展</div>}>
+          <SpatialTree
+            graph={graph}
+            view={camera}
+            viewport={size}
+            selectedId={selectedId}
+            dragging={dragging}
+            onPointerDown={startPan}
+            onPointerMove={movePan}
+            onPointerUp={endPan}
+            onKeyDown={onGraphKey}
+            active={active}
+            onSelect={onSelect}
+            onBranch={(id) => {
+              const node = graph.nodes.find((n) => n.person.id === id);
+              if (node) toggleBranch(node);
+            }}
+          />
+        </Suspense>
+      ) : mode === "scroll" && !webglUnavailable ? (
         <Suspense fallback={<div className="scroll-loading">山水正在舒展</div>}>
           <ScrollScene
             graph={graph}
