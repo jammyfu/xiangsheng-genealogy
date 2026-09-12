@@ -83,3 +83,48 @@ it("handles empty and singleton sets without invalid navigation", async () => {
     host.querySelector<HTMLButtonElement>('[aria-label="下一事件"]')!.disabled,
   ).toBe(true);
 });
+
+it("supports endpoint keys and respects externally restored event selection", async () => {
+  const onEventSelect = vi.fn();
+  await act(async () =>
+    root.render(
+      <TimelineJourney
+        items={events.slice(0, 4)}
+        selectedId={events[2].id}
+        onEventSelect={onEventSelect}
+      />,
+    ),
+  );
+  expect(host.querySelector(".event-heading")!.textContent).toContain(
+    events[2].title,
+  );
+  await act(async () =>
+    host
+      .querySelector(".timeline-journey")!
+      .dispatchEvent(
+        new KeyboardEvent("keydown", { key: "End", bubbles: true }),
+      ),
+  );
+  expect(onEventSelect).toHaveBeenLastCalledWith(events[3].id);
+  await act(async () =>
+    root.render(
+      <TimelineJourney
+        items={events.slice(0, 4)}
+        selectedId={events[0].id}
+        onEventSelect={onEventSelect}
+      />,
+    ),
+  );
+  expect(host.querySelector(".event-heading")!.textContent).toContain(
+    events[0].title,
+  );
+  onEventSelect.mockClear();
+  await act(async () =>
+    host
+      .querySelector("input")!
+      .dispatchEvent(
+        new KeyboardEvent("keydown", { key: "End", bubbles: true }),
+      ),
+  );
+  expect(onEventSelect).not.toHaveBeenCalled();
+});

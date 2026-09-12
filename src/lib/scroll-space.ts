@@ -11,6 +11,14 @@ export interface ScrollPointer {
   y: number;
 }
 
+/** Parallax.js invertX/invertY: opposite the cursor, in Three's Y-up space. */
+export function scrollPointerFromClient(clientX: number, clientY: number, rect: { left: number; top: number; width: number; height: number }): ScrollPointer {
+  return constrainPointer(
+    1 - (clientX - rect.left) / Math.max(1, rect.width) * 2,
+    (clientY - rect.top) / Math.max(1, rect.height) * 2 - 1,
+  );
+}
+
 const clamp = (value: number, min: number, max: number) =>
   Math.min(max, Math.max(min, value));
 const finite = (value: number, fallback = 0) =>

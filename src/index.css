@@ -360,6 +360,26 @@ h3 {
   color: #69705f;
   margin-bottom: 32px;
 }
+.person-summary .summary-story p { font-size:14px; line-height:1.9; color:#5c594e; margin:8px 0; }
+.summary-story details { margin-top:12px; }
+.summary-story summary { cursor:pointer; font-size:12px; color:var(--red); padding-block:5px; }
+.summary-generation-note { border-left:2px solid #9e514740; padding-left:12px; margin-top:15px; }
+.summary-generation-note strong { font-size:12px; color:var(--red); font-weight:500; }
+.lineage-adjustment {
+  color: var(--red);
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 12px 0 0;
+}
+.lineage-adjustment-note {
+  border-left: 3px solid #8b262675;
+  padding: 12px 14px;
+  margin: 18px 0;
+  background: #8b262608;
+}
+.lineage-adjustment-note p {
+  margin: 7px 0 0;
+}
 .person-summary section {
   border-top: 1px solid var(--line);
   padding: 25px 0 21px;
@@ -1555,4 +1575,171 @@ h3 {
     white-space: nowrap;
     letter-spacing: 0.04em;
   }
+}
+
+/* One viewport, one paper ground. The canvas measures the available space. */
+.ink-app {
+  max-width: none;
+  width: 100%;
+}
+.ink-app:is(.view-scroll, .view-tree) {
+  height: 100dvh;
+  min-height: 650px;
+}
+.ink-app:is(.view-scroll, .view-tree) .site-header {
+  height: 76px;
+  flex-shrink: 0;
+}
+.ink-app:is(.view-scroll, .view-tree) .view-bar {
+  min-height: 100px;
+  padding-top: 20px;
+  padding-bottom: 18px;
+  flex-shrink: 0;
+}
+.ink-app:is(.view-scroll, .view-tree) .main-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.ink-app:is(.view-scroll, .view-tree) .exploration:not([hidden]) {
+  flex: 1;
+  min-height: 0;
+  grid-template-rows: minmax(0, 1fr);
+}
+.ink-app:is(.view-scroll, .view-tree) .graph-stage .atlas-graph {
+  height: 100%;
+  min-height: 0;
+  max-height: none;
+}
+.ink-app:is(.view-scroll, .view-tree) .person-summary {
+  min-height: 0;
+  overflow: auto;
+}
+.ink-app:is(.view-scroll, .view-tree) .site-footer {
+  flex-shrink: 0;
+  margin-top: 0;
+  padding: 10px 0;
+  min-height: 54px;
+}
+.site-footer .fullscreen-toggle {
+  min-height: 44px;
+  gap: 8px;
+  white-space: nowrap;
+}
+.view-scroll:has(.scroll-space.is-ready) .landscape-art {
+  opacity: 0;
+}
+.view-scroll .graph-stage {
+  background: var(--paper);
+}
+.ink-app.is-immersive {
+  height: 100dvh;
+  min-height: 0;
+  overflow: auto;
+}
+.ink-app.is-immersive .site-header,
+.ink-app.is-immersive .view-bar {
+  display: none;
+}
+.ink-app.is-immersive .exploration:not([hidden]) {
+  margin: 0;
+  grid-template-columns: minmax(0, 1fr);
+}
+.ink-app.is-immersive .person-summary {
+  display: none;
+}
+.ink-app.is-immersive .graph-heading {
+  top: 24px;
+  left: 28px;
+}
+.ink-app.is-immersive .site-footer {
+  margin: 0;
+  padding: 4px 24px;
+}
+.ink-app.is-immersive .graph-stage .atlas-topline {
+  top: 30px;
+}
+.ink-app.is-immersive .scroll-motion-toggle {
+  top: 80px;
+}
+.ink-app.is-immersive .main-content {
+  overflow: auto;
+}
+.ink-app.is-immersive:is(.view-scroll, .view-tree) .main-content {
+  overflow: hidden;
+}
+.ink-app.is-immersive .generation-bar {
+  left: 24px;
+  right: 24px;
+}
+@media (max-width: 820px) {
+  .ink-app:is(.view-scroll, .view-tree) {
+    height: auto;
+    min-height: 100dvh;
+  }
+  .ink-app:is(.view-scroll, .view-tree) .site-header {
+    height: auto;
+  }
+  .ink-app:is(.view-scroll, .view-tree) .exploration:not([hidden]) {
+    display: block;
+  }
+  .ink-app:is(.view-scroll, .view-tree) .graph-stage .atlas-graph {
+    height: max(480px, calc(100dvh - 260px));
+  }
+  .ink-app.is-immersive {
+    height: 100dvh;
+    min-height: 0;
+  }
+  .ink-app.is-immersive .exploration:not([hidden]) {
+    display: flex;
+    flex-direction: column;
+  }
+  .ink-app.is-immersive .graph-stage {
+    flex: 1;
+    min-height: 0;
+  }
+  .ink-app.is-immersive .graph-stage .atlas-graph {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+  }
+  .ink-app.is-immersive .site-footer {
+    font-size: 10px;
+    gap: 10px;
+    padding: 2px 12px;
+  }
+  .ink-app.is-immersive .site-footer > span {
+    display: none;
+  }
+  .ink-app.is-immersive .graph-heading {
+    top: 22px;
+    left: 16px;
+  }
+  .ink-app.is-immersive .graph-heading h1 {
+    font-size: 36px;
+  }
+  .ink-app.is-immersive .graph-stage .atlas-topline {
+    top: 102px;
+    right: 16px;
+  }
+  .ink-app.is-immersive .scroll-motion-toggle {
+    top: 150px;
+    right: 16px;
+  }
+}
+.ink-app.is-immersive .person-summary.is-expanded {
+  display: block;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  bottom: 76px;
+  width: min(300px, calc(100% - 48px));
+  padding: 24px;
+  background: #f8f5eef7;
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 45px #30332e18;
+  z-index: 50;
+}
+.ink-app.is-immersive .person-summary.is-expanded .summary-body {
+  display: block;
 }

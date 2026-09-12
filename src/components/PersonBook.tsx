@@ -47,6 +47,11 @@ export function PersonBook({
           <span className="generation-seal">{person.generation ?? "谱"}</span>
           <p className="book-years">{lifespan(person)}</p>
           <p>{person.school}</p>
+          {person.originalGeneration ? (
+            <p className="lineage-adjustment">
+              原始{person.originalGeneration}字辈 · 通行{person.generation}字辈
+            </p>
+          ) : null}
           <span className="image-caption">相声意象 · 折扇与醒木</span>
         </div>
         <div className="book-content">
@@ -104,6 +109,12 @@ export function PersonBook({
                 <p className="eyebrow">人物小传</p>
                 <h2>声留人间</h2>
                 <p className="biography">{person.bio}</p>
+                {person.generationNote ? (
+                  <aside className="dispute-note lineage-adjustment-note">
+                    <strong>字辈调整</strong>
+                    <p>{person.generationNote}</p>
+                  </aside>
+                ) : null}
                 {person.aliases?.length ? (
                   <p className="muted">亦名：{person.aliases.join("、")}</p>
                 ) : null}
@@ -142,17 +153,24 @@ export function PersonBook({
                 <p className="muted">
                   历史拜师与组织任职分开记录。退出、除名等后续变动见「事件」。
                 </p>
+                {person.generationNote ? (
+                  <div className="dispute-note lineage-adjustment-note">
+                    <strong>字辈调整不改变师承</strong>
+                    <p>{person.generationNote}</p>
+                  </div>
+                ) : null}
                 <h3>师承</h3>
                 <PersonButtons list={mentors} onSelect={onSelect} />
                 <h3>传人</h3>
                 <PersonButtons list={disciples} onSelect={onSelect} />
                 {related
-                  .filter((e) => e.disputed)
+                  .filter((e) => e.disputed || e.note)
                   .map((e) => (
                     <div className="dispute-note" key={e.id}>
                       <strong>
                         {peopleById[e.from]?.name ?? e.from} →{" "}
-                        {peopleById[e.to]?.name ?? e.to}：此条师承存在异说
+                        {peopleById[e.to]?.name ?? e.to}：
+                        {e.disputed ? "此条师承存在异说" : "师承说明"}
                       </strong>
                       <p>
                         {e.note ?? "已有谱表标记异说，具体依据待进一步核验。"}

@@ -10,6 +10,10 @@ export interface Person {
   aliases?: string[];
   generation: GenerationName | null;
   generationIndex: number;
+  /** 入行后通行的字辈与原始师承字辈不一致时，保留原始字辈。 */
+  originalGeneration?: GenerationName;
+  /** 字辈调整的简要缘由；不改变师徒边。 */
+  generationNote?: string;
   birthYear?: number | null;
   deathYear?: number | null;
   floruit?: string;

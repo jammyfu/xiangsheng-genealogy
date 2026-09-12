@@ -15,12 +15,16 @@ export function EventList({
   emptyTitle = "此处尚待补笺",
   emptyMessage = "尚未收录该人物的事件。已收录的小传与师承可在人物书笺中查阅。",
   onResetFilter,
+  selectedId,
+  onEventSelect,
 }: {
   items: LifeEvent[];
   onSelect?: (id: string) => void;
   emptyTitle?: string;
   emptyMessage?: string;
   onResetFilter?: () => void;
+  selectedId?: string;
+  onEventSelect?: (id: string) => void;
 }) {
   const [open, setOpen] = useState<string | null>(null);
   if (!items.length)
@@ -38,7 +42,11 @@ export function EventList({
   return (
     <ol className="event-list">
       {items.map((event) => (
-        <li key={event.id} className={`event-item status-${event.status}`}>
+        <li
+          key={event.id}
+          aria-current={selectedId === event.id ? "true" : undefined}
+          className={`event-item status-${event.status}`}
+        >
           <div className="event-date">
             <time dateTime={event.date}>{formatEventDate(event)}</time>
             <span>{EVENT_KIND_LABELS[event.kind]}</span>
@@ -51,6 +59,17 @@ export function EventList({
               </span>
             </div>
             <p>{event.summary}</p>
+            {onEventSelect && (
+              <button
+                className="inline-link"
+                onClick={() => onEventSelect(event.id)}
+              >
+                {selectedId === event.id
+                  ? "继续沿卷阅读此事"
+                  : "在长卷中定位此事"}
+                <ArrowUpRight size={14} />
+              </button>
+            )}
             {onSelect && (
               <div className="event-people">
                 {event.people.map(

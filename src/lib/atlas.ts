@@ -1,3 +1,4 @@
+import { lineageFocus } from "./lineage-focus";
 import type { Edge, Person } from "../types";
 
 export interface AtlasViewport {
@@ -12,7 +13,7 @@ export interface AtlasCamera {
 
 // The full catalog needs roughly 10% scale on a 320px phone, with room to
 // zoom out further after fitting. Keep Fit and manual zoom on the same range.
-export const MIN_ATLAS_SCALE = 0.05;
+export const MIN_ATLAS_SCALE = 0.02;
 export const MAX_ATLAS_SCALE = 2.4;
 export const clampAtlasScale = (scale: number) =>
   Math.min(MAX_ATLAS_SCALE, Math.max(MIN_ATLAS_SCALE, scale));
@@ -81,6 +82,11 @@ export interface AtlasOptions {
 }
 
 export interface AtlasNode {
+  focusRole?: "current" | "mentor" | "disciple" | "ancestor" | "background";
+  focusDepth?: number;
+  deckPage?: number;
+  deckOrdinal?: number;
+  deckColumn?: number;
   person: Person;
   x: number;
   y: number;
@@ -95,6 +101,7 @@ export interface AtlasNode {
 }
 
 export interface AtlasLayout {
+  fixed?: boolean;
   nodes: AtlasNode[];
   edges: Array<Edge & { highlighted: boolean }>;
   columns: Array<{ index: number; label: string; x: number }>;
@@ -246,14 +253,26 @@ export function buildAtlas(options: AtlasOptions): AtlasLayout {
   }
   if (hasFilter) for (const id of ancestors(matches)) visible.add(id);
 
-  const primaryMentor = (
-    validEdges.find((edge) => edge.to === selected.id && !edge.disputed) ??
-    validEdges.find((edge) => edge.to === selected.id)
-  )?.from;
-  const primaryChild = (
-    validEdges.find((edge) => edge.from === selected.id && !edge.disputed) ??
-    validEdges.find((edge) => edge.from === selected.id)
-  )?.to;
+  const featuredPrimary = ["ma-ji", "jiang-kun", "feng-gong", "zhao-yan", "shi-shengjie"];
+  const primaryRank = (id: string) => {
+    const index = featuredPrimary.indexOf(id);
+    return index < 0 ? featuredPrimary.length : index;
+  };
+  const primaryMentor = validEdges
+    .filter((edge) => edge.to === selected.id && !edge.disputed && visible.has(edge.from))
+    .filter((edge) => (byId.get(edge.from)?.generationIndex ?? Infinity) < selected.generationIndex)
+    .sort((a, b) =>
+      (byId.get(b.from)?.generationIndex ?? -Infinity) -
+        (byId.get(a.from)?.generationIndex ?? -Infinity) ||
+      primaryRank(a.from) - primaryRank(b.from) ||
+      a.from.localeCompare(b.from, "zh-Hans"),
+    )[0]?.from;
+  const primaryChild = validEdges
+    .filter((edge) => edge.from === selected.id && !edge.disputed && visible.has(edge.to))
+    .filter((edge) => (byId.get(edge.to)?.generationIndex ?? -Infinity) > selected.generationIndex)
+    .sort((a, b) =>
+      primaryRank(a.to) - primaryRank(b.to) || a.to.localeCompare(b.to, "zh-Hans"),
+    )[0]?.to;
   const verticalIds = new Set([
     selected.id,
     ...(mode === "tree"
@@ -377,15 +396,14 @@ export function buildAtlas(options: AtlasOptions): AtlasLayout {
   const maxX = Math.max(...nodes.map((node) => node.x + node.width / 2)) + 90;
   const minY = Math.min(...nodes.map((node) => node.y - node.height / 2)) - 80;
   const maxY = Math.max(...nodes.map((node) => node.y + node.height / 2)) + 80;
+  const focus = lineageFocus(selected.id, validEdges);
   return {
     nodes,
     edges: validEdges
       .filter((edge) => visible.has(edge.from) && visible.has(edge.to))
       .map((edge) => ({
         ...edge,
-        highlighted:
-          (edge.from === "zhu-kuoquan" && edge.to === "hou-baolin") ||
-          (edge.from === "hou-baolin" && edge.to === "ma-ji"),
+        highlighted: focus.links.has(edge.id),
       })),
     columns,
     bounds: {

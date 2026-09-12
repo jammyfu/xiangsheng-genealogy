@@ -53,6 +53,16 @@ export function PersonPanel({ person, onSelect }: PersonPanelProps) {
         <p>{person.bio}</p>
       </section>
 
+      {person.generationNote ? (
+        <section>
+          <h3>字辈调整</h3>
+          <p>
+            {person.originalGeneration ? `原始${person.originalGeneration}字辈；` : ''}
+            {person.generationNote}
+          </p>
+        </section>
+      ) : null}
+
       {person.works.length ? (
         <section>
           <h3>作品（仅标题）</h3>
