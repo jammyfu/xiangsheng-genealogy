@@ -52,24 +52,15 @@ export default function SpatialTree(props: Props) {
     const distance = Math.max((y1-y0+140)/(2*tangent), (x1-x0+130)/(2*tangent*camera.aspect), 230) + (z1-z0)/2;
     api.cameraPosition(target.clone().add(new Vector3(distance*.28, distance*.20, distance*1.08)), target, reduced.current ? 0 : duration);
   };
-  const focus = (id: string) => {
-    const api = instance.current, node = cache.current.get(id);
-    if (!api || !node) return;
-    const target = new Vector3(node.x ?? 0, node.y ?? 0, node.z ?? 0);
-    const direction = new Vector3().copy(api.cameraPosition()).sub(target).normalize();
-    if (!direction.lengthSq()) direction.set(0, 0, 1);
-    api.cameraPosition(target.clone().addScaledVector(direction, 360), target, reduced.current ? 0 : 850);
-  };
   const activate = (id: string) => {
-    const node = latest.current.graph.nodes.find(n => n.person.id === id);
     const target = cache.current.get(id), api = instance.current;
     if (target && api) {
       const screen = new Vector3(target.x ?? 0, target.y ?? 0, target.z ?? 0).project(api.camera());
       stars.current?.burst(screen.x, screen.y);
     }
     setInspected(id);
-    focus(id);
-    if (node?.childCount) latest.current.onBranch(id);
+    compareRef.current(null);
+    if (id === latest.current.selectedId) fit(750, id);
     else latest.current.onSelect(id);
   };
   useEffect(() => {
@@ -158,7 +149,7 @@ export default function SpatialTree(props: Props) {
           objectCache.set(node.id, { key, group, dot: material, label: labelMaterial, labelSprite: label, halo: hoverHalo });
           return group;
         })
-        .nodeLabel(n => `${n.atlas.person.name} · ${n.atlas.hiddenChildren ? `点击展开 ${n.atlas.hiddenChildren} 位传人` : n.atlas.childCount ? '点击收起传人' : '查看人物'}`)
+        .nodeLabel(n => `${n.atlas.person.name} · 点击查看完整师承主线`)
         .linkColor(e => {
           const color = forceLinkColor(e, comparisonLinks.current);
           return ({ '#8b2626': '#ff927f', '#a36922': '#e8c17c', '#197c85': '#75dce3', '#77549c': '#c4a5f5' } as Record<string, string>)[color] ?? 'rgba(142,170,202,0.24)';
@@ -249,7 +240,10 @@ export default function SpatialTree(props: Props) {
   }, [props.graph, ready]);
   useEffect(() => { instance.current?.width(props.viewport.width).height(props.viewport.height); }, [props.viewport]);
   useEffect(() => { props.active ? instance.current?.resumeAnimation() : instance.current?.pauseAnimation(); }, [props.active, ready]);
-  useEffect(() => { setInspected(props.selectedId); if (ready) fit(750, props.selectedId); }, [props.selectedId]);
+  useEffect(() => {
+    setInspected(props.selectedId);
+    if (ready) { needsFit.current = true; fit(750, props.selectedId); }
+  }, [props.selectedId, ready]);
   const node = props.graph.nodes.find(n => n.person.id === inspected) ?? props.graph.nodes.find(n => n.selected);
   return <div className="force-tree" aria-label="可展开的三维世代谱系">
     <div ref={host} className="force-tree-canvas" onPointerMove={event => {
@@ -263,12 +257,12 @@ export default function SpatialTree(props: Props) {
     </div>
     {node && <div className="force-tree-actions" data-atlas-control="force">
       <strong>{node.person.name}</strong>{node.selected && <span className="force-current-label">当前人物</span>}
-      {node.childCount > 0 && <button onClick={() => activate(node.person.id)}>{node.hiddenChildren ? `展开传人 · ${node.hiddenChildren}` : '收起传人'}</button>}
+      {node.childCount > 0 && <button onClick={() => { needsFit.current = true; props.onBranch(node.person.id); }}>{node.hiddenChildren ? `展开传人 · ${node.hiddenChildren}` : '收起传人'}</button>}
       <button onClick={() => props.onSelect(node.person.id)}>查看人物</button>
     </div>}
     <details className="force-tree-directory" data-atlas-control="force">
       <summary>人物与支系 · {props.graph.nodes.length}</summary>
-      <div>{props.graph.nodes.map(n => <button key={n.person.id} onPointerEnter={() => compareRef.current(n.person.id)} onPointerLeave={() => compareRef.current(null)} onFocus={() => compareRef.current(n.person.id)} onBlur={() => compareRef.current(null)} aria-label={`${n.person.name}，${n.childCount ? n.hiddenChildren ? '展开传人' : '收起传人' : '查看人物'}`} onClick={() => activate(n.person.id)}>{n.person.name}<small>{n.childCount ? n.hiddenChildren ? `＋${n.hiddenChildren}` : '－' : ''}</small></button>)}</div>
+      <div>{props.graph.nodes.map(n => <button key={n.person.id} onPointerEnter={() => compareRef.current(n.person.id)} onPointerLeave={() => compareRef.current(null)} onFocus={() => compareRef.current(n.person.id)} onBlur={() => compareRef.current(null)} aria-label={`${n.person.name}，查看师承主线`} onClick={() => activate(n.person.id)}>{n.person.name}<small>{n.childCount ? `${n.childCount} 位传人` : ''}</small></button>)}</div>
     </details>
   </div>;
 }

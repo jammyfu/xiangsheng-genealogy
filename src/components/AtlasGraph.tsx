@@ -691,7 +691,7 @@ export function AtlasGraph({
             {mode === "scroll" && !webglUnavailable
               ? readable ? "点姓名重排主线 · 缩放调节字号 · 人名册查找" : "拖动移卷 · 点姓名靠近 · 人名册查找"
               : mode === "tree" && spatialTree
-                ? "拖动旋转 · 滚轮缩放 · 点节点展开 / 收起"
+                ? "点姓名切换主线 · 拖动旋转 · 传人按钮展开 / 收起"
                 : "拖动移卷 · 方向键平移 · 点击人物读笺"}
           </p>
           <p className="atlas-result" role="status">
