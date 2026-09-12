@@ -1,101 +1,141 @@
-# 相声家谱 · Xiangsheng Genealogy
+<p align="center">中文 | <a href="README.en.md">English</a></p>
 
-**Xiangsheng Genealogy** is an open-source ink-wash map of Chinese
-crosstalk (**相声**, xiangsheng) master–disciple lineages — who taught
-whom, which generation name they carried, and where that claim is
-written down.
+<div align="center">
+  <img src="public/seal.svg" alt="相声家谱印章" width="96">
+  <h1>相声家谱（Xiangsheng Genealogy）</h1>
+  <p><strong>开源水墨三维图谱，画出相声有出处的师承</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white" alt="React 19">
+    <img src="https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white" alt="Vite">
+    <img src="https://img.shields.io/badge/Three.js-r180-000000?logo=threedotjs&logoColor=white" alt="Three.js">
+    <img src="https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white" alt="TypeScript">
+    <img src="https://img.shields.io/badge/License-MIT-2d6a4f" alt="MIT">
+  </p>
+</div>
 
-相声家谱以宣纸水墨的方式，把有出处的师承画成可检索的图谱：墨点是人，墨线是师傅→弟子。字辈只用 **德寿宝文明**，不用「德寿喜哈」。
+---
 
-![Studio](docs/studio-desktop.png)
+## 一句话定位
 
-## Features
+**相声家谱（Xiangsheng Genealogy）是开源水墨三维图谱：把有出处的相声师承画成可检索的图。墨点是人，墨线是师傅→弟子。**
 
-- React + Vite + TypeScript + React Three Fiber + Drei
-- 水墨国画界面：宣纸 `#F3EBD9`、墨灰、朱砂印 `#8B1E1E`、留白、Noto Serif SC
-- 三维师承图，镜头飞入；人物笺含小传、字辈、作品标题、出处
-- 默认游径：朱阔泉 → 侯宝林 → 马季 → 传人；可选马三立对照
-- 检索 + 德 / 寿 / 宝 / 文 / 明 过滤
-- 移动端宣纸 SVG 回退
-- 深链接 `/p/:id`
-- 开源数据：`data/people/*.json`、`data/edges.json`、`data/sources.json` 与 JSON Schema
+> 字辈只用 **德寿宝文明**（德 / 寿 / 宝 / 文 / 明），不用「德寿喜哈」。本库不托管音频；画像只用占位印、公有领域或外链。
 
-本库 **不托管音频**。画像只用占位印、公有领域或外链。
+## 截图
 
-## 后续开发
+<div align="center">
+  <img src="docs/studio-desktop.png" alt="桌面端：三维师承图与人物笺" width="720">
+  <p><em>桌面 — 默认游径，朱阔泉选中，三维水墨图 + 人物笺</em></p>
+  <img src="docs/studio-mobile.png" alt="移动端：宣纸 SVG 师承图" width="360">
+  <p><em>窄屏 — 宣纸 SVG 回退</em></p>
+</div>
 
-详见 [main 合并后的开发路线与效果验收](docs/next-development-roadmap.md)，包含 8 个阶段、逐步实施方法、验收标准、史料核验与下一轮开工清单。当前 GPU 视觉验收仍受环境限制，合并不代表设计稿复刻已通过验收。
+更多画面见 [docs/README.md](docs/README.md)。
 
-## Quick start
+## 核心功能
+
+| 模块 | 能力 |
+| --- | --- |
+| **三维师承图** | 墨点是人，墨线是师傅→弟子；镜头飞入选中人物 |
+| **人物笺** | 小传、字辈、作品**标题**、出处；不播放、不提供音频下载 |
+| **默认游径** | 朱阔泉 → 侯宝林 → 马季 → 传人 |
+| **对照游径** | 可选马三立一脉 |
+| **检索与字辈** | 姓名 / 艺名 / id；德 / 寿 / 宝 / 文 / 明 过滤 |
+| **移动端** | 窄屏宣纸 SVG 回退 |
+| **深链接** | `/p/:id` |
+| **开源数据** | `data/people/*.json`、`data/edges.json`、`data/sources.json`、`data/events.json` 与 JSON Schema |
+
+界面另有山水长卷、世代谱系、人物书笺、生平年表等浏览视图。当前 GPU 对稿仍受环境限制，合并不代表设计稿复刻已通过验收。后续阶段见 [开发路线](docs/next-development-roadmap.md)。
+
+## 技术栈
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│  App（Vite）                                                 │
+│  ├── React 19 + TypeScript                                   │
+│  ├── React Three Fiber + Drei + Three.js                     │
+│  ├── GSAP                                                    │
+│  ├── react-router-dom（深链接 /p/:id）                        │
+│  ├── Phosphor icons                                          │
+│  └── 字体：Noto Serif SC / Ma Shan Zheng                     │
+├──────────────────────────────────────────────────────────────┤
+│  Data                                                        │
+│  └── data/people · edges.json · sources.json · events.json   │
+└──────────────────────────────────────────────────────────────┘
+```
+
+界面用宣纸色 `#F3EBD9`、墨灰、朱砂印 `#8B1E1E`。
+
+## 快速开始
+
+需要 Node.js 与 npm。本仓库 CI 使用 Node 22。
 
 ```bash
+git clone https://github.com/jammyfu/xiangsheng-genealogy.git
+cd xiangsheng-genealogy
 npm install
-npm test
+npm test          # vitest
 npm run dev
 ```
 
-Production build:
+生产构建：
 
 ```bash
 npm run build
 npm run preview
 ```
 
-## Data
+## 数据
 
-| Kind | Path |
+当前目录（会随提交增减）：`data/people/` **119** 份人物 JSON，另有 105 条师承、25 条来源、11 条正式事件。数字只表示已收录范围，不表示全量核验或完整名录。详见 [数据覆盖说明](docs/data-coverage.md)。
+
+| 类型 | 路径 |
 | --- | --- |
-| People | `data/people/*.json` |
-| Edges | `data/edges.json` |
-| Sources | `data/sources.json` |
-| Life events | `data/events.json` |
-| Schemas | `data/schemas/` |
+| 人物 | `data/people/*.json` |
+| 师承 | `data/edges.json` |
+| 出处 | `data/sources.json` |
+| 生平事件 | `data/events.json` |
+| Schema | `data/schemas/` |
 
-The files under `data/` are the maintained catalog and the source of truth for
-the app. Update those files directly when correcting a person or relationship,
-adding a source, or recording a life event. Keep each claim tied to its sources;
-use named, sourced perspectives for attributed or disputed event accounts.
-Record organization departures, expulsions, and performance suspensions as
-distinct events without deleting historical teacher links.
+`data/` 是应用的维护目录与事实来源。改正人物或关系、补出处、记事件，都直接改这些文件。每条说法绑来源；有争议或归因说法用具名、有出处的视角。退社、除名、停演记为独立事件，不删历史师承边。
 
-Validate catalog changes before committing:
+提交前校验：
 
 ```bash
 npm test
 npm run build
 ```
 
-The original seed is retained only as a historical reference fixture. It lacks
-later corrections, people, events, and source additions, so it must not replace
-the maintained catalog. The exporter writes `people/` and `edges.json` into a
-new system temporary directory and prints its location:
+每人至少一条出处。未定师承标 `"disputed": true`。字辈仅 德 / 寿 / 宝 / 文 / 明；第 1–3 代与第 9 代及以后可为 `null`。作品只记标题。
+
+原始 seed 只作历史对照，缺后续更正，不能替换维护目录。导出脚本把 `people/` 与 `edges.json` 写到新的系统临时目录并打印路径：
 
 ```bash
 node scripts/emit-seed.mjs
 ```
 
-To choose the export location, provide a new directory outside `data/` whose
-parent already exists:
+指定目录时，父目录须已存在，且目标不能落在 `data/` 内：
 
 ```bash
 node scripts/emit-seed.mjs --out /tmp/xiangsheng-seed-review
 ```
 
-The script refuses existing output directories and destinations inside `data/`,
-including paths through symlinks. It never regenerates or clears the curated
-catalog. Review historical exports separately; apply source-checked corrections
-to the maintained files individually.
+脚本拒绝已存在的输出目录，以及经符号链接指向 `data/` 的路径。它不重写、不清空维护目录。历史导出单独审阅；经出处核对的更正逐条写回维护文件。
 
-Every person cites at least one source. Unsettled teacher links are
-`"disputed": true`.
+## 许可
 
-## License
+- 源码：[MIT](LICENSE)
+- 数据说明：[NOTICE](NOTICE)、[ATTRIBUTION.md](ATTRIBUTION.md)
+- 源自维基百科的表格仍为 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 
-- Source code: [MIT](LICENSE)
-- Dataset notices: [NOTICE](NOTICE), [ATTRIBUTION.md](ATTRIBUTION.md)
-- Wikipedia-derived tables remain [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+## 贡献
 
-## Contributing
+见 [CONTRIBUTING.md](CONTRIBUTING.md)。机器可读摘要：[llms.txt](llms.txt)。英文说明：[README.en.md](README.en.md)。
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). Machine-readable summary:
-[llms.txt](llms.txt).
+这是研究可视化，不是排辈法庭。优先已刊表格，不收传闻。
+
+---
+
+<div align="center">
+  <sub>相声家谱 · Xiangsheng Genealogy · MIT</sub>
+</div>
