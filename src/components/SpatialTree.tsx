@@ -1,4 +1,5 @@
 import { treeLabelStyle } from "../lib/tree-label-style";
+import { createGenealogyStars } from '../lib/genealogy-stars';
 import { lineageComparison } from "../lib/lineage-focus";
 import { gsap } from "gsap";
 import { useEffect, useRef, useState } from 'react';
@@ -20,6 +21,7 @@ type ForceView = ForceGraph3DInstance<ForcePerson, ForceRelation>;
 export default function SpatialTree(props: Props) {
   const host = useRef<HTMLDivElement>(null);
   const instance = useRef<ForceView | null>(null);
+  const stars = useRef<ReturnType<typeof createGenealogyStars> | null>(null);
   const latest = useRef(props); latest.current = props;
   const cache = useRef(new Map<string, ForcePerson>());
   const [inspected, setInspected] = useState(props.selectedId);
@@ -94,10 +96,10 @@ export default function SpatialTree(props: Props) {
       const api = new ForceGraph3D(host.current, { controlType: 'orbit' }) as unknown as ForceView;
       instance.current = api;
       api.width(latest.current.viewport.width).height(latest.current.viewport.height)
-        .backgroundColor('#f8f5ee').showNavInfo(false)
+        .backgroundColor('#080c15').showNavInfo(false)
         .nodeThreeObject((node) => {
           const n = node.atlas;
-          const color = n.selected ? '#8b2626' : node.related ? '#534837' : '#6a786e';
+          const color = n.selected ? '#ff927f' : node.related ? '#f0d6a2' : '#93acc8';
           const key = `${color}:${n.dimmed}:${node.related}`;
           const old = objectCache.get(node.id);
           if (old?.key === key) return old.group;
@@ -106,7 +108,7 @@ export default function SpatialTree(props: Props) {
           const material = new MeshBasicMaterial({ color, toneMapped: false, transparent: true, opacity: node.related ? 1 : .18 });
           group.add(new Mesh(geometry, material));
           if (n.selected) {
-            for (const [inner, outer, color] of [[11, 12.2, '#8b2626'], [15, 15.7, '#ba9251']] as const) {
+            for (const [inner, outer, color] of [[11, 12.2, '#ff927f'], [15, 15.7, '#e6c98c']] as const) {
               const ringGeometry = new RingGeometry(inner, outer, 64);
               const ringMaterial = new MeshBasicMaterial({ color, side: DoubleSide, toneMapped: false, depthWrite: false });
               const ring = new Mesh(ringGeometry, ringMaterial);
@@ -124,14 +126,17 @@ export default function SpatialTree(props: Props) {
           group.add(label);
           resources.push(geometry, material, labelMaterial);
           const hoverGeometry = new RingGeometry(6, 7, 48);
-          const hoverMaterial = new MeshBasicMaterial({ color: '#197c85', side: DoubleSide, toneMapped: false, depthWrite: false });
+          const hoverMaterial = new MeshBasicMaterial({ color: '#75dce3', side: DoubleSide, toneMapped: false, depthWrite: false });
           const hoverHalo = new Mesh(hoverGeometry, hoverMaterial); hoverHalo.visible = false;
           group.add(hoverHalo); resources.push(hoverGeometry, hoverMaterial);
           objectCache.set(node.id, { key, group, dot: material, label: labelMaterial, labelSprite: label, halo: hoverHalo });
           return group;
         })
         .nodeLabel(n => `${n.atlas.person.name} · ${n.atlas.hiddenChildren ? `点击展开 ${n.atlas.hiddenChildren} 位传人` : n.atlas.childCount ? '点击收起传人' : '查看人物'}`)
-        .linkColor(e => forceLinkColor(e, comparisonLinks.current))
+        .linkColor(e => {
+          const color = forceLinkColor(e, comparisonLinks.current);
+          return ({ '#8b2626': '#ff927f', '#a36922': '#e8c17c', '#197c85': '#75dce3', '#77549c': '#c4a5f5' } as Record<string, string>)[color] ?? 'rgba(142,170,202,0.24)';
+        })
         .linkOpacity(1).linkWidth(e => e.highlighted ? 2.2 : comparisonLinks.current.has(e.id) ? 1.8 : .35)
         .linkDirectionalArrowLength(e => e.highlighted || comparisonLinks.current.has(e.id) ? 5 : 1.5).linkDirectionalArrowRelPos(.85)
         .linkDirectionalParticles(e => !reduced.current && (e.highlighted || comparisonLinks.current.has(e.id)) ? 2 : 0)
@@ -141,6 +146,8 @@ export default function SpatialTree(props: Props) {
         .onEngineStop(() => { if (needsFit.current) { needsFit.current = false; fit(700, latest.current.selectedId); } })
         .onNodeClick(n => activate(n.id))
         .onNodeHover(n => compareRef.current(n?.id ?? null));
+      stars.current = createGenealogyStars();
+      api.scene().add(stars.current.points);
       compareRef.current = (id) => {
         if (hovered.current === id) return;
         hovered.current = id;
@@ -164,7 +171,7 @@ export default function SpatialTree(props: Props) {
           const style = labelStyle(node), height = ([...node.atlas.person.name].length*64+16)*style.width/96;
           visual.labelSprite.scale.set(style.width,height,1);
           visual.labelSprite.position.y = -height/2-(node.atlas.selected ? 20 : 7);
-          visual.dot.color.set(node.atlas.selected ? '#8b2626' : shared ? '#77549c' : comparing ? '#197c85' : node.related ? '#534837' : '#6a786e');
+          visual.dot.color.set(node.atlas.selected ? '#ff927f' : shared ? '#c4a5f5' : comparing ? '#75dce3' : node.related ? '#f0d6a2' : '#93acc8');
           visual.halo.visible = nodeId === id && !node.atlas.selected;
         }
         api.linkColor(api.linkColor()).linkWidth(api.linkWidth())
@@ -198,6 +205,7 @@ export default function SpatialTree(props: Props) {
     return () => {
       cancelled = true;
       latest.current.controlsRef.current = null;
+      stars.current?.dispose(); stars.current = null;
       instance.current?._destructor(); instance.current = null;
       compareRef.current = () => {};
       objectCache.forEach(({ group, dot, label }) => { gsap.killTweensOf(group.scale); gsap.killTweensOf(dot); gsap.killTweensOf(label); });
@@ -216,7 +224,11 @@ export default function SpatialTree(props: Props) {
   useEffect(() => { setInspected(props.selectedId); if (ready) fit(750, props.selectedId); }, [props.selectedId]);
   const node = props.graph.nodes.find(n => n.person.id === inspected) ?? props.graph.nodes.find(n => n.selected);
   return <div className="force-tree" aria-label="可展开的三维世代谱系">
-    <div ref={host} className="force-tree-canvas" onPointerLeave={() => compareRef.current(null)} />
+    <div ref={host} className="force-tree-canvas" onPointerMove={event => {
+      const rect = event.currentTarget.getBoundingClientRect();
+      stars.current?.move((event.clientX - rect.left) / Math.max(1, rect.width) * 2 - 1, 1 - (event.clientY - rect.top) / Math.max(1, rect.height) * 2);
+    }} onPointerLeave={() => { compareRef.current(null); stars.current?.move(0, 0); }} />
+    <div className="force-tree-cosmic-caption" aria-hidden="true"><span>群星相承</span><small>一人一星 · 一脉一河</small></div>
     <div className="force-comparison" role="status" aria-live="polite">
       <span className="force-path-current">当前：{props.graph.nodes.find(n => n.selected)?.person.name}</span>
       {comparison ? <><span className="force-path-hover">对照：{comparison.name}</span><span className="force-path-shared">共同路径 · {comparison.shared} 人</span></> : <small>移到其他人物，对照完整师承</small>}

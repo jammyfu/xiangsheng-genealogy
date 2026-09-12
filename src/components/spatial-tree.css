@@ -17,3 +17,34 @@
 .force-path-current { color:#8b2626; } .force-path-hover { color:#197c85; } .force-path-shared { color:#77549c; }
 .force-comparison small { color:#8a897d; width:100%; text-align:right; }
 @media(max-width:600px) { .force-comparison { top:146px; right:8px; max-width:62%; font-size:10px; } }
+
+/* The observatory palette belongs only to the 3D genealogy view. */
+.atlas-graph--cosmic { background:#080c15; color:#d4dcea; color-scheme:dark; }
+.force-tree { overflow:hidden; background:#080c15; }
+.force-tree-cosmic-caption { position:absolute; left:28px; top:145px; pointer-events:none; display:grid; gap:9px; color:#dfd4bf; }
+.force-tree-cosmic-caption span { font-family:var(--font-serif); font-size:27px; letter-spacing:.24em; font-weight:400; }
+.force-tree-cosmic-caption small { color:#8493aa; font-size:10px; letter-spacing:.17em; }
+.force-tree-actions,.force-tree-directory,.force-comparison { background:#101826eb; color:#d4dcea; border:1px solid #35425780; border-radius:6px; box-shadow:0 6px 25px #0003; }
+.force-tree-actions strong { color:#f5dec3; }
+.force-tree-actions button,.force-tree-directory small { color:#ffb6a0; }
+.force-tree-directory button:hover,.force-tree-directory button:focus-visible { background:#243046; }
+.force-current-label { color:#ffb6a0; border-color:#ff927f66; }
+.force-path-current { color:#ffb6a0; }
+.force-path-hover { color:#8ce5e6; }
+.force-path-shared { color:#cbb1f8; }
+.force-comparison small { color:#a0aec3; }
+.force-tree button:focus-visible,.force-tree summary:focus-visible { outline-color:#ffb6a0; }
+.atlas-graph--cosmic .atlas-topline,.atlas-graph--cosmic .atlas-bottomline { color:#b4c1d5; }
+.atlas-graph--cosmic .atlas-scope,.atlas-graph--cosmic .atlas-camera { background:#101826eb; color:#d7e1ee; border-color:#39465b; }
+.atlas-graph--cosmic .atlas-scope[aria-pressed=true] { color:#ffe1be; border-color:#b29973; }
+.atlas-graph--cosmic .atlas-camera button { color:#d7e1ee; }
+.atlas-graph--cosmic .atlas-camera button:hover { background:#293349; }
+.atlas-graph--cosmic .atlas-notes,.atlas-graph--cosmic .atlas-result { color:#a3b0c4; }
+.atlas-graph--cosmic .atlas-legend-line { border-color:#ff927f; background-color:#ff927f; }
+.atlas-graph--cosmic .atlas-legend-line--disputed { border-color:#e8c17c; background:transparent; }
+.force-tree .scene-tooltip { color:#e9e0d2; background:#111c2bf2; border:1px solid #52627c; padding:7px 10px; border-radius:4px; }
+@media(max-width:600px) {
+  .force-tree-cosmic-caption { left:16px; top:156px; }
+  .force-tree-cosmic-caption span { font-size:20px; }
+  .force-tree-actions { flex-wrap:wrap; max-width:calc(100% - 16px); }
+}

@@ -381,7 +381,7 @@ export function AtlasGraph({
   return (
     <div
       ref={hostRef}
-      className={`atlas-graph atlas-graph--${mode}${dragging ? " atlas-graph--dragging" : ""}`}
+      className={`atlas-graph atlas-graph--${mode}${mode === 'tree' && spatialTree ? ' atlas-graph--cosmic' : ''}${dragging ? " atlas-graph--dragging" : ""}`}
     >
       <div className="atlas-topline">
         <span className="atlas-direction">由师而徒，自左向右</span>
