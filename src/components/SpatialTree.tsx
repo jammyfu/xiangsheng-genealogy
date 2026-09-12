@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 import type { MutableRefObject } from 'react';
 import ForceGraph3D from '3d-force-graph';
 import type { ForceGraph3DInstance } from '3d-force-graph';
-import { CanvasTexture, Group, Mesh, MeshBasicMaterial, SphereGeometry, Sprite, SpriteMaterial, Vector3, PerspectiveCamera, SRGBColorSpace, RingGeometry, DoubleSide } from 'three';
+import { AdditiveBlending, CanvasTexture, Group, Mesh, MeshBasicMaterial, SphereGeometry, Sprite, SpriteMaterial, Vector3, PerspectiveCamera, SRGBColorSpace, RingGeometry, DoubleSide } from 'three';
 import type { AtlasLayout, AtlasViewport } from '../lib/atlas';
 import { forceTreeData, forceLinkColor } from '../lib/force-tree';
 import type { ForcePerson, ForceRelation } from '../lib/force-tree';
@@ -62,6 +62,11 @@ export default function SpatialTree(props: Props) {
   };
   const activate = (id: string) => {
     const node = latest.current.graph.nodes.find(n => n.person.id === id);
+    const target = cache.current.get(id), api = instance.current;
+    if (target && api) {
+      const screen = new Vector3(target.x ?? 0, target.y ?? 0, target.z ?? 0).project(api.camera());
+      stars.current?.burst(screen.x, screen.y);
+    }
     setInspected(id);
     focus(id);
     if (node?.childCount) latest.current.onBranch(id);
@@ -70,6 +75,13 @@ export default function SpatialTree(props: Props) {
   useEffect(() => {
     if (!host.current) return;
     const resources: Array<{ dispose(): void }> = [];
+    const glowCanvas = document.createElement('canvas'); glowCanvas.width = glowCanvas.height = 128;
+    const glowContext = glowCanvas.getContext('2d')!;
+    const gradient = glowContext.createRadialGradient(64,64,0,64,64,64);
+    gradient.addColorStop(0, '#ffffff'); gradient.addColorStop(.12, '#ffffffc0');
+    gradient.addColorStop(.35, '#ffffff35'); gradient.addColorStop(1, '#ffffff00');
+    glowContext.fillStyle = gradient; glowContext.fillRect(0,0,128,128);
+    const glowTexture = new CanvasTexture(glowCanvas); resources.push(glowTexture);
     const objectCache = new Map<string, { key: string; group: Group; dot: MeshBasicMaterial; label: SpriteMaterial; labelSprite: Sprite; halo: Mesh }>();
     const labelTextures = new Map<string, CanvasTexture>();
     const labelStyle = (node: ForcePerson) => treeLabelStyle({ selected: node.atlas.selected, related: node.related, compared: comparisonNodes.current.has(node.id), shared: sharedNodes.current.has(node.id) });
@@ -107,6 +119,11 @@ export default function SpatialTree(props: Props) {
           const geometry = new SphereGeometry(n.selected ? 8 : 3.2, 20, 16);
           const material = new MeshBasicMaterial({ color, toneMapped: false, transparent: true, opacity: node.related ? 1 : .18 });
           group.add(new Mesh(geometry, material));
+          const glowMaterial = new SpriteMaterial({ map: glowTexture, color, transparent: true, opacity: n.selected ? .8 : node.related ? .48 : .16, blending: AdditiveBlending, depthWrite: false, toneMapped: false });
+          const glow = new Sprite(glowMaterial);
+          const glowSize = n.selected ? 85 : node.related ? 32 : 18;
+          glow.scale.setScalar(glowSize); glow.raycast = () => {}; group.add(glow); resources.push(glowMaterial);
+          if (n.selected) glow.onBeforeRender = () => { glow.scale.setScalar(glowSize * (1 + Math.sin((stars.current?.time ?? 0) * 1.4) * .07)); };
           if (n.selected) {
             for (const [inner, outer, color] of [[11, 12.2, '#ff927f'], [15, 15.7, '#e6c98c']] as const) {
               const ringGeometry = new RingGeometry(inner, outer, 64);
@@ -114,6 +131,15 @@ export default function SpatialTree(props: Props) {
               const ring = new Mesh(ringGeometry, ringMaterial);
               ring.name = 'selected-person-halo'; group.add(ring);
               resources.push(ringGeometry, ringMaterial);
+            }
+            for (let orbit = 0; orbit < 2; orbit++) {
+              const orbitGeometry = new RingGeometry(22 + orbit * 7, 22.5 + orbit * 7, 96, 1, orbit, Math.PI * 1.45);
+              const orbitMaterial = new MeshBasicMaterial({ color: orbit ? '#80dbe5' : '#ffcc91', side: DoubleSide, transparent: true, opacity: .58, blending: AdditiveBlending, depthWrite: false, toneMapped: false });
+              const ring = new Mesh(orbitGeometry, orbitMaterial);
+              ring.rotation.x = orbit ? .9 : -.65;
+              ring.raycast = () => {};
+              ring.onBeforeRender = () => { ring.rotation.z = (stars.current?.time ?? 0) * (orbit ? -.22 : .16); };
+              group.add(ring); resources.push(orbitGeometry, orbitMaterial);
             }
           }
           const texture = labelTexture(node);
@@ -140,7 +166,8 @@ export default function SpatialTree(props: Props) {
         .linkOpacity(1).linkWidth(e => e.highlighted ? 2.2 : comparisonLinks.current.has(e.id) ? 1.8 : .35)
         .linkDirectionalArrowLength(e => e.highlighted || comparisonLinks.current.has(e.id) ? 5 : 1.5).linkDirectionalArrowRelPos(.85)
         .linkDirectionalParticles(e => !reduced.current && (e.highlighted || comparisonLinks.current.has(e.id)) ? 2 : 0)
-        .linkDirectionalParticleWidth(1.6).linkDirectionalParticleSpeed(.003)
+        .linkDirectionalParticleWidth(2.2).linkDirectionalParticleSpeed(.0025)
+        .linkDirectionalParticleColor(e => comparisonLinks.current.has(e.id) ? '#b4fbff' : '#ffe5bf')
         .linkLabel(e => e.disputed ? '师承存在不同说法，出处见人物书笺' : '师父 → 徒弟')
         .enableNodeDrag(false).warmupTicks(50).cooldownTicks(reduced.current ? 0 : 100)
         .onEngineStop(() => { if (needsFit.current) { needsFit.current = false; fit(700, latest.current.selectedId); } })
@@ -151,6 +178,7 @@ export default function SpatialTree(props: Props) {
       compareRef.current = (id) => {
         if (hovered.current === id) return;
         hovered.current = id;
+        stars.current?.hover(Boolean(id));
         const paths = lineageComparison(latest.current.selectedId, id, latest.current.graph.edges);
         comparisonLinks.current = paths.compared.links;
         comparisonNodes.current = paths.compared.nodes; sharedNodes.current = paths.sharedNodes;

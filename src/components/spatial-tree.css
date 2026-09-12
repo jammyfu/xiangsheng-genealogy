@@ -40,6 +40,7 @@
 .atlas-graph--cosmic .atlas-camera button { color:#d7e1ee; }
 .atlas-graph--cosmic .atlas-camera button:hover { background:#293349; }
 .atlas-graph--cosmic .atlas-notes,.atlas-graph--cosmic .atlas-result { color:#a3b0c4; }
+.atlas-graph--cosmic .atlas-notes,.atlas-graph--cosmic .atlas-notes * { text-shadow:none; }
 .atlas-graph--cosmic .atlas-legend-line { border-color:#ff927f; background-color:#ff927f; }
 .atlas-graph--cosmic .atlas-legend-line--disputed { border-color:#e8c17c; background:transparent; }
 .force-tree .scene-tooltip { color:#e9e0d2; background:#111c2bf2; border:1px solid #52627c; padding:7px 10px; border-radius:4px; }
