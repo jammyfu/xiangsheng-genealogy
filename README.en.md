@@ -24,10 +24,10 @@
 ## Screenshots
 
 <div align="center">
-  <img src="docs/studio-desktop.png" alt="Desktop: 3D lineage graph and person panel" width="720">
-  <p><em>Desktop — default tour, 朱阔泉 selected, 3D ink graph + person panel</em></p>
-  <img src="docs/studio-mobile.png" alt="Mobile: paper SVG lineage graph" width="360">
-  <p><em>Narrow viewport — paper / SVG fallback</em></p>
+  <img src="docs/studio-desktop.png" alt="Desktop ink-wash lineage graph and person panel" width="720">
+  <p><em>Earlier studio capture (desktop). The app now opens on 侯宝林, not a stepped tour.</em></p>
+  <img src="docs/studio-mobile.png" alt="Narrow-viewport ink-wash lineage graph" width="360">
+  <p><em>Earlier studio capture (narrow). Narrow viewports still use the WebGL scroll; the SVG plane is a WebGL-failure or manual tree toggle, not a mobile default.</em></p>
 </div>
 
 More captures: [docs/README.md](docs/README.md).
@@ -36,12 +36,12 @@ More captures: [docs/README.md](docs/README.md).
 
 | Area | What it does |
 | --- | --- |
-| **3D lineage graph** | Ink nodes for people, ink strokes for mentor→disciple; camera fly-to on select |
+| **3D lineage graph** | Ink nodes for people, ink strokes for mentor→disciple; camera focuses the selected person |
 | **Person panel** | Bio, 字辈, **work titles**, sources — no playback, no audio downloads |
-| **Default path** | 朱阔泉 → 侯宝林 → 马季 → disciples |
-| **Contrast path** | Optional 马三立 line |
+| **Default open** | `/` redirects to `/p/hou-baolin` (侯宝林). The graph expands that mentor context (including 朱阔泉, 马季); there is no stepped “tour” control |
+| **Lineage root** | Dropdown: 侯宝林, 马三立, 郭德纲, 刘宝瑞, 常宝堃 |
 | **Search + filters** | Name / stage name / id; 德 / 寿 / 宝 / 文 / 明 |
-| **Mobile** | Paper SVG fallback on narrow viewports |
+| **Flat fallback** | Scroll view uses an SVG plane if WebGL fails; tree view can switch to “平面谱系” by hand. Not a narrow-viewport auto-switch |
 | **Deep links** | `/p/:id` |
 | **Open data** | `data/people/*.json`, `data/edges.json`, `data/sources.json`, `data/events.json`, and JSON Schema |
 

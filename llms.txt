@@ -11,11 +11,10 @@ app. It maps cited teacher–disciple edges, the generation poem
 ## Product
 
 - 3D lineage graph (people as ink nodes, mentor→disciple as ink strokes)
-- Camera fly-to and person panel (bio, 字辈, works titles, sources)
-- Default path: 朱阔泉 → 侯宝林 → 马季 → 传人
-- Optional contrast path: 马三立
+- Camera focuses the selected person; person panel (bio, 字辈, works titles, sources)
+- Default open: / → /p/hou-baolin (侯宝林). Lineage-root dropdown: 侯宝林, 马三立, 郭德纲, 刘宝瑞, 常宝堃
 - Search + 德/寿/宝/文/明 filters
-- Mobile paper / SVG fallback
+- SVG plane only if WebGL fails (scroll) or the user toggles 平面谱系 (tree) — not a mobile auto-switch
 - Deep links: /p/:id
 
 ## Data

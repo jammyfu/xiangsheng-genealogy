@@ -24,10 +24,10 @@
 ## 截图
 
 <div align="center">
-  <img src="docs/studio-desktop.png" alt="桌面端：三维师承图与人物笺" width="720">
-  <p><em>桌面 — 默认游径，朱阔泉选中，三维水墨图 + 人物笺</em></p>
-  <img src="docs/studio-mobile.png" alt="移动端：宣纸 SVG 师承图" width="360">
-  <p><em>窄屏 — 宣纸 SVG 回退</em></p>
+  <img src="docs/studio-desktop.png" alt="桌面端水墨师承图与人物笺" width="720">
+  <p><em>既有工作室截图（桌面）。当前打开默认为侯宝林，不是分步游径。</em></p>
+  <img src="docs/studio-mobile.png" alt="窄屏水墨师承图" width="360">
+  <p><em>既有工作室截图（窄屏）。窄屏仍走 WebGL 长卷；平面 SVG 只在 WebGL 失败或手动切换时出现。</em></p>
 </div>
 
 更多画面见 [docs/README.md](docs/README.md)。
@@ -36,12 +36,12 @@
 
 | 模块 | 能力 |
 | --- | --- |
-| **三维师承图** | 墨点是人，墨线是师傅→弟子；镜头飞入选中人物 |
+| **三维师承图** | 墨点是人，墨线是师傅→弟子；选中后镜头对准人物 |
 | **人物笺** | 小传、字辈、作品**标题**、出处；不播放、不提供音频下载 |
-| **默认游径** | 朱阔泉 → 侯宝林 → 马季 → 传人 |
-| **对照游径** | 可选马三立一脉 |
+| **默认打开** | `/` 转到 `/p/hou-baolin`（侯宝林）。图上会展开其师承上下文（含朱阔泉、马季等），但没有分步「游径」控件 |
+| **一脉选择** | 下拉换根：侯宝林、马三立、郭德纲、刘宝瑞、常宝堃 |
 | **检索与字辈** | 姓名 / 艺名 / id；德 / 寿 / 宝 / 文 / 明 过滤 |
-| **移动端** | 窄屏宣纸 SVG 回退 |
+| **平面回退** | 长卷在 WebGL 不可用时改用 SVG 平面谱系；世代谱系可手动「切换平面谱系」。不是按窄屏自动切换 |
 | **深链接** | `/p/:id` |
 | **开源数据** | `data/people/*.json`、`data/edges.json`、`data/sources.json`、`data/events.json` 与 JSON Schema |
 
