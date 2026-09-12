@@ -1,15 +1,19 @@
 {
   "birthYear": 1949,
   "portraitKind": "placeholder",
-  "disputed": true,
+  "disputed": false,
+  "notes": [
+    "通常以于谦为开门大弟子；据刘献伟口述，石富宽早年另有艺名「马蹄」的弟子，已退出行业。",
+    "正式入室弟子收录于谦、刘献伟、侯震、孙越；孙越另见赵小林门下记载，保留其原有双重记载标记。"
+  ],
   "works": [],
   "sources": [
     "src-wiki-lineage"
   ],
   "id": "shi-fuquan",
   "name": "石富宽",
-  "generation": "宝",
-  "generationIndex": 6,
+  "generation": "文",
+  "generationIndex": 7,
   "school": "北京",
-  "bio": "高凤山弟子。于谦、孙越、侯震出其门。此支部辈在维基注释中有「自降一辈」异说。"
+  "bio": "高凤山弟子。因高家两代自降，此支行业通行归文字辈；于谦、刘献伟、侯震、孙越出其门。早年曾立誓不收徒，后为于谦破例。"
 }

@@ -2,18 +2,19 @@
   "id": "zhou-jiuliang",
   "name": "周九良",
   "generation": null,
-  "generationIndex": 10,
+  "generationIndex": 9,
   "school": "德云社",
   "bio": "德云社相声演员，与孟鹤堂合作。两人在2018年《相声有新人》总决赛获得冠军。2021年《答案奇遇夜》公布的节目单也列入了周九良，安排其参加情景剧表演。",
   "works": [],
   "sources": [
     "src-people-meng-zhou-final-20181029",
-    "src-xinhua-zhihu-lineup-20210126"
+    "src-xinhua-zhihu-lineup-20210126",
+    "src-wiki-lineage"
   ],
   "portraitKind": "placeholder",
   "notes": [
-    "字辈及世代尚未核定。",
     "本轮核验范围为演出身份、搭档及比赛结果；未把名字中的“九”作为相声行业字辈。",
-    "《答案奇遇夜》所引来源为节目单预告，仅用于确认公布的演出安排。"
+    "《答案奇遇夜》所引来源为节目单预告，仅用于确认公布的演出安排。",
+    "2026-09-12 按郭德纲门下云、鹤、九科名录补录师承；科名不代表相声世代，第九代无统一字辈。"
   ]
 }

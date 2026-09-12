@@ -5,12 +5,15 @@
     "好家伙"
   ],
   "sources": [
-    "src-wiki-lineage"
+    "src-wiki-lineage",
+    "src-360-feng-gong-disciples",
+    "src-huanqiu-feng-gong-lineage"
   ],
   "id": "jia-ling",
   "name": "贾玲",
   "generation": null,
   "generationIndex": 9,
   "school": "冯巩门",
-  "bio": "冯巩弟子。以小品、影视名世，谱表仍列于冯巩相声门墙。本库只列作品标题，不提供音视频。"
+  "bio": "冯巩弟子。以小品、影视名世，谱表仍列于冯巩相声门墙。本库只列作品标题，不提供音视频。",
+  "disputed": false
 }

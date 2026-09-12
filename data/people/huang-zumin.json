@@ -1,0 +1,13 @@
+{
+  "id": "huang-zumin",
+  "name": "黄族民",
+  "generation": "文",
+  "generationIndex": 7,
+  "school": "马志明门下（口头师徒）",
+  "bio": "相声演员，长期与马志明搭档。资料称马志明口头承认师徒名分，但未举行传统摆知仪式，因此不列作正式入室弟子。",
+  "works": [],
+  "sources": ["src-wiki-lineage", "src-sina-ma-huangzumin"],
+  "portraitKind": "placeholder",
+  "disputed": true,
+  "notes": ["沿用文字辈的展示位置仅服务谱系阅读，不等同有正式摆知入门。"]
+}

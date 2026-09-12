@@ -2,7 +2,7 @@
   "id": "lang-heyan",
   "name": "郎鹤炎",
   "generation": null,
-  "generationIndex": 10,
+  "generationIndex": 9,
   "school": "德云社",
   "bio": "德云社相声演员，与张鹤伦搭档。2019年《欢乐喜剧人5》首期，两人表演相声《幸福生活》；中国青年报客户端转载的后续节目报道也列出了他们的合作演出安排。",
   "works": [
@@ -10,12 +10,13 @@
   ],
   "sources": [
     "src-huanqiu-helun-20190121",
-    "src-cyol-comedian-round-20190314"
+    "src-cyol-comedian-round-20190314",
+    "src-wiki-lineage"
   ],
   "portraitKind": "placeholder",
   "notes": [
-    "字辈及世代尚未核定。",
     "本轮核验范围为团体、搭档与作品演出，师承边待专门来源补证。",
-    "作品列表表示有据可查的演出作品，不表示独家创作或版权归属。"
+    "作品列表表示有据可查的演出作品，不表示独家创作或版权归属。",
+    "2026-09-12 按郭德纲门下云、鹤、九科名录补录师承；科名不代表相声世代，第九代无统一字辈。"
   ]
 }

@@ -3,12 +3,16 @@
   "portraitKind": "placeholder",
   "works": [],
   "sources": [
-    "src-wiki-lineage"
+    "src-wiki-lineage",
+    "src-cctv-lineage-20070624"
   ],
   "id": "ju-hao",
   "name": "句号",
   "generation": null,
   "generationIndex": 9,
   "school": "北京姜昆门",
-  "bio": "姜昆弟子。第九代暂无通行字辈。影视与相声两栖。"
+  "bio": "姜昆弟子。第九代暂无通行字辈。影视与相声两栖。",
+  "aliases": [
+    "句兆杰"
+  ]
 }

@@ -1,0 +1,11 @@
+{
+  "id": "gao-guiqing",
+  "name": "高桂清",
+  "generation": "寿",
+  "generationIndex": 5,
+  "school": "天津马门",
+  "bio": "马德禄大弟子，擅长单口相声与相声理论，曾任天津相声改进小组首任组长。",
+  "works": ["单口相声"],
+  "sources": ["src-wiki-lineage"],
+  "portraitKind": "placeholder"
+}

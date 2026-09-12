@@ -1,8 +1,8 @@
 {
   "id": "wang-sheng",
   "name": "王声",
-  "generation": null,
-  "generationIndex": 10,
+  "generation": "明",
+  "generationIndex": 8,
   "school": "陕西青曲社",
   "bio": "陕西青曲社相声演员，与苗阜合作。2014年，两人在北京卫视春晚演出《满腹经纶》，并在央视元宵晚会演出《学富五车》。搜狐娱乐当年的专场报道将二人作为陕西相声组合介绍。",
   "works": [
@@ -10,12 +10,13 @@
     "学富五车"
   ],
   "sources": [
-    "src-sohu-qingqu-shanghai-20140521"
+    "src-sohu-qingqu-shanghai-20140521",
+    "src-wiki-lineage"
   ],
   "portraitKind": "placeholder",
   "notes": [
-    "字辈及世代尚未核定。",
     "团体及搭档信息按2014年报道记载，不据此断言当前职务或持续合作状态。",
-    "师承、本名及生年未由本轮所引来源补证，暂不填写。"
+    "本名及生年尚未补证，暂不填写。",
+    "2026-09-12补录参考表师承，按第八代明字辈归类；既有演出史料仍保留。"
   ]
 }

@@ -1,17 +1,18 @@
 {
   "id": "chen-xi",
   "name": "陈曦",
-  "generation": null,
-  "generationIndex": 10,
-  "bio": "相声演员、创作者，与金霏共同参加过2018年《相声有新人》。总决赛报道记载，两人创作的作品由孟鹤堂、周九良带到决赛演出；作品表演者获奖后向他们表达感谢。",
+  "generation": "明",
+  "generationIndex": 8,
+  "school": "康桂生门下",
+  "bio": "相声演员、创作者，师承康桂生。与金霏长期搭档，共同参加过2018年《相声有新人》；两人创作的作品由孟鹤堂、周九良带到决赛演出。",
   "works": [],
   "sources": [
-    "src-people-meng-zhou-final-20181029"
+    "src-people-meng-zhou-final-20181029",
+    "src-jxwy-jin-chen-20220223"
   ],
   "portraitKind": "placeholder",
   "notes": [
-    "字辈及世代尚未核定。",
     "本条专指与金霏合作的相声演员陈曦，不能与其他同名人物合并。",
-    "所属团体、正式师承及生年未由本轮所引来源补证，作品标题暂留空。"
+    "公开演出机构资料确认康桂生师承；拜师日期及其他曲种师承待补。"
   ]
 }

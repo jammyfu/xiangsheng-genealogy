@@ -6,9 +6,7 @@
   "birthYear": 1881,
   "deathYear": 1923,
   "portraitKind": "placeholder",
-  "works": [
-    "卖五器"
-  ],
+  "works": ["菜单子", "地理图", "卖五器"],
   "sources": [
     "src-wiki-lineage"
   ],
@@ -17,5 +15,5 @@
   "generation": "德",
   "generationIndex": 4,
   "school": "北京",
-  "bio": "恩绪弟子，艺名万人迷，相声八德之一。以摹仿、倒口著称，对后辈「文」气滑稽影响很大。"
+  "bio": "恩绪大弟子，艺名万人迷，相声八德之一。单口、对口俱佳，是将相声由街头撂地带入茶社剧场的关键人物之一；以摹仿、倒口见长。"
 }

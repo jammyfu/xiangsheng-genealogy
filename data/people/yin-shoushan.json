@@ -1,0 +1,11 @@
+{
+  "id": "yin-shoushan",
+  "name": "尹寿山",
+  "generation": "寿",
+  "generationIndex": 5,
+  "school": "天津启明茶社",
+  "bio": "马德禄四弟子，天津启明茶社主力演员，擅长捧哏与双簧；尹笑声之父。",
+  "works": ["双簧"],
+  "sources": ["src-wiki-lineage"],
+  "portraitKind": "placeholder"
+}
