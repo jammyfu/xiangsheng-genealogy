@@ -6,6 +6,8 @@ import {
   MagnifyingGlass,
   CaretDown,
   X,
+  ArrowsOut,
+  ArrowsIn,
 } from "@phosphor-icons/react";
 import { peopleById, searchPeople, mentorsOf } from "../lib/catalog";
 import { eventsForPerson } from "../lib/events";
@@ -26,6 +28,33 @@ export function Studio() {
   const knownPerson = id !== undefined && Object.hasOwn(peopleById, id);
   const selected = knownPerson ? peopleById[id] : peopleById["hou-baolin"];
   const motionRoot = useRef<HTMLElement>(null);
+  const [immersive, setImmersive] = useState(false);
+  useEffect(() => {
+    const sync = () =>
+      setImmersive(document.fullscreenElement === motionRoot.current);
+    const escape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setImmersive(false);
+    };
+    document.addEventListener("fullscreenchange", sync);
+    document.addEventListener("keydown", escape);
+    return () => {
+      document.removeEventListener("fullscreenchange", sync);
+      document.removeEventListener("keydown", escape);
+    };
+  }, []);
+  const toggleFullscreen = async () => {
+    if (immersive) {
+      setImmersive(false);
+      if (document.fullscreenElement) await document.exitFullscreen();
+    } else {
+      setImmersive(true);
+      try {
+        await motionRoot.current?.requestFullscreen?.();
+      } catch {
+        /* In-page immersive layout remains available. */
+      }
+    }
+  };
   const transitioning = useStudioMotion(motionRoot, state.view, selected.id);
   const [graphMode, setGraphMode] = useState<"scroll" | "tree">(
     state.view === "tree" ? "tree" : "scroll",
@@ -82,7 +111,7 @@ export function Studio() {
   return (
     <main
       ref={motionRoot}
-      className={`ink-app view-${state.view}`}
+      className={`ink-app view-${state.view}${immersive ? " is-immersive" : ""}`}
       data-transition={transitioning ? "moving" : "settled"}
     >
       <a className="skip-link" href="#main-content">
@@ -174,6 +203,7 @@ export function Studio() {
             `正在切换至${VIEWS.find((v) => v.id === state.view)?.label} · `}
           当前人物：{selected.name} ·{" "}
           {selected.generation ? `${selected.generation}字辈` : "字辈待考"}
+          {selected.originalGeneration ? `（原始${selected.originalGeneration}字辈）` : ""}
         </p>
       </section>
       {id && !knownPerson && (
@@ -202,9 +232,11 @@ export function Studio() {
                   {[
                     "hou-baolin",
                     "ma-sanli",
+                    "ma-delu",
                     "guo-degang",
                     "liu-baorui",
                     "chang-baokun",
+                    "gao-fengshan",
                   ]
                     .filter((p) => p !== selected.id)
                     .map((p) => (
@@ -276,8 +308,21 @@ export function Studio() {
                 {selected.generation
                   ? `${selected.generation}字辈`
                   : "字辈待考"}
+                {selected.originalGeneration && ` · 原始${selected.originalGeneration}字辈`}
                 {selected.school && ` · ${selected.school}`}
               </p>
+              <section className="summary-story">
+                <h3>人物小传</h3>
+                <p>{selected.bio}</p>
+                {selected.generationNote && <div className="summary-generation-note">
+                  <strong>字辈调整{selected.originalGeneration && ` · 原${selected.originalGeneration} → ${selected.generation ?? '待考'}`}</strong>
+                  <p>{selected.generationNote}</p>
+                </div>}
+                {!!selected.notes?.length && <details key={selected.id}>
+                  <summary>师承补记 · {selected.notes.length} 条</summary>
+                  {selected.notes.map((note, index) => <p key={index}>{note}</p>)}
+                </details>}
+              </section>
               <section>
                 <h3>师承</h3>
                 {mentors.length ? (
@@ -355,6 +400,19 @@ export function Studio() {
               : "沿年查事 · 循源核实"}
         </span>
         <span>同一人物 · 多种阅法</span>
+        {immersive && graph && (
+          <button aria-expanded={drawer} onClick={() => setDrawer(!drawer)}>
+            {drawer ? "收起资料" : "人物资料"}
+          </button>
+        )}
+        <button
+          className="fullscreen-toggle"
+          aria-pressed={immersive}
+          onClick={toggleFullscreen}
+        >
+          {immersive ? <ArrowsIn size={18} /> : <ArrowsOut size={18} />}
+          {immersive ? "退出全屏" : "全屏阅读"}
+        </button>
         <button onClick={() => openPanel("evidence")}>
           查看出处
           <ArrowUpRight size={19} />

@@ -157,3 +157,30 @@
     flex-wrap: wrap;
   }
 }
+
+/* Keep all four navigation targets usable on touch screens. */
+.journey-controls {
+  gap: 10px;
+}
+.journey-controls button {
+  min-width: 64px;
+  min-height: 44px;
+}
+.journey-slider input {
+  min-height: 44px;
+}
+@media (max-width: 700px) {
+  .journey-controls {
+    flex-wrap: wrap;
+  }
+  .journey-slider {
+    flex-basis: 100%;
+    order: -1;
+  }
+  .journey-controls button {
+    min-width: 44px;
+    flex: 1;
+    font-size: 12px;
+    gap: 5px;
+  }
+}

@@ -1,4 +1,7 @@
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { readTimelineState, updateTimelineSearch } from "../lib/timeline-state";
+import type { TimelineState } from "../lib/timeline-state";
 import type { Person } from "../types";
 import type { LifeEvent } from "../event-types";
 import {
@@ -17,11 +20,19 @@ export function TimelineView({
   person: Person;
   onSelect: (id: string) => void;
 }) {
-  const [scope, setScope] = useState<"person" | "all">("person");
-  const [kind, setKind] = useState("");
-  const [presentation, setPresentation] = useState<"journey" | "list">(
-    "journey",
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { scope, kind, presentation, event } = readTimelineState(
+    location.search,
   );
+  const change = (patch: Partial<TimelineState>, replace = false) =>
+    navigate(
+      {
+        pathname: location.pathname,
+        search: updateTimelineSearch(location.search, patch),
+      },
+      { replace },
+    );
   const kindRef = useRef<HTMLSelectElement>(null);
   const list = useMemo(() => {
     let result = scope === "all" ? events : eventsForPerson(person.id);
@@ -57,6 +68,22 @@ export function TimelineView({
     }
     return sortEvents(result.filter((e) => !kind || e.kind === kind));
   }, [person, scope, kind]);
+  const selectedEvent =
+    list.find((item) => item.id === event)?.id ?? list[0]?.id ?? "";
+  useEffect(() => {
+    // Canonicalize stale/shared IDs against the actual filtered records.
+    if (event !== selectedEvent) {
+      navigate(
+        {
+          pathname: location.pathname,
+          search: updateTimelineSearch(location.search, {
+            event: selectedEvent,
+          }),
+        },
+        { replace: true },
+      );
+    }
+  }, [event, selectedEvent, location.pathname, location.search, navigate]);
   return (
     <section className="timeline-scene">
       <header className="section-heading">
@@ -74,14 +101,14 @@ export function TimelineView({
             <button
               className={scope === "person" ? "active" : ""}
               aria-pressed={scope === "person"}
-              onClick={() => setScope("person")}
+              onClick={() => change({ scope: "person", event: "" })}
             >
               当前人物
             </button>
             <button
               className={scope === "all" ? "active" : ""}
               aria-pressed={scope === "all"}
-              onClick={() => setScope("all")}
+              onClick={() => change({ scope: "all", event: "" })}
             >
               全部纪事
             </button>
@@ -90,7 +117,7 @@ export function TimelineView({
             ref={kindRef}
             aria-label="筛选事件类型"
             value={kind}
-            onChange={(e) => setKind(e.target.value)}
+            onChange={(e) => change({ kind: e.target.value, event: "" })}
           >
             <option value="">所有事件</option>
             {Object.entries(EVENT_KIND_LABELS).map(([id, label]) => (
@@ -105,26 +132,29 @@ export function TimelineView({
         <button
           aria-pressed={presentation === "journey"}
           className={presentation === "journey" ? "active" : ""}
-          onClick={() => setPresentation("journey")}
+          onClick={() => change({ presentation: "journey" })}
         >
           立体回廊
         </button>
         <button
           aria-pressed={presentation === "list"}
           className={presentation === "list" ? "active" : ""}
-          onClick={() => setPresentation("list")}
+          onClick={() => change({ presentation: "list" })}
         >
           纪事列表
         </button>
       </div>
       {presentation === "journey" && list.length > 0 ? (
         <TimelineJourney
-          key={`${scope}-${person.id}-${kind}`}
+          selectedId={selectedEvent}
+          onEventSelect={(id) => change({ event: id })}
           items={list}
           onSelect={scope === "all" ? onSelect : undefined}
         />
       ) : (
         <EventList
+          selectedId={selectedEvent}
+          onEventSelect={(id) => change({ event: id, presentation: "journey" })}
           items={list}
           onSelect={scope === "all" ? onSelect : undefined}
           emptyTitle={kind ? "没有匹配的事件" : undefined}
@@ -138,7 +168,7 @@ export function TimelineView({
           onResetFilter={
             kind
               ? () => {
-                  setKind("");
+                  change({ kind: "", event: "" });
                   kindRef.current?.focus();
                 }
               : undefined

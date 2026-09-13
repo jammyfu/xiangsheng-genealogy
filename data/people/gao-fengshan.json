@@ -2,7 +2,7 @@
   "birthYear": 1921,
   "deathYear": 1995,
   "portraitKind": "placeholder",
-  "disputed": true,
+  "disputed": false,
   "works": [
     "数来宝",
     "金针记"
@@ -12,8 +12,10 @@
   ],
   "id": "gao-fengshan",
   "name": "高凤山",
-  "generation": "寿",
-  "generationIndex": 5,
+  "generation": "宝",
+  "generationIndex": 6,
+  "originalGeneration": "寿",
+  "generationNote": "随师父高德亮顺降一辈：原始寿字辈，行业通行宝字辈；后认张寿臣为义父，宝字辈身份进一步确立。",
   "school": "北京",
-  "bio": "高德亮弟子，以数来宝、快板书名世，亦能相声。传石富宽等。部辈是否与主流「寿」完全对齐，文献有异说。"
+  "bio": "高德亮弟子，亦师从曹德奎学习数来宝、快板，是高派快板创始人。以数来宝、快板书名世，亦能相声；行业通行宝字辈，传石富宽及十位同门弟子。"
 }

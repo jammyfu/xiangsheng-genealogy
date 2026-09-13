@@ -291,13 +291,17 @@ describe("spatial scroll DOM lifecycle (GPU root mocked)", () => {
 
   it("wakes a settled demand-rendered scene when the pointer moves after initial configuration", async () => {
     const state = await mount();
+    vi.spyOn(state.area(), "getBoundingClientRect").mockReturnValue({
+      x: 0, y: 0, top: 0, left: 0, right: viewport.width, bottom: viewport.height,
+      width: viewport.width, height: viewport.height, toJSON: () => ({}),
+    });
     const motion = worldProps().motion.current;
     motion.open = 1;
     motion.moving = false;
     motion.pointer = { x: 0, y: 0 };
     gpu.invalidate.mockClear();
     await pointer(state.area(), "pointermove", 900, 175);
-    expect(motion.target).toEqual({ x: 0.5, y: 0.5 });
+    expect(motion.target).toEqual({ x: -0.5, y: -0.5 });
     expect(gpu.invalidate).toHaveBeenCalledOnce();
   });
 

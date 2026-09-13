@@ -21,6 +21,15 @@ import {
 } from "../lib/atlas";
 import type { AtlasCamera, AtlasNode } from "../lib/atlas";
 import "./atlas-graph.css";
+import {
+  buildFixedScroll,
+  boundScrollCamera,
+  focusScrollCamera,
+  minimumScrollScale,
+} from "../lib/fixed-scroll";
+
+import type { SpatialTreeControls } from "./SpatialTree";
+import { AtlasNames } from './AtlasNames';
 
 const SpatialTree = lazy(() => import("./SpatialTree"));
 const ScrollScene = lazy(() => import("./ScrollScene"));
@@ -65,6 +74,7 @@ export function AtlasGraph({
   generation,
   onSelect,
 }: AtlasGraphProps) {
+  const treeControls = useRef<SpatialTreeControls | null>(null);
   const [webglUnavailable, setWebglUnavailable] = useState(false);
   const hostRef = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
@@ -76,6 +86,7 @@ export function AtlasGraph({
   const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set());
   const [collapsedIds, setCollapsedIds] = useState<Set<string>>(new Set());
   const [showAll, setShowAll] = useState(false);
+  const [readable, setReadable] = useState(true);
   const [dragging, setDragging] = useState(false);
   const initializedModes = useRef(
     new Set<AtlasMode>(Object.keys(rememberedCameras) as AtlasMode[]),
@@ -89,7 +100,7 @@ export function AtlasGraph({
   const previousSelected = useRef(selectedId);
   const graph = useMemo(
     () =>
-      buildAtlas({
+      (mode === "scroll" ? buildFixedScroll : buildAtlas)({
         people,
         edges,
         selectedId,
@@ -123,12 +134,17 @@ export function AtlasGraph({
     (next: Camera | ((previous: Camera) => Camera)) => {
       initializedModes.current.add(mode);
       setCameras((previous) => {
-        const value = typeof next === "function" ? next(previous[mode]) : next;
+        const proposed =
+          typeof next === "function" ? next(previous[mode]) : next;
+        const value =
+          mode === "scroll"
+            ? boundScrollCamera(proposed, size, graph)
+            : proposed;
         rememberedCameras[mode] = value;
         return { ...previous, [mode]: value };
       });
     },
-    [mode],
+    [mode, size, graph],
   );
 
   useEffect(() => {
@@ -155,14 +171,50 @@ export function AtlasGraph({
     )
       return;
     const node = lookup.get(selectedId);
-    if (node) updateCamera(focusAtlasCamera(size, node));
+    if (node)
+      updateCamera(
+        mode === "scroll"
+          ? focusScrollCamera(size, graph, selectedId)
+          : focusAtlasCamera(size, node),
+      );
   }, [mode, size, updateCamera, lookup, selectedId]);
 
+  const previousViewport = useRef(size);
+  useEffect(() => {
+    const previous = previousViewport.current;
+    if (previous.width === size.width && previous.height === size.height)
+      return;
+    previousViewport.current = size;
+    if (showAll) {
+      updateCamera(fitAtlasCamera(size, graph.bounds));
+      return;
+    }
+    const node = lookup.get(selectedId);
+    if (node)
+      updateCamera((current) => ({
+        scale: current.scale,
+        x: size.width * 0.45 - node.x * current.scale,
+        y:
+          Math.min(size.height * 0.46, size.height - 150) -
+          node.y * current.scale,
+      }));
+  }, [size, showAll, graph.bounds, lookup, selectedId, updateCamera]);
+
   const centerSelected = useCallback(() => {
+    if (mode === "tree" && treeControls.current) { treeControls.current.focus(); return; }
     const node = lookup.get(selectedId);
     if (!node) return;
-    updateCamera(focusAtlasCamera(size, node));
-  }, [lookup, selectedId, size, updateCamera]);
+    updateCamera(
+      mode === "scroll"
+        ? focusScrollCamera(
+            size,
+            graph,
+            selectedId,
+            Math.max(0.75, camera.scale),
+          )
+        : focusAtlasCamera(size, node),
+    );
+  }, [lookup, selectedId, size, updateCamera, mode, graph, camera.scale]);
 
   useEffect(() => {
     if (previousSelected.current === selectedId) return;
@@ -174,8 +226,9 @@ export function AtlasGraph({
 
   const zoom = useCallback(
     (factor: number, point?: { x: number; y: number }) => {
+      if (mode === "tree" && treeControls.current) { treeControls.current.zoom(factor); return; }
       updateCamera((previous) => {
-        const scale = clampAtlasScale(previous.scale * factor);
+        const scale = Math.max(mode === "scroll" ? minimumScrollScale(size, graph) : MIN_ATLAS_SCALE, clampAtlasScale(previous.scale * factor));
         const anchor = point ?? { x: size.width / 2, y: size.height / 2 };
         const ratio = scale / previous.scale;
         return {
@@ -185,13 +238,14 @@ export function AtlasGraph({
         };
       });
     },
-    [size, updateCamera],
+    [size, updateCamera, mode, graph],
   );
 
   useEffect(() => {
     const svg = hostRef.current;
     if (!svg) return;
     const wheel = (event: WheelEvent) => {
+      if (mode === "tree" && treeControls.current) return;
       if (!event.ctrlKey && !event.metaKey) return;
       event.preventDefault();
       const rect = svg.getBoundingClientRect();
@@ -202,9 +256,10 @@ export function AtlasGraph({
     };
     svg.addEventListener("wheel", wheel, { passive: false });
     return () => svg.removeEventListener("wheel", wheel);
-  }, [zoom]);
+  }, [zoom, mode]);
 
   const fitGraph = () => {
+    if (mode === "tree" && treeControls.current) { treeControls.current.fit(); return; }
     updateCamera(fitAtlasCamera(size, graph.bounds));
   };
 
@@ -224,17 +279,21 @@ export function AtlasGraph({
     });
   };
 
-  const startPan = (event: PointerEvent<SVGSVGElement | HTMLDivElement>) => {
+  const startPan = (
+    event: PointerEvent<SVGSVGElement | HTMLDivElement>,
+    displayed?: Camera,
+  ) => {
     if (
       event.button !== 0 ||
       (event.target as Element).closest("[data-atlas-control]")
     )
       return;
+    if (displayed) updateCamera({ ...displayed });
     drag.current = {
       pointer: event.pointerId,
       x: event.clientX,
       y: event.clientY,
-      camera,
+      camera: displayed ? { ...displayed } : camera,
     };
     event.currentTarget.setPointerCapture(event.pointerId);
     setDragging(true);
@@ -245,7 +304,10 @@ export function AtlasGraph({
     updateCamera({
       ...start.camera,
       x: start.camera.x + event.clientX - start.x,
-      y: start.camera.y + event.clientY - start.y,
+      y:
+        mode === "scroll"
+          ? start.camera.y
+          : start.camera.y + event.clientY - start.y,
     });
   };
   const endPan = (event: PointerEvent<SVGSVGElement | HTMLDivElement>) => {
@@ -256,6 +318,7 @@ export function AtlasGraph({
       event.currentTarget.releasePointerCapture(event.pointerId);
   };
   const onGraphKey = (event: KeyboardEvent<SVGSVGElement | HTMLDivElement>) => {
+    if ((event.target as Element).closest('[data-atlas-control]')) return;
     const shifts: Record<string, [number, number]> = {
       ArrowLeft: [70, 0],
       ArrowRight: [-70, 0],
@@ -288,8 +351,14 @@ export function AtlasGraph({
     action();
   };
   const revealFocusedNode = (node: AtlasNode) => {
+    if (mode === "scroll") {
+      updateCamera(focusScrollCamera(size, graph, node.person.id, Math.max(0.75, camera.scale)));
+      return;
+    }
     if (camera.scale < 0.75) {
-      updateCamera(focusAtlasCamera(size, node));
+      updateCamera(
+        focusAtlasCamera(size, node),
+      );
       return;
     }
     const screenX = node.x * camera.scale + camera.x;
@@ -312,7 +381,7 @@ export function AtlasGraph({
   return (
     <div
       ref={hostRef}
-      className={`atlas-graph atlas-graph--${mode}${dragging ? " atlas-graph--dragging" : ""}`}
+      className={`atlas-graph atlas-graph--${mode}${mode === 'tree' && spatialTree ? ' atlas-graph--cosmic' : ''}${dragging ? " atlas-graph--dragging" : ""}`}
     >
       <div className="atlas-topline">
         <span className="atlas-direction">由师而徒，自左向右</span>
@@ -330,26 +399,36 @@ export function AtlasGraph({
           className="atlas-scope"
           aria-pressed={showAll}
           onClick={() => {
+            if (mode === "scroll") {
+              setReadable(false);
+              fitGraph();
+              return;
+            }
             setShowAll(!showAll);
             setCollapsedIds(new Set());
             setExpandedIds(new Set());
           }}
         >
-          {showAll ? "收回当前一脉" : `展开全谱 · ${people.length} 人`}
+          {mode === "scroll"
+            ? `长卷全貌 · ${people.length} 人`
+            : showAll
+              ? "收回当前一脉"
+              : `展开全谱 · ${people.length} 人`}
         </button>
       </div>
+      {mode === 'scroll' && <AtlasNames people={people} selectedId={selectedId} onSelect={onSelect} />}
+      {mode === 'scroll' && <div className="atlas-reading" role="group" aria-label="姓名显示方式">
+        <button aria-pressed={readable} onClick={() => setReadable(true)}>聚焦文字云</button>
+        <button aria-pressed={!readable} onClick={() => setReadable(false)}>原貌长卷</button>
+      </div>}
       {mode === "tree" && spatialTree ? (
         <Suspense fallback={<div className="scroll-loading">山水正在舒展</div>}>
           <SpatialTree
             graph={graph}
-            view={camera}
             viewport={size}
             selectedId={selectedId}
-            dragging={dragging}
-            onPointerDown={startPan}
-            onPointerMove={movePan}
-            onPointerUp={endPan}
-            onKeyDown={onGraphKey}
+            controlsRef={treeControls}
+            onFailure={() => setSpatialTree(false)}
             active={active}
             onSelect={onSelect}
             onBranch={(id) => {
@@ -361,6 +440,7 @@ export function AtlasGraph({
       ) : mode === "scroll" && !webglUnavailable ? (
         <Suspense fallback={<div className="scroll-loading">山水正在舒展</div>}>
           <ScrollScene
+            readable={readable}
             graph={graph}
             view={camera}
             viewport={size}
@@ -609,13 +689,15 @@ export function AtlasGraph({
           </div>
           <p id="atlas-instructions">
             {mode === "scroll" && !webglUnavailable
-              ? "移鼠展卷 · 拖动游谱 · 点选人物"
-              : "拖动移卷 · 方向键平移 · 点击人物读笺"}
+              ? readable ? "点姓名重排主线 · 缩放调节字号 · 人名册查找" : "拖动移卷 · 点姓名靠近 · 人名册查找"
+              : mode === "tree" && spatialTree
+                ? "点姓名切换主线 · 拖动旋转 · 传人按钮展开 / 收起"
+                : "拖动移卷 · 方向键平移 · 点击人物读笺"}
           </p>
           <p className="atlas-result" role="status">
             {graph.hasFilter
               ? `${graph.matchCount} 人符合筛选 · 浅墨保留师承上下文`
-              : `已展 ${graph.nodes.length} 人 · 历史师承不等同组织归属`}
+              : mode === 'scroll' && readable ? '主线表示师承 · 周围位置不代表辈分' : `已展 ${graph.nodes.length} 人 · 历史师承不等同组织归属`}
           </p>
         </div>
         <div className="atlas-camera" role="group" aria-label="图谱视角">
@@ -624,12 +706,12 @@ export function AtlasGraph({
             title="缩小"
             aria-label="缩小图谱"
             onClick={() => zoom(1 / 1.2)}
-            disabled={camera.scale <= MIN_ATLAS_SCALE}
+            disabled={camera.scale <= (mode === "scroll" ? minimumScrollScale(size, graph) : MIN_ATLAS_SCALE) + .0001}
           >
             <Minus size={18} />
           </button>
           <output aria-label="缩放比例">
-            {Math.round(camera.scale * 100)}%
+            {mode === "tree" && spatialTree ? "3D" : `${Math.round(camera.scale * 100)}%`}
           </output>
           <button
             type="button"

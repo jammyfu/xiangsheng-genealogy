@@ -1,141 +1,121 @@
 <p align="center">中文 | <a href="README.en.md">English</a></p>
 
-<div align="center">
-  <img src="public/seal.svg" alt="相声家谱印章" width="96">
-  <h1>相声家谱（Xiangsheng Genealogy）</h1>
-  <p><strong>开源水墨三维图谱，画出相声有出处的师承</strong></p>
-  <p>
-    <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white" alt="React 19">
-    <img src="https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white" alt="Vite">
-    <img src="https://img.shields.io/badge/Three.js-r180-000000?logo=threedotjs&logoColor=white" alt="Three.js">
-    <img src="https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white" alt="TypeScript">
-    <img src="https://img.shields.io/badge/License-MIT-2d6a4f" alt="MIT">
-  </p>
-</div>
+# 相声家谱 · Xiangsheng Genealogy
 
----
+**Xiangsheng Genealogy** is an open-source, source-aware atlas of Chinese
+crosstalk (相声) master–disciple lineages. It turns people, relationships,
+generation names, and their supporting records into an explorable ink-wash
+landscape and a luminous, spatial genealogy.
 
-## 一句话定位
+相声家谱把有出处的师承做成可以阅读、检索和比对的交互图谱：人是节点，师傅到弟子的关系是连线；资料的确认、争议与待考状态会保留在数据和人物信息中。字辈只使用 **德、寿、宝、文、明**，不使用“德寿喜哈”。
 
-**相声家谱（Xiangsheng Genealogy）是开源水墨三维图谱：把有出处的相声师承画成可检索的图。墨点是人，墨线是师傅→弟子。**
+![山水长卷：分层景物、人物名牌与主线关系](docs/qa/layered-scroll-fullscreen.png)
 
-> 字辈只用 **德寿宝文明**（德 / 寿 / 宝 / 文 / 明），不用「德寿喜哈」。本库不托管音频；画像只用占位印、公有领域或外链。
+## 两种阅读场景
 
-## 截图
-
-<div align="center">
-  <img src="docs/studio-desktop.png" alt="桌面端水墨师承图与人物笺" width="720">
-  <p><em>既有工作室截图（桌面）。当前打开默认为侯宝林，不是分步游径。</em></p>
-  <img src="docs/studio-mobile.png" alt="窄屏水墨师承图" width="360">
-  <p><em>既有工作室截图（窄屏）。窄屏仍走 WebGL 长卷；平面 SVG 只在 WebGL 失败或手动切换时出现。</em></p>
-</div>
-
-更多画面见 [docs/README.md](docs/README.md)。
-
-## 核心功能
-
-| 模块 | 能力 |
+| 山水长卷 | 世代谱系 |
 | --- | --- |
-| **三维师承图** | 墨点是人，墨线是师傅→弟子；选中后镜头对准人物 |
-| **人物笺** | 小传、字辈、作品**标题**、出处；不播放、不提供音频下载 |
-| **默认打开** | `/` 转到 `/p/hou-baolin`（侯宝林）。图上会展开其师承上下文（含朱阔泉、马季等），但没有分步「游径」控件 |
-| **一脉选择** | 下拉换根：侯宝林、马三立、郭德纲、刘宝瑞、常宝堃 |
-| **检索与字辈** | 姓名 / 艺名 / id；德 / 寿 / 宝 / 文 / 明 过滤 |
-| **平面回退** | 长卷在 WebGL 不可用时改用 SVG 平面谱系；世代谱系可手动「切换平面谱系」。不是按窄屏自动切换 |
-| **深链接** | `/p/:id` |
-| **开源数据** | `data/people/*.json`、`data/edges.json`、`data/sources.json`、`data/events.json` 与 JSON Schema |
+| ![山水长卷界面](docs/qa/continuous-scroll-fullscreen.png) | ![选中主脉络的世代谱系](docs/qa/force-tree-selected-lineage.png) |
+| 以横向画卷展开人物关系。远山、水面、桥屋和前景景物分层移动，人物名牌置于景深中。 | 以三维星云和星点呈现世代关系。选中人物后，主脉络、上下游关系和连接线保持清晰可读。 |
 
-界面另有山水长卷、世代谱系、人物书笺、生平年表等浏览视图。当前 GPU 对稿仍受环境限制，合并不代表设计稿复刻已通过验收。后续阶段见 [开发路线](docs/next-development-roadmap.md)。
+### 山水长卷
 
-## 技术栈
+- **连续画卷与全屏自适应**：画面随窗口尺寸铺展；名字和背景遵循不同的运动层，保持阅读焦点。
+- **有层次的视差**：远山、岸线、屋桥、水面、近景器物和人物标签使用不同位移与缩放，横向浏览与上下指针移动都能感到空间深度。
+- **水面与行船**：水纹以低成本循环流动；船只沿画卷坐标前进，速度由整体画面位置换算，避免与人物尺度失配。
+- **可读的人名簇**：按世代形成竖向、立体的名字簇，而不是一长排平铺；主分支在前，旁支退至后方但仍可悬停和点击。
+- **关系强调**：选中人物时，其师承链路使用朱砂色前置线条；悬停旁支可临时提升对应名牌和关系线，便于对照。
 
-```
-┌──────────────────────────────────────────────────────────────┐
-│  App（Vite）                                                 │
-│  ├── React 19 + TypeScript                                   │
-│  ├── React Three Fiber + Drei + Three.js                     │
-│  ├── GSAP                                                    │
-│  ├── react-router-dom（深链接 /p/:id）                        │
-│  ├── Phosphor icons                                          │
-│  └── 字体：Noto Serif SC / Ma Shan Zheng                     │
-├──────────────────────────────────────────────────────────────┤
-│  Data                                                        │
-│  └── data/people · edges.json · sources.json · events.json   │
-└──────────────────────────────────────────────────────────────┘
-```
+![前景连线、姓名底牌与悬停状态](docs/qa/foreground-line-hover.png)
 
-界面用宣纸色 `#F3EBD9`、墨灰、朱砂印 `#8B1E1E`。
+### 世代谱系 · 群星璀璨
 
-## 快速开始
+- **星云背景**：半透明的青蓝、紫灰星云、粒子和微光组成深空底板，让谱系成为可阅读的“群星”而非一张静态图。
+- **立体世代关系**：主线沿前景展开，非主线在后方缩小并保留可点击区域；师徒连线随着节点状态高亮。
+- **点击与悬停**：点击人物会维持当前主脉络的选中状态；悬停人物会显示其关系范围和视觉反馈，便于在密集谱系中比较。
+- **镜头操作**：拖拽旋转，滚轮缩放；界面为键盘与触屏提供相应的可访问路径，并根据 `prefers-reduced-motion` 降低动态效果。
 
-需要 Node.js 与 npm。本仓库 CI 使用 Node 22。
+![世代分区与选中谱系](docs/qa/generation-decks.png)
+
+## 主要功能
+
+- React、Vite、TypeScript、React Three Fiber、Drei、Three.js 和 `3d-force-graph`
+- 宣纸、水墨、朱砂的视觉系统，搭配 Noto Serif SC 和马善政书法字体
+- 深链接人物页：`/p/:id`，并支持画卷、世代谱系、时间线和书页等阅读视图
+- 搜索与德 / 寿 / 宝 / 文 / 明字辈筛选
+- 人物笺呈现小传、字辈、代表作品、关系说明与资料出处
+- 移动端 SVG / DOM 回退，保证非 WebGL 环境也能阅读核心内容
+- 机器可读的 JSON 数据、关系边、事件、来源与 Schema
+
+## 如何浏览
+
+1. 从首页或任意人物的深链接进入，例如 `/p/hou-baolin?view=tree`。
+2. 在**世代谱系**中点击一个人物，查看其主脉络；拖拽和缩放可检查后方的旁支。
+3. 把指针放到名字或节点上，比较该人物相关的师承范围；点击关系卡或节点可切换焦点。
+4. 在**山水长卷**中左右浏览。名字与背景保持相对稳定，前景、远景与水面按不同速度运动。
+5. 用搜索和字辈筛选收敛结果；筛选不会删除原始师承数据，只改变当前阅读范围。
+
+## 数据与史料原则
+
+数据目录是项目的唯一维护来源。每个人物至少关联一条资料来源；关系、事件和组织状态独立表达，避免用一个标签覆盖不同事实。
+
+| 内容 | 路径 | 说明 |
+| --- | --- | --- |
+| 人物 | `data/people/*.json` | 姓名、别名、字辈、小传、作品和来源 |
+| 师承关系 | `data/edges.json` | 师傅 → 弟子关系及争议标记 |
+| 来源 | `data/sources.json` | 报道、馆藏、机构页面与许可信息 |
+| 生平与组织事件 | `data/events.json` | 事件和时间线，避免删除历史关系 |
+| Schema | `data/schemas/` | 结构约束与校验规则 |
+
+录入时区分“正式师徒”“口盟/学员”“家传”“争议关系”“清门或退出”等不同情况。未能充分核验的师承关系标记为 `"disputed": true`，并保留来源与说明，而不是把不确定信息伪装成结论。扩展资料的核查过程见 [2026-09-12 师承审计](docs/lineage-audit-2026-09-12.md) 和 [数据覆盖说明](docs/data-coverage.md)。
+
+## 本地启动
 
 ```bash
-git clone https://github.com/jammyfu/xiangsheng-genealogy.git
-cd xiangsheng-genealogy
 npm install
-npm test          # vitest
 npm run dev
 ```
 
-生产构建：
+默认 Vite 开发服务器会打印本地访问地址。生产构建与预览：
 
 ```bash
 npm run build
 npm run preview
 ```
 
-## 数据
-
-当前目录（会随提交增减）：`data/people/` **119** 份人物 JSON，另有 105 条师承、25 条来源、11 条正式事件。数字只表示已收录范围，不表示全量核验或完整名录。详见 [数据覆盖说明](docs/data-coverage.md)。
-
-| 类型 | 路径 |
-| --- | --- |
-| 人物 | `data/people/*.json` |
-| 师承 | `data/edges.json` |
-| 出处 | `data/sources.json` |
-| 生平事件 | `data/events.json` |
-| Schema | `data/schemas/` |
-
-`data/` 是应用的维护目录与事实来源。改正人物或关系、补出处、记事件，都直接改这些文件。每条说法绑来源；有争议或归因说法用具名、有出处的视角。退社、除名、停演记为独立事件，不删历史师承边。
-
-提交前校验：
+运行完整的单元与数据校验：
 
 ```bash
 npm test
-npm run build
+npm run lint
 ```
 
-每人至少一条出处。未定师承标 `"disputed": true`。字辈仅 德 / 寿 / 宝 / 文 / 明；第 1–3 代与第 9 代及以后可为 `null`。作品只记标题。
+## 维护数据
 
-原始 seed 只作历史对照，缺后续更正，不能替换维护目录。导出脚本把 `people/` 与 `edges.json` 写到新的系统临时目录并打印路径：
+编辑 `data/` 下的维护目录，不要用历史 seed 覆盖现有目录。每次调整人物、关系或事件后，运行测试与构建；新主张应带上来源，存在分歧时应该明确记录分歧。
+
+原始 seed 只保留作历史参考。若需要导出供人工核对的副本，可运行：
 
 ```bash
 node scripts/emit-seed.mjs
-```
-
-指定目录时，父目录须已存在，且目标不能落在 `data/` 内：
-
-```bash
 node scripts/emit-seed.mjs --out /tmp/xiangsheng-seed-review
 ```
 
-脚本拒绝已存在的输出目录，以及经符号链接指向 `data/` 的路径。它不重写、不清空维护目录。历史导出单独审阅；经出处核对的更正逐条写回维护文件。
+导出器只写入新的空目录，拒绝写入 `data/` 或覆盖既有目录。
 
-## 许可
+## 项目文档
+
+- [效果规划与验收路线](docs/next-development-roadmap.md)
+- [空间长卷设计与 QA](docs/spatial-scroll-qa.md)
+- [连续长卷说明](docs/continuous-scroll.md)
+- [资料首批研究记录](docs/research-first-batch.md)
+- [贡献指南](CONTRIBUTING.md)
+- [机器可读项目摘要](llms.txt)
+
+## 许可与署名
 
 - 源码：[MIT](LICENSE)
-- 数据说明：[NOTICE](NOTICE)、[ATTRIBUTION.md](ATTRIBUTION.md)
-- 源自维基百科的表格仍为 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+- 数据与素材说明：[NOTICE](NOTICE)、[ATTRIBUTION.md](ATTRIBUTION.md)
+- 维基百科衍生表格遵循 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 
-## 贡献
-
-见 [CONTRIBUTING.md](CONTRIBUTING.md)。机器可读摘要：[llms.txt](llms.txt)。英文说明：[README.en.md](README.en.md)。
-
-这是研究可视化，不是排辈法庭。优先已刊表格，不收传闻。
-
----
-
-<div align="center">
-  <sub>相声家谱 · Xiangsheng Genealogy · MIT</sub>
-</div>
+本仓库不托管音频；人物形象使用占位印、公有领域素材或外链，具体来源以数据与署名文件为准。

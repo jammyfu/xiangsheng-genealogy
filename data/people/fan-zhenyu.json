@@ -1,17 +1,27 @@
 {
-  "birthYear": 1935,
-  "deathYear": 2021,
+  "birthYear": 1927,
+  "deathYear": 2008,
   "portraitKind": "placeholder",
   "works": [
-    "钓鱼（捧哏）"
+    "钓鱼（捧哏）",
+    "跟谁对着干",
+    "前线日记",
+    "英雄岛"
   ],
   "sources": [
-    "src-wiki-lineage"
+    "src-wiki-lineage",
+    "src-wiki-fan-zhenyu",
+    "src-sohu-guo-fan-partnership-20090727",
+    "src-iqiyi-gao-fan-diaoyu-2017"
   ],
   "id": "fan-zhenyu",
   "name": "范振钰",
   "generation": "文",
   "generationIndex": 7,
-  "school": "天津",
-  "bio": "班德贵弟子。长期与高英培合作，是文字辈捧哏的代表。"
+  "school": "班德贵门下 · 天津／全总文工团",
+  "bio": "天津出生、祖籍河北容城的相声演员。1950年拜班德贵为师，属文字辈，出师后入天津和平区曲艺团；与高英培长期搭档，专事捧哏。1958年二人将整理后的《钓鱼》搬上舞台；1979年同调入全总文工团。1998年曾与郭德纲搭档演出；2008年11月17日逝世。",
+  "notes": [
+    "高英培与郭德纲均为舞台搭档，不建立师承线。",
+    "央视2006年公开师承表列赵津生、腾生祥、彭华、于志勇、郭伯良、何世铭、王传林、丛波、杨俊杰、马腾翔、刘春山、张德起和高峰为其门下；本轮已据表建立分支，个体生平与拜师细节仍待逐人补证。"
+  ]
 }

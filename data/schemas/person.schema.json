@@ -26,6 +26,11 @@
       ]
     },
     "generationIndex": { "type": "integer", "minimum": 1, "maximum": 10 },
+    "originalGeneration": {
+      "type": "string",
+      "enum": ["德", "寿", "宝", "文", "明"]
+    },
+    "generationNote": { "type": "string" },
     "birthYear": { "type": ["integer", "null"] },
     "deathYear": { "type": ["integer", "null"] },
     "floruit": { "type": "string" },

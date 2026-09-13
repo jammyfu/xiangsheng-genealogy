@@ -149,6 +149,9 @@ export default function InkWorld(props: Props) {
           map: texture,
           side: THREE.BackSide,
           fog: false,
+          toneMapped: false,
+          transparent: true,
+          opacity: 0.55,
           depthWrite: false,
         }),
       );
@@ -159,23 +162,23 @@ export default function InkWorld(props: Props) {
     load("/assets/spatial/ink-mountains.webp", (texture) => {
       const layers =
         props.mode === "timeline"
-          ? Math.max(8, Math.ceil(props.items.length / 2))
-          : 7;
+          ? Math.max(5, Math.ceil(props.items.length / 3) + 3)
+          : 3;
       for (let i = 0; i < layers; i++) {
         for (const side of [-1, 1]) {
           const material = new THREE.MeshBasicMaterial({
             map: texture,
             transparent: true,
             alphaTest: 0.025,
-            opacity: i % 3 === 0 ? 0.8 : 0.58,
+            opacity: i === 0 ? 0.32 : 0.2,
             depthWrite: false,
             side: THREE.DoubleSide,
           });
           const mountain = mesh(
-            new THREE.PlaneGeometry(42 + (i % 3) * 7, (42 + (i % 3) * 7) / 3),
+            new THREE.PlaneGeometry(36 + (i % 3) * 6, (36 + (i % 3) * 6) / 3),
             material,
           );
-          mountain.position.set(side * (21 + (i % 2) * 5), 2, 8 - i * 17);
+          mountain.position.set(side * (24 + (i % 2) * 5), -1, -24 - i * 24);
           mountain.rotation.y = side * 0.3;
           mountain.name = `ink-mountain-${i}-${side}`;
         }
@@ -314,7 +317,7 @@ export default function InkWorld(props: Props) {
       camera.updateMatrixWorld();
       panels.forEach((panel) => panel.quaternion.copy(camera.quaternion));
       const projected = new THREE.Vector3();
-      props.items.forEach((item) => {
+      props.items.forEach((item, itemIndex) => {
         const element = labels.current.get(item.id);
         if (!element) return;
         projected.set(...item.position).project(camera);
@@ -324,7 +327,16 @@ export default function InkWorld(props: Props) {
           new THREE.Vector3(...item.position),
         );
         const current = item.id === latest.current.selectedId;
+        // Keep the current stop and three upcoming papers readable. Past stops
+        // remain reachable via navigation/list, but cannot cover the new stop.
+        const inReadingWindow =
+          props.mode !== "timeline" ||
+          (itemIndex >= (latest.current.index ?? 0) &&
+            itemIndex <= (latest.current.index ?? 0) + 3);
+        const panel = panels.get(item.id);
+        if (panel) panel.visible = inReadingWindow;
         const visible =
+          inReadingWindow &&
           projected.z < 1 &&
           projected.z > -1 &&
           x > -90 &&
@@ -356,7 +368,7 @@ export default function InkWorld(props: Props) {
         const item = props.items.find((item) => item.generation === generation);
         if (!item) return;
         projected.set(item.position[0], 7.5, item.position[2]).project(camera);
-        element.style.transform = `translate(${((projected.x + 1) * width) / 2}px, ${((1 - projected.y) * height) / 2}px) translate(-50%, -50%)`;
+        element.style.transform = `translate(${((projected.x + 1) * width) / 2}px, ${Math.max(200, ((1 - projected.y) * height) / 2)}px) translate(-50%, -50%)`;
         element.style.visibility =
           projected.z < 1 && projected.z > -1 ? "visible" : "hidden";
       });
@@ -377,13 +389,16 @@ export default function InkWorld(props: Props) {
       let target;
       if (p.mode === "timeline") {
         const t = timePoint(p.index ?? 0);
+        const focus = p.items.find((item) => item.id === p.selectedId);
+        const narrow = width < 700;
+        const focusX = focus?.position[0] ?? t.x;
         target = {
-          x: t.x + 4,
+          x: narrow ? focusX + 1 : t.x + 4,
           y: 7.4,
           z: t.z + 17,
-          tx: t.x,
+          tx: narrow ? focusX : t.x,
           ty: 0.4,
-          tz: t.z - 11,
+          tz: t.z - (narrow ? 7 : 11),
         };
       } else {
         const view = p.view ?? { x: 0, y: 0, scale: 1 };
@@ -439,7 +454,8 @@ export default function InkWorld(props: Props) {
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
       renderer?.setSize(width, height, false);
-      requestDraw();
+      if (initializedWorld.current) navigate();
+      else requestDraw();
     };
     const observer = new ResizeObserver(resize);
     observer.observe(container);

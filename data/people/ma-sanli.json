@@ -7,17 +7,22 @@
   "portraitKind": "placeholder",
   "works": [
     "开粥厂",
+    "逗你玩",
     "买猴",
     "偏方"
   ],
   "sources": [
     "src-wiki-lineage",
-    "src-wiki-ma-sanli"
+    "src-wiki-ma-sanli",
+    "src-cflac-ma-sanli-20210420"
   ],
   "id": "ma-sanli",
   "name": "马三立",
   "generation": "寿",
   "generationIndex": 5,
   "school": "天津",
-  "bio": "周德山弟子，马德禄之子。以「贯口」与冷面见长，是天津卫寿字辈最广为人知的代表。对照路径以此为轴。"
+  "bio": "马德禄之子，自幼向父兄学艺，正式拜师周德山。以贯口与冷面表演见长，天津相声的重要代表。",
+  "notes": [
+    "父兄传艺保留为家学经历，不作为与周德山并列的正式拜师连接。"
+  ]
 }

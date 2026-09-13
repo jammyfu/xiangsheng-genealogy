@@ -1,0 +1,12 @@
+{
+  "id": "cao-dekui",
+  "name": "曹德奎",
+  "aliases": ["曹麻子"],
+  "generation": "德",
+  "generationIndex": 4,
+  "school": "北京",
+  "bio": "曲艺艺人。高凤山曾从其学习数来宝与快板；此边记录技艺师承，与高德亮所传相声门户并列。",
+  "works": ["数来宝", "快板"],
+  "sources": ["src-wiki-lineage"],
+  "portraitKind": "placeholder"
+}

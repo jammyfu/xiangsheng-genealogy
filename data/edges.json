@@ -1,67 +1,15 @@
 {
   "edges": [
     {
-      "id": "zhang-sanlu--zhu-shaowen",
-      "from": "zhang-sanlu",
-      "to": "zhu-shaowen",
+      "id": "a-yantao--chun-changlong",
+      "from": "a-yantao",
+      "to": "chun-changlong",
       "type": "mentor",
       "disputed": true,
       "sources": [
         "src-wiki-lineage"
       ],
-      "note": "与朱绍文是否直系尚待考证。"
-    },
-    {
-      "id": "zhang-sanlu--a-yantao",
-      "from": "zhang-sanlu",
-      "to": "a-yantao",
-      "type": "mentor",
-      "disputed": true,
-      "sources": [
-        "src-wiki-lineage"
-      ],
-      "note": "三大派源头关系待考。"
-    },
-    {
-      "id": "zhang-sanlu--shen-chunhe",
-      "from": "zhang-sanlu",
-      "to": "shen-chunhe",
-      "type": "mentor",
-      "disputed": true,
-      "sources": [
-        "src-wiki-lineage"
-      ],
-      "note": "三大派源头关系待考。"
-    },
-    {
-      "id": "zhu-shaowen--xu-youlu",
-      "from": "zhu-shaowen",
-      "to": "xu-youlu",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "zhu-shaowen--fan-youyuan",
-      "from": "zhu-shaowen",
-      "to": "fan-youyuan",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "zhu-shaowen--fu-yougen",
-      "from": "zhu-shaowen",
-      "to": "fu-yougen",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
+      "note": "现行参考表列此师承；央视2007年转载天津日报旧谱列朱绍文门下。两种来源并列待考。"
     },
     {
       "id": "a-yantao--en-xu",
@@ -74,9 +22,20 @@
       ]
     },
     {
-      "id": "shen-chunhe--feng-kunzhi",
-      "from": "shen-chunhe",
-      "to": "feng-kunzhi",
+      "id": "a-yantao--shen-zhushan",
+      "from": "a-yantao",
+      "to": "shen-zhushan",
+      "type": "mentor",
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "现行参考表所列；央视旧谱另列朱绍文。",
+      "disputed": true
+    },
+    {
+      "id": "ban-degui--fan-zhenyu",
+      "from": "ban-degui",
+      "to": "fan-zhenyu",
       "type": "mentor",
       "disputed": false,
       "sources": [
@@ -84,9 +43,20 @@
       ]
     },
     {
-      "id": "xu-youlu--jiao-dehai",
-      "from": "xu-youlu",
-      "to": "jiao-dehai",
+      "id": "cao-dekui--gao-fengshan",
+      "from": "cao-dekui",
+      "to": "gao-fengshan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "技艺师承：学习数来宝、快板；与高德亮所传相声门户并列记录。"
+    },
+    {
+      "id": "chang-baohua--hou-yaohua",
+      "from": "chang-baohua",
+      "to": "hou-yaohua",
       "type": "mentor",
       "disputed": false,
       "sources": [
@@ -94,9 +64,9 @@
       ]
     },
     {
-      "id": "xu-youlu--liu-dezhi",
-      "from": "xu-youlu",
-      "to": "liu-dezhi",
+      "id": "chang-baohua--niu-qun",
+      "from": "chang-baohua",
+      "to": "niu-qun",
       "type": "mentor",
       "disputed": false,
       "sources": [
@@ -104,9 +74,205 @@
       ]
     },
     {
-      "id": "xu-youlu--lu-dejun",
-      "from": "xu-youlu",
-      "to": "lu-dejun",
+      "id": "chang-baokun--li-boren",
+      "from": "chang-baokun",
+      "to": "li-boren",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "chang-baokun--su-wenmao",
+      "from": "chang-baokun",
+      "to": "su-wenmao",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "chang-lianan--gao-yuankun",
+      "from": "chang-lianan",
+      "to": "gao-yuankun",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "chen-yuting--wang-shichen",
+      "from": "chen-yuting",
+      "to": "wang-shichen",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "chun-changlong--ma-delu",
+      "from": "chun-changlong",
+      "to": "ma-delu",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "正式摆知师承：按马氏支脉资料，春长隆为马德禄公开摆知确立的正式师父。"
+    },
+    {
+      "id": "en-xu--chen-zizhen",
+      "from": "en-xu",
+      "to": "chen-zizhen",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "官方谱系资料增补条目，与常见十一人名录并列记录。"
+    },
+    {
+      "id": "en-xu--dai-zhizhai",
+      "from": "en-xu",
+      "to": "dai-zhizhai",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "en-xu--gao-yufeng",
+      "from": "en-xu",
+      "to": "gao-yufeng",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "en-xu--guo-kuoquan",
+      "from": "en-xu",
+      "to": "guo-kuoquan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "en-xu--hua-ziyuan",
+      "from": "en-xu",
+      "to": "hua-ziyuan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "en-xu--lai-deru",
+      "from": "en-xu",
+      "to": "lai-deru",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "en-xu--li-dexi",
+      "from": "en-xu",
+      "to": "li-dexi",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "en-xu--li-dexiang",
+      "from": "en-xu",
+      "to": "li-dexiang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "en-xu--luo-caiwu",
+      "from": "en-xu",
+      "to": "luo-caiwu",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage",
+        "src-cctv-lineage-20070624"
+      ],
+      "note": "央视2007年名录列恩绪门下；现行参考表标问号，仍保留待考，不补写入室、拜师日期等细节。"
+    },
+    {
+      "id": "en-xu--ma-delu",
+      "from": "en-xu",
+      "to": "ma-delu",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "开蒙师承：马德禄十三岁起随恩绪学艺；其公开摆知的正式师父另记春长隆。"
+    },
+    {
+      "id": "en-xu--wang-baoshan",
+      "from": "en-xu",
+      "to": "wang-baoshan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "en-xu--xie-ruizhi",
+      "from": "en-xu",
+      "to": "xie-ruizhi",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "en-xu--zhang-dequan",
+      "from": "en-xu",
+      "to": "zhang-dequan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "fan-ruiting--jiao-shouhai",
+      "from": "fan-ruiting",
+      "to": "jiao-shouhai",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "参考师承表：范瑞亭传焦寿海。"
+    },
+    {
+      "id": "fan-youyuan--guo-ruilin",
+      "from": "fan-youyuan",
+      "to": "guo-ruilin",
       "type": "mentor",
       "disputed": false,
       "sources": [
@@ -124,29 +290,165 @@
       ]
     },
     {
-      "id": "fan-youyuan--guo-ruilin",
-      "from": "fan-youyuan",
-      "to": "guo-ruilin",
+      "id": "fan-zhenyu--cong-bo",
+      "from": "fan-zhenyu",
+      "to": "cong-bo",
+      "type": "mentor",
+      "sources": [
+        "src-cctv-fan-zhenyu-disciples-20061220"
+      ],
+      "note": "央视2006年公开师承表列录；个体拜师细节待补。",
+      "disputed": false
+    },
+    {
+      "id": "fan-zhenyu--gao-feng",
+      "from": "fan-zhenyu",
+      "to": "gao-feng",
+      "type": "mentor",
+      "sources": [
+        "src-cctv-fan-zhenyu-disciples-20061220"
+      ],
+      "note": "央视2006年公开师承表列录；其余曲种学习经历不并入此师承线。",
+      "disputed": false
+    },
+    {
+      "id": "fan-zhenyu--guo-boliang",
+      "from": "fan-zhenyu",
+      "to": "guo-boliang",
+      "type": "mentor",
+      "sources": [
+        "src-cctv-fan-zhenyu-disciples-20061220"
+      ],
+      "note": "央视2006年公开师承表列录；个体拜师细节待补。",
+      "disputed": false
+    },
+    {
+      "id": "fan-zhenyu--he-shiming",
+      "from": "fan-zhenyu",
+      "to": "he-shiming",
+      "type": "mentor",
+      "sources": [
+        "src-cctv-fan-zhenyu-disciples-20061220"
+      ],
+      "note": "央视2006年公开师承表列录；个体拜师细节待补。",
+      "disputed": false
+    },
+    {
+      "id": "fan-zhenyu--liu-chunshan",
+      "from": "fan-zhenyu",
+      "to": "liu-chunshan",
+      "type": "mentor",
+      "sources": [
+        "src-cctv-fan-zhenyu-disciples-20061220"
+      ],
+      "note": "央视2006年公开师承表列录；个体拜师细节待补。",
+      "disputed": false
+    },
+    {
+      "id": "fan-zhenyu--ma-tengxiang",
+      "from": "fan-zhenyu",
+      "to": "ma-tengxiang",
+      "type": "mentor",
+      "sources": [
+        "src-cctv-fan-zhenyu-disciples-20061220"
+      ],
+      "note": "央视2006年公开师承表列录；个体拜师细节待补。",
+      "disputed": false
+    },
+    {
+      "id": "fan-zhenyu--peng-hua",
+      "from": "fan-zhenyu",
+      "to": "peng-hua",
+      "type": "mentor",
+      "sources": [
+        "src-cctv-fan-zhenyu-disciples-20061220"
+      ],
+      "note": "央视2006年公开师承表列录；个体拜师细节待补。",
+      "disputed": false
+    },
+    {
+      "id": "fan-zhenyu--teng-shengxiang",
+      "from": "fan-zhenyu",
+      "to": "teng-shengxiang",
+      "type": "mentor",
+      "sources": [
+        "src-cctv-fan-zhenyu-disciples-20061220"
+      ],
+      "note": "央视2006年公开师承表列录；姓名异写及个体拜师细节待补。",
+      "disputed": false
+    },
+    {
+      "id": "fan-zhenyu--wang-chuanlin",
+      "from": "fan-zhenyu",
+      "to": "wang-chuanlin",
+      "type": "mentor",
+      "sources": [
+        "src-cctv-fan-zhenyu-disciples-20061220"
+      ],
+      "note": "央视2006年公开师承表列录；其他曲种师承另行核验。",
+      "disputed": false
+    },
+    {
+      "id": "fan-zhenyu--yang-junjie",
+      "from": "fan-zhenyu",
+      "to": "yang-junjie",
+      "type": "mentor",
+      "sources": [
+        "src-cctv-fan-zhenyu-disciples-20061220"
+      ],
+      "note": "央视2006年公开师承表列录；个体拜师细节待补。",
+      "disputed": false
+    },
+    {
+      "id": "fan-zhenyu--yu-zhiyong",
+      "from": "fan-zhenyu",
+      "to": "yu-zhiyong",
+      "type": "mentor",
+      "sources": [
+        "src-cctv-fan-zhenyu-disciples-20061220"
+      ],
+      "note": "央视2006年公开师承表列“于志勇”；“于志远”异写待核。",
+      "disputed": true
+    },
+    {
+      "id": "fan-zhenyu--zhang-deqi",
+      "from": "fan-zhenyu",
+      "to": "zhang-deqi",
+      "type": "mentor",
+      "sources": [
+        "src-cctv-fan-zhenyu-disciples-20061220"
+      ],
+      "note": "央视2006年公开师承表列录；个体拜师细节待补。",
+      "disputed": false
+    },
+    {
+      "id": "fan-zhenyu--zhao-jinsheng",
+      "from": "fan-zhenyu",
+      "to": "zhao-jinsheng",
+      "type": "mentor",
+      "sources": [
+        "src-cctv-fan-zhenyu-disciples-20061220"
+      ],
+      "note": "央视2006年公开师承表列录；个体拜师细节待补。",
+      "disputed": false
+    },
+    {
+      "id": "feng-gong--jia-ling",
+      "from": "feng-gong",
+      "to": "jia-ling",
       "type": "mentor",
       "disputed": false,
       "sources": [
-        "src-wiki-lineage"
-      ]
+        "src-wiki-lineage",
+        "src-360-feng-gong-disciples",
+        "src-huanqiu-feng-gong-lineage"
+      ],
+      "note": "2004年正式拜师并有公开报道。"
     },
     {
-      "id": "fu-yougen--yu-delong",
-      "from": "fu-yougen",
-      "to": "yu-delong",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "en-xu--li-dexi",
-      "from": "en-xu",
-      "to": "li-dexi",
+      "id": "feng-kunzhi--gao-deguang",
+      "from": "feng-kunzhi",
+      "to": "gao-deguang",
       "type": "mentor",
       "disputed": false,
       "sources": [
@@ -174,9 +476,20 @@
       ]
     },
     {
-      "id": "jiao-dehai--zhu-kuoquan",
-      "from": "jiao-dehai",
-      "to": "zhu-kuoquan",
+      "id": "fu-yougen--fan-ruiting",
+      "from": "fu-yougen",
+      "to": "fan-ruiting",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "现行参考表所列；央视2007年旧谱另列沈竹善门下，保留两说。"
+    },
+    {
+      "id": "fu-yougen--yu-delong",
+      "from": "fu-yougen",
+      "to": "yu-delong",
       "type": "mentor",
       "disputed": false,
       "sources": [
@@ -184,9 +497,20 @@
       ]
     },
     {
-      "id": "jiao-dehai--zhang-shouchen",
-      "from": "jiao-dehai",
-      "to": "zhang-shouchen",
+      "id": "gao-deliang--gao-fengshan",
+      "from": "gao-deliang",
+      "to": "gao-fengshan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "原始师承不变；高德亮自降后，高凤山随之由原始寿字辈顺降为行业通行宝字辈。"
+    },
+    {
+      "id": "gao-fengshan--bi-xuexiang",
+      "from": "gao-fengshan",
+      "to": "bi-xuexiang",
       "type": "mentor",
       "disputed": false,
       "sources": [
@@ -194,9 +518,9 @@
       ]
     },
     {
-      "id": "jiao-dehai--chang-lianan",
-      "from": "jiao-dehai",
-      "to": "chang-lianan",
+      "id": "gao-fengshan--chen-xuefu",
+      "from": "gao-fengshan",
+      "to": "chen-xuefu",
       "type": "mentor",
       "disputed": false,
       "sources": [
@@ -204,9 +528,9 @@
       ]
     },
     {
-      "id": "jiao-dehai--yu-junbo",
-      "from": "jiao-dehai",
-      "to": "yu-junbo",
+      "id": "gao-fengshan--cui-qi",
+      "from": "gao-fengshan",
+      "to": "cui-qi",
       "type": "mentor",
       "disputed": false,
       "sources": [
@@ -214,9 +538,9 @@
       ]
     },
     {
-      "id": "jiao-dehai--li-shouzeng",
-      "from": "jiao-dehai",
-      "to": "li-shouzeng",
+      "id": "gao-fengshan--lai-baogang",
+      "from": "gao-fengshan",
+      "to": "lai-baogang",
       "type": "mentor",
       "disputed": false,
       "sources": [
@@ -224,9 +548,9 @@
       ]
     },
     {
-      "id": "zhou-deshan--ma-sanli",
-      "from": "zhou-deshan",
-      "to": "ma-sanli",
+      "id": "gao-fengshan--li-shaojie",
+      "from": "gao-fengshan",
+      "to": "li-shaojie",
       "type": "mentor",
       "disputed": false,
       "sources": [
@@ -234,9 +558,9 @@
       ]
     },
     {
-      "id": "zhou-deshan--lian-xiuquan",
-      "from": "zhou-deshan",
-      "to": "lian-xiuquan",
+      "id": "gao-fengshan--li-shiru",
+      "from": "gao-fengshan",
+      "to": "li-shiru",
       "type": "mentor",
       "disputed": false,
       "sources": [
@@ -244,14 +568,1187 @@
       ]
     },
     {
-      "id": "liu-dezhi--guo-qiru",
-      "from": "liu-dezhi",
-      "to": "guo-qiru",
+      "id": "gao-fengshan--li-xuehong",
+      "from": "gao-fengshan",
+      "to": "li-xuehong",
       "type": "mentor",
       "disputed": false,
       "sources": [
         "src-wiki-lineage"
       ]
+    },
+    {
+      "id": "gao-fengshan--liang-houmin",
+      "from": "gao-fengshan",
+      "to": "liang-houmin",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "带艺投师。"
+    },
+    {
+      "id": "gao-fengshan--shi-fuquan",
+      "from": "gao-fengshan",
+      "to": "shi-fuquan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "高凤山一脉按行业通行辈分整体下移一辈，石富宽归文字辈。"
+    },
+    {
+      "id": "gao-fengshan--zhang-changlai",
+      "from": "gao-fengshan",
+      "to": "zhang-changlai",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "gao-fengshan--zhang-wenfu",
+      "from": "gao-fengshan",
+      "to": "zhang-wenfu",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-cnr-zhang-wenfu-20090722"
+      ],
+      "note": "中国广播网记载的高派快板拜师关系；相声门归属与字辈待考。"
+    },
+    {
+      "id": "gao-yingpei--su-mingjie",
+      "from": "gao-yingpei",
+      "to": "su-mingjie",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "苏明杰为苏文茂之子；正式师承按参考表列高英培，父子关系不代替师徒关系。"
+    },
+    {
+      "id": "gao-yuankun--li-lishan",
+      "from": "gao-yuankun",
+      "to": "li-lishan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "guo-degang--cao-heyang",
+      "from": "guo-degang",
+      "to": "cao-heyang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "沿用现有鹤字科师承名录。移除原先由曹云金人物混同造成的“后独立发展”争议标记。"
+    },
+    {
+      "id": "guo-degang--cao-jiutai",
+      "from": "guo-degang",
+      "to": "cao-jiutai",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为在职。"
+    },
+    {
+      "id": "guo-degang--cao-yunjin",
+      "from": "guo-degang",
+      "to": "cao-yunjin",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-chinanews-cao-response-2016",
+        "src-ifeng-guo-response-2016"
+      ],
+      "note": "记录曾有的授艺与师徒历史，不代表目前仍列在德云社家谱；2010年组织退出与2016年家谱除名见独立事件。"
+    },
+    {
+      "id": "guo-degang--chen-jiufu",
+      "from": "guo-degang",
+      "to": "chen-jiufu",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为淡出。"
+    },
+    {
+      "id": "guo-degang--chen-jiupin",
+      "from": "guo-degang",
+      "to": "chen-jiupin",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为淡出。"
+    },
+    {
+      "id": "guo-degang--chen-jiutong",
+      "from": "guo-degang",
+      "to": "chen-jiutong",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为淡出。"
+    },
+    {
+      "id": "guo-degang--chen-xiaohua",
+      "from": "guo-degang",
+      "to": "chen-xiaohua",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为2022清除。"
+    },
+    {
+      "id": "guo-degang--chi-hexiong",
+      "from": "guo-degang",
+      "to": "chi-hexiong",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列入清门除名。"
+    },
+    {
+      "id": "guo-degang--dong-jiuhan",
+      "from": "guo-degang",
+      "to": "dong-jiuhan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为在职。"
+    },
+    {
+      "id": "guo-degang--dong-jiuli",
+      "from": "guo-degang",
+      "to": "dong-jiuli",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为在职。"
+    },
+    {
+      "id": "guo-degang--du-helai",
+      "from": "guo-degang",
+      "to": "du-helai",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列主动退出，不为清门除名。"
+    },
+    {
+      "id": "guo-degang--fan-xiaoqi",
+      "from": "guo-degang",
+      "to": "fan-xiaoqi",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为在职。"
+    },
+    {
+      "id": "guo-degang--fan-xiaotang",
+      "from": "guo-degang",
+      "to": "fan-xiaotang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为在职。"
+    },
+    {
+      "id": "guo-degang--fang-hedi",
+      "from": "guo-degang",
+      "to": "fang-hedi",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列跨平台演出。"
+    },
+    {
+      "id": "guo-degang--gao-hepeng",
+      "from": "guo-degang",
+      "to": "gao-hepeng",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为淡出。"
+    },
+    {
+      "id": "guo-degang--gao-jiucheng",
+      "from": "guo-degang",
+      "to": "gao-jiucheng",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为在职。"
+    },
+    {
+      "id": "guo-degang--guan-hebai",
+      "from": "guo-degang",
+      "to": "guan-hebai",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为在职。"
+    },
+    {
+      "id": "guo-degang--guan-jiuhai",
+      "from": "guo-degang",
+      "to": "guan-jiuhai",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为在职。"
+    },
+    {
+      "id": "guo-degang--guo-heming",
+      "from": "guo-degang",
+      "to": "guo-heming",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "清单提示郭德纲家谱逐出。"
+    },
+    {
+      "id": "guo-degang--han-hexiao",
+      "from": "guo-degang",
+      "to": "han-hexiao",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单标注“摘字查看”，非彻底清门。"
+    },
+    {
+      "id": "guo-degang--han-jiuming",
+      "from": "guo-degang",
+      "to": "han-jiuming",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为淡出。"
+    },
+    {
+      "id": "guo-degang--he-jiuhua",
+      "from": "guo-degang",
+      "to": "he-jiuhua",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为在职。"
+    },
+    {
+      "id": "guo-degang--he-yunwei",
+      "from": "guo-degang",
+      "to": "he-yunwei",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-cri-he-li-interview-2010",
+        "src-chinanews-cao-response-2016"
+      ],
+      "note": "记录历史师徒关系；何云伟2010年退社后仍称师徒关系保持，2016年家谱除名另有事件，不删除历史边。"
+    },
+    {
+      "id": "guo-degang--hou-helian",
+      "from": "guo-degang",
+      "to": "hou-helian",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列2019主动退出。"
+    },
+    {
+      "id": "guo-degang--ji-hewu",
+      "from": "guo-degang",
+      "to": "ji-hewu",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为鹤字科淡出舞台。"
+    },
+    {
+      "id": "guo-degang--jin-helan",
+      "from": "guo-degang",
+      "to": "jin-helan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为在职。"
+    },
+    {
+      "id": "guo-degang--jin-henian",
+      "from": "guo-degang",
+      "to": "jin-henian",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为较少登台。"
+    },
+    {
+      "id": "guo-degang--kong-yunlong",
+      "from": "guo-degang",
+      "to": "kong-yunlong",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "2006年拜师，云字科序列成员。"
+    },
+    {
+      "id": "guo-degang--lang-heyan",
+      "from": "guo-degang",
+      "to": "lang-heyan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "参考师承表郭德纲门下科名录；按第九代收录。"
+    },
+    {
+      "id": "guo-degang--li-hebiao",
+      "from": "guo-degang",
+      "to": "li-hebiao",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为鹤字科在职成员。"
+    },
+    {
+      "id": "guo-degang--li-hedong",
+      "from": "guo-degang",
+      "to": "li-hedong",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为在职。"
+    },
+    {
+      "id": "guo-degang--li-helin",
+      "from": "guo-degang",
+      "to": "li-helin",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为鹤字科在职成员。"
+    },
+    {
+      "id": "guo-degang--li-hepu",
+      "from": "guo-degang",
+      "to": "li-hepu",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为家谱收录且未登台。"
+    },
+    {
+      "id": "guo-degang--li-jiuchong",
+      "from": "guo-degang",
+      "to": "li-jiuchong",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为在职。"
+    },
+    {
+      "id": "guo-degang--li-jiuchun",
+      "from": "guo-degang",
+      "to": "li-jiuchun",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为在职。"
+    },
+    {
+      "id": "guo-degang--li-jiujiang",
+      "from": "guo-degang",
+      "to": "li-jiujiang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为在职。"
+    },
+    {
+      "id": "guo-degang--li-jiutian",
+      "from": "guo-degang",
+      "to": "li-jiutian",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为在职。"
+    },
+    {
+      "id": "guo-degang--li-yunjie",
+      "from": "guo-degang",
+      "to": "li-yunjie",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "列表为在职成员；另有评书师承并行不构成郭德纲师承冲突。"
+    },
+    {
+      "id": "guo-degang--li-yuntian",
+      "from": "guo-degang",
+      "to": "li-yuntian",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "按云字科名录录入。"
+    },
+    {
+      "id": "guo-degang--liu-hechun",
+      "from": "guo-degang",
+      "to": "liu-hechun",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "列为鹤字科在职成员。"
+    },
+    {
+      "id": "guo-degang--liu-heqing",
+      "from": "guo-degang",
+      "to": "liu-heqing",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为鹤字科淡出。"
+    },
+    {
+      "id": "guo-degang--liu-heying",
+      "from": "guo-degang",
+      "to": "liu-heying",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单显示已转幕后，未清门。"
+    },
+    {
+      "id": "guo-degang--liu-jiuren",
+      "from": "guo-degang",
+      "to": "liu-jiuren",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为淡出。"
+    },
+    {
+      "id": "guo-degang--liu-jiuru",
+      "from": "guo-degang",
+      "to": "liu-jiuru",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为在职。"
+    },
+    {
+      "id": "guo-degang--liu-jiusi",
+      "from": "guo-degang",
+      "to": "liu-jiusi",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为在职。"
+    },
+    {
+      "id": "guo-degang--luan-hehua",
+      "from": "guo-degang",
+      "to": "luan-hehua",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为淡出。"
+    },
+    {
+      "id": "guo-degang--luan-yunping",
+      "from": "guo-degang",
+      "to": "luan-yunping",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "guo-degang--ma-zhaozhuang",
+      "from": "guo-degang",
+      "to": "ma-zhaozhuang",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-sina-guo-koumeng"
+      ],
+      "note": "口盟关系，按清单不计入正式入室弟子。"
+    },
+    {
+      "id": "guo-degang--mei-jiuliang",
+      "from": "guo-degang",
+      "to": "mei-jiuliang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为主动退出，未清门。"
+    },
+    {
+      "id": "guo-degang--meng-hetang",
+      "from": "guo-degang",
+      "to": "meng-hetang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "参考师承表郭德纲门下科名录；按第九代收录。"
+    },
+    {
+      "id": "guo-degang--ni-jiutao",
+      "from": "guo-degang",
+      "to": "ni-jiutao",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为在外发展。"
+    },
+    {
+      "id": "guo-degang--ning-yunxiang",
+      "from": "guo-degang",
+      "to": "ning-yunxiang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为退出演出但未见清门公告。"
+    },
+    {
+      "id": "guo-degang--ou-di",
+      "from": "guo-degang",
+      "to": "ou-di",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-sina-guo-koumeng"
+      ],
+      "note": "口盟关系，按清单不计入正式入室弟子。"
+    },
+    {
+      "id": "guo-degang--qi-hetao",
+      "from": "guo-degang",
+      "to": "qi-hetao",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为淡出。"
+    },
+    {
+      "id": "guo-degang--qin-xiaoxian",
+      "from": "guo-degang",
+      "to": "qin-xiaoxian",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为在职。"
+    },
+    {
+      "id": "guo-degang--shang-jiuxi",
+      "from": "guo-degang",
+      "to": "shang-jiuxi",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为主动退出，未清门。"
+    },
+    {
+      "id": "guo-degang--shao-bing",
+      "from": "guo-degang",
+      "to": "shao-bing",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "参考师承表郭德纲门下科名录；按第九代收录。"
+    },
+    {
+      "id": "guo-degang--sun-jiuxiang",
+      "from": "guo-degang",
+      "to": "sun-jiuxiang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为主动退出，未清门。"
+    },
+    {
+      "id": "guo-degang--tao-yunsheng",
+      "from": "guo-degang",
+      "to": "tao-yunsheng",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单为在职演员，曾在麒麟剧社活动。"
+    },
+    {
+      "id": "guo-degang--wang-hejiang",
+      "from": "guo-degang",
+      "to": "wang-hejiang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为淡出。"
+    },
+    {
+      "id": "guo-degang--wang-jiulong",
+      "from": "guo-degang",
+      "to": "wang-jiulong",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为在职。"
+    },
+    {
+      "id": "guo-degang--wang-xiaoyi",
+      "from": "guo-degang",
+      "to": "wang-xiaoyi",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为在职。"
+    },
+    {
+      "id": "guo-degang--wang-yaozong",
+      "from": "guo-degang",
+      "to": "wang-yaozong",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-sina-guo-koumeng"
+      ],
+      "note": "口盟关系，按清单不计入正式入室弟子。"
+    },
+    {
+      "id": "guo-degang--wu-hechen",
+      "from": "guo-degang",
+      "to": "wu-hechen",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为淡出并未公开清门。"
+    },
+    {
+      "id": "guo-degang--yan-hexiang",
+      "from": "guo-degang",
+      "to": "yan-hexiang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为在职成员。"
+    },
+    {
+      "id": "guo-degang--yan-yunda",
+      "from": "guo-degang",
+      "to": "yan-yunda",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "清单为口头及其公开退社说明显示为主动退出，未见郭德纲公开清门。"
+    },
+    {
+      "id": "guo-degang--yang-heling",
+      "from": "guo-degang",
+      "to": "yang-heling",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单标注离世。"
+    },
+    {
+      "id": "guo-degang--yang-jiulang",
+      "from": "guo-degang",
+      "to": "yang-jiulang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-guo-degang"
+      ],
+      "note": "师承沿用百科名录。官方演出通报不作为正式拜师日期的证据。"
+    },
+    {
+      "id": "guo-degang--yu-hezhen",
+      "from": "guo-degang",
+      "to": "yu-hezhen",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为在职。"
+    },
+    {
+      "id": "guo-degang--yu-yunti",
+      "from": "guo-degang",
+      "to": "yu-yunti",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单记为家谱收录且有早年学员赐字背景。"
+    },
+    {
+      "id": "guo-degang--yu-yunting",
+      "from": "guo-degang",
+      "to": "yu-yunting",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单将其列为口盟转正式，先行按云字科收录，待逐人核验。"
+    },
+    {
+      "id": "guo-degang--yue-yunpeng",
+      "from": "guo-degang",
+      "to": "yue-yunpeng",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "guo-degang--zhang-hefan",
+      "from": "guo-degang",
+      "to": "zhang-hefan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列转幕后。"
+    },
+    {
+      "id": "guo-degang--zhang-hefeng",
+      "from": "guo-degang",
+      "to": "zhang-hefeng",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为淡出。"
+    },
+    {
+      "id": "guo-degang--zhang-hejian",
+      "from": "guo-degang",
+      "to": "zhang-hejian",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为淡出。"
+    },
+    {
+      "id": "guo-degang--zhang-hejun",
+      "from": "guo-degang",
+      "to": "zhang-hejun",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为在职成员。"
+    },
+    {
+      "id": "guo-degang--zhang-heluan",
+      "from": "guo-degang",
+      "to": "zhang-heluan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为淡出。"
+    },
+    {
+      "id": "guo-degang--zhang-helun",
+      "from": "guo-degang",
+      "to": "zhang-helun",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "参考师承表郭德纲门下科名录；按第九代收录。"
+    },
+    {
+      "id": "guo-degang--zhang-hewen",
+      "from": "guo-degang",
+      "to": "zhang-hewen",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为淡出。"
+    },
+    {
+      "id": "guo-degang--zhang-jiuchi",
+      "from": "guo-degang",
+      "to": "zhang-jiuchi",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为淡出。"
+    },
+    {
+      "id": "guo-degang--zhang-jiulin",
+      "from": "guo-degang",
+      "to": "zhang-jiulin",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为在职。"
+    },
+    {
+      "id": "guo-degang--zhang-jiuling",
+      "from": "guo-degang",
+      "to": "zhang-jiuling",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为在职。"
+    },
+    {
+      "id": "guo-degang--zhang-jiunan",
+      "from": "guo-degang",
+      "to": "zhang-jiunan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为在职。"
+    },
+    {
+      "id": "guo-degang--zhang-jiutai",
+      "from": "guo-degang",
+      "to": "zhang-jiutai",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为在职。"
+    },
+    {
+      "id": "guo-degang--zhang-kang",
+      "from": "guo-degang",
+      "to": "zhang-kang",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-sina-guo-koumeng"
+      ],
+      "note": "口盟关系，按清单不计入正式入室弟子。"
+    },
+    {
+      "id": "guo-degang--zhang-xiaobai",
+      "from": "guo-degang",
+      "to": "zhang-xiaobai",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为在职。"
+    },
+    {
+      "id": "guo-degang--zhang-yunfan",
+      "from": "guo-degang",
+      "to": "zhang-yunfan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单中列有云字科成员，当前公开活动较少。"
+    },
+    {
+      "id": "guo-degang--zhang-yunlei",
+      "from": "guo-degang",
+      "to": "zhang-yunlei",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "guo-degang--zheng-jiulian",
+      "from": "guo-degang",
+      "to": "zheng-jiulian",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为在职。"
+    },
+    {
+      "id": "guo-degang--zhou-jiuliang",
+      "from": "guo-degang",
+      "to": "zhou-jiuliang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "参考师承表郭德纲门下科名录；按第九代收录。"
+    },
+    {
+      "id": "guo-degang--zhu-hesong",
+      "from": "guo-degang",
+      "to": "zhu-hesong",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "名单列为2015谢师仪式转正。"
+    },
+    {
+      "id": "guo-degang--zhu-yunfeng",
+      "from": "guo-degang",
+      "to": "zhu-yunfeng",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "艺名烧饼，名录列为正式门下弟子。"
+    },
+    {
+      "id": "guo-degang--gao-hecai",
+      "from": "guo-degang",
+      "to": "gao-hecai",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "鹤字科成员；已离开德云社演出，未见公开清门记录。"
+    },
+    {
+      "id": "guo-degang--yang-hetong",
+      "from": "guo-degang",
+      "to": "yang-hetong",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "鹤字科成员，艺名杨鹤通。"
+    },
+    {
+      "id": "guo-degang--liang-hekeng",
+      "from": "guo-degang",
+      "to": "liang-hekeng",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "鹤字科成员；公开活动较少。"
+    },
+    {
+      "id": "guo-degang--zhong-hexuan",
+      "from": "guo-degang",
+      "to": "zhong-hexuan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "鹤字科成员；现已离开行业。"
+    },
+    {
+      "id": "guo-degang--ma-heqi",
+      "from": "guo-degang",
+      "to": "ma-heqi",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "鹤字科成员；目前主要在外地发展。"
+    },
+    {
+      "id": "guo-degang--sun-hebao",
+      "from": "guo-degang",
+      "to": "sun-hebao",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-ifeng-guo-genealogy-2016"
+      ],
+      "note": "鹤字科成员，名录列为在职。"
+    },
+    {
+      "id": "guo-qiru--quan-changbao",
+      "from": "guo-qiru",
+      "to": "quan-changbao",
+      "type": "mentor",
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "补齐现有演员的上游师承；按参考表对应代际收录。",
+      "disputed": false
+    },
+    {
+      "id": "guo-rongqi--chang-baoting",
+      "from": "guo-rongqi",
+      "to": "chang-baoting",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "guo-rongqi--yang-shaohua",
+      "from": "guo-rongqi",
+      "to": "yang-shaohua",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "天津圈多按郭荣起口传弟子、宝字辈相待；严格行规说认为未正式摆知，属海清，另有归文字辈说，未有统一定论。"
     },
     {
       "id": "guo-ruilin--hou-yichen",
@@ -274,9 +1771,9 @@
       ]
     },
     {
-      "id": "lu-dejun--chen-yuting",
-      "from": "lu-dejun",
-      "to": "chen-yuting",
+      "id": "hou-baolin--ding-guangquan",
+      "from": "hou-baolin",
+      "to": "ding-guangquan",
       "type": "mentor",
       "disputed": false,
       "sources": [
@@ -284,9 +1781,9 @@
       ]
     },
     {
-      "id": "lu-dejun--zhao-ailu",
-      "from": "lu-dejun",
-      "to": "zhao-ailu",
+      "id": "hou-baolin--hao-aimin",
+      "from": "hou-baolin",
+      "to": "hao-aimin",
       "type": "mentor",
       "disputed": false,
       "sources": [
@@ -294,31 +1791,9 @@
       ]
     },
     {
-      "id": "gao-deliang--gao-fengshan",
-      "from": "gao-deliang",
-      "to": "gao-fengshan",
-      "type": "mentor",
-      "disputed": true,
-      "sources": [
-        "src-wiki-lineage"
-      ],
-      "note": "此支部辈或有自降，文献不足。"
-    },
-    {
-      "id": "zhu-kuoquan--hou-baolin",
-      "from": "zhu-kuoquan",
-      "to": "hou-baolin",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ],
-      "note": "早年收养，后正式收徒。"
-    },
-    {
-      "id": "zhu-kuoquan--wang-fengshan",
-      "from": "zhu-kuoquan",
-      "to": "wang-fengshan",
+      "id": "hou-baolin--huang-tieliang",
+      "from": "hou-baolin",
+      "to": "huang-tieliang",
       "type": "mentor",
       "disputed": false,
       "sources": [
@@ -326,200 +1801,9 @@
       ]
     },
     {
-      "id": "zhu-kuoquan--ma-zhiming",
-      "from": "zhu-kuoquan",
-      "to": "ma-zhiming",
-      "type": "mentor",
-      "disputed": true,
-      "sources": [
-        "src-wiki-lineage"
-      ],
-      "note": "马三立之子；谱表记拜朱阔泉。"
-    },
-    {
-      "id": "zhang-shouchen--chang-baokun",
-      "from": "zhang-shouchen",
-      "to": "chang-baokun",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "zhang-shouchen--liu-baorui",
-      "from": "zhang-shouchen",
-      "to": "liu-baorui",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "zhang-shouchen--tong-dafang",
-      "from": "zhang-shouchen",
-      "to": "tong-dafang",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "ma-sanli--yan-xiaoru",
-      "from": "ma-sanli",
-      "to": "yan-xiaoru",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "ma-sanli--chang-baohua",
-      "from": "ma-sanli",
-      "to": "chang-baohua",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "ma-sanli--chang-baofeng",
-      "from": "ma-sanli",
-      "to": "chang-baofeng",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "ma-sanli--li-wenhua",
-      "from": "ma-sanli",
-      "to": "li-wenhua",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "ma-sanli--ban-degui",
-      "from": "ma-sanli",
-      "to": "ban-degui",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "chang-lianan--gao-yuankun",
-      "from": "chang-lianan",
-      "to": "gao-yuankun",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "tan-boru--chen-yongquan",
-      "from": "tan-boru",
-      "to": "chen-yongquan",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "tan-boru--zhao-shizhong",
-      "from": "tan-boru",
-      "to": "zhao-shizhong",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "jiao-shouhai--zhao-peiru",
-      "from": "jiao-shouhai",
-      "to": "zhao-peiru",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "yu-junbo--guo-quanbao",
-      "from": "yu-junbo",
-      "to": "guo-quanbao",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "guo-rongqi--chang-baoting",
-      "from": "guo-rongqi",
-      "to": "chang-baoting",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "guo-rongqi--yang-shaohua",
-      "from": "guo-rongqi",
-      "to": "yang-shaohua",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "ma-delu--guo-rongqi",
-      "from": "ma-delu",
-      "to": "guo-rongqi",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "gao-fengshan--shi-fuquan",
-      "from": "gao-fengshan",
-      "to": "shi-fuquan",
-      "type": "mentor",
-      "disputed": true,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "zhao-ailu--wang-changyou",
-      "from": "zhao-ailu",
-      "to": "wang-changyou",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "chen-yuting--wang-shichen",
-      "from": "chen-yuting",
-      "to": "wang-shichen",
+      "id": "hou-baolin--jia-jiguang",
+      "from": "hou-baolin",
+      "to": "jia-jiguang",
       "type": "mentor",
       "disputed": false,
       "sources": [
@@ -547,49 +1831,9 @@
       ]
     },
     {
-      "id": "hou-baolin--ding-guangquan",
-      "from": "hou-baolin",
-      "to": "ding-guangquan",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
       "id": "hou-baolin--wu-zhaonan",
       "from": "hou-baolin",
       "to": "wu-zhaonan",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "hou-baolin--hao-aimin",
-      "from": "hou-baolin",
-      "to": "hao-aimin",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "hou-baolin--jia-jiguang",
-      "from": "hou-baolin",
-      "to": "jia-jiguang",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "hou-baolin--huang-tieliang",
-      "from": "hou-baolin",
-      "to": "huang-tieliang",
       "type": "mentor",
       "disputed": false,
       "sources": [
@@ -607,250 +1851,9 @@
       ]
     },
     {
-      "id": "chang-baokun--su-wenmao",
-      "from": "chang-baokun",
-      "to": "su-wenmao",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "liu-baorui--tang-jiezhong",
-      "from": "liu-baorui",
-      "to": "tang-jiezhong",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "liu-baorui--yin-wenshuo",
-      "from": "liu-baorui",
-      "to": "yin-wenshuo",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "zhao-peiru--hou-yaowen",
-      "from": "zhao-peiru",
-      "to": "hou-yaowen",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "zhao-peiru--li-boxiang",
-      "from": "zhao-peiru",
-      "to": "li-boxiang",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "zhao-peiru--gao-yingpei",
-      "from": "zhao-peiru",
-      "to": "gao-yingpei",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "zhao-peiru--chang-guitian",
-      "from": "zhao-peiru",
-      "to": "chang-guitian",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "wang-changyou--zhao-zhenduo",
-      "from": "wang-changyou",
-      "to": "zhao-zhenduo",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "chang-baohua--hou-yaohua",
-      "from": "chang-baohua",
-      "to": "hou-yaohua",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "chang-baohua--niu-qun",
-      "from": "chang-baohua",
-      "to": "niu-qun",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "shi-fuquan--yu-qian",
-      "from": "shi-fuquan",
-      "to": "yu-qian",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "shi-fuquan--sun-yue",
-      "from": "shi-fuquan",
-      "to": "sun-yue",
-      "type": "mentor",
-      "disputed": true,
-      "sources": [
-        "src-wiki-lineage"
-      ],
-      "note": "亦见赵小林门下记载。"
-    },
-    {
-      "id": "gao-yuankun--li-lishan",
-      "from": "gao-yuankun",
-      "to": "li-lishan",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "tong-dafang--zhang-wenshun",
-      "from": "tong-dafang",
-      "to": "zhang-wenshun",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "wang-shichen--liu-hongyi",
-      "from": "wang-shichen",
-      "to": "liu-hongyi",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "ban-degui--fan-zhenyu",
-      "from": "ban-degui",
-      "to": "fan-zhenyu",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "ma-ji--jiang-kun",
-      "from": "ma-ji",
-      "to": "jiang-kun",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "ma-ji--feng-gong",
-      "from": "ma-ji",
-      "to": "feng-gong",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "ma-ji--zhao-yan",
-      "from": "ma-ji",
-      "to": "zhao-yan",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "ma-ji--liu-wei",
-      "from": "ma-ji",
-      "to": "liu-wei",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "ma-ji--xiao-lin",
-      "from": "ma-ji",
-      "to": "xiao-lin",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "ma-ji--wang-qianxiang",
-      "from": "ma-ji",
-      "to": "wang-qianxiang",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "ma-ji--li-zengrui",
-      "from": "ma-ji",
-      "to": "li-zengrui",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "ma-ji--han-lancheng",
-      "from": "ma-ji",
-      "to": "han-lancheng",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "ma-ji--huang-hong",
-      "from": "ma-ji",
-      "to": "huang-hong",
+      "id": "hou-yaowen--chen-hanbai",
+      "from": "hou-yaowen",
+      "to": "chen-hanbai",
       "type": "mentor",
       "disputed": false,
       "sources": [
@@ -880,59 +1883,9 @@
       ]
     },
     {
-      "id": "hou-yaowen--chen-hanbai",
-      "from": "hou-yaowen",
-      "to": "chen-hanbai",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "zhao-zhenduo--li-jindou",
-      "from": "zhao-zhenduo",
-      "to": "li-jindou",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "li-boxiang--dai-zhicheng",
-      "from": "li-boxiang",
-      "to": "dai-zhicheng",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "liu-hongyi--li-weijian",
-      "from": "liu-hongyi",
-      "to": "li-weijian",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "shi-shengjie--li-jing",
-      "from": "shi-shengjie",
-      "to": "li-jing",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "jiang-kun--ju-hao",
-      "from": "jiang-kun",
-      "to": "ju-hao",
+      "id": "hou-yichen--chang-baolin",
+      "from": "hou-yichen",
+      "to": "chang-baolin",
       "type": "mentor",
       "disputed": false,
       "sources": [
@@ -946,54 +1899,27 @@
       "type": "mentor",
       "disputed": false,
       "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "feng-gong--jia-ling",
-      "from": "feng-gong",
-      "to": "jia-ling",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "guo-degang--yue-yunpeng",
-      "from": "guo-degang",
-      "to": "yue-yunpeng",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "guo-degang--luan-yunping",
-      "from": "guo-degang",
-      "to": "luan-yunping",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
-      ]
-    },
-    {
-      "id": "guo-degang--cao-heyang",
-      "from": "guo-degang",
-      "to": "cao-heyang",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-wiki-lineage"
+        "src-wiki-lineage",
+        "src-cctv-lineage-20070624"
       ],
-      "note": "沿用现有鹤字科师承名录。移除原先由曹云金人物混同造成的“后独立发展”争议标记。"
+      "note": "央视谱系列入。"
     },
     {
-      "id": "guo-degang--zhang-yunlei",
-      "from": "guo-degang",
-      "to": "zhang-yunlei",
+      "id": "jiang-kun--ju-hao",
+      "from": "jiang-kun",
+      "to": "ju-hao",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage",
+        "src-cctv-lineage-20070624"
+      ],
+      "note": "央视与既有谱系均收录句号（句兆杰）。"
+    },
+    {
+      "id": "jiao-dehai--chang-lianan",
+      "from": "jiao-dehai",
+      "to": "chang-lianan",
       "type": "mentor",
       "disputed": false,
       "sources": [
@@ -1001,9 +1927,80 @@
       ]
     },
     {
-      "id": "yu-qian--guo-qilin",
-      "from": "yu-qian",
-      "to": "guo-qilin",
+      "id": "jiao-dehai--li-shouzeng",
+      "from": "jiao-dehai",
+      "to": "li-shouzeng",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "jiao-dehai--yu-junbo",
+      "from": "jiao-dehai",
+      "to": "yu-junbo",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "jiao-dehai--zhang-shouchen",
+      "from": "jiao-dehai",
+      "to": "zhang-shouchen",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "jiao-dehai--zhu-kuoquan",
+      "from": "jiao-dehai",
+      "to": "zhu-kuoquan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "jiao-shouhai--zhao-peiru",
+      "from": "jiao-shouhai",
+      "to": "zhao-peiru",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "kang-guisheng--chen-xi",
+      "from": "kang-guisheng",
+      "to": "chen-xi",
+      "type": "mentor",
+      "sources": [
+        "src-jxwy-jin-chen-20220223"
+      ],
+      "note": "江西文演集团演出介绍确认师承；拜师日期待补。",
+      "disputed": false
+    },
+    {
+      "id": "li-boxiang--dai-zhicheng",
+      "from": "li-boxiang",
+      "to": "dai-zhicheng",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "li-dexiang--ma-shouyan",
+      "from": "li-dexiang",
+      "to": "ma-shouyan",
       "type": "mentor",
       "disputed": false,
       "sources": [
@@ -1021,6 +2018,29 @@
       ]
     },
     {
+      "id": "li-shaojie--jin-fei",
+      "from": "li-shaojie",
+      "to": "jin-fei",
+      "type": "mentor",
+      "sources": [
+        "src-cnbpat-jin-fei-20220830",
+        "src-ifeng-jin-chen-interview-20170602"
+      ],
+      "note": "快板师承，跨曲种保留；不替代王谦祥相声师承。",
+      "disputed": false
+    },
+    {
+      "id": "li-shouzeng--zhang-zhenqi",
+      "from": "li-shouzeng",
+      "to": "zhang-zhenqi",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "参考师承表将张振圻列在李寿增门下。"
+    },
+    {
       "id": "li-zengrui--li-ding",
       "from": "li-zengrui",
       "to": "li-ding",
@@ -1031,39 +2051,1575 @@
       ]
     },
     {
-      "id": "guo-degang--cao-yunjin",
-      "from": "guo-degang",
-      "to": "cao-yunjin",
+      "id": "lian-xiuquan--wang-benlin",
+      "from": "lian-xiuquan",
+      "to": "wang-benlin",
       "type": "mentor",
-      "disputed": false,
       "sources": [
-        "src-chinanews-cao-response-2016",
-        "src-ifeng-guo-response-2016"
+        "src-wiki-lineage"
       ],
-      "note": "记录曾有的授艺与师徒历史，不代表目前仍列在德云社家谱；2010年组织退出与2016年家谱除名见独立事件。"
+      "note": "补齐现有演员的上游师承；按参考表对应代际收录。",
+      "disputed": false
     },
     {
-      "id": "guo-degang--he-yunwei",
-      "from": "guo-degang",
-      "to": "he-yunwei",
+      "id": "liu-baorui--tang-jiezhong",
+      "from": "liu-baorui",
+      "to": "tang-jiezhong",
       "type": "mentor",
       "disputed": false,
       "sources": [
-        "src-cri-he-li-interview-2010",
-        "src-chinanews-cao-response-2016"
-      ],
-      "note": "记录历史师徒关系；何云伟2010年退社后仍称师徒关系保持，2016年家谱除名另有事件，不删除历史边。"
+        "src-wiki-lineage"
+      ]
     },
     {
-      "id": "guo-degang--yang-jiulang",
-      "from": "guo-degang",
-      "to": "yang-jiulang",
+      "id": "liu-baorui--yin-wenshuo",
+      "from": "liu-baorui",
+      "to": "yin-wenshuo",
       "type": "mentor",
       "disputed": false,
       "sources": [
-        "src-wiki-guo-degang"
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "liu-dezhi--guo-qiru",
+      "from": "liu-dezhi",
+      "to": "guo-qiru",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "liu-hongyi--li-weijian",
+      "from": "liu-hongyi",
+      "to": "li-weijian",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "liu-junjie--zhang-bin",
+      "from": "liu-junjie",
+      "to": "zhang-bin",
+      "type": "mentor",
+      "sources": [
+        "src-sohu-hulu-liujunjie"
       ],
-      "note": "师承沿用百科名录。官方演出通报不作为正式拜师日期的证据。"
+      "note": "仅自媒体师承记载，未见摆知仪式或当事人材料。",
+      "disputed": true
+    },
+    {
+      "id": "liu-junjie--zhang-fengyan",
+      "from": "liu-junjie",
+      "to": "zhang-fengyan",
+      "type": "mentor",
+      "sources": [
+        "src-sohu-hulu-liujunjie"
+      ],
+      "note": "仅自媒体师承记载，未见摆知仪式或当事人材料。",
+      "disputed": true
+    },
+    {
+      "id": "lu-dejun--chen-yuting",
+      "from": "lu-dejun",
+      "to": "chen-yuting",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "lu-dejun--zhao-ailu",
+      "from": "lu-dejun",
+      "to": "zhao-ailu",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-delu--gao-guiqing",
+      "from": "ma-delu",
+      "to": "gao-guiqing",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-delu--guo-rongqi",
+      "from": "ma-delu",
+      "to": "guo-rongqi",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-delu--yin-shoushan",
+      "from": "ma-delu",
+      "to": "yin-shoushan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-ji--feng-gong",
+      "from": "ma-ji",
+      "to": "feng-gong",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-ji--han-lancheng",
+      "from": "ma-ji",
+      "to": "han-lancheng",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-ji--huang-hong",
+      "from": "ma-ji",
+      "to": "huang-hong",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-ji--jiang-kun",
+      "from": "ma-ji",
+      "to": "jiang-kun",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-ji--li-zengrui",
+      "from": "ma-ji",
+      "to": "li-zengrui",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-ji--liu-wei",
+      "from": "ma-ji",
+      "to": "liu-wei",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-ji--wang-qianxiang",
+      "from": "ma-ji",
+      "to": "wang-qianxiang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-ji--xiao-lin",
+      "from": "ma-ji",
+      "to": "xiao-lin",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-ji--zhao-yan",
+      "from": "ma-ji",
+      "to": "zhao-yan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-sanli--ban-degui",
+      "from": "ma-sanli",
+      "to": "ban-degui",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-sanli--chang-baofeng",
+      "from": "ma-sanli",
+      "to": "chang-baofeng",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-sanli--chang-baohua",
+      "from": "ma-sanli",
+      "to": "chang-baohua",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-sanli--fang-xiaowen",
+      "from": "ma-sanli",
+      "to": "fang-xiaowen",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-sanli--gao-xiaolin",
+      "from": "ma-sanli",
+      "to": "gao-xiaolin",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-sanli--li-wenhua",
+      "from": "ma-sanli",
+      "to": "li-wenhua",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-sanli--lian-xiaokun",
+      "from": "ma-sanli",
+      "to": "lian-xiaokun",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-sanli--ren-xiaohai",
+      "from": "ma-sanli",
+      "to": "ren-xiaohai",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-sanli--yan-xiaoru",
+      "from": "ma-sanli",
+      "to": "yan-xiaoru",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-sanli--yin-xiaosheng",
+      "from": "ma-sanli",
+      "to": "yin-xiaosheng",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-sanli--yu-xiaobo",
+      "from": "ma-sanli",
+      "to": "yu-xiaobo",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-shouyan--hui-wanhua",
+      "from": "ma-shouyan",
+      "to": "hui-wanhua",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "ma-zhiming--huang-zumin",
+      "from": "ma-zhiming",
+      "to": "huang-zumin",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage",
+        "src-sina-ma-huangzumin"
+      ],
+      "note": "口头承认师徒、无传统摆知仪式；不作为正式入室弟子。"
+    },
+    {
+      "id": "ma-zhiming--lu-fulai",
+      "from": "ma-zhiming",
+      "to": "lu-fulai",
+      "type": "mentor",
+      "sources": [
+        "src-sina-ma-lufulai-yukezi"
+      ],
+      "note": "1989年有摆知仪式记载，但马志明本人不认可师徒名分。",
+      "disputed": true
+    },
+    {
+      "id": "ma-zhiming--yu-kezhi",
+      "from": "ma-zhiming",
+      "to": "yu-kezhi",
+      "type": "mentor",
+      "sources": [
+        "src-sina-ma-lufulai-yukezi"
+      ],
+      "note": "1989年有摆知仪式记载，但马志明本人不认可师徒名分。",
+      "disputed": true
+    },
+    {
+      "id": "quan-changbao--zheng-wenxi",
+      "from": "quan-changbao",
+      "to": "zheng-wenxi",
+      "type": "mentor",
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "补齐现有演员的上游师承；按参考表对应代际收录。",
+      "disputed": false
+    },
+    {
+      "id": "shen-chunhe--feng-kunzhi",
+      "from": "shen-chunhe",
+      "to": "feng-kunzhi",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "现行参考表列此师承；央视2007年转载天津日报旧谱列朱绍文门下。两种来源并列待考。"
+    },
+    {
+      "id": "shen-zhushan--fan-ruiting",
+      "from": "shen-zhushan",
+      "to": "fan-ruiting",
+      "type": "mentor",
+      "sources": [
+        "src-cctv-lineage-20070624"
+      ],
+      "note": "央视2007年旧谱列沈竹善门下，与现行参考表不同。",
+      "disputed": true
+    },
+    {
+      "id": "shen-zhushan--lu-dejun",
+      "from": "shen-zhushan",
+      "to": "lu-dejun",
+      "type": "mentor",
+      "sources": [
+        "src-cctv-lineage-20070624"
+      ],
+      "note": "央视2007年旧谱列沈竹善门下，与现行参考表不同。",
+      "disputed": true
+    },
+    {
+      "id": "shi-fuquan--hou-zhen",
+      "from": "shi-fuquan",
+      "to": "hou-zhen",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "shi-fuquan--liu-xianwei",
+      "from": "shi-fuquan",
+      "to": "liu-xianwei",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "shi-fuquan--sun-yue",
+      "from": "shi-fuquan",
+      "to": "sun-yue",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "亦见赵小林门下记载。"
+    },
+    {
+      "id": "shi-fuquan--yu-qian",
+      "from": "shi-fuquan",
+      "to": "yu-qian",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "shi-shengjie--li-jing",
+      "from": "shi-shengjie",
+      "to": "li-jing",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "su-wenmao--cui-jinquan",
+      "from": "su-wenmao",
+      "to": "cui-jinquan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "su-wenmao--liu-junjie",
+      "from": "su-wenmao",
+      "to": "liu-junjie",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "su-wenmao--song-dequan",
+      "from": "su-wenmao",
+      "to": "song-dequan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "su-wenmao--zhao-weizhou",
+      "from": "su-wenmao",
+      "to": "zhao-weizhou",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "tan-boru--chen-yongquan",
+      "from": "tan-boru",
+      "to": "chen-yongquan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "tan-boru--zhao-shizhong",
+      "from": "tan-boru",
+      "to": "zhao-shizhong",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "tong-dafang--zhang-wenshun",
+      "from": "tong-dafang",
+      "to": "zhang-wenshun",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "wang-benlin--zheng-xiaoshan",
+      "from": "wang-benlin",
+      "to": "zheng-xiaoshan",
+      "type": "mentor",
+      "sources": [
+        "src-wiki-lineage",
+        "src-people-zheng-xiaoshan-20190625",
+        "src-cnr-zheng-xiaoshan-20190627"
+      ],
+      "note": "人民网讣告与央广网追思报道均记郑小山师承王本林。",
+      "disputed": false
+    },
+    {
+      "id": "wang-changyou--zhao-zhenduo",
+      "from": "wang-changyou",
+      "to": "zhao-zhenduo",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "wang-fengshan--ma-liujia",
+      "from": "wang-fengshan",
+      "to": "ma-liujia",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "按参考表归王凤山门下；天津日报2026-01-20另载其为王派快板亲传弟子，曲种需区分。"
+    },
+    {
+      "id": "wang-peiyuan--meng-qinglong",
+      "from": "wang-peiyuan",
+      "to": "meng-qinglong",
+      "type": "mentor",
+      "sources": [
+        "src-douyin-hulu-lineage"
+      ],
+      "note": "仅短视频自媒体记载，正式摆知待考。",
+      "disputed": true
+    },
+    {
+      "id": "wang-qianxiang--jin-fei",
+      "from": "wang-qianxiang",
+      "to": "jin-fei",
+      "type": "mentor",
+      "sources": [
+        "src-cnbpat-jin-fei-20220830",
+        "src-ifeng-jin-chen-interview-20170602"
+      ],
+      "note": "相声师承；拜师年份待补。",
+      "disputed": false
+    },
+    {
+      "id": "wang-qianxiang--li-yinfei",
+      "from": "wang-qianxiang",
+      "to": "li-yinfei",
+      "type": "mentor",
+      "sources": [
+        "src-china-liyinfei-20210729",
+        "src-tsinghua-liyinfei-yepeng"
+      ],
+      "note": "2014年正式拜师；德云社学员经历不作为郭德纲师承。",
+      "disputed": false
+    },
+    {
+      "id": "wang-qianxiang--ye-peng",
+      "from": "wang-qianxiang",
+      "to": "ye-peng",
+      "type": "mentor",
+      "sources": [
+        "src-tsinghua-liyinfei-yepeng"
+      ],
+      "note": "2014年同批拜师；京剧家传不并入相声师承。",
+      "disputed": false
+    },
+    {
+      "id": "wang-shichen--liu-hongyi",
+      "from": "wang-shichen",
+      "to": "liu-hongyi",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "wei-yuancheng--yu-hao",
+      "from": "wei-yuancheng",
+      "to": "yu-hao",
+      "type": "mentor",
+      "sources": [
+        "src-sohu-luxin-yuhao-ticket-20171115"
+      ],
+      "note": "2017年演出介绍载玉浩于2012年8月27日拜魏元成。",
+      "disputed": false
+    },
+    {
+      "id": "xia-jinhua--wang-chaozheng",
+      "from": "xia-jinhua",
+      "to": "wang-chaozheng",
+      "type": "mentor",
+      "sources": [
+        "src-douyin-hulu-lineage"
+      ],
+      "note": "仅短视频自媒体记载，正式摆知待考。",
+      "disputed": true
+    },
+    {
+      "id": "xu-youlu--jiao-dehai",
+      "from": "xu-youlu",
+      "to": "jiao-dehai",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "xu-youlu--liu-dezhi",
+      "from": "xu-youlu",
+      "to": "liu-dezhi",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "xu-youlu--lu-dejun",
+      "from": "xu-youlu",
+      "to": "lu-dejun",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "现行参考表所列；央视2007年旧谱另列沈竹善门下，保留两说。"
+    },
+    {
+      "id": "yu-junbo--guo-quanbao",
+      "from": "yu-junbo",
+      "to": "guo-quanbao",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "yu-qian--feng-zhaoyang",
+      "from": "yu-qian",
+      "to": "feng-zhaoyang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "yu-qian--guo-fenyang",
+      "from": "yu-qian",
+      "to": "guo-fenyang",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage",
+        "src-chinanews-guo-fenyang-20150122"
+      ],
+      "note": "原目录收录的师承说法待补直接出处。当前所引总表不足以核实，不作已确认的正式拜师关系；详见2026-09-12核查记录。新华社及采访记载的家庭口头称谓未明确姓名与正式摆知程序，仍保留待核。"
+    },
+    {
+      "id": "yu-qian--guo-qilin",
+      "from": "yu-qian",
+      "to": "guo-qilin",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "yu-qian--li-siming",
+      "from": "yu-qian",
+      "to": "li-siming",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "yu-qian--tai-rongjian",
+      "from": "yu-qian",
+      "to": "tai-rongjian",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "yu-qian--wu-suowei",
+      "from": "yu-qian",
+      "to": "wu-suowei",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "原目录收录的师承说法待补直接出处。当前所引总表不足以核实，不作已确认的正式拜师关系；详见2026-09-12核查记录。"
+    },
+    {
+      "id": "yu-qian--xiao-long-guo-zihao",
+      "from": "yu-qian",
+      "to": "xiao-long-guo-zihao",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "原目录收录的师承说法待补直接出处。当前所引总表不足以核实，不作已确认的正式拜师关系；详见2026-09-12核查记录。"
+    },
+    {
+      "id": "zhang-sanlu--a-yantao",
+      "from": "zhang-sanlu",
+      "to": "a-yantao",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "三大派源头关系待考。"
+    },
+    {
+      "id": "zhang-sanlu--shen-chunhe",
+      "from": "zhang-sanlu",
+      "to": "shen-chunhe",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "三大派源头关系待考。"
+    },
+    {
+      "id": "zhang-sanlu--zhu-shaowen",
+      "from": "zhang-sanlu",
+      "to": "zhu-shaowen",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "与朱绍文是否直系尚待考证。"
+    },
+    {
+      "id": "zhang-shouchen--chang-baokun",
+      "from": "zhang-shouchen",
+      "to": "chang-baokun",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "zhang-shouchen--chang-baoqing",
+      "from": "zhang-shouchen",
+      "to": "chang-baoqing",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "由田立禾代拉师弟。"
+    },
+    {
+      "id": "zhang-shouchen--liu-baorui",
+      "from": "zhang-shouchen",
+      "to": "liu-baorui",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "zhang-shouchen--tong-dafang",
+      "from": "zhang-shouchen",
+      "to": "tong-dafang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "zhao-ailu--wang-changyou",
+      "from": "zhao-ailu",
+      "to": "wang-changyou",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "zhao-peiru--chang-guitian",
+      "from": "zhao-peiru",
+      "to": "chang-guitian",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "zhao-peiru--gao-yingpei",
+      "from": "zhao-peiru",
+      "to": "gao-yingpei",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "zhao-peiru--hou-yaowen",
+      "from": "zhao-peiru",
+      "to": "hou-yaowen",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "zhao-peiru--li-boxiang",
+      "from": "zhao-peiru",
+      "to": "li-boxiang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "zhao-shizhong--kang-guisheng",
+      "from": "zhao-shizhong",
+      "to": "kang-guisheng",
+      "type": "mentor",
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "公开师承表记录，康桂生个体生平待补。",
+      "disputed": false
+    },
+    {
+      "id": "zhao-zhenduo--li-jindou",
+      "from": "zhao-zhenduo",
+      "to": "li-jindou",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "zheng-hongwei--lu-xin",
+      "from": "zheng-hongwei",
+      "to": "lu-xin",
+      "type": "mentor",
+      "sources": [
+        "src-sohu-luxin-yuhao-ticket-20171115"
+      ],
+      "note": "演出介绍称卢鑫师承郑宏伟，尚无独立摆知仪式材料；郑宏伟于2026年公开声明解除师徒关系，保留历史待考边。",
+      "disputed": true
+    },
+    {
+      "id": "zheng-wenxi--wang-sheng",
+      "from": "zheng-wenxi",
+      "to": "wang-sheng",
+      "type": "mentor",
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "补齐现有演员的上游师承；按参考表对应代际收录。",
+      "disputed": false
+    },
+    {
+      "id": "zheng-xiaoshan--miao-fu",
+      "from": "zheng-xiaoshan",
+      "to": "miao-fu",
+      "type": "mentor",
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "补齐现有演员的上游师承；按参考表对应代际收录。",
+      "disputed": false
+    },
+    {
+      "id": "zheng-xiaoshan--wei-yuancheng",
+      "from": "zheng-xiaoshan",
+      "to": "wei-yuancheng",
+      "type": "mentor",
+      "sources": [
+        "src-cctv-fan-zhenyu-disciples-20061220"
+      ],
+      "note": "央视公开师承表列录。",
+      "disputed": false
+    },
+    {
+      "id": "zheng-xiaoshan--zheng-hongwei",
+      "from": "zheng-xiaoshan",
+      "to": "zheng-hongwei",
+      "type": "mentor",
+      "sources": [
+        "src-baike-zheng-hongwei",
+        "src-people-zheng-xiaoshan-20190625"
+      ],
+      "note": "郑宏伟正式师承郑小山；父亲郑文喜为家传授艺，不建立门内师承边。",
+      "disputed": false
+    },
+    {
+      "id": "zhou-deshan--lian-xiuquan",
+      "from": "zhou-deshan",
+      "to": "lian-xiuquan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "zhou-deshan--ma-sanli",
+      "from": "zhou-deshan",
+      "to": "ma-sanli",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage",
+        "src-cflac-ma-sanli-20210420"
+      ],
+      "note": "中国文联刊载《曲艺》资料明确记载拜周德山为师；父亲马德禄与兄长的传艺属于家学。"
+    },
+    {
+      "id": "zhu-kuoquan--hou-baolin",
+      "from": "zhu-kuoquan",
+      "to": "hou-baolin",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "早年收养，后正式收徒。"
+    },
+    {
+      "id": "zhu-kuoquan--ma-zhiming",
+      "from": "zhu-kuoquan",
+      "to": "ma-zhiming",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "马三立之子；谱表记拜朱阔泉。"
+    },
+    {
+      "id": "zhu-kuoquan--wang-fengshan",
+      "from": "zhu-kuoquan",
+      "to": "wang-fengshan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "zhu-shaowen--chun-changlong",
+      "from": "zhu-shaowen",
+      "to": "chun-changlong",
+      "type": "mentor",
+      "sources": [
+        "src-cctv-lineage-20070624"
+      ],
+      "note": "央视2007年转载天津日报旧谱列此师承，与现行参考表不同。",
+      "disputed": true
+    },
+    {
+      "id": "zhu-shaowen--fan-youyuan",
+      "from": "zhu-shaowen",
+      "to": "fan-youyuan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "zhu-shaowen--feng-kunzhi",
+      "from": "zhu-shaowen",
+      "to": "feng-kunzhi",
+      "type": "mentor",
+      "sources": [
+        "src-cctv-lineage-20070624"
+      ],
+      "note": "央视2007年转载天津日报旧谱列此师承，与现行参考表不同。",
+      "disputed": true
+    },
+    {
+      "id": "zhu-shaowen--fu-yougen",
+      "from": "zhu-shaowen",
+      "to": "fu-yougen",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "zhu-shaowen--shen-zhushan",
+      "from": "zhu-shaowen",
+      "to": "shen-zhushan",
+      "type": "mentor",
+      "sources": [
+        "src-cctv-lineage-20070624"
+      ],
+      "note": "央视旧谱所列；现行参考表另列阿彦涛。",
+      "disputed": true
+    },
+    {
+      "id": "zhu-shaowen--xu-youlu",
+      "from": "zhu-shaowen",
+      "to": "xu-youlu",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-wiki-lineage"
+      ]
+    },
+    {
+      "id": "feng-gong--song-ning",
+      "from": "feng-gong",
+      "to": "song-ning",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-huanqiu-songning-2002",
+        "src-huanqiu-feng-gong-lineage",
+        "src-cctv-lineage-20070624"
+      ],
+      "note": "宋宁为冯巩正式弟子之一，央视及媒体有明确报道。"
+    },
+    {
+      "id": "feng-gong--pan-binlong",
+      "from": "feng-gong",
+      "to": "pan-binlong",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-360-feng-gong-disciples",
+        "src-huanqiu-feng-gong-lineage",
+        "src-cctv-lineage-20070624"
+      ],
+      "note": "中戏汇报演出后入门，2004年媒体报道正式拜师。"
+    },
+    {
+      "id": "feng-gong--bai-kainan",
+      "from": "feng-gong",
+      "to": "bai-kainan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-huanqiu-baikainan-2004",
+        "src-huanqiu-feng-gong-lineage",
+        "src-cctv-lineage-20070624"
+      ],
+      "note": "中戏毕业后正式拜师，央视及媒体记录。"
+    },
+    {
+      "id": "feng-gong--cao-suifeng",
+      "from": "feng-gong",
+      "to": "cao-suifeng",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-iesdouyin-cao-suifeng",
+        "src-wiki-lineage",
+        "src-cctv-lineage-20070624"
+      ],
+      "note": "2007年登台被师父赏识并拜师口径。"
+    },
+    {
+      "id": "feng-gong--he-jun",
+      "from": "feng-gong",
+      "to": "he-jun",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-allhistory-feng-gong-lineage"
+      ],
+      "note": "现仅见谱系条目。"
+    },
+    {
+      "id": "feng-gong--li-mingyu",
+      "from": "feng-gong",
+      "to": "li-mingyu",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-allhistory-feng-gong-lineage"
+      ],
+      "note": "现仅见谱系条目。"
+    },
+    {
+      "id": "feng-gong--hou-linlin",
+      "from": "feng-gong",
+      "to": "hou-linlin",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-allhistory-feng-gong-lineage"
+      ],
+      "note": "现仅见谱系条目。"
+    },
+    {
+      "id": "feng-gong--geng-qiang",
+      "from": "feng-gong",
+      "to": "geng-qiang",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-allhistory-feng-gong-lineage"
+      ],
+      "note": "现仅见谱系条目。"
+    },
+    {
+      "id": "feng-gong--mo-hong",
+      "from": "feng-gong",
+      "to": "mo-hong",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-allhistory-feng-gong-lineage"
+      ],
+      "note": "现仅见谱系条目。"
+    },
+    {
+      "id": "feng-gong--wang-tong",
+      "from": "feng-gong",
+      "to": "wang-tong",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-allhistory-feng-gong-lineage"
+      ],
+      "note": "现仅见谱系条目。"
+    },
+    {
+      "id": "jiang-kun--tang-aiguo",
+      "from": "jiang-kun",
+      "to": "tang-aiguo",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-cctv-lineage-20070624"
+      ],
+      "note": "央视族谱列为马季→姜昆→唐爱国。"
+    },
+    {
+      "id": "jiang-kun--qi-liqiang",
+      "from": "jiang-kun",
+      "to": "qi-liqiang",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-cctv-lineage-20070624"
+      ],
+      "note": "仅见谱系收录。"
+    },
+    {
+      "id": "jiang-kun--liu-quanhe",
+      "from": "jiang-kun",
+      "to": "liu-quanhe",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-cctv-lineage-20070624"
+      ],
+      "note": "仅见谱系收录。"
+    },
+    {
+      "id": "jiang-kun--liu-quanli",
+      "from": "jiang-kun",
+      "to": "liu-quanli",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-cctv-lineage-20070624"
+      ],
+      "note": "仅见谱系收录。"
+    },
+    {
+      "id": "jiang-kun--liu-hui",
+      "from": "jiang-kun",
+      "to": "liu-hui",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-cctv-lineage-20070624"
+      ],
+      "note": "仅见谱系收录。"
+    },
+    {
+      "id": "jiang-kun--lu-ming",
+      "from": "jiang-kun",
+      "to": "lu-ming",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-cctv-lineage-20070624"
+      ],
+      "note": "仅见谱系收录。"
+    },
+    {
+      "id": "jiang-kun--sun-chen",
+      "from": "jiang-kun",
+      "to": "sun-chen",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-cctv-lineage-20070624"
+      ],
+      "note": "仅见谱系收录。"
+    },
+    {
+      "id": "jiang-kun--deng-xiaolin",
+      "from": "jiang-kun",
+      "to": "deng-xiaolin",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-cctv-lineage-20070624"
+      ],
+      "note": "仅见谱系收录。"
+    },
+    {
+      "id": "jiang-kun--xu-yong",
+      "from": "jiang-kun",
+      "to": "xu-yong",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-cctv-lineage-20070624"
+      ],
+      "note": "仅见谱系收录。"
+    },
+    {
+      "id": "jiang-kun--zhao-weiguo",
+      "from": "jiang-kun",
+      "to": "zhao-weiguo",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-cctv-lineage-20070624"
+      ],
+      "note": "仅见谱系收录。"
+    },
+    {
+      "id": "jiang-kun--baishua",
+      "from": "jiang-kun",
+      "to": "baishua",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-cctv-lineage-20070624"
+      ],
+      "note": "仅见谱系收录。"
+    },
+    {
+      "id": "jiang-kun--li-danan",
+      "from": "jiang-kun",
+      "to": "li-danan",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-cctv-lineage-20070624"
+      ],
+      "note": "仅见谱系收录。"
+    },
+    {
+      "id": "jiang-kun--xiao-wenlan",
+      "from": "jiang-kun",
+      "to": "xiao-wenlan",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-cctv-lineage-20070624"
+      ],
+      "note": "仅见谱系收录。"
+    },
+    {
+      "id": "jiang-kun--ni-ming",
+      "from": "jiang-kun",
+      "to": "ni-ming",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-cctv-lineage-20070624"
+      ],
+      "note": "仅见谱系收录。"
+    },
+    {
+      "id": "jiang-kun--xu-wen",
+      "from": "jiang-kun",
+      "to": "xu-wen",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-cctv-lineage-20070624"
+      ],
+      "note": "仅见谱系收录。"
+    },
+    {
+      "id": "jiang-kun--guo-dan",
+      "from": "jiang-kun",
+      "to": "guo-dan",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-cctv-lineage-20070624"
+      ],
+      "note": "仅见谱系收录。"
+    },
+    {
+      "id": "jiang-kun--cao-shuguang",
+      "from": "jiang-kun",
+      "to": "cao-shuguang",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-cctv-lineage-20070624"
+      ],
+      "note": "仅见谱系收录。"
+    },
+    {
+      "id": "jiang-kun--xu-huimin",
+      "from": "jiang-kun",
+      "to": "xu-huimin",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-lidicity-maji-baishi-2006"
+      ],
+      "note": "2006年12月新加坡正式拜师，有完整引保代信息。"
+    },
+    {
+      "id": "jiang-kun--qiu-shengyang",
+      "from": "jiang-kun",
+      "to": "qiu-shengyang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-lidicity-maji-baishi-2006"
+      ],
+      "note": "2006年12月新加坡正式拜师，有完整引保代信息。"
+    },
+    {
+      "id": "han-lancheng--fan-jun",
+      "from": "han-lancheng",
+      "to": "fan-jun",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-cctv-lineage-20070624",
+        "src-baike-han-lancheng"
+      ],
+      "note": "谱系+百科共识。"
+    },
+    {
+      "id": "han-lancheng--yu-xiaofei",
+      "from": "han-lancheng",
+      "to": "yu-xiaofei",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-cctv-lineage-20070624",
+        "src-baike-han-lancheng"
+      ],
+      "note": "谱系+百科共识。"
+    },
+    {
+      "id": "wang-qianxiang--guo-peixin",
+      "from": "wang-qianxiang",
+      "to": "guo-peixin",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-cctv-lineage-20070624"
+      ],
+      "note": "央视谱系有列，待补待确认资料。"
+    },
+    {
+      "id": "ma-ji--chang-peiye",
+      "from": "ma-ji",
+      "to": "chang-peiye",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "公开谱系中出现，未检到单独拜师细节。"
+    },
+    {
+      "id": "ma-ji--liu-xiyao",
+      "from": "ma-ji",
+      "to": "liu-xiyao",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "公开谱系中出现，未检到单独拜师细节。"
+    },
+    {
+      "id": "ma-ji--peng-ziyi",
+      "from": "ma-ji",
+      "to": "peng-ziyi",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "公开谱系中出现，未检到单独拜师细节。"
+    },
+    {
+      "id": "ma-ji--huang-zhiqiang",
+      "from": "ma-ji",
+      "to": "huang-zhiqiang",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "公开谱系中出现，未检到单独拜师细节。"
+    },
+    {
+      "id": "ma-ji--yin-zhuolin",
+      "from": "ma-ji",
+      "to": "yin-zhuolin",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "公开谱系中出现，未检到单独拜师细节。"
+    },
+    {
+      "id": "ma-ji--yao-xinguang",
+      "from": "ma-ji",
+      "to": "yao-xinguang",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "公开谱系中出现，未检到单独拜师细节。"
+    },
+    {
+      "id": "ma-ji--li-guoxiu",
+      "from": "ma-ji",
+      "to": "li-guoxiu",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "公开谱系中出现，未检到单独拜师细节。"
+    },
+    {
+      "id": "ma-ji--zhao-longjun",
+      "from": "ma-ji",
+      "to": "zhao-longjun",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "公开谱系中出现，未检到单独拜师细节。"
+    },
+    {
+      "id": "ma-ji--xing-yingying",
+      "from": "ma-ji",
+      "to": "xing-yingying",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "公开谱系中出现，未检到单独拜师细节。"
+    },
+    {
+      "id": "ma-ji--liu-lixin",
+      "from": "ma-ji",
+      "to": "liu-lixin",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "公开谱系中出现，未检到单独拜师细节。"
+    },
+    {
+      "id": "ma-ji--hou-guannan",
+      "from": "ma-ji",
+      "to": "hou-guannan",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "公开谱系中出现，未检到单独拜师细节。"
+    },
+    {
+      "id": "ma-ji--zhang-qing",
+      "from": "ma-ji",
+      "to": "zhang-qing",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-wiki-lineage"
+      ],
+      "note": "公开谱系中出现，未检到单独拜师细节。"
     }
   ]
 }

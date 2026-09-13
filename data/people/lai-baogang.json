@@ -1,0 +1,11 @@
+{
+  "id": "lai-baogang",
+  "name": "来宝刚",
+  "generation": "文",
+  "generationIndex": 7,
+  "school": "高凤山门下",
+  "bio": "高凤山入室弟子，快板名家；按高凤山一脉行业通行辈分归文字辈。",
+  "works": ["快板"],
+  "sources": ["src-wiki-lineage"],
+  "portraitKind": "placeholder"
+}

@@ -6,8 +6,8 @@
       "url": "https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%A3%B0%E6%BC%94%E5%91%98%E5%B8%88%E6%89%BF%E5%85%B3%E7%B3%BB",
       "publisher": "维基百科",
       "license": "CC BY-SA 4.0",
-      "accessed": "2026-09-08",
-      "note": "本库师承边的主表。字辈取「德寿宝文明」，不用「德寿喜哈」。"
+      "accessed": "2026-09-12",
+      "note": "公开师承参考表，含早期师承问号及辈分例外；不把全表视为已独立证实的史实。此次核对当前库内人物，未穷尽全表。"
     },
     {
       "id": "src-wiki-zhu-kuoquan",
@@ -200,12 +200,285 @@
       "note": "已打开并阅读全文。2014-05-21演出报道支持苗阜、王声的青曲社身份及此前《满腹经纶》《学富五车》的晚会演出。7月上海专场属于当时预告，不能由此单独证明最终如期举行；未采用宣传性排名与观众评价。"
     },
     {
+      "id": "src-cnr-yang-shaohua-death-2025",
+      "title": "相声演员杨少华去世",
+      "url": "https://news.cnr.cn/native/gd/kx/20250709/t20250709_527254014.shtml",
+      "publisher": "央广网（来源：央视新闻客户端）",
+      "accessed": "2026-09-12",
+      "note": "发布于2025-07-09。报道明确杨少华于2025年7月9日去世，享年94岁；仅用于校正人物生卒信息，不以此认定正式师承或字辈。"
+    },
+    {
       "id": "src-cyol-comedian-round-20190314",
       "title": "《欢乐喜剧人5》突围赛 王宁猫王造型放飞自我",
       "url": "https://web.archive.org/web/20211116021143/https://shareapp.cyol.com/cmsfile/News/201903/14/share194886.html?nid=194886&t=1553511344",
       "publisher": "中国青年报客户端（来源：北方网；Internet Archive存档）",
       "accessed": "2026-09-10",
       "note": "已打开并阅读全文。存档对应2019-03-14节目预告；原文 https://shareapp.cyol.com/cmsfile/News/201903/14/share194886.html 本轮未成功打开。支持张鹤伦/郎鹤炎、卢鑫/玉浩的当时搭档身份及节目安排，不代表当前关系状态，不补造作品名称或师承。"
+    },
+    {
+      "id": "src-cflac-ma-sanli-20210420",
+      "title": "留给人间都是笑——记优秀共产党员马三立",
+      "url": "https://www.cflac.org.cn/ys/qy/qydt/202104/t20210420_542488.html",
+      "publisher": "中国文艺网 / 曲艺杂志融媒",
+      "accessed": "2026-09-12",
+      "note": "2021-04-20刊载；摘自中国曲协组织编写的2017年文集，明确父兄传艺与拜周德山分开。"
+    },
+    {
+      "id": "src-tjrb-ma-liujia-20260120",
+      "title": "天津日报2026年1月20日第9版：马六甲曲艺传承报道",
+      "url": "https://epaper.tianjinwe.com/tjrb/resfile/2026-01-20/09/09.pdf",
+      "publisher": "天津日报",
+      "accessed": "2026-09-12",
+      "note": "报道其为王凤山亲传弟子，语境为王派快板，不据此虚构相声拜师日期。"
+    },
+    {
+      "id": "src-cctv-lineage-20070624",
+      "title": "中国相声师承关系族谱（第一代至第四代）",
+      "url": "https://news.cctv.com/performance/20070624/100144.shtml",
+      "publisher": "央视网",
+      "accessed": "2026-09-12",
+      "note": "本页用于马季一脉及明代口述谱系补充，部分人物以名单形式出现。"
+    },
+    {
+      "id": "src-cnr-zhang-wenfu-20090722",
+      "title": "相声演员介绍——《相声乐苑》",
+      "url": "https://wyzs.cnr.cn/qwfb/200907/t20090722_505407363.shtml",
+      "publisher": "中国广播网",
+      "accessed": "2026-09-12",
+      "note": "原文明确张文甫艺名张学桐，1978年拜高凤山学习高派快板；不能自动等同相声门辈分。"
+    },
+    {
+      "id": "src-wiki-fan-zhenyu",
+      "title": "范振钰",
+      "url": "https://zh.wikipedia.org/wiki/%E8%8C%83%E6%8C%AF%E9%92%B0",
+      "publisher": "维基百科",
+      "license": "CC BY-SA 4.0",
+      "accessed": "2026-09-12",
+      "note": "公开人物条目，记载1927年出生、1950年拜班德贵、与高英培长期搭档、1979年调入全总文工团及2008年11月17日逝世；用于人物资料补录，并非独立师承档案。"
+    },
+    {
+      "id": "src-sohu-guo-fan-partnership-20090727",
+      "title": "郭德纲：从艺二十年不指望别人只指望听众",
+      "url": "https://yule.sohu.com/20090727/n265506378.shtml",
+      "publisher": "搜狐娱乐（来源：北京青年报）",
+      "accessed": "2026-09-12",
+      "note": "2009年采访报道写明郭德纲1998年与范振钰合作；只用于确认舞台搭档，不推导师承。"
+    },
+    {
+      "id": "src-iqiyi-gao-fan-diaoyu-2017",
+      "title": "笑动剧场：高英培范振钰相声《钓鱼》",
+      "url": "https://www.iq.com/play/%E7%AC%91%E5%8A%A8%E5%89%A7%E5%9C%BA-2021-12-19-ho4ippd26s?lang=zh_cn",
+      "publisher": "爱奇艺国际站",
+      "accessed": "2026-09-12",
+      "note": "节目页明确列出高英培、范振钰的《钓鱼》表演；用于作品与搭档信息。"
+    },
+    {
+      "id": "src-cctv-fan-zhenyu-disciples-20061220",
+      "title": "中国相声的族谱及师承关系一览",
+      "url": "https://news.cctv.com/performance/20061220/103656_1.shtml",
+      "publisher": "央视网",
+      "accessed": "2026-09-12",
+      "note": "2006-12-20公开师承表第77行列出范振钰及赵津生、腾生祥、彭华、于志勇、郭伯良、何世铭、王传林、丛波、杨俊杰、马腾翔、刘春山、张德起、高峰。用于补齐这13条师承，个体生平和拜师日期仍待逐人补证。"
+    },
+    {
+      "id": "src-cnbpat-jin-fei-20220830",
+      "title": "中国广播说唱团：金霏",
+      "url": "https://www.cnbpat.com/art/2022/8/30/art_1771_39641.html",
+      "publisher": "中国广播艺术团",
+      "accessed": "2026-09-12",
+      "note": "国家艺术院团演员页明确金霏师承王谦祥、李少杰，并列代表作品；未列拜师日期或两门曲种的仪式细节。"
+    },
+    {
+      "id": "src-ifeng-jin-chen-interview-20170602",
+      "title": "《艺乐》专访相声演员金霏&陈曦：台上龙马精神",
+      "url": "https://iah.ifeng.com/5720621/news.shtml",
+      "publisher": "中国网（凤凰网转载）",
+      "accessed": "2026-09-12",
+      "note": "2017年采访中直接问及金霏相声师从王谦祥、快板师从李少杰；金霏回答具体学艺方式。"
+    },
+    {
+      "id": "src-jxwy-jin-chen-20220223",
+      "title": "《金霏曦比》相声专场演员介绍",
+      "url": "https://www.jxwyjt.net/detail_uuid_fcf8f7d186cf4901acb182667dc240f9",
+      "publisher": "江西文演集团",
+      "accessed": "2026-09-12",
+      "note": "演出机构介绍列金霏师从王谦祥、李少杰及陈曦师承康桂生；页面抓取受限，已通过网页检索摘要与豆包给出的原链接复核。"
+    },
+    {
+      "id": "src-sohu-luxin-yuhao-ticket-20171115",
+      "title": "卢鑫玉浩相声专场即将上演",
+      "url": "https://www.sohu.com/a/204628519_172847",
+      "publisher": "中演票务通太原站（搜狐转载）",
+      "accessed": "2026-09-12",
+      "note": "2017年演出介绍称卢鑫师承郑宏伟、玉浩师承魏元成，并列明玉浩2012年8月27日拜魏元成；卢鑫拜师仪式细节未见独立材料。"
+    },
+    {
+      "id": "src-china-liyinfei-20210729",
+      "title": "李寅飞相声艺术介绍",
+      "url": "https://music.china.com.cn/2021-07/29/content_41630438.htm",
+      "publisher": "中国网",
+      "accessed": "2026-09-12",
+      "note": "报道记载李寅飞2014年正式拜王谦祥为师；未据其早年德云社学员经历建立郭德纲师承。"
+    },
+    {
+      "id": "src-tsinghua-liyinfei-yepeng",
+      "title": "李寅飞、叶蓬相声专场演员介绍",
+      "url": "https://www.hall.tsinghua.edu.cn/info/pwzx_hd/4042",
+      "publisher": "清华大学艺术教育中心",
+      "accessed": "2026-09-12",
+      "note": "演员介绍称李寅飞、叶蓬师承王谦祥，并称为关门弟子；页面抓取受限，按用户提供链接与检索摘要复核。"
+    },
+    {
+      "id": "src-sohu-hulu-liujunjie",
+      "title": "葫芦相声社张斌、张峰岩师承报道",
+      "url": "https://m.sohu.com/a/1059518731_121711119/",
+      "publisher": "搜狐号",
+      "accessed": "2026-09-12",
+      "note": "自媒体称张斌、张峰岩拜入刘俊杰门下；未找到摆知仪式或当事人采访，关系标待考。"
+    },
+    {
+      "id": "src-douyin-hulu-lineage",
+      "title": "葫芦相声社师承短视频文章",
+      "url": "https://www.iesdouyin.com/share/video/758436625296628648",
+      "publisher": "抖音用户内容",
+      "accessed": "2026-09-12",
+      "note": "自媒体称王朝正师承夏锦华、孟庆龙为王佩元徒弟；未见权威媒体或当事人材料，关系标待考。"
+    },
+    {
+      "id": "src-sina-ma-lufulai-yukezi",
+      "title": "马志明与卢福来、于克志师承争议",
+      "url": "https://k.sina.cn/article/6433619053_17f793c6d001004985.html",
+      "publisher": "新浪文史自媒体",
+      "accessed": "2026-09-12",
+      "note": "文章称1989年两人举行有引保代的摆知仪式，同时记录马志明不认可该师徒名分；按争议关系录入。"
+    },
+    {
+      "id": "src-sina-ma-huangzumin",
+      "title": "马志明与黄族民师徒关系说明",
+      "url": "https://k.sina.cn/article/1210154912_48217fa002001cm4h.html",
+      "publisher": "新浪自媒体",
+      "accessed": "2026-09-12",
+      "note": "文章称马志明口头承认黄族民师徒名分，但未举行传统摆知仪式；不作为正式入室弟子。"
+    },
+    {
+      "id": "src-douyin-ma-rejected-disciples",
+      "title": "马志明活动名义收徒争议短视频文章",
+      "url": "https://www.iesdouyin.com/share/video/760909325926887697",
+      "publisher": "抖音用户内容",
+      "accessed": "2026-09-12",
+      "note": "自媒体称潘贵才、王金东为活动名义挂名，马志明本人不承认；仅作马志明人物备注，不建正式弟子边。"
+    },
+    {
+      "id": "src-baike-zheng-hongwei",
+      "title": "郑宏伟人物介绍",
+      "url": "https://m.baike.com/wiki/%E9%83%91%E5%AE%8F%E4%BC%9F/19757714",
+      "publisher": "抖音百科",
+      "accessed": "2026-09-12",
+      "note": "页面称郑宏伟为郑文喜之子、师承郑小山。用于郑宏伟个人资料交叉核对；正式师承关系另有人民网郑小山讣告佐证。"
+    },
+    {
+      "id": "src-people-zheng-xiaoshan-20190625",
+      "title": "郑小山讣告与师承资料",
+      "url": "http://culture.people.com.cn/n1/2019/0625/c1013-31178107.html",
+      "publisher": "人民网",
+      "accessed": "2026-09-12",
+      "note": "用户提供的郑小山讣告链接称郑小山师承王本林，弟子包括苗阜、郑宏伟；本轮网页抓取返回 502，保留为待复核的官方来源链接。"
+    },
+    {
+      "id": "src-cnr-zheng-xiaoshan-20190627",
+      "title": "相声名家郑小山追思会在西安举行",
+      "url": "https://www.cnr.cn/sxpd/ws/20190627/t20190627_524666407.shtml",
+      "publisher": "央广网（来源：西部网）",
+      "accessed": "2026-09-12",
+      "note": "已打开正文。报道记载郑小山师从马三立弟子王本林、为第六代传人，并称其与郑文喜之子郑宏伟合作；不单独证明郑宏伟拜师仪式日期。"
+    },
+    {
+      "id": "src-ifeng-guo-genealogy-2016",
+      "title": "德云社家谱清门与弟子公告",
+      "url": "https://ent.ifeng.com/c/8lbFiGpP1DM",
+      "publisher": "凤凰网娱乐",
+      "accessed": "2026-09-12",
+      "note": "用户提交的德云社家谱来源，核验清单中“在职/清门/主动退出/口盟”分类。"
+    },
+    {
+      "id": "src-sina-guo-koumeng",
+      "title": "德云社口盟弟子名单（张康等）",
+      "url": "https://k.sina.cn/article_6816500779_1964b8c2b0.html",
+      "publisher": "新浪娱乐",
+      "accessed": "2026-09-12",
+      "note": "来源用于口盟（无摆知）条目核对。清单要求口盟不计入正式入室徒弟。"
+    },
+    {
+      "id": "src-chinanews-guo-fenyang-20150122",
+      "title": "郭德纲未给小儿子起名字（中新网）",
+      "url": "https://www.chinanews.com/yl/2015/01-22/6994284.shtml",
+      "publisher": "中国新闻网（转载：武汉晨报）",
+      "accessed": "2026-09-12",
+      "note": "2015-01-22采访中称“今年年末出生半月的小儿子”将拜于谦，且小儿子未定名；仅反映家庭口头规划，不等同正式拜师宣告。"
+    },
+    {
+      "title": "环球网：冯巩弟子相关师承报道",
+      "url": "https://m.huanqiu.com/article/9CaKrnKc7aa",
+      "publisher": "环球网",
+      "accessed": "2026-09-12",
+      "note": "收录宋宁2002拜师并常与师父登台合作。",
+      "id": "src-huanqiu-songning-2002"
+    },
+    {
+      "title": "冯巩师承相关报道索引",
+      "url": "https://m.huanqiu.com/article/9CaKrnKc7aa",
+      "publisher": "环球网",
+      "accessed": "2026-09-12",
+      "note": "用于冯巩门下公开拜师信息的补充来源。",
+      "id": "src-huanqiu-feng-gong-lineage"
+    },
+    {
+      "title": "360娱乐：冯巩门下弟子拜师报道",
+      "url": "https://m.yule.360.com/content/4369490",
+      "publisher": "360娱乐",
+      "accessed": "2026-09-12",
+      "note": "该页对潘斌龙/贾玲/白凯南拜师时间与背景有明确报道。",
+      "id": "src-360-feng-gong-disciples"
+    },
+    {
+      "title": "环球网：白凯南冯巩师承条目",
+      "url": "https://m.huanqiu.com/article/9CaKrnKfMWt",
+      "publisher": "环球网",
+      "accessed": "2026-09-12",
+      "note": "用于标注白凯南与冯巩的正式师承。",
+      "id": "src-huanqiu-baikainan-2004"
+    },
+    {
+      "title": "抖音：曹随风与冯巩师承材料",
+      "url": "https://www.iesdouyin.com/share/video/714539723025244942",
+      "publisher": "抖音",
+      "accessed": "2026-09-12",
+      "note": "视频内容提及曹随风被冯巩赏识及合作经历。",
+      "id": "src-iesdouyin-cao-suifeng"
+    },
+    {
+      "title": "全历史：冯巩师承条目",
+      "url": "https://speed.allhistory.com/detail/591ac43955b5427dfa018135",
+      "publisher": "全历史",
+      "accessed": "2026-09-12",
+      "note": "多为谱系收录项；本库将其标记为“仅谱系记录”。",
+      "id": "src-allhistory-feng-gong-lineage"
+    },
+    {
+      "title": "马季家谱网：新加坡拜师仪式报道",
+      "url": "http://xhm.lidicity.com/baishi.html",
+      "publisher": "联合早报/相关转述",
+      "accessed": "2026-09-12",
+      "note": "文本提及徐惠民、邱胜扬于新加坡正式拜师，含引师保代信息。",
+      "id": "src-lidicity-maji-baishi-2006"
+    },
+    {
+      "title": "抖音百科：韩兰城（韩兰成）",
+      "url": "https://m.baike.com/wiki/%E9%9F%A9%E5%85%B0%E5%9F%8E/4723845",
+      "publisher": "抖音百科",
+      "accessed": "2026-09-12",
+      "note": "用于补充韩兰成门下“范军、于小飞”。",
+      "id": "src-baike-han-lancheng"
     }
   ]
 }

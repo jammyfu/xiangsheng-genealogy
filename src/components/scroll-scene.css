@@ -224,3 +224,180 @@
     transition: none;
   }
 }
+.scroll-scenery-toggle {
+  position: absolute;
+  top: 195px;
+  right: 24px;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 44px;
+  padding: 6px 10px;
+  background: #f8f5eede;
+  border: 1px solid #777f6330;
+  color: #66705d;
+  font-size: 11px;
+}
+.ink-app.is-immersive .scroll-scenery-toggle {
+  top: 128px;
+}
+@media (max-width: 820px) {
+  .scroll-scenery-toggle {
+    top: 110px;
+    right: 6px;
+    font-size: 10px;
+  }
+  .ink-app.is-immersive .scroll-scenery-toggle {
+    top: 195px;
+    right: 16px;
+  }
+}
+
+.scroll-travel-controls { position:absolute; bottom:88px; left:50%; transform:translateX(-50%); display:flex; align-items:center; gap:8px; z-index:25; background:#f8f4e9ed; border:1px solid #70694e26; padding:4px 8px; white-space:nowrap; }
+.scroll-travel-controls button { min-height:38px; padding:5px 10px; color:#574b38; font-size:12px; }
+.scroll-travel-controls button:disabled { opacity:.32; cursor:default; }
+.scroll-travel-controls span { font-size:11px; color:#8b2626; min-width:48px; text-align:center; }
+@media(max-width:600px) { .scroll-travel-controls { bottom:115px; gap:1px; padding:3px; } .scroll-travel-controls button { padding:5px 8px; min-height:44px; } }
+
+/* Names and their lineage are the focal plane of the landscape. */
+.spatial-person-name { background: #faf7efdf; }
+.spatial-person.is-selected .spatial-person-name { background:#fffaf1; box-shadow:0 6px 24px #55412a24, 0 0 0 5px #fffaf15c; }
+
+.spatial-person[class*="depth-"] { transition:opacity 650ms ease; }
+.spatial-person.depth-background { opacity:.68; }
+.spatial-person.depth-background:hover, .spatial-person.depth-background:focus-within { opacity:1; }
+.spatial-person.depth-background .spatial-person-name { min-height:66px; background:#f6f2e8b8; color:#626459; }
+.spatial-person.depth-ancestor { opacity:.8; }
+.spatial-person.depth-disciple .spatial-person-name, .spatial-person.depth-mentor .spatial-person-name { border-color:#80674342; background:#fffaf1f2; box-shadow:0 6px 16px #4d382b14; }
+.spatial-person.depth-disciple small, .spatial-person.depth-mentor small { color:#8b4835; }
+@media(prefers-reduced-motion:reduce) { .spatial-person[class*="depth-"] { transition:none; } }
+
+.generation-deck { width:170px; position:relative; pointer-events:auto; background:#f7f1e4f5; border:1px solid #8a785b55; box-shadow:5px 5px 0 #d9cdb950,10px 10px 0 #d9cdb925; transform:scale(.86); transition:transform .4s,box-shadow .4s; }
+.generation-deck.is-open { transform:scale(1); border-color:#8b2626a0; box-shadow:0 8px 22px #574b3820; }
+.generation-deck > button { width:100%; padding:12px; display:flex; flex-direction:column; gap:6px; align-items:center; }
+.generation-deck strong { font-family:var(--font-serif); font-size:22px; color:#493f30; }
+.generation-deck span { font-size:11px; color:#85755e; }
+.generation-deck-pages { display:flex; justify-content:center; align-items:center; border-top:1px solid #8a785b25; gap:14px; }
+.generation-deck-pages button { min-width:44px; min-height:36px; font-size:21px; }
+.generation-deck-pages button:disabled { opacity:.25; }
+.spatial-person { animation:deck-person-enter .4s ease both; }
+@keyframes deck-person-enter { from { opacity:0; } }
+@media(prefers-reduced-motion:reduce) { .spatial-person { animation:none; } .generation-deck { transition:none; } }
+
+.generation-person.is-selected .spatial-person-name { min-height:66px; width:140px; }
+.generation-person.is-selected .spatial-person-name > span { writing-mode:horizontal-tb; font-size:25px; letter-spacing:.06em; }
+.generation-person.is-selected::after { top:calc(100% + 7px); }
+.generation-person .spatial-caption { top:calc(100% + 18px); }
+.generation-deck > button { padding:8px; gap:4px; }
+.generation-deck strong { font-size:20px; }
+.generation-deck-pages button { min-height:32px; }
+
+.generation-person.depth-background { opacity:.9; }
+
+.spatial-person.generation-person .spatial-person-name,
+.generation-person.is-selected .spatial-person-name { width:100px; min-height:36px; padding:4px 2px; }
+.generation-person .spatial-person-name > span,
+.generation-person.is-selected .spatial-person-name > span { writing-mode:horizontal-tb; font-size:19px; line-height:1.2; }
+.generation-person .spatial-person-name small,
+.generation-person .spatial-caption,
+.generation-person.is-selected .spatial-person-name::after { display:none; }
+.spatial-person.generation-person.is-compact .spatial-person-name { min-height:28px; }
+.generation-person.is-compact .spatial-person-name > span { font-size:17px; }
+
+/* Region labels, not containers: the names themselves occupy the 3D volume. */
+.generation-cluster, .generation-cluster.is-open { width:230px; border:0; background:transparent; box-shadow:none; }
+.generation-cluster > button { padding:4px 12px; border:0; background:transparent; gap:3px; }
+.generation-cluster strong { font-size:25px; letter-spacing:.22em; font-weight:500; color:#6b6250; }
+.generation-cluster.is-open strong { color:#8b2626; }
+.generation-cluster span { font-size:10px; opacity:.65; letter-spacing:.12em; }
+.spatial-person.generation-person .spatial-person-name { background:transparent; border-color:transparent; box-shadow:none; }
+.spatial-person.generation-person.is-selected .spatial-person-name { color:#8b2626; background:#fff9ed80; border:0; box-shadow:none; }
+.spatial-person.generation-person .spatial-person-name:hover, .spatial-person.generation-person .spatial-person-name:focus-visible { background:#fff9edb0; outline:1px solid #8b26264a; }
+
+/* Vertical name slips follow the handscroll's traditional reading direction. */
+.spatial-person.generation-person .spatial-person-name,
+.spatial-person.generation-person.is-selected .spatial-person-name { width:44px; min-height:88px; padding:8px 6px; margin-inline:auto; }
+.generation-person .spatial-person-name > span,
+.generation-person.is-selected .spatial-person-name > span,
+.generation-person.is-compact .spatial-person-name > span { writing-mode:vertical-rl; text-orientation:upright; white-space:nowrap; font-size:26px; line-height:1.15; letter-spacing:.06em; }
+.spatial-person.generation-person.is-compact .spatial-person-name { min-height:78px; }
+
+/* Individual text backings remain legible even when the branch recedes. */
+.spatial-person.generation-person,
+.spatial-person.generation-person.is-dimmed,
+.spatial-person.generation-person.depth-background,
+.spatial-person.generation-person.depth-ancestor { opacity:1; }
+.spatial-person.generation-person .spatial-person-name { background:#f5f1e7; color:#697064; border:1px solid #c8c5b8; box-shadow:0 3px 9px #4a403515; }
+.spatial-person.generation-person .spatial-person-name > span { font-family:"PingFang SC",system-ui,sans-serif; }
+.spatial-person.generation-person.is-lineage .spatial-person-name { background:#fff8e9; border-color:#b7a78b; color:#493f30; }
+.spatial-person.generation-person.is-lineage .spatial-person-name > span { font-family:var(--font-serif); font-weight:600; }
+.spatial-person.generation-person.is-selected .spatial-person-name { background:#fff0d4; border:1.5px solid #9d4540; box-shadow:0 4px 16px #8b26262b; color:#8b2626; }
+.spatial-person.generation-person.is-selected .spatial-person-name > span { font-family:var(--font-brush); font-size:30px; font-weight:400; }
+.spatial-person.generation-person.is-compared:not(.is-selected) .spatial-person-name,
+.spatial-person.generation-person:not(.is-selected) .spatial-person-name:hover,
+.spatial-person.generation-person:not(.is-selected) .spatial-person-name:focus-visible { background:#e8f3ef; border-color:#6faba6; color:#17646c; outline:none; box-shadow:0 3px 12px #197c8528; }
+.spatial-person.generation-person.is-shared:not(.is-selected) .spatial-person-name { background:#f1eaf7; border-color:#a48cba; color:#65447e; }
+.generation-cluster > button { background:#f5f1e7f5; border:1px solid #c8c5b885; box-shadow:0 2px 8px #4a40350e; }
+.generation-cluster.is-open > button { background:#fff8e9; border-color:#b7a78b; }
+
+/* Keep the backed vertical slips clear of adjacent rows. */
+.spatial-person.generation-person .spatial-person-name { padding:6px 4px; }
+.spatial-person.generation-person .spatial-person-name > span { font-size:24px; line-height:1.05; letter-spacing:.02em; }
+.spatial-person.generation-person.is-selected .spatial-person-name > span { font-size:26px; }
+
+/* Calligraphic colophons occupy the quiet outer upper corners of the scroll. */
+.scroll-inscription { position:absolute; top:25%; display:flex; flex-direction:row-reverse; align-items:flex-start; gap:12px; padding:14px 12px; background:linear-gradient(100deg,#faf4e600,#faf4e6eb 24%,#faf4e6e8 80%,#faf4e600); color:#534e3e; pointer-events:none; opacity:0; visibility:hidden; }
+.scroll-inscription.is-opening { left:8%; }
+.scroll-inscription.is-closing { right:8%; }
+.scroll-inscription strong { writing-mode:vertical-rl; font-family:var(--font-brush); font-size:clamp(28px,3vw,46px); font-weight:400; letter-spacing:.14em; }
+.scroll-inscription span { writing-mode:vertical-rl; font-family:var(--font-serif); font-size:12px; line-height:1.8; letter-spacing:.16em; max-height:180px; }
+.scroll-inscription b { align-self:flex-end; font-family:var(--font-serif); font-size:17px; line-height:1; padding:5px; border:2px solid #93413d; outline:1px solid #93413d; outline-offset:2px; color:#93413d; font-weight:500; }
+@media(max-width:600px) { .scroll-inscription { top:19%; gap:6px; padding:8px; } .scroll-inscription.is-opening { left:3%; } .scroll-inscription.is-closing { right:3%; } .scroll-inscription span { font-size:10px; max-height:150px; } .scroll-inscription strong { font-size:27px; } }
+
+/* Dense context stays readable on paper; hover restores comparison emphasis. */
+.spatial-person.generation-person.depth-background:not(.is-lineage):not(.is-compared):not(.is-shared) { opacity:.88; }
+.spatial-person.generation-person.depth-background:not(.is-lineage) .spatial-person-name { box-shadow:none; border-color:#d2ccbd; }
+.spatial-person.generation-person.depth-background:hover,
+.spatial-person.generation-person.depth-background:focus-within { opacity:1; }
+
+/* Focus + context: stable readable names, an airy oval around the lineage. */
+.focus-cloud-guide { position:absolute; top:132px; left:32px; right:32px; display:flex; justify-content:center; align-items:center; font-size:11px; letter-spacing:.12em; color:#777c6d; }
+.focus-cloud-guide strong { font-weight:400; color:#8b2626; }
+.focus-cloud-count { position:absolute; top:158px; left:50%; transform:translateX(-50%); white-space:nowrap; margin:0; color:#777466; font-size:11px; }
+.spatial-person.generation-person.is-readable .spatial-person-name { background:#f8f5ebef; border-color:#cfc8b7; box-shadow:0 3px 8px #4a403510; }
+.spatial-person.generation-person.is-readable.is-lineage .spatial-person-name { background:#fff8e9; color:#543d2b; border-color:#b9a487; }
+.spatial-person.generation-person.is-readable.is-selected .spatial-person-name { background:#fff0d4; color:#8b2626; border:1.5px solid #9d4540; min-height:116px; box-shadow:0 6px 20px #8b262624; }
+.spatial-person.generation-person.is-readable.is-selected .spatial-caption { display:block; top:calc(100% + 18px); font-size:11px; }
+.spatial-person.generation-person.is-readable.is-compared:not(.is-selected) .spatial-person-name { background:#e8f3ef; border-color:#6faba6; color:#17646c; }
+.spatial-person.generation-person.is-readable.is-shared:not(.is-selected) .spatial-person-name { background:#f1eaf7; border-color:#a48cba; color:#65447e; }
+.spatial-person.generation-person.is-readable.is-cloud-context .spatial-person-name { width:100%; min-height:44px; padding:6px; border-color:transparent; background:#f8f5ebd9; box-shadow:none; border-radius:2px; }
+.spatial-person.generation-person.is-readable.is-cloud-context .spatial-person-name > span { writing-mode:horizontal-tb; font-size:24px; letter-spacing:.02em; }
+.spatial-person.generation-person.is-readable.is-cloud-context .spatial-person-name:hover,.spatial-person.generation-person.is-readable.is-cloud-context .spatial-person-name:focus-visible { border-color:#6faba6; outline:2px solid #6faba6; }
+
+.atlas-reading { position:absolute; z-index:35; top:82px; left:50%; transform:translateX(-50%); display:flex; gap:2px; padding:3px; border:1px solid #bfb6a570; border-radius:4px; background:#f9f5eadd; white-space:nowrap; }
+.atlas-reading button { padding:6px 9px; color:#716c5e; font-size:12px; border-radius:2px; }
+.atlas-reading button[aria-pressed="true"] { color:#8b2626; background:#e9dfcb; }
+.atlas-reading button:focus-visible,.atlas-names summary:focus-visible { outline:2px solid #8b2626; outline-offset:3px; }
+.atlas-names { position:absolute; z-index:45; top:55px; right:24px; font-size:12px; color:#594e3d; }
+.atlas-names summary { cursor:pointer; list-style:none; border-bottom:1px solid #aa9d8570; padding:6px 0; background:#faf6eceb; }
+.atlas-names summary::before { content:'＋'; margin-right:6px; color:#8b2626; }
+.atlas-names[open] summary::before { content:'−'; }
+.atlas-names summary span { margin-left:12px; font-size:10px; color:#817766; }
+.atlas-names-body { position:absolute; right:0; top:calc(100% + 8px); width:300px; max-width:calc(100vw - 70px); padding:16px; border:1px solid #c1b49c; border-radius:4px; background:#faf6ef; box-shadow:0 12px 36px #433b3026; }
+.atlas-names-body label { display:grid; gap:8px; }
+.atlas-names-body input { width:100%; box-sizing:border-box; padding:10px; background:#fffdf8; border:1px solid #bcb19e; font-size:14px; }
+.atlas-names-body p { font-size:11px; color:#7a715f; margin:12px 0; }
+.atlas-names-list { max-height:min(330px,45vh); overflow:auto; overscroll-behavior:contain; display:grid; grid-template-columns:1fr 1fr; gap:6px; }
+.atlas-names-list button { text-align:left; display:grid; gap:5px; padding:10px 8px; background:#f0e9dc; border:1px solid transparent; min-height:55px; }
+.atlas-names-list button strong { font-weight:500; font-size:15px; }
+.atlas-names-list button span { font-size:10px; color:#7b705b; }
+.atlas-names-list button:hover,.atlas-names-list button[aria-pressed="true"] { border-color:#a35c4d; background:#f8ead5; }
+@media (max-width:600px) {
+  .atlas-reading { left:50%; top:88px; }
+  .atlas-reading button { font-size:11px; padding:6px; }
+  .atlas-names { right:18px; top:52px; }
+  .atlas-names summary span { display:none; }
+  .focus-cloud-guide { left:18px; right:18px; font-size:10px; letter-spacing:0; }
+  .focus-cloud-count { font-size:10px; }
+}

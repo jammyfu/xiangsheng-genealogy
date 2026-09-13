@@ -1,0 +1,11 @@
+{
+  "id": "cui-qi",
+  "name": "崔琦",
+  "generation": "文",
+  "generationIndex": 7,
+  "school": "高凤山门下",
+  "bio": "高凤山入室弟子，曲艺作家、快板名家；按高凤山一脉行业通行辈分归文字辈。",
+  "works": ["快板"],
+  "sources": ["src-wiki-lineage"],
+  "portraitKind": "placeholder"
+}

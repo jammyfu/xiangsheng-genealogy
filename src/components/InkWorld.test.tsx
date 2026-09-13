@@ -193,3 +193,55 @@ it("reuses the GPU context when a branch changes", async () => {
   expect(mocks.construct).toHaveBeenCalledTimes(1);
   expect(mocks.dispose).not.toHaveBeenCalled();
 });
+
+it("removes past event papers from the reading window and keyboard focus", async () => {
+  await act(async () =>
+    root.render(
+      <InkWorld
+        mode="timeline"
+        items={items}
+        selectedId="b"
+        index={1}
+        onSelect={() => {}}
+      />,
+    ),
+  );
+  await flush();
+  const scene = mocks.render.mock.calls.at(-1)![0] as Scene;
+  expect(scene.getObjectByName("event-paper:a")!.visible).toBe(false);
+  expect(scene.getObjectByName("event-paper:b")!.visible).toBe(true);
+  expect((host.querySelectorAll(".ink-anchor")[0] as HTMLElement).inert).toBe(
+    true,
+  );
+});
+
+it("centers the selected timeline paper inside a narrow viewport", async () => {
+  const width = vi
+    .spyOn(HTMLElement.prototype, "clientWidth", "get")
+    .mockReturnValue(390);
+  const height = vi
+    .spyOn(HTMLElement.prototype, "clientHeight", "get")
+    .mockReturnValue(500);
+  try {
+    await act(async () =>
+      root.render(
+        <InkWorld
+          mode="timeline"
+          items={items}
+          selectedId="b"
+          index={1}
+          onSelect={() => {}}
+        />,
+      ),
+    );
+    await flush();
+    const label = host.querySelector(".ink-anchor.is-selected") as HTMLElement;
+    const x = Number(label.style.transform.match(/translate\(([\d.-]+)px/)![1]);
+    expect(x).toBeGreaterThan(120);
+    expect(x).toBeLessThan(270);
+    expect(label.style.visibility).toBe("visible");
+  } finally {
+    width.mockRestore();
+    height.mockRestore();
+  }
+});

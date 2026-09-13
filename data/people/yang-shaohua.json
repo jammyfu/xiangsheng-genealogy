@@ -1,17 +1,24 @@
 {
   "birthYear": 1940,
-  "deathYear": 2021,
+  "deathYear": 2025,
   "portraitKind": "placeholder",
+  "disputed": true,
+  "notes": [
+    "天津相声圈多按郭荣起口传弟子、宝字辈相待；严格行规说则认为未举行公开摆知，属海清出身。",
+    "另有按年龄与行内交往归入文字辈的说法，行业内无统一定论；谱图暂以「宝字辈（争议）」定位。",
+    "海清／海青指未经过正式摆知、没有明确门户师承的演员；杨议亦未正式拜师，按海清身份记录。"
+  ],
   "works": [
     "五味俱全"
   ],
   "sources": [
-    "src-wiki-lineage"
+    "src-wiki-lineage",
+    "src-cnr-yang-shaohua-death-2025"
   ],
   "id": "yang-shaohua",
   "name": "杨少华",
   "generation": "宝",
   "generationIndex": 6,
   "school": "天津",
-  "bio": "郭荣起弟子。与子杨议等在当代舞台活跃，是天津宝字辈通向当代观众的桥梁。"
+  "bio": "早年在天津启明茶社学艺，长期随郭荣起演出。其是否经过正式摆知、因而能否正式列为郭荣起弟子，业内有宝字辈、文字辈与海清三种说法；与子杨议等在当代舞台活跃。"
 }
