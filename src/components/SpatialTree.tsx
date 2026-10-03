@@ -1,3 +1,5 @@
+import { disciplesOf, mentorsOf } from "../lib/catalog";
+import { layoutTreeLabels, type TreeLabelCandidate } from "../lib/tree-label-layout";
 import { treeLabelStyle } from "../lib/tree-label-style";
 import { createGenealogyStars } from '../lib/genealogy-stars';
 import { lineageComparison } from "../lib/lineage-focus";
@@ -6,7 +8,7 @@ import { useEffect, useRef, useState } from 'react';
 import type { MutableRefObject } from 'react';
 import ForceGraph3D from '3d-force-graph';
 import type { ForceGraph3DInstance } from '3d-force-graph';
-import { AdditiveBlending, CanvasTexture, Group, Mesh, MeshBasicMaterial, SphereGeometry, Sprite, SpriteMaterial, Vector3, PerspectiveCamera, SRGBColorSpace, RingGeometry, DoubleSide } from 'three';
+import { AdditiveBlending, CanvasTexture, Group, Mesh, MeshBasicMaterial, SphereGeometry, Sprite, SpriteMaterial, Vector3, PerspectiveCamera, SRGBColorSpace, RingGeometry, DoubleSide, Line, BufferGeometry, LineBasicMaterial } from 'three';
 import type { AtlasLayout, AtlasViewport } from '../lib/atlas';
 import { forceTreeData, forceLinkColor } from '../lib/force-tree';
 import type { ForcePerson, ForceRelation } from '../lib/force-tree';
@@ -20,6 +22,11 @@ interface Props {
 type ForceView = ForceGraph3DInstance<ForcePerson, ForceRelation>;
 export default function SpatialTree(props: Props) {
   const host = useRef<HTMLDivElement>(null);
+  const gesture = useRef({x:0,y:0,moved:false});
+  const labelStats = useRef<HTMLSpanElement>(null);
+  const directory = useRef<HTMLDetailsElement>(null);
+  const [directoryMode, setDirectoryMode] = useState<"mentors" | "disciples" | "graph">("mentors");
+  const [directoryQuery, setDirectoryQuery] = useState("");
   const instance = useRef<ForceView | null>(null);
   const stars = useRef<ReturnType<typeof createGenealogyStars> | null>(null);
   const latest = useRef(props); latest.current = props;
@@ -39,6 +46,7 @@ export default function SpatialTree(props: Props) {
     const api = instance.current;
     if (!api) return;
     const focusNodes = lineageId ? lineageComparison(lineageId, null, latest.current.graph.edges).selected.nodes : null;
+    if (focusNodes && lineageId) for (const edge of latest.current.graph.edges) if (edge.from === lineageId) focusNodes.add(edge.to);
     const nodes = latest.current.graph.nodes.filter(n => !focusNodes || focusNodes.has(n.person.id)).map(n => cache.current.get(n.person.id)).filter((n): n is ForcePerson => Boolean(n));
     if (!nodes.length) return;
     const extent = (axis: "x" | "y" | "z") => {
@@ -59,6 +67,7 @@ export default function SpatialTree(props: Props) {
       stars.current?.burst(screen.x, screen.y);
     }
     setInspected(id);
+    if (directory.current?.open) { directory.current.open = false; directory.current.querySelector("summary")?.focus(); }
     compareRef.current(null);
     if (id === latest.current.selectedId) fit(750, id);
     else latest.current.onSelect(id);
@@ -73,7 +82,7 @@ export default function SpatialTree(props: Props) {
     gradient.addColorStop(.35, '#ffffff35'); gradient.addColorStop(1, '#ffffff00');
     glowContext.fillStyle = gradient; glowContext.fillRect(0,0,128,128);
     const glowTexture = new CanvasTexture(glowCanvas); resources.push(glowTexture);
-    const objectCache = new Map<string, { key: string; group: Group; dot: MeshBasicMaterial; label: SpriteMaterial; labelSprite: Sprite; halo: Mesh }>();
+    const objectCache = new Map<string, { leader: Line; key: string; group: Group; dot: MeshBasicMaterial; label: SpriteMaterial; labelSprite: Sprite; halo: Mesh }>();
     const labelTextures = new Map<string, CanvasTexture>();
     const labelStyle = (node: ForcePerson) => treeLabelStyle({ selected: node.atlas.selected, related: node.related, compared: comparisonNodes.current.has(node.id), shared: sharedNodes.current.has(node.id) });
     const labelTexture = (node: ForcePerson) => {
@@ -82,18 +91,19 @@ export default function SpatialTree(props: Props) {
       const cached = labelTextures.get(key);
       if (cached) return cached;
       const canvas = document.createElement('canvas');
-      canvas.width = 96; canvas.height = [...name].length * 64 + 16;
+      canvas.width = Math.max(96, [...name].length * 38 + 24); canvas.height = 64;
       const ctx = canvas.getContext('2d')!;
-      ctx.fillStyle = style.paper; ctx.fillRect(3, 1, 90, canvas.height-2);
+      ctx.fillStyle = style.paper; ctx.fillRect(3, 1, canvas.width-6, canvas.height-2);
       ctx.strokeStyle = style.border; ctx.lineWidth = style.mode === 'selected' ? 3 : 1.5;
-      ctx.strokeRect(3, 1, 90, canvas.height-2);
-      ctx.font = style.font; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillStyle = style.ink;
-      [...name].forEach((glyph, i) => ctx.fillText(glyph,48,i*64+40));
+      ctx.strokeRect(3, 1, canvas.width-6, canvas.height-2);
+      ctx.font = style.font.replace(/\d+px/, "32px"); ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillStyle = style.ink;
+      ctx.fillText(name, canvas.width/2, 32);
       const texture = new CanvasTexture(canvas); texture.colorSpace = SRGBColorSpace;
       labelTextures.set(key,texture); resources.push(texture);
       return texture;
     };
     let cancelled = false;
+    let labelFrame = 0;
     try {
       reduced.current = matchMedia('(prefers-reduced-motion: reduce)').matches;
       const api = new ForceGraph3D(host.current, { controlType: 'orbit' }) as unknown as ForceView;
@@ -146,7 +156,11 @@ export default function SpatialTree(props: Props) {
           const hoverMaterial = new MeshBasicMaterial({ color: '#75dce3', side: DoubleSide, toneMapped: false, depthWrite: false });
           const hoverHalo = new Mesh(hoverGeometry, hoverMaterial); hoverHalo.visible = false;
           group.add(hoverHalo); resources.push(hoverGeometry, hoverMaterial);
-          objectCache.set(node.id, { key, group, dot: material, label: labelMaterial, labelSprite: label, halo: hoverHalo });
+          const leaderGeometry = new BufferGeometry().setFromPoints([new Vector3(),new Vector3()]);
+          const leaderMaterial = new LineBasicMaterial({color,transparent:true,opacity:node.related ? .6 : .2,depthTest:false});
+          const leader = new Line(leaderGeometry,leaderMaterial); leader.raycast = () => {}; group.add(leader);
+          resources.push(leaderGeometry,leaderMaterial);
+          objectCache.set(node.id, { leader, key, group, dot: material, label: labelMaterial, labelSprite: label, halo: hoverHalo });
           return group;
         })
         .nodeLabel(n => `${n.atlas.person.name} · 点击查看完整师承主线`)
@@ -162,7 +176,7 @@ export default function SpatialTree(props: Props) {
         .linkLabel(e => e.disputed ? '师承存在不同说法，出处见人物书笺' : '师父 → 徒弟')
         .enableNodeDrag(false).warmupTicks(50).cooldownTicks(reduced.current ? 0 : 100)
         .onEngineStop(() => { if (needsFit.current) { needsFit.current = false; fit(700, latest.current.selectedId); } })
-        .onNodeClick(n => activate(n.id))
+        .onNodeClick(n => { if (!gesture.current.moved) activate(n.id); })
         .onNodeHover(n => compareRef.current(n?.id ?? null));
       stars.current = createGenealogyStars();
       api.scene().add(stars.current.points);
@@ -205,6 +219,53 @@ export default function SpatialTree(props: Props) {
       });
       api.graphData(forceTreeData(latest.current.graph, cache.current));
       fit(0, latest.current.selectedId);
+      let lastLayout = 0;
+      const layoutLabels = (time: number) => {
+        if (cancelled) return;
+        labelFrame = requestAnimationFrame(layoutLabels);
+        if (!latest.current.active || time - lastLayout < 16) return;
+        lastLayout = time;
+        const camera = api.camera() as PerspectiveCamera;
+        camera.updateMatrixWorld(); api.scene().updateMatrixWorld();
+        const { width, height } = latest.current.viewport;
+        const candidates: TreeLabelCandidate[] = [];
+        const direct = new Set(latest.current.graph.edges.filter(e=>e.from===latest.current.selectedId).map(e=>e.to));
+        for (const [id, visual] of objectCache) {
+          const node = cache.current.get(id);
+          if (!node) continue;
+          const world = visual.group.getWorldPosition(new Vector3());
+          const view = world.clone().applyMatrix4(camera.matrixWorldInverse);
+          const screen = world.clone().project(camera);
+          const pixelWidth = Math.min(80, [...node.atlas.person.name].length * (node.atlas.selected ? 15 : 13) + 16);
+          const pixelHeight = node.atlas.selected ? 32 : 28;
+          visual.labelSprite.visible = false; visual.leader.visible = false;
+          if (view.z >= 0 || screen.z < -1 || screen.z > 1 || (!node.atlas.selected && (Math.abs(screen.x)>1 || Math.abs(screen.y)>1))) continue;
+          candidates.push({ id, x:(screen.x + 1) * width / 2 - pixelWidth / 2, y:(1 - screen.y) * height / 2 + 12,
+            width:pixelWidth, height:pixelHeight, priority:node.atlas.selected ? 100 : id === hovered.current ? 90 : direct.has(id) ? 40 : node.related ? 20 : 1 });
+        }
+        const rect = host.current?.getBoundingClientRect();
+        const obstacles = rect ? [...(host.current!.closest('.atlas-graph') ?? host.current!.parentElement!).querySelectorAll<HTMLElement>('[data-atlas-control], .force-comparison, .force-tree-cosmic-caption, .atlas-topline, .atlas-bottomline')].filter(element=>element.offsetHeight && getComputedStyle(element).visibility!=='hidden').map(element=>{const r=element.getBoundingClientRect();return {x:r.left-rect.left-4,y:r.top-rect.top-4,width:r.width+8,height:r.height+8};}) : [];
+        const focused = candidates.filter(label=>label.priority>1);
+        const background = candidates.filter(label=>label.priority===1).sort((a,b)=> Math.hypot(a.x-width/2,a.y-height/2)-Math.hypot(b.x-width/2,b.y-height/2)).slice(0,18);
+        obstacles.push({x:0,y:height-64,width,height:64});
+        const placed = layoutTreeLabels([...focused,...background],width,height,obstacles);
+        for (const label of placed) {
+          const visual = objectCache.get(label.id)!, node = cache.current.get(label.id)!;
+          const anchor = visual.group.getWorldPosition(new Vector3());
+          const depth = anchor.clone().project(camera).z;
+          const center = new Vector3((label.x+label.width/2)/width*2-1,1-(label.y+label.height/2)/height*2,depth).unproject(camera);
+          const local = visual.group.worldToLocal(center.clone());
+          const viewDepth = -center.clone().applyMatrix4(camera.matrixWorldInverse).z;
+          const unit = 2 * viewDepth * Math.tan(camera.fov * Math.PI / 360) / height / (visual.group.scale.x||1);
+          visual.labelSprite.position.copy(local); visual.labelSprite.scale.set(label.width*unit,label.height*unit,1); visual.labelSprite.visible = true;
+          const positions = visual.leader.geometry.attributes.position;
+          positions.setXYZ(0,0,0,0); positions.setXYZ(1,local.x,local.y,local.z); positions.needsUpdate=true;
+          visual.leader.geometry.computeBoundingSphere(); visual.leader.visible=true;
+          (visual.leader.material as LineBasicMaterial).color.set(node.atlas.selected ? '#ff927f' : node.related ? '#e8c17c' : '#52627c');
+        }
+        if (labelStats.current) labelStats.current.textContent = `主线姓名 ${placed.filter(label=>label.priority>1).length}/${focused.length} · 细线连接原星点；其他人物见目录`;
+      };
+      labelFrame = requestAnimationFrame(layoutLabels);
       latest.current.controlsRef.current = {
         fit: () => fit(),
         focus: () => fit(750, latest.current.selectedId),
@@ -223,6 +284,7 @@ export default function SpatialTree(props: Props) {
     } catch { latest.current.onFailure(); }
     return () => {
       cancelled = true;
+      cancelAnimationFrame(labelFrame);
       latest.current.controlsRef.current = null;
       stars.current?.dispose(); stars.current = null;
       instance.current?._destructor(); instance.current = null;
@@ -238,31 +300,47 @@ export default function SpatialTree(props: Props) {
     if (props.graph.nodes.length > previousCount.current * 2) needsFit.current = true;
     previousCount.current = props.graph.nodes.length;
   }, [props.graph, ready]);
-  useEffect(() => { instance.current?.width(props.viewport.width).height(props.viewport.height); }, [props.viewport]);
+  useEffect(() => { instance.current?.width(props.viewport.width).height(props.viewport.height); if (ready) fit(0, props.selectedId); }, [props.viewport, ready]);
   useEffect(() => { props.active ? instance.current?.resumeAnimation() : instance.current?.pauseAnimation(); }, [props.active, ready]);
   useEffect(() => {
     setInspected(props.selectedId);
+    setDirectoryQuery("");
     if (ready) { needsFit.current = true; fit(750, props.selectedId); }
   }, [props.selectedId, ready]);
   const node = props.graph.nodes.find(n => n.person.id === inspected) ?? props.graph.nodes.find(n => n.selected);
+  const mentors = mentorsOf(props.selectedId), disciples = disciplesOf(props.selectedId);
+  const directoryPeople = directoryMode === "mentors" ? mentors : directoryMode === "disciples" ? disciples : props.graph.nodes.map(n => n.person);
+  const query = directoryQuery.trim().toLocaleLowerCase();
+  const matches = directoryPeople.filter(p => [p.name, p.nameHant, ...(p.aliases ?? [])].some(name => name?.toLocaleLowerCase().includes(query)));
   return <div className="force-tree" aria-label="可展开的三维世代谱系">
-    <div ref={host} className="force-tree-canvas" onPointerMove={event => {
+    <div ref={host} className="force-tree-canvas" onPointerDown={event=>{gesture.current={x:event.clientX,y:event.clientY,moved:false};}} onPointerMove={event => {
+      if (event.buttons && Math.hypot(event.clientX-gesture.current.x,event.clientY-gesture.current.y)>5) gesture.current.moved=true;
       const rect = event.currentTarget.getBoundingClientRect();
       stars.current?.move((event.clientX - rect.left) / Math.max(1, rect.width) * 2 - 1, 1 - (event.clientY - rect.top) / Math.max(1, rect.height) * 2);
     }} onPointerLeave={() => { compareRef.current(null); stars.current?.move(0, 0); }} />
     <div className="force-tree-cosmic-caption" aria-hidden="true"><span>群星相承</span><small>一人一星 · 一脉一河</small></div>
     <div className="force-comparison" role="status" aria-live="polite">
       <span className="force-path-current">当前：{props.graph.nodes.find(n => n.selected)?.person.name}</span>
-      {comparison ? <><span className="force-path-hover">对照：{comparison.name}</span><span className="force-path-shared">共同路径 · {comparison.shared} 人</span></> : <small>移到其他人物，对照完整师承</small>}
+      {comparison ? <><span className="force-path-hover">对照：{comparison.name}</span><span className="force-path-shared">共同路径 · {comparison.shared} 人</span></> : <small>拖动旋转 · 滚轮缩放 · 点姓名查看师承</small>}
+    <span ref={labelStats} className="force-label-stats" />
     </div>
     {node && <div className="force-tree-actions" data-atlas-control="force">
       <strong>{node.person.name}</strong>{node.selected && <span className="force-current-label">当前人物</span>}
       {node.childCount > 0 && <button onClick={() => { needsFit.current = true; props.onBranch(node.person.id); }}>{node.hiddenChildren ? `展开传人 · ${node.hiddenChildren}` : '收起传人'}</button>}
       <button onClick={() => props.onSelect(node.person.id)}>查看人物</button>
     </div>}
-    <details className="force-tree-directory" data-atlas-control="force">
-      <summary>人物与支系 · {props.graph.nodes.length}</summary>
-      <div>{props.graph.nodes.map(n => <button key={n.person.id} onPointerEnter={() => compareRef.current(n.person.id)} onPointerLeave={() => compareRef.current(null)} onFocus={() => compareRef.current(n.person.id)} onBlur={() => compareRef.current(null)} aria-label={`${n.person.name}，查看师承主线`} onClick={() => activate(n.person.id)}>{n.person.name}<small>{n.childCount ? `${n.childCount} 位传人` : ''}</small></button>)}</div>
+    <details ref={directory} className="force-tree-directory" data-atlas-control="force" onKeyDown={event => { if (event.key === "Escape") { event.stopPropagation(); directory.current!.open = false; directory.current?.querySelector("summary")?.focus(); } }}>
+      <summary>师父与弟子 · {mentors.length} / {disciples.length}</summary>
+      <div className="force-directory-content">
+        <strong>{node?.person.name}的师承导航</strong>
+        <div className="force-directory-modes" role="group" aria-label="师承导航范围">
+          {([["mentors", `师父 · ${mentors.length}`], ["disciples", `弟子 · ${disciples.length}`], ["graph", `图中人物 · ${props.graph.nodes.length}`]] as const).map(([mode, label]) => <button key={mode} aria-pressed={directoryMode === mode} onClick={() => { setDirectoryMode(mode); setDirectoryQuery(""); }}>{label}</button>)}
+        </div>
+        <input aria-label="检索师承导航" placeholder="输入姓名或艺名" value={directoryQuery} onChange={event => setDirectoryQuery(event.target.value)} />
+        <p role="status">{query ? `找到 ${matches.length} / ${directoryPeople.length} 人` : directoryMode === "graph" ? "图中姓名自动避让；完整名单可在此选择" : "直接师承关系 · 点击姓名定位人物"}</p>
+        <div className="force-directory-list">{matches.map(person => <button key={person.id} onPointerEnter={() => compareRef.current(person.id)} onPointerLeave={() => compareRef.current(null)} onFocus={() => compareRef.current(person.id)} onBlur={() => compareRef.current(null)} aria-label={`${person.name}，查看师承主线`} onClick={() => activate(person.id)}>{person.name}</button>)}</div>
+        {!matches.length && <p>{query ? "没有匹配人物，请更换姓名或艺名。" : directoryMode === "mentors" ? "尚未记录师父。" : "尚未记录弟子。"}</p>}
+      </div>
     </details>
   </div>;
 }

@@ -1,0 +1,60 @@
+
+> xiangsheng-genealogy@1.0.0 test
+> vitest run --maxWorkers=2 --testTimeout=20000
+
+
+ RUN  v3.2.7 /Users/jammyfu/Documents/Codex/2026-10-03/task/xiangsheng-genealogy
+
+ ✓ src/lib/focus-cloud.test.ts (27 tests) 5267ms
+   ✓ packs hou-baolin inside 1600 × 900 without overlaps  983ms
+   ✓ packs yu-qian inside 1600 × 900 without overlaps  1311ms
+   ✓ packs guo-degang inside 1600 × 900 without overlaps  1050ms
+   ✓ packs ma-delu inside 1600 × 900 without overlaps  1008ms
+ ✓ src/catalog.test.ts (8 tests) 291ms
+ ✓ src/lib/genealogy-stars.test.ts (4 tests) 785ms
+ ✓ src/lib/tree-label-layout.test.ts (2 tests) 395ms
+   ✓ repositions a dense branch without dropping its names  391ms
+ ✓ src/lib/atlas.test.ts (18 tests) 247ms
+ ✓ src/lib/branch-layout.test.ts (2 tests) 217ms
+ ✓ src/lib/scroll-space.test.ts (15 tests) 146ms
+ ✓ src/lib/force-tree.test.ts (6 tests) 145ms
+ ✓ src/lib/layout.test.ts (1 test) 163ms
+ ✓ src/lib/fixed-scroll.test.ts (6 tests) 128ms
+ ✓ src/lib/cluster-layout.test.ts (3 tests) 52ms
+ ✓ src/lib/visibility.test.ts (2 tests) 244ms
+ ✓ src/lib/events.test.ts (52 tests) 62ms
+ ✓ src/lib/motion.test.ts (4 tests) 24ms
+ ✓ src/components/ScrollScene.test.tsx (18 tests) 10212ms
+   ✓ spatial scroll scene integration (without GPU) > moves a newly selected name continuously and retargets from its visible position  667ms
+   ✓ spatial scroll scene integration (without GPU) > keeps static reading immediate and lets dragging interrupt selection travel  455ms
+   ✓ keeps the genealogy as the focal plane between slower distant scenery and faster foreground  340ms
+   ✓ animates a clickable rear branch into the front depth plane  2225ms
+   ✓ rotates a generation cloud in depth while keeping every person in the scene  1199ms
+   ✓ matches parallax.js inverted axes from cursor through projection (fixed=true)  1851ms
+   ✓ moves scenery and fixed-scroll names in both axes while keeping distant ink opacity constant  2055ms
+ ✓ src/lib/immersive-space.test.ts (2 tests) 40ms
+ ✓ src/lib/lineage-focus.test.ts (3 tests) 18ms
+ ✓ src/lineage-audit.test.ts (7 tests) 44ms
+ ✓ src/lib/scroll-paper.test.ts (2 tests) 157ms
+ ✓ src/lib/scenery-layout.test.ts (7 tests) 14ms
+ ✓ src/lib/browsing.test.ts (3 tests) 30ms
+ ✓ src/lib/tree-label-style.test.ts (2 tests) 44ms
+ ✓ src/lib/cluster-space.test.ts (2 tests) 184ms
+ ✓ src/lib/timeline-state.test.ts (2 tests) 36ms
+ ✓ src/components/TimelineView.test.tsx (2 tests) 464ms
+   ✓ restores deep links, event history and the same event after view unmount  366ms
+ ✓ src/components/Studio.navigation.test.tsx (2 tests) 477ms
+   ✓ clears a completed search, retains generation, and returns to the previous person and view after switching views  379ms
+ ✓ src/components/SpatialTree.test.tsx (1 test) 712ms
+   ✓ selects a parent from the graph and directory without collapsing its lineage  703ms
+ ✓ src/components/InkWorld.test.tsx (6 tests) 633ms
+ ✓ src/lib/useStudioMotion.test.tsx (2 tests) 305ms
+ ✓ src/components/ScrollScene.dom.test.tsx (7 tests) 554ms
+ ✓ src/components/PersonSearch.test.tsx (1 test) 131ms
+ ✓ src/components/TimelineJourney.test.tsx (3 tests) 451ms
+
+ Test Files  32 passed (32)
+      Tests  222 passed (222)
+   Start at  12:40:15
+   Duration  157.41s (transform 14.27s, setup 0ms, collect 186.82s, tests 22.67s, environment 28.33s, prepare 15.09s)
+

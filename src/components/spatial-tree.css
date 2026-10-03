@@ -49,3 +49,24 @@
   .force-tree-cosmic-caption span { font-size:20px; }
   .force-tree-actions { flex-wrap:wrap; max-width:calc(100% - 16px); }
 }
+/* One existing disclosure holds direct relationships and the complete graph list. */
+.force-tree-directory { width:290px; max-width:calc(100% - 48px); padding:0; }
+.force-tree-directory summary { min-height:44px; padding:13px 12px; }
+.force-tree-directory:not([open]) { width:auto; }
+.force-tree-directory > .force-directory-content { display:block; max-height:300px; padding:0 12px 12px; overflow:auto; }
+.force-directory-content strong { display:block; padding:4px 0 8px; }
+.force-directory-modes { display:flex; gap:3px; }
+.force-directory-modes button { flex:1; min-height:44px; padding:6px 3px; font-size:11px; text-align:center; border:1px solid #354257; border-radius:3px; }
+.force-directory-modes button[aria-pressed=true] { background:#354257; color:#ffe1be; border-color:#b29973; }
+.force-directory-content input { width:100%; min-height:44px; margin-top:8px; padding:8px; background:#080c15; border:1px solid #52627c; color:#e9e0d2; border-radius:3px; }
+.force-directory-content input:focus-visible { outline:2px solid #ffb6a0; outline-offset:2px; }
+.force-directory-content p { color:#b4c1d5; line-height:1.6; margin:8px 0; }
+.force-directory-list { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:4px; }
+.force-directory-list button { min-height:44px; padding:8px 4px; text-align:center; border:1px solid #354257; border-radius:3px; }
+.force-tree:has(.force-tree-directory[open]) .force-tree-cosmic-caption { visibility:hidden; }
+@media(max-width:600px) {
+  .force-tree-directory { max-width:calc(100% - 16px); }
+  .force-tree:has(.force-tree-directory[open]) .force-comparison { visibility:hidden; }
+}
+.force-label-stats { display:block; width:100%; color:#a0aec3; font-size:10px; text-align:right; }
+.force-comparison .force-label-stats::before { display:none; }

@@ -1,0 +1,36 @@
+{
+  "observations": [
+    {
+      "name": "front",
+      "labels": "主线姓名 108/108 · 细线连接原星点；其他人物见目录"
+    },
+    {
+      "name": "side",
+      "labels": "主线姓名 108/108 · 细线连接原星点；其他人物见目录"
+    },
+    {
+      "name": "tilt",
+      "labels": "主线姓名 108/108 · 细线连接原星点；其他人物见目录"
+    },
+    {
+      "name": "reverse",
+      "labels": "主线姓名 81/81 · 细线连接原星点；其他人物见目录"
+    },
+    {
+      "name": "zoom-out",
+      "labels": "主线姓名 108/108 · 细线连接原星点；其他人物见目录"
+    },
+    {
+      "name": "zoom-in",
+      "labels": "主线姓名 10/10 · 细线连接原星点；其他人物见目录"
+    }
+  ],
+  "errors": [],
+  "close": {
+    "open": false,
+    "focus": "SUMMARY"
+  },
+  "overflow": false,
+  "dragDidNotNavigate": true,
+  "reducedMotionRestored": true
+}

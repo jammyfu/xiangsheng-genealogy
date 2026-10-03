@@ -45,11 +45,28 @@ it('selects a parent from the graph and directory without collapsing its lineage
     // The camera frames the lineage with space for labels, rather than a fixed 360-unit close-up.
     const [position, target] = cameraPosition.mock.lastCall as [Vector3, Vector3];
     expect(position.distanceTo(target)).toBeGreaterThan(360);
+    const graphTab = [...element.querySelectorAll<HTMLButtonElement>('.force-directory-modes button')].find(b => b.textContent?.includes('图中人物'))!;
+    await act(async () => graphTab.click());
     const directoryButton = element.querySelector<HTMLButtonElement>('[aria-label="张三禄，查看师承主线"]')!;
     await act(async () => directoryButton.click());
     expect(onSelect).toHaveBeenLastCalledWith('zhang-sanlu'); expect(onBranch).not.toHaveBeenCalled();
     const branchButton = [...element.querySelectorAll<HTMLButtonElement>('.force-tree-actions button')].find(b => /传人/.test(b.textContent ?? ''))!;
     await act(async () => branchButton.click());
     expect(onBranch).toHaveBeenCalledOnce();
+    await act(async () => render('guo-degang'));
+    expect(element.querySelector('.force-tree-directory summary')?.textContent).toContain('1 / 98');
+    const disciplesTab = [...element.querySelectorAll<HTMLButtonElement>('.force-directory-modes button')].find(b => b.textContent === '弟子 · 98')!;
+    await act(async () => disciplesTab.click());
+    // Direct relationships come from the catalog even when most disciples are not in the collapsed graph.
+    expect(element.querySelectorAll('.force-directory-list button')).toHaveLength(98);
+    const disciple = element.querySelector<HTMLButtonElement>('[aria-label="岳云鹏，查看师承主线"]')!;
+    const details = element.querySelector<HTMLDetailsElement>('.force-tree-directory')!;
+    details.open = true;
+    await act(async () => disciple.click());
+    expect(onSelect).toHaveBeenLastCalledWith('yue-yunpeng');
+    expect(onBranch).toHaveBeenCalledOnce();
+    expect(details.open).toBe(false);
+    expect(document.activeElement).toBe(details.querySelector('summary'));
+
   } finally { await act(async () => root.unmount()); }
 });
