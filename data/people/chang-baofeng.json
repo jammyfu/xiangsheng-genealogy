@@ -1,9 +1,12 @@
 {
   "portraitKind": "placeholder",
-  "aliases": ["九蘑菇"],
+  "aliases": [
+    "九蘑菇"
+  ],
   "works": [],
   "sources": [
-    "src-wiki-lineage"
+    "src-wiki-lineage",
+    "src-sparse-chang-2020"
   ],
   "id": "chang-baofeng",
   "name": "常宝丰",

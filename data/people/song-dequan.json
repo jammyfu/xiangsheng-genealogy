@@ -6,6 +6,11 @@
   "school": "天津",
   "bio": "苏文茂弟子，常宝堃一脉文字辈下传的明字辈成员。",
   "works": [],
-  "sources": ["src-wiki-lineage"],
+  "sources": [
+    "src-wiki-lineage",
+    "src-sparse-su-2008",
+    "src-sparse-song-2011",
+    "src-sparse-su-culture-2015"
+  ],
   "portraitKind": "placeholder"
 }

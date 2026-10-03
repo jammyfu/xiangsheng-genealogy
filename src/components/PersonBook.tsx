@@ -163,6 +163,8 @@ export function PersonBook({
                 <PersonButtons list={mentors} onSelect={onSelect} />
                 <h3>传人</h3>
                 <PersonButtons list={disciples} onSelect={onSelect} />
+                {related.some(e => e.disputed || e.note) && <details key={person.id} open={related.length <= 6}>
+                  <summary>师承依据与异说 · {related.filter(e => e.disputed || e.note).length} 条{related.some(e => e.disputed) ? "（含异说）" : ""}</summary>
                 {related
                   .filter((e) => e.disputed || e.note)
                   .map((e) => (
@@ -178,6 +180,7 @@ export function PersonBook({
                       <SourceLinks ids={e.sources} />
                     </div>
                   ))}
+                </details>}
                 {person.notes?.map((n, i) => (
                   <p className="editor-note" key={i}>
                     {n}

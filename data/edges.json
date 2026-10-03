@@ -2504,8 +2504,11 @@
       "type": "mentor",
       "disputed": false,
       "sources": [
-        "src-wiki-lineage"
-      ]
+        "src-wiki-lineage",
+        "src-sparse-shi-2018",
+        "src-sparse-li-jing-2006"
+      ],
+      "note": "2006年11月26日正式拜入师胜杰相声门；梁厚民为此前快板老师，不混为相声本师。"
     },
     {
       "id": "su-wenmao--cui-jinquan",
@@ -2514,8 +2517,10 @@
       "type": "mentor",
       "disputed": false,
       "sources": [
-        "src-wiki-lineage"
-      ]
+        "src-wiki-lineage",
+        "src-sparse-su-2008"
+      ],
+      "note": "天津日报孙福海亲历文逐名列为苏文茂弟子；苏世杰字形按该文，未与其他写法节点擅自合并。"
     },
     {
       "id": "su-wenmao--liu-junjie",
@@ -2524,8 +2529,11 @@
       "type": "mentor",
       "disputed": false,
       "sources": [
-        "src-wiki-lineage"
-      ]
+        "src-wiki-lineage",
+        "src-sparse-su-2008",
+        "src-sparse-su-culture-2015"
+      ],
+      "note": "中国文化报李治邦纪念文明确苏文茂弟子，与天津日报师门文互证。"
     },
     {
       "id": "su-wenmao--song-dequan",
@@ -2534,8 +2542,11 @@
       "type": "mentor",
       "disputed": false,
       "sources": [
-        "src-wiki-lineage"
-      ]
+        "src-wiki-lineage",
+        "src-sparse-su-2008",
+        "src-sparse-su-culture-2015"
+      ],
+      "note": "中国文化报李治邦纪念文明确苏文茂弟子，与天津日报师门文互证。"
     },
     {
       "id": "su-wenmao--zhao-weizhou",
@@ -2544,8 +2555,11 @@
       "type": "mentor",
       "disputed": false,
       "sources": [
-        "src-wiki-lineage"
-      ]
+        "src-wiki-lineage",
+        "src-sparse-su-2008",
+        "src-sparse-su-culture-2015"
+      ],
+      "note": "中国文化报李治邦纪念文明确苏文茂弟子，与天津日报师门文互证。"
     },
     {
       "id": "tan-boru--chen-yongquan",
@@ -3652,9 +3666,10 @@
       "to": "yang-zhenhua",
       "type": "mentor",
       "sources": [
-        "src-lnr-yang-obit-2026"
+        "src-lnr-yang-obit-2026",
+        "src-sparse-yang-2022"
       ],
-      "note": "辽宁日报讣告明确1957年拜师；与金炳昶是搭档。",
+      "note": "辽宁日报逐名列为杨海荃弟子；金炳昶与杨振华为搭档，同师门而非上下师承。",
       "from": "yang-haiquan"
     },
     {
@@ -4105,6 +4120,1185 @@
         "src-enorth-bai-2012"
       ],
       "note": "报道明确为长徒，姓名为杨志刚；不按未核实杨志光写法另建人物。"
+    },
+    {
+      "id": "tang-jiezhong--zhu-qi",
+      "from": "tang-jiezhong",
+      "to": "zhu-qi",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-tang-2009"
+      ],
+      "note": "报道确认2009年8月22日七人入唐杰忠门下；徐锦江因拍戏未到现场。关门弟子的称谓存在报道冲突，本库不作唯一认定。"
+    },
+    {
+      "id": "tang-jiezhong--bai-yu",
+      "from": "tang-jiezhong",
+      "to": "bai-yu",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-tang-2009"
+      ],
+      "note": "报道确认2009年8月22日七人入唐杰忠门下；徐锦江因拍戏未到现场。关门弟子的称谓存在报道冲突，本库不作唯一认定。"
+    },
+    {
+      "id": "tang-jiezhong--yu-baodong",
+      "from": "tang-jiezhong",
+      "to": "yu-baodong",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-tang-2009"
+      ],
+      "note": "报道确认2009年8月22日七人入唐杰忠门下；徐锦江因拍戏未到现场。关门弟子的称谓存在报道冲突，本库不作唯一认定。"
+    },
+    {
+      "id": "tang-jiezhong--wang-defang",
+      "from": "tang-jiezhong",
+      "to": "wang-defang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-tang-2009"
+      ],
+      "note": "报道确认2009年8月22日七人入唐杰忠门下；徐锦江因拍戏未到现场。关门弟子的称谓存在报道冲突，本库不作唯一认定。"
+    },
+    {
+      "id": "tang-jiezhong--xu-jinjiang",
+      "from": "tang-jiezhong",
+      "to": "xu-jinjiang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-tang-2009"
+      ],
+      "note": "报道确认2009年8月22日七人入唐杰忠门下；徐锦江因拍戏未到现场。关门弟子的称谓存在报道冲突，本库不作唯一认定。"
+    },
+    {
+      "id": "tang-jiezhong--zhao-zhihong",
+      "from": "tang-jiezhong",
+      "to": "zhao-zhihong",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-tang-2009"
+      ],
+      "note": "报道确认2009年8月22日七人入唐杰忠门下；徐锦江因拍戏未到现场。关门弟子的称谓存在报道冲突，本库不作唯一认定。"
+    },
+    {
+      "id": "tang-jiezhong--han-zhanjun",
+      "from": "tang-jiezhong",
+      "to": "han-zhanjun",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-tang-2009"
+      ],
+      "note": "报道确认2009年8月22日七人入唐杰忠门下；徐锦江因拍戏未到现场。关门弟子的称谓存在报道冲突，本库不作唯一认定。"
+    },
+    {
+      "id": "tang-jiezhong--li-jianhua",
+      "from": "tang-jiezhong",
+      "to": "li-jianhua",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-tang-2009",
+        "src-sparse-tang-liu-1988"
+      ],
+      "note": "刘全刚本人采访回忆1988年三人共同拜唐杰忠为师；没有精确月日。"
+    },
+    {
+      "id": "tang-jiezhong--gong-hanlin",
+      "from": "tang-jiezhong",
+      "to": "gong-hanlin",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-tang-2009"
+      ],
+      "note": "报道明确为唐杰忠此前弟子；不据报道日期推定拜师年。"
+    },
+    {
+      "id": "tang-jiezhong--cui-xiyue",
+      "from": "tang-jiezhong",
+      "to": "cui-xiyue",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-tang-2009"
+      ],
+      "note": "报道明确为唐杰忠此前弟子；不据报道日期推定拜师年。"
+    },
+    {
+      "id": "tang-jiezhong--wei-zhenbai",
+      "from": "tang-jiezhong",
+      "to": "wei-zhenbai",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-tang-2009"
+      ],
+      "note": "报道明确为唐杰忠此前弟子；不据报道日期推定拜师年。"
+    },
+    {
+      "id": "tang-jiezhong--liu-quangang",
+      "from": "tang-jiezhong",
+      "to": "liu-quangang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-tang-liu-1988"
+      ],
+      "note": "刘全刚本人采访回忆1988年三人共同拜唐杰忠为师；没有精确月日。"
+    },
+    {
+      "id": "tang-jiezhong--li-jinxiang",
+      "from": "tang-jiezhong",
+      "to": "li-jinxiang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-tang-liu-1988"
+      ],
+      "note": "刘全刚本人采访回忆1988年三人共同拜唐杰忠为师；没有精确月日。"
+    },
+    {
+      "id": "cui-xiyue--ma-jingyuan",
+      "from": "cui-xiyue",
+      "to": "ma-jingyuan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-cui-2015"
+      ],
+      "note": "山西晚报记2015年3月3日太原收徒仪式，报道逐名确认；未列出的其余弟子不补。"
+    },
+    {
+      "id": "cui-xiyue--niu-chenxi",
+      "from": "cui-xiyue",
+      "to": "niu-chenxi",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-cui-2015"
+      ],
+      "note": "山西晚报记2015年3月3日太原收徒仪式，报道逐名确认；未列出的其余弟子不补。"
+    },
+    {
+      "id": "cui-xiyue--fan-xing",
+      "from": "cui-xiyue",
+      "to": "fan-xing",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-cui-2015"
+      ],
+      "note": "山西晚报记2015年3月3日太原收徒仪式，报道逐名确认；未列出的其余弟子不补。"
+    },
+    {
+      "id": "cui-xiyue--fan-shuai",
+      "from": "cui-xiyue",
+      "to": "fan-shuai",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-cui-2015"
+      ],
+      "note": "山西晚报记2015年3月3日太原收徒仪式，报道逐名确认；未列出的其余弟子不补。"
+    },
+    {
+      "id": "cui-xiyue--zhao-yue",
+      "from": "cui-xiyue",
+      "to": "zhao-yue",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-cui-2015"
+      ],
+      "note": "山西晚报记2015年3月3日太原收徒仪式，报道逐名确认；未列出的其余弟子不补。"
+    },
+    {
+      "id": "cui-xiyue--liu-feng",
+      "from": "cui-xiyue",
+      "to": "liu-feng",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-cui-2015"
+      ],
+      "note": "山西晚报记2015年3月3日太原收徒仪式，报道逐名确认；未列出的其余弟子不补。"
+    },
+    {
+      "id": "cui-xiyue--hou-ailin",
+      "from": "cui-xiyue",
+      "to": "hou-ailin",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-cui-2015"
+      ],
+      "note": "山西晚报记2015年3月3日太原收徒仪式，报道逐名确认；未列出的其余弟子不补。"
+    },
+    {
+      "id": "cui-xiyue--feng-hao",
+      "from": "cui-xiyue",
+      "to": "feng-hao",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-cui-2015"
+      ],
+      "note": "山西晚报记2015年3月3日太原收徒仪式，报道逐名确认；未列出的其余弟子不补。"
+    },
+    {
+      "id": "cui-xiyue--li-yajie",
+      "from": "cui-xiyue",
+      "to": "li-yajie",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-cui-2015"
+      ],
+      "note": "山西晚报记2015年3月3日太原收徒仪式，报道逐名确认；未列出的其余弟子不补。"
+    },
+    {
+      "id": "zhu-qi--bao-miaoshuai",
+      "from": "zhu-qi",
+      "to": "bao-miaoshuai",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-zhu-2011"
+      ],
+      "note": "2011年5月27日青岛拜师仪式，唐杰忠发来贺电。"
+    },
+    {
+      "id": "zhu-qi--lu-tong",
+      "from": "zhu-qi",
+      "to": "lu-tong",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-zhu-2011"
+      ],
+      "note": "2011年5月27日青岛拜师仪式，唐杰忠发来贺电。"
+    },
+    {
+      "id": "zhu-qi--su-shan",
+      "from": "zhu-qi",
+      "to": "su-shan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-zhu-2011"
+      ],
+      "note": "2011年5月27日青岛拜师仪式，唐杰忠发来贺电。"
+    },
+    {
+      "id": "shi-shengjie--liu-tong",
+      "from": "shi-shengjie",
+      "to": "liu-tong",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-shi-2018"
+      ],
+      "note": "生活报2018年师家班采访明确列为师胜杰弟子；义子、学生不转换为正式师承。"
+    },
+    {
+      "id": "shi-shengjie--zou-dejiang",
+      "from": "shi-shengjie",
+      "to": "zou-dejiang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-shi-2018"
+      ],
+      "note": "生活报2018年师家班采访明确列为师胜杰弟子；义子、学生不转换为正式师承。"
+    },
+    {
+      "id": "shi-shengjie--wang-min",
+      "from": "shi-shengjie",
+      "to": "wang-min",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-shi-2018"
+      ],
+      "note": "生活报2018年师家班采访明确列为师胜杰弟子；义子、学生不转换为正式师承。"
+    },
+    {
+      "id": "shi-shengjie--wang-gang",
+      "from": "shi-shengjie",
+      "to": "wang-gang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-shi-2018"
+      ],
+      "note": "生活报2018年师家班采访明确列为师胜杰弟子；义子、学生不转换为正式师承。"
+    },
+    {
+      "id": "shi-shengjie--ruan-hang",
+      "from": "shi-shengjie",
+      "to": "ruan-hang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-shi-2018"
+      ],
+      "note": "生活报2018年师家班采访明确列为师胜杰弟子；义子、学生不转换为正式师承。"
+    },
+    {
+      "id": "shi-shengjie--hou-jun",
+      "from": "shi-shengjie",
+      "to": "hou-jun",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-shi-2018"
+      ],
+      "note": "生活报2018年师家班采访明确列为师胜杰弟子；义子、学生不转换为正式师承。"
+    },
+    {
+      "id": "shi-shengjie--chen-qiang",
+      "from": "shi-shengjie",
+      "to": "chen-qiang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-shi-2018"
+      ],
+      "note": "生活报2018年师家班采访明确列为师胜杰弟子；义子、学生不转换为正式师承。"
+    },
+    {
+      "id": "shi-shengjie--liu-wei-shi",
+      "from": "shi-shengjie",
+      "to": "liu-wei-shi",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-shi-2018"
+      ],
+      "note": "生活报2018年师家班采访明确列为师胜杰弟子；义子、学生不转换为正式师承。"
+    },
+    {
+      "id": "shi-shengjie--wang-hai",
+      "from": "shi-shengjie",
+      "to": "wang-hai",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-shi-2018"
+      ],
+      "note": "生活报2018年师家班采访明确列为师胜杰弟子；义子、学生不转换为正式师承。"
+    },
+    {
+      "id": "shi-shengjie--zhang-chong",
+      "from": "shi-shengjie",
+      "to": "zhang-chong",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-shi-2018"
+      ],
+      "note": "生活报2018年师家班采访明确列为师胜杰弟子；义子、学生不转换为正式师承。"
+    },
+    {
+      "id": "shi-shengjie--he-shucheng",
+      "from": "shi-shengjie",
+      "to": "he-shucheng",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-shi-2018"
+      ],
+      "note": "生活报2018年师家班采访明确列为师胜杰弟子；义子、学生不转换为正式师承。"
+    },
+    {
+      "id": "shi-shengjie--zhou-wei",
+      "from": "shi-shengjie",
+      "to": "zhou-wei",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-shi-2018"
+      ],
+      "note": "生活报2018年师家班采访明确列为师胜杰弟子；义子、学生不转换为正式师承。"
+    },
+    {
+      "id": "shi-shengjie--chang-yuan",
+      "from": "shi-shengjie",
+      "to": "chang-yuan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-shi-2018"
+      ],
+      "note": "常远本人采访记2008年11月26日拜师师胜杰；家族传承不替代正式师承。"
+    },
+    {
+      "id": "shi-shengjie--min-tianhao",
+      "from": "shi-shengjie",
+      "to": "min-tianhao",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-shi-2018"
+      ],
+      "note": "生活报2018年师家班采访明确列为师胜杰弟子；义子、学生不转换为正式师承。"
+    },
+    {
+      "id": "shi-shengjie--jia-changsong",
+      "from": "shi-shengjie",
+      "to": "jia-changsong",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-shi-2018"
+      ],
+      "note": "生活报2018年师家班采访明确列为师胜杰弟子；义子、学生不转换为正式师承。"
+    },
+    {
+      "id": "shi-shengjie--li-ziting",
+      "from": "shi-shengjie",
+      "to": "li-ziting",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-shi-2018"
+      ],
+      "note": "生活报2018年师家班采访明确列为师胜杰弟子；义子、学生不转换为正式师承。"
+    },
+    {
+      "id": "shi-shengjie--zhang-jianhong",
+      "from": "shi-shengjie",
+      "to": "zhang-jianhong",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-shi-2018"
+      ],
+      "note": "生活报2018年师家班采访明确列为师胜杰弟子；义子、学生不转换为正式师承。"
+    },
+    {
+      "id": "shi-shengjie--xu-tao",
+      "from": "shi-shengjie",
+      "to": "xu-tao",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-shi-2018"
+      ],
+      "note": "生活报2018年师家班采访明确列为师胜杰弟子；义子、学生不转换为正式师承。"
+    },
+    {
+      "id": "yang-haiquan--fu-lanying",
+      "from": "yang-haiquan",
+      "to": "fu-lanying",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-yang-2022"
+      ],
+      "note": "辽宁日报逐名列为杨海荃弟子；金炳昶与杨振华为搭档，同师门而非上下师承。"
+    },
+    {
+      "id": "yang-haiquan--zhou-yinjin",
+      "from": "yang-haiquan",
+      "to": "zhou-yinjin",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-yang-2022"
+      ],
+      "note": "辽宁日报逐名列为杨海荃弟子；金炳昶与杨振华为搭档，同师门而非上下师承。"
+    },
+    {
+      "id": "yang-haiquan--jin-bingchang",
+      "from": "yang-haiquan",
+      "to": "jin-bingchang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-yang-2022"
+      ],
+      "note": "辽宁日报逐名列为杨海荃弟子；金炳昶与杨振华为搭档，同师门而非上下师承。"
+    },
+    {
+      "id": "yang-haiquan--feng-jingshun",
+      "from": "yang-haiquan",
+      "to": "feng-jingshun",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-yang-2022"
+      ],
+      "note": "辽宁日报逐名列为杨海荃弟子；金炳昶与杨振华为搭档，同师门而非上下师承。"
+    },
+    {
+      "id": "yang-haiquan--wang-zhitao",
+      "from": "yang-haiquan",
+      "to": "wang-zhitao",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-yang-2022"
+      ],
+      "note": "辽宁日报逐名列为杨海荃弟子；金炳昶与杨振华为搭档，同师门而非上下师承。"
+    },
+    {
+      "id": "yin-xiaosheng--shi-fuxing",
+      "from": "yin-xiaosheng",
+      "to": "shi-fuxing",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-yin-2022"
+      ],
+      "note": "刘晖本人口述逐名列出六位弟子；刘晖由张乃林代师收徒，有引保代仪式，精确日期未公布。"
+    },
+    {
+      "id": "yin-xiaosheng--yang-wei",
+      "from": "yin-xiaosheng",
+      "to": "yang-wei",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-yin-2022"
+      ],
+      "note": "刘晖本人口述逐名列出六位弟子；刘晖由张乃林代师收徒，有引保代仪式，精确日期未公布。"
+    },
+    {
+      "id": "yin-xiaosheng--wang-xiangming",
+      "from": "yin-xiaosheng",
+      "to": "wang-xiangming",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-yin-2022"
+      ],
+      "note": "刘晖本人口述逐名列出六位弟子；刘晖由张乃林代师收徒，有引保代仪式，精确日期未公布。"
+    },
+    {
+      "id": "yin-xiaosheng--meng-weidong",
+      "from": "yin-xiaosheng",
+      "to": "meng-weidong",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-yin-2022"
+      ],
+      "note": "刘晖本人口述逐名列出六位弟子；刘晖由张乃林代师收徒，有引保代仪式，精确日期未公布。"
+    },
+    {
+      "id": "yin-xiaosheng--zhang-nailin",
+      "from": "yin-xiaosheng",
+      "to": "zhang-nailin",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-yin-2022"
+      ],
+      "note": "刘晖本人口述逐名列出六位弟子；刘晖由张乃林代师收徒，有引保代仪式，精确日期未公布。"
+    },
+    {
+      "id": "yin-xiaosheng--liu-hui-yin",
+      "from": "yin-xiaosheng",
+      "to": "liu-hui-yin",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-yin-2022"
+      ],
+      "note": "刘晖本人口述逐名列出六位弟子；刘晖由张乃林代师收徒，有引保代仪式，精确日期未公布。"
+    },
+    {
+      "id": "wei-wenliang--kou-yi",
+      "from": "wei-wenliang",
+      "to": "kou-yi",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-wei-2019"
+      ],
+      "note": "2019年4月14日正式拜师仪式，报道明确相声门引保代，不把仪式见证人作为额外师父。"
+    },
+    {
+      "id": "wei-wenliang--yang-yuhai",
+      "from": "wei-wenliang",
+      "to": "yang-yuhai",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-wei-2019"
+      ],
+      "note": "2019年4月14日正式拜师仪式，报道明确相声门引保代，不把仪式见证人作为额外师父。"
+    },
+    {
+      "id": "wei-wenliang--chang-song",
+      "from": "wei-wenliang",
+      "to": "chang-song",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-wei-2019"
+      ],
+      "note": "2019年4月14日正式拜师仪式，报道明确相声门引保代，不把仪式见证人作为额外师父。"
+    },
+    {
+      "id": "wei-wenliang--zheng-bin",
+      "from": "wei-wenliang",
+      "to": "zheng-bin",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-wei-2019"
+      ],
+      "note": "2019年4月14日正式拜师仪式，报道明确相声门引保代，不把仪式见证人作为额外师父。"
+    },
+    {
+      "id": "chang-baofeng--ma-xiaochuan",
+      "from": "chang-baofeng",
+      "to": "ma-xiaochuan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-chang-2020"
+      ],
+      "note": "报道明确马小川、杨树此前为入室弟子；张颂阳于2020年8月22日拜师。"
+    },
+    {
+      "id": "chang-baofeng--yang-shu",
+      "from": "chang-baofeng",
+      "to": "yang-shu",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-chang-2020"
+      ],
+      "note": "报道明确马小川、杨树此前为入室弟子；张颂阳于2020年8月22日拜师。"
+    },
+    {
+      "id": "chang-baofeng--zhang-songyang",
+      "from": "chang-baofeng",
+      "to": "zhang-songyang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-chang-2020"
+      ],
+      "note": "报道明确马小川、杨树此前为入室弟子；张颂阳于2020年8月22日拜师。"
+    },
+    {
+      "id": "zhang-songyang--wang-hao",
+      "from": "zhang-songyang",
+      "to": "wang-hao",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-chang-2020"
+      ],
+      "note": "2020年8月22日同一仪式中张颂阳收徒；姓名采用现场报道字形。"
+    },
+    {
+      "id": "zhang-songyang--cui-minghao",
+      "from": "zhang-songyang",
+      "to": "cui-minghao",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-chang-2020"
+      ],
+      "note": "2020年8月22日同一仪式中张颂阳收徒；姓名采用现场报道字形。"
+    },
+    {
+      "id": "wang-shichen--li-wenshan",
+      "from": "wang-shichen",
+      "to": "li-wenshan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-li-wenshan"
+      ],
+      "note": "德云社讣告明确王世臣弟子，未给其拜师日期。"
+    },
+    {
+      "id": "li-wenshan--zhang-deyan",
+      "from": "li-wenshan",
+      "to": "zhang-deyan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-li-wenshan"
+      ],
+      "note": "2009年12月10日北京民族宫大剧院拜师李文山。"
+    },
+    {
+      "id": "wang-shichen--xie-jin",
+      "from": "wang-shichen",
+      "to": "xie-jin",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-li-wenshan"
+      ],
+      "note": "2009年12月10日由李文山代王世臣收徒，为李文山师弟；不建立李文山→谢金正式本师边。"
+    },
+    {
+      "id": "li-shouzeng--sun-shaolin",
+      "from": "li-shouzeng",
+      "to": "sun-shaolin",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-sun-shaolin"
+      ],
+      "note": "王文玉回忆明确上世纪40年代李寿增与徒弟孙少林赴济南演出；不推定拜师年份。"
+    },
+    {
+      "id": "zhang-yongxi--lv-shaoming",
+      "from": "zhang-yongxi",
+      "to": "lv-shaoming",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-nanjing-2007"
+      ],
+      "note": "吕少明为此前弟子，2007年3月24日代师拉杨桂宝、马克入张永熙门下；不建立吕少明→两位师弟正式边。"
+    },
+    {
+      "id": "zhang-yongxi--yang-guibao",
+      "from": "zhang-yongxi",
+      "to": "yang-guibao",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-nanjing-2007"
+      ],
+      "note": "吕少明为此前弟子，2007年3月24日代师拉杨桂宝、马克入张永熙门下；不建立吕少明→两位师弟正式边。"
+    },
+    {
+      "id": "zhang-yongxi--ma-ke",
+      "from": "zhang-yongxi",
+      "to": "ma-ke",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-nanjing-2007"
+      ],
+      "note": "吕少明为此前弟子，2007年3月24日代师拉杨桂宝、马克入张永熙门下；不建立吕少明→两位师弟正式边。"
+    },
+    {
+      "id": "su-wenmao--wu-fuxing",
+      "from": "su-wenmao",
+      "to": "wu-fuxing",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-su-2008",
+        "src-sparse-su-culture-2015"
+      ],
+      "note": "中国文化报李治邦纪念文明确苏文茂弟子，与天津日报师门文互证。"
+    },
+    {
+      "id": "su-wenmao--guo-xin",
+      "from": "su-wenmao",
+      "to": "guo-xin",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-su-2008"
+      ],
+      "note": "天津日报孙福海亲历文逐名列为苏文茂弟子；苏世杰字形按该文，未与其他写法节点擅自合并。"
+    },
+    {
+      "id": "su-wenmao--ji-ma",
+      "from": "su-wenmao",
+      "to": "ji-ma",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-su-2008"
+      ],
+      "note": "天津日报孙福海亲历文逐名列为苏文茂弟子；苏世杰字形按该文，未与其他写法节点擅自合并。"
+    },
+    {
+      "id": "su-wenmao--huang-yuncheng",
+      "from": "su-wenmao",
+      "to": "huang-yuncheng",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-su-2008"
+      ],
+      "note": "天津日报孙福海亲历文逐名列为苏文茂弟子；苏世杰字形按该文，未与其他写法节点擅自合并。"
+    },
+    {
+      "id": "su-wenmao--su-shijie",
+      "from": "su-wenmao",
+      "to": "su-shijie",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-su-2008"
+      ],
+      "note": "天津日报孙福海亲历文逐名列为苏文茂弟子；苏世杰字形按该文，未与其他写法节点擅自合并。"
+    },
+    {
+      "id": "song-dequan--chen-yinquan",
+      "from": "song-dequan",
+      "to": "chen-yinquan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-song-2011"
+      ],
+      "note": "2011年6月11日正式拜师宋德全，苏文茂见证。"
+    },
+    {
+      "id": "liu-junjie--xu-jian",
+      "from": "liu-junjie",
+      "to": "xu-jian",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-liu-2010"
+      ],
+      "note": "报道确认刘俊杰弟子；2010年5月28日为展演日，不硬定拜师日期。王友儒字形按该报道，王友如写法待另证。"
+    },
+    {
+      "id": "liu-junjie--feng-yang",
+      "from": "liu-junjie",
+      "to": "feng-yang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-liu-2010"
+      ],
+      "note": "报道确认刘俊杰弟子；2010年5月28日为展演日，不硬定拜师日期。王友儒字形按该报道，王友如写法待另证。"
+    },
+    {
+      "id": "liu-junjie--zhang-fu",
+      "from": "liu-junjie",
+      "to": "zhang-fu",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-liu-2010"
+      ],
+      "note": "报道确认刘俊杰弟子；2010年5月28日为展演日，不硬定拜师日期。王友儒字形按该报道，王友如写法待另证。"
+    },
+    {
+      "id": "liu-junjie--wang-zhengxin",
+      "from": "liu-junjie",
+      "to": "wang-zhengxin",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-liu-2010"
+      ],
+      "note": "报道确认刘俊杰弟子；2010年5月28日为展演日，不硬定拜师日期。王友儒字形按该报道，王友如写法待另证。"
+    },
+    {
+      "id": "liu-junjie--wang-ying",
+      "from": "liu-junjie",
+      "to": "wang-ying",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-liu-2010"
+      ],
+      "note": "报道确认刘俊杰弟子；2010年5月28日为展演日，不硬定拜师日期。王友儒字形按该报道，王友如写法待另证。"
+    },
+    {
+      "id": "liu-junjie--wang-youru",
+      "from": "liu-junjie",
+      "to": "wang-youru",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-liu-2010"
+      ],
+      "note": "报道确认刘俊杰弟子；2010年5月28日为展演日，不硬定拜师日期。王友儒字形按该报道，王友如写法待另证。"
+    },
+    {
+      "id": "tian-lihe--geng-boyang",
+      "from": "tian-lihe",
+      "to": "geng-boyang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-tian-2026"
+      ],
+      "note": "中国新闻周刊逐名明确田立禾门下弟子；开蒙学生不转换为正式边。"
+    },
+    {
+      "id": "tian-lihe--zhao-guangshan",
+      "from": "tian-lihe",
+      "to": "zhao-guangshan",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-tian-2026"
+      ],
+      "note": "中国新闻周刊逐名明确田立禾门下弟子；开蒙学生不转换为正式边。"
+    },
+    {
+      "id": "tian-lihe--wang-xingfu",
+      "from": "tian-lihe",
+      "to": "wang-xingfu",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-tian-2016"
+      ],
+      "note": "同期活动记录记2016年6月27日拜师；证据为戏考活动记录，尚缺独立媒体互证。"
+    },
+    {
+      "id": "tian-lihe--xiao-dong",
+      "from": "tian-lihe",
+      "to": "xiao-dong",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-tian-2016"
+      ],
+      "note": "同期活动记录记2016年6月27日拜师；证据为戏考活动记录，尚缺独立媒体互证。"
+    },
+    {
+      "id": "tian-lihe--liu-jianzhong",
+      "from": "tian-lihe",
+      "to": "liu-jianzhong",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-tian-2016"
+      ],
+      "note": "同期活动记录记2016年6月27日拜师；证据为戏考活动记录，尚缺独立媒体互证。"
+    },
+    {
+      "id": "wei-wenliang--luo-feng",
+      "from": "wei-wenliang",
+      "to": "luo-feng",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-wei-luo-2025"
+      ],
+      "note": "罗峰本人口述明确相声本师魏文亮；快板老师张志宽不混为相声本师。"
+    },
+    {
+      "id": "wei-wenliang--li-mengyao",
+      "from": "wei-wenliang",
+      "to": "li-mengyao",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-wei-li-2005"
+      ],
+      "note": "台北曲艺团相声演员，原名李红，报道明确师从魏文亮；不把2005年3月2日刊发日期作为拜师日。"
+    },
+    {
+      "id": "wei-wenliang--zhang-lianzhi",
+      "from": "wei-wenliang",
+      "to": "zhang-lianzhi",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-wei-2024"
+      ],
+      "note": "2024年10月12日天津迎宾馆拜师仪式；未把见证人转为额外本师。"
+    },
+    {
+      "id": "wei-wenliang--wang-wei",
+      "from": "wei-wenliang",
+      "to": "wang-wei",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-wei-2024"
+      ],
+      "note": "2024年10月12日天津迎宾馆拜师仪式；未把见证人转为额外本师。"
+    },
+    {
+      "id": "wei-wenliang--chang-le",
+      "from": "wei-wenliang",
+      "to": "chang-le",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-wei-2024"
+      ],
+      "note": "2024年10月12日天津迎宾馆拜师仪式；未把见证人转为额外本师。"
+    },
+    {
+      "id": "zhang-wenbin--wei-wenliang",
+      "from": "zhang-wenbin",
+      "to": "wei-wenliang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-wei-interview"
+      ],
+      "note": "魏文亮本人明确张文斌为相声门正式拜师师父，武魁海为第二位老师；保留两师，不改成唯一师父。"
+    },
+    {
+      "id": "ma-xiaochuan--zhang-qingbai",
+      "from": "ma-xiaochuan",
+      "to": "zhang-qingbai",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-ma-xiaochuan-2019"
+      ],
+      "note": "天津文旅机构介绍明确马小川弟子张庆柏；未推定精确拜师年。"
+    },
+    {
+      "id": "liu-tong--liu-ji",
+      "from": "liu-tong",
+      "to": "liu-ji",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-shi-2018"
+      ],
+      "note": "生活报对师家班的采访明确刘彤弟子刘骥。"
+    },
+    {
+      "id": "li-jing--zhang-tianlei",
+      "from": "li-jing",
+      "to": "zhang-tianlei",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-li-jing-2012"
+      ],
+      "note": "公开收徒报道逐名确认李菁门下张天雷、郭天翼。"
+    },
+    {
+      "id": "li-jing--guo-tianyi",
+      "from": "li-jing",
+      "to": "guo-tianyi",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-li-jing-2012"
+      ],
+      "note": "公开收徒报道逐名确认李菁门下张天雷、郭天翼。"
+    },
+    {
+      "id": "yang-zhenhua--liu-jingui",
+      "from": "yang-zhenhua",
+      "to": "liu-jingui",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-yang-2020"
+      ],
+      "note": "辽宁日报逐名明确杨振华弟子；不推定统一拜师日期。"
+    },
+    {
+      "id": "yang-zhenhua--wei-chuanliang",
+      "from": "yang-zhenhua",
+      "to": "wei-chuanliang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-yang-2020"
+      ],
+      "note": "辽宁日报逐名明确杨振华弟子；不推定统一拜师日期。"
+    },
+    {
+      "id": "yang-zhenhua--wang-letian",
+      "from": "yang-zhenhua",
+      "to": "wang-letian",
+      "type": "mentor",
+      "disputed": true,
+      "sources": [
+        "src-sparse-yang-2020"
+      ],
+      "note": "辽宁日报记录历史师承；后续2023年清门报道待独立核验，当前关系标为争议，不断言已经正式除名。"
+    },
+    {
+      "id": "yang-zhenhua--dai-xiang",
+      "from": "yang-zhenhua",
+      "to": "dai-xiang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-yang-dai"
+      ],
+      "note": "报道明确杨振华弟子，艺名盛京小媄；不依据其他弟子的仪式推定其日期。"
+    },
+    {
+      "id": "yang-zhenhua--guan-haoyong",
+      "from": "yang-zhenhua",
+      "to": "guan-haoyong",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-yang-guan"
+      ],
+      "note": "地方报报道明确杨振华弟子；精确拜师年未核验。"
+    },
+    {
+      "id": "yang-zhenhua--li-daping",
+      "from": "yang-zhenhua",
+      "to": "li-daping",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-yang-li"
+      ],
+      "note": "辽宁日报报道明确杨振华弟子；精确拜师年未核验。"
+    },
+    {
+      "id": "liu-baorui--han-dejiang",
+      "from": "liu-baorui",
+      "to": "han-dejiang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-liu-baorui-2015"
+      ],
+      "note": "北京晚报纪念报道明确刘宝瑞门下弟子；不将受过指导的马季转换为正式师承。"
+    },
+    {
+      "id": "liu-baorui--kou-gengru",
+      "from": "liu-baorui",
+      "to": "kou-gengru",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-liu-baorui-2015"
+      ],
+      "note": "北京晚报纪念报道明确刘宝瑞门下弟子；不将受过指导的马季转换为正式师承。"
+    },
+    {
+      "id": "liu-baorui--gao-hongshun",
+      "from": "liu-baorui",
+      "to": "gao-hongshun",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-liu-baorui-2015"
+      ],
+      "note": "北京晚报纪念报道明确刘宝瑞门下弟子；不将受过指导的马季转换为正式师承。"
+    },
+    {
+      "id": "wu-kuihai--wei-wenliang",
+      "from": "wu-kuihai",
+      "to": "wei-wenliang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-sparse-wei-interview"
+      ],
+      "note": "魏文亮本人口述武魁海为第二位正式老师，同时保留张文斌第一位正式师父；不将两师关系删成单师。"
     }
   ]
 }

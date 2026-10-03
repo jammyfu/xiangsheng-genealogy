@@ -10,7 +10,12 @@
     "下棋"
   ],
   "sources": [
-    "src-lnr-yang-obit-2026"
+    "src-lnr-yang-obit-2026",
+    "src-sparse-yang-2022",
+    "src-sparse-yang-2020",
+    "src-sparse-yang-dai",
+    "src-sparse-yang-guan",
+    "src-sparse-yang-li"
   ],
   "portraitKind": "placeholder",
   "birthYear": 1936,

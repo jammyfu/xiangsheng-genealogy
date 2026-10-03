@@ -1,17 +1,22 @@
 {
   "birthYear": 1953,
-  "deathYear": 2014,
+  "deathYear": 2018,
   "portraitKind": "placeholder",
   "works": [
     "幽默与友情"
   ],
   "sources": [
-    "src-wiki-lineage"
+    "src-wiki-lineage",
+    "src-sparse-shi-2018",
+    "src-sparse-li-jing-2006"
   ],
   "id": "shi-shengjie",
   "name": "师胜杰",
   "generation": "文",
   "generationIndex": 7,
   "school": "北京侯派",
-  "bio": "侯宝林弟子，与马季并称侯门当代重要传人。李菁等出其门。"
+  "bio": "侯宝林弟子，与马季并称侯门当代重要传人。李菁等出其门。",
+  "notes": [
+    "卒年按2018年生活报师家班采访的纪念背景校正；原库2014年有误。"
+  ]
 }

@@ -1,0 +1,32 @@
+{
+  "checks": [
+    "唐杰忠 branch",
+    "师胜杰 branch",
+    "苏文茂 branch",
+    "尹笑声 branch",
+    "田立禾 branch",
+    "常宝丰 branch",
+    "魏文亮 branch",
+    "杨海荃 branch",
+    "杨振华 branch",
+    "李寿增 branch",
+    "王世臣 branch",
+    "张永熙 branch",
+    "large branch evidence keyboard expand/close",
+    "two-level disciple drilldown and return",
+    "Canton actor has institutional source",
+    "mobile touch next generation return and reduced motion",
+    "alias keyboard search"
+  ],
+  "errors": [],
+  "desktop": [
+    1440,
+    1000
+  ],
+  "mobile": [
+    390,
+    844
+  ],
+  "touch": true,
+  "reducedMotion": true
+}

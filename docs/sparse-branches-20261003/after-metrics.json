@@ -1,0 +1,110 @@
+{
+  "summary": {
+    "people": 515,
+    "edges": 491,
+    "sources": 131,
+    "new_people": 112,
+    "new_edges": 107,
+    "analysis_edges": 419,
+    "seed_only_edges": 136,
+    "disputed_edges": 68
+  },
+  "branches": [
+    {
+      "id": "hou-yichen",
+      "name": "侯一尘",
+      "before_direct": 1,
+      "after_direct": 1,
+      "before_descendants": 1,
+      "after_descendants": 1
+    },
+    {
+      "id": "li-shouzeng",
+      "name": "李寿增",
+      "before_direct": 2,
+      "after_direct": 3,
+      "before_descendants": 2,
+      "after_descendants": 3
+    },
+    {
+      "id": "yang-haiquan",
+      "name": "杨海荃",
+      "before_direct": 1,
+      "after_direct": 6,
+      "before_descendants": 2,
+      "after_descendants": 12
+    },
+    {
+      "id": "shi-shengjie",
+      "name": "师胜杰",
+      "before_direct": 1,
+      "after_direct": 19,
+      "before_descendants": 1,
+      "after_descendants": 22
+    },
+    {
+      "id": "su-wenmao",
+      "name": "苏文茂",
+      "before_direct": 4,
+      "after_direct": 9,
+      "before_descendants": 4,
+      "after_descendants": 16
+    },
+    {
+      "id": "tian-lihe",
+      "name": "田立禾",
+      "before_direct": 0,
+      "after_direct": 5,
+      "before_descendants": 0,
+      "after_descendants": 5
+    },
+    {
+      "id": "tang-jiezhong",
+      "name": "唐杰忠",
+      "before_direct": 0,
+      "after_direct": 13,
+      "before_descendants": 0,
+      "after_descendants": 25
+    },
+    {
+      "id": "yin-xiaosheng",
+      "name": "尹笑声",
+      "before_direct": 0,
+      "after_direct": 6,
+      "before_descendants": 0,
+      "after_descendants": 6
+    },
+    {
+      "id": "chang-baofeng",
+      "name": "常宝丰",
+      "before_direct": 0,
+      "after_direct": 3,
+      "before_descendants": 0,
+      "after_descendants": 6
+    },
+    {
+      "id": "wei-wenliang",
+      "name": "魏文亮",
+      "before_direct": 1,
+      "after_direct": 10,
+      "before_descendants": 1,
+      "after_descendants": 10
+    },
+    {
+      "id": "chen-yuting",
+      "name": "陈雨亭",
+      "before_direct": 1,
+      "after_direct": 1,
+      "before_descendants": 3,
+      "after_descendants": 6
+    },
+    {
+      "id": "huang-junying",
+      "name": "黄俊英",
+      "before_direct": 0,
+      "after_direct": 0,
+      "before_descendants": 0,
+      "after_descendants": 0
+    }
+  ]
+}

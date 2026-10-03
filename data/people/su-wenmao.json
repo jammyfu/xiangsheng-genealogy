@@ -12,12 +12,14 @@
   ],
   "sources": [
     "src-wiki-lineage",
-    "src-zhihu-generation"
+    "src-zhihu-generation",
+    "src-sparse-su-2008",
+    "src-sparse-su-culture-2015"
   ],
   "id": "su-wenmao",
   "name": "苏文茂",
   "generation": "文",
   "generationIndex": 7,
   "school": "天津",
-  "bio": "常宝堃二弟子，文哏相声的代表人物，被誉为「文哏巨匠」。曾任天津曲艺团相声队队长，传赵伟洲、刘俊杰、苏明杰、崔金泉、宋德全等明字辈弟子。"
+  "bio": "常宝堃弟子，以文哏见长。注重细节与艺术修养，培养赵伟洲、刘俊杰、武福星、宋德全等弟子；亲属与正式师承分开记录。"
 }
