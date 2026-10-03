@@ -172,7 +172,8 @@
       "type": "mentor",
       "disputed": false,
       "sources": [
-        "src-wiki-lineage"
+        "src-wiki-lineage",
+        "src-chaoxing-liuhuo"
       ]
     },
     {
@@ -1265,9 +1266,10 @@
       "type": "mentor",
       "disputed": false,
       "sources": [
-        "src-wiki-lineage"
+        "src-wiki-lineage",
+        "src-ifeng-guo-genealogy-2016"
       ],
-      "note": "参考师承表郭德纲门下科名录；按第九代收录。"
+      "note": "朱云峰艺名烧饼，师承表及门下名录确认郭德纲弟子；合并重复人物及师承。"
     },
     {
       "id": "guo-degang--sun-jiuxiang",
@@ -1640,17 +1642,6 @@
         "src-ifeng-guo-genealogy-2016"
       ],
       "note": "名单列为2015谢师仪式转正。"
-    },
-    {
-      "id": "guo-degang--zhu-yunfeng",
-      "from": "guo-degang",
-      "to": "zhu-yunfeng",
-      "type": "mentor",
-      "disputed": false,
-      "sources": [
-        "src-ifeng-guo-genealogy-2016"
-      ],
-      "note": "艺名烧饼，名录列为正式门下弟子。"
     },
     {
       "id": "guo-degang--gao-hecai",
@@ -3448,9 +3439,11 @@
       "type": "mentor",
       "disputed": false,
       "sources": [
-        "src-lidicity-maji-baishi-2006"
+        "src-lidicity-maji-baishi-2006",
+        "src-cover-jiang-overseas-2019",
+        "src-zaobao-xu-2020"
       ],
-      "note": "2006年12月新加坡正式拜师，有完整引保代信息。"
+      "note": "师承已确认。封面新闻及联合早报记2007年，旧资料记2006年12月；仪式年份有异说。"
     },
     {
       "id": "jiang-kun--qiu-shengyang",
@@ -3459,9 +3452,11 @@
       "type": "mentor",
       "disputed": false,
       "sources": [
-        "src-lidicity-maji-baishi-2006"
+        "src-lidicity-maji-baishi-2006",
+        "src-cover-jiang-overseas-2019",
+        "src-zaobao-xu-2020"
       ],
-      "note": "2006年12月新加坡正式拜师，有完整引保代信息。"
+      "note": "师承已确认。封面新闻及联合早报记2007年，旧资料记2006年12月；仪式年份有异说。"
     },
     {
       "id": "han-lancheng--fan-jun",
@@ -3558,11 +3553,12 @@
       "from": "ma-ji",
       "to": "yao-xinguang",
       "type": "mentor",
-      "disputed": true,
+      "disputed": false,
       "sources": [
-        "src-wiki-lineage"
+        "src-wiki-lineage",
+        "src-yu-sinkong-memorial"
       ],
-      "note": "公开谱系中出现，未检到单独拜师细节。"
+      "note": "纪念特刊年谱及师徒页明确1990年5月15日在新山正式拜师。"
     },
     {
       "id": "ma-ji--li-guoxiu",
@@ -3690,6 +3686,425 @@
       ],
       "note": "国立传统艺术中心称台湾正式弟子；关系确认，拜师年份本次未核定。",
       "from": "wei-wenliang"
+    },
+    {
+      "id": "wu-zhaonan--jiang-nan",
+      "from": "wu-zhaonan",
+      "to": "jiang-nan",
+      "type": "mentor",
+      "sources": [
+        "src-ncfta-wu-disciples",
+        "src-nccu-crosstalk-2012"
+      ],
+      "note": "机构资料确认吴兆南入门弟子；本次未核定仪式年份。"
+    },
+    {
+      "id": "wu-zhaonan--hou-guanqun",
+      "from": "wu-zhaonan",
+      "to": "hou-guanqun",
+      "type": "mentor",
+      "sources": [
+        "src-ncfta-wu-disciples",
+        "src-nccu-crosstalk-2012"
+      ],
+      "note": "机构资料确认吴兆南入门弟子；本次未核定仪式年份。"
+    },
+    {
+      "id": "wu-zhaonan--lang-zuyun",
+      "from": "wu-zhaonan",
+      "to": "lang-zuyun",
+      "type": "mentor",
+      "sources": [
+        "src-ncfta-wu-disciples",
+        "src-nccu-crosstalk-2012"
+      ],
+      "note": "1999年正式拜师；两份机构资料分别记7月26日及8月26日，月日保留异说。"
+    },
+    {
+      "id": "wu-zhaonan--liu-zengkai",
+      "from": "wu-zhaonan",
+      "to": "liu-zengkai",
+      "type": "mentor",
+      "sources": [
+        "src-ncfta-wu-disciples",
+        "src-nccu-crosstalk-2012"
+      ],
+      "note": "1999年正式拜师；两份机构资料分别记7月26日及8月26日，月日保留异说。"
+    },
+    {
+      "id": "wu-zhaonan--liu-erjin",
+      "from": "wu-zhaonan",
+      "to": "liu-erjin",
+      "type": "mentor",
+      "sources": [
+        "src-ncfta-wu-disciples",
+        "src-nccu-crosstalk-2012"
+      ],
+      "note": "1999年正式拜师；两份机构资料分别记7月26日及8月26日，月日保留异说。"
+    },
+    {
+      "id": "wu-zhaonan--fan-guangyao",
+      "from": "wu-zhaonan",
+      "to": "fan-guangyao",
+      "type": "mentor",
+      "sources": [
+        "src-ncfta-wu-disciples",
+        "src-nccu-crosstalk-2012"
+      ],
+      "note": "1999年正式拜师；两份机构资料分别记7月26日及8月26日，月日保留异说。"
+    },
+    {
+      "id": "liu-zengkai--ji-tianyu",
+      "from": "liu-zengkai",
+      "to": "ji-tianyu",
+      "type": "mentor",
+      "sources": [
+        "src-nccu-crosstalk-2012",
+        "src-ncfta-wu-disciples"
+      ],
+      "note": "本师刘增锴；引师傅谛、代师叶怡均不是额外本师。"
+    },
+    {
+      "id": "wei-longhao--fu-di",
+      "from": "wei-longhao",
+      "to": "fu-di",
+      "type": "mentor",
+      "sources": [
+        "src-nccu-crosstalk-2012"
+      ],
+      "note": "官方节目明确魏龙豪正式弟子；年份未核定。"
+    },
+    {
+      "id": "wang-zhenquan--wu-siwei",
+      "from": "wang-zhenquan",
+      "to": "wu-siwei",
+      "type": "mentor",
+      "sources": [
+        "src-ntt-wu-siwei"
+      ],
+      "note": "2014年正式拜相声师王振全；京剧师承另属艺术门类。"
+    },
+    {
+      "id": "chen-yongquan--chen-qingsheng",
+      "from": "chen-yongquan",
+      "to": "chen-qingsheng",
+      "type": "mentor",
+      "sources": [
+        "src-ncaf-beiqu-30"
+      ],
+      "note": "团方演员简介明确陈涌泉门下，仪式年份未核定。"
+    },
+    {
+      "id": "liu-zengkai--shi-tiantian",
+      "from": "liu-zengkai",
+      "to": "shi-tiantian",
+      "type": "mentor",
+      "sources": [
+        "src-focus-shi-tiantiian-2019"
+      ],
+      "note": "2019年12月28日完成仪式；樊光耀任代传师，不另建本师边。"
+    },
+    {
+      "id": "ma-sanli--yu-baolin",
+      "from": "ma-sanli",
+      "to": "yu-baolin",
+      "type": "mentor",
+      "sources": [
+        "src-tjdaily-tong-2026"
+      ],
+      "note": "天津日报親历文章确认亲传弟子，拜师年份本次未核定。"
+    },
+    {
+      "id": "yu-baolin--tong-youwei",
+      "from": "yu-baolin",
+      "to": "tong-youwei",
+      "type": "mentor",
+      "sources": [
+        "src-tjdaily-tong-2026"
+      ],
+      "note": "2000年共同正式拜师；李治邦亲历记述。"
+    },
+    {
+      "id": "yu-baolin--ma-shuchun",
+      "from": "yu-baolin",
+      "to": "ma-shuchun",
+      "type": "mentor",
+      "sources": [
+        "src-tjdaily-tong-2026"
+      ],
+      "note": "2000年共同正式拜师；李治邦亲历记述。"
+    },
+    {
+      "id": "liu-baorui--wang-wenlin",
+      "from": "liu-baorui",
+      "to": "wang-wenlin",
+      "type": "mentor",
+      "sources": [
+        "src-wiki-wang-wenlin-2026"
+      ],
+      "note": "百科记师从刘宝瑞；本次未独立核实拜师仪式及年份，父亲王长友不因亲属关系另连本师。"
+    },
+    {
+      "id": "jiang-kun--huang-jiaqiang",
+      "from": "jiang-kun",
+      "to": "huang-jiaqiang",
+      "type": "mentor",
+      "sources": [
+        "src-cover-jiang-overseas-2019"
+      ],
+      "note": "2019年2月21日在北京举行正式拜师仪式。"
+    },
+    {
+      "id": "jiang-kun--yan-guijuan",
+      "from": "jiang-kun",
+      "to": "yan-guijuan",
+      "type": "mentor",
+      "sources": [
+        "src-cover-jiang-overseas-2019"
+      ],
+      "note": "2019年2月21日在北京举行正式拜师仪式。"
+    },
+    {
+      "id": "xu-huimin--li-yaoguang",
+      "from": "xu-huimin",
+      "to": "li-yaoguang",
+      "type": "mentor",
+      "sources": [
+        "src-sccc-xu-2022",
+        "src-zaobao-xu-2020"
+      ],
+      "note": "弟子身份有官方节目与采访支持；本次未核定具体仪式年份。"
+    },
+    {
+      "id": "yao-xinguang--su-weisheng",
+      "from": "yao-xinguang",
+      "to": "su-weisheng",
+      "type": "mentor",
+      "sources": [
+        "src-yu-sinkong-memorial"
+      ],
+      "note": "纪念特刊记1999年12月15日收徒；其他资料2000年说法待核，师承身份明确。"
+    },
+    {
+      "id": "yao-xinguang--ji-qingrong",
+      "from": "yao-xinguang",
+      "to": "ji-qingrong",
+      "type": "mentor",
+      "sources": [
+        "src-yu-sinkong-memorial"
+      ],
+      "note": "纪念特刊记1999年12月15日收徒；其他资料2000年说法待核，师承身份明确。"
+    },
+    {
+      "id": "liu-zengkai--ai-tianyi",
+      "from": "liu-zengkai",
+      "to": "ai-tianyi",
+      "type": "mentor",
+      "sources": [
+        "src-udn-liu-disciples-2019"
+      ],
+      "note": "人物采访明确弟子身份，拜师年份未核定。"
+    },
+    {
+      "id": "liu-zengkai--qiao-tianlan",
+      "from": "liu-zengkai",
+      "to": "qiao-tianlan",
+      "type": "mentor",
+      "sources": [
+        "src-udn-liu-disciples-2019"
+      ],
+      "note": "人物采访明确弟子身份，拜师年份未核定。"
+    },
+    {
+      "id": "hou-guanqun--wu-yongfeng",
+      "from": "hou-guanqun",
+      "to": "wu-yongfeng",
+      "type": "mentor",
+      "sources": [
+        "src-miaobei-wu-yongfeng"
+      ],
+      "note": "官方节目师承栏明确侯冠群；吴兆南入门弟子是宽泛称谓，不另建直接本师。"
+    },
+    {
+      "id": "chen-yian--wang-zhenquan",
+      "from": "chen-yian",
+      "to": "wang-zhenquan",
+      "type": "mentor",
+      "sources": [
+        "src-more-wang-2026"
+      ],
+      "note": "本人提供的拜师照片说明明确陈逸安；年份此来源未载。"
+    },
+    {
+      "id": "hou-guanqun--yuan-xiaoting",
+      "from": "hou-guanqun",
+      "to": "yuan-xiaoting",
+      "type": "mentor",
+      "sources": [
+        "src-tvbs-yuan-2010"
+      ],
+      "note": "2010年8月19日现场拜师报道。"
+    },
+    {
+      "id": "chang-baohua--feng-yigang",
+      "from": "chang-baohua",
+      "to": "feng-yigang",
+      "type": "mentor",
+      "sources": [
+        "src-wiki-feng-2026"
+      ],
+      "note": "百科生平明确2002年在北京拜师；本次未独立核定仪式月日。"
+    },
+    {
+      "id": "chang-baohua--song-shaoqing",
+      "from": "chang-baohua",
+      "to": "song-shaoqing",
+      "type": "mentor",
+      "sources": [
+        "src-wiki-song-2026"
+      ],
+      "note": "百科生平明确2002年在北京拜师；本次未独立核定仪式月日。"
+    },
+    {
+      "id": "zhang-shouchen--yuan-peilou",
+      "from": "zhang-shouchen",
+      "to": "yuan-peilou",
+      "type": "mentor",
+      "sources": [
+        "src-zcst-zhang-2015"
+      ],
+      "note": "传记明确親传弟子，拜师年份未核定。"
+    },
+    {
+      "id": "zhang-shouchen--dai-shaofu",
+      "from": "zhang-shouchen",
+      "to": "dai-shaofu",
+      "type": "mentor",
+      "sources": [
+        "src-zcst-zhang-2015"
+      ],
+      "note": "传记明确親传弟子，拜师年份未核定。"
+    },
+    {
+      "id": "zhang-shouchen--feng-lizhang",
+      "from": "zhang-shouchen",
+      "to": "feng-lizhang",
+      "type": "mentor",
+      "sources": [
+        "src-zcst-zhang-2015"
+      ],
+      "note": "传记明确親传弟子，拜师年份未核定。"
+    },
+    {
+      "id": "zhang-shouchen--zhao-liwu",
+      "from": "zhang-shouchen",
+      "to": "zhao-liwu",
+      "type": "mentor",
+      "sources": [
+        "src-jinwan-zhang-2004"
+      ],
+      "note": "陈笑暇传记明确张门弟子，仪式年份未核定。"
+    },
+    {
+      "id": "zhang-shouchen--yu-shide",
+      "from": "zhang-shouchen",
+      "to": "yu-shide",
+      "type": "mentor",
+      "sources": [
+        "src-jinwan-zhang-2004"
+      ],
+      "note": "陈笑暇传记明确张门弟子，仪式年份未核定。"
+    },
+    {
+      "id": "zhang-shouchen--kang-liben",
+      "from": "zhang-shouchen",
+      "to": "kang-liben",
+      "type": "mentor",
+      "sources": [
+        "src-jinwan-zhang-2004"
+      ],
+      "note": "陈笑暇传记明确张门弟子，仪式年份未核定。"
+    },
+    {
+      "id": "zhang-shouchen--ye-dushen",
+      "from": "zhang-shouchen",
+      "to": "ye-dushen",
+      "type": "mentor",
+      "sources": [
+        "src-jinwan-zhang-2004"
+      ],
+      "note": "陈笑暇传记明确张门弟子，仪式年份未核定。"
+    },
+    {
+      "id": "bai-quanfu--fang-guoqun",
+      "from": "bai-quanfu",
+      "to": "fang-guoqun",
+      "type": "mentor",
+      "sources": [
+        "src-enorth-bai-2012"
+      ],
+      "note": "现场祭拜报道明确弟子身份，仪式年份未核定。"
+    },
+    {
+      "id": "bai-quanfu--zhang-wenqi",
+      "from": "bai-quanfu",
+      "to": "zhang-wenqi",
+      "type": "mentor",
+      "sources": [
+        "src-enorth-bai-2012"
+      ],
+      "note": "现场祭拜报道明确弟子身份，仪式年份未核定。"
+    },
+    {
+      "id": "bai-quanfu--song-yong",
+      "from": "bai-quanfu",
+      "to": "song-yong",
+      "type": "mentor",
+      "sources": [
+        "src-enorth-bai-2012",
+        "src-quyi-2014-apprentices"
+      ],
+      "note": "现场报道明确白全福弟子；1979拜师及别名宋福生暂待可读来源复核。"
+    },
+    {
+      "id": "li-shouzeng--wang-shutian",
+      "from": "li-shouzeng",
+      "to": "wang-shutian",
+      "type": "mentor",
+      "sources": [
+        "src-chaoxing-liuhuo"
+      ],
+      "note": "中国相声史正文明确1929年正式拜师；张杰尧是指导及合作，不另建本师。"
+    },
+    {
+      "id": "yu-junbo--bai-quanfu",
+      "from": "yu-junbo",
+      "to": "bai-quanfu",
+      "type": "mentor",
+      "sources": [
+        "src-enorth-bai-2012"
+      ],
+      "note": "北方网简介明确18岁正式拜于俊波；不从年龄反推精确仪式年份。"
+    },
+    {
+      "id": "yang-shaokui--liu-lanting",
+      "from": "yang-shaokui",
+      "to": "liu-lanting",
+      "type": "mentor",
+      "sources": [
+        "src-quyi-2014-apprentices"
+      ],
+      "note": "《曲艺》2014年摘要记2007年由刘文步代师收徒；代师与本师分别记录。"
+    },
+    {
+      "id": "bai-quanfu--yang-zhigang",
+      "from": "bai-quanfu",
+      "to": "yang-zhigang",
+      "type": "mentor",
+      "sources": [
+        "src-enorth-bai-2012"
+      ],
+      "note": "报道明确为长徒，姓名为杨志刚；不按未核实杨志光写法另建人物。"
     }
   ]
 }

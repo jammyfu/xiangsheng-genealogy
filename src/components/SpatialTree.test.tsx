@@ -54,11 +54,13 @@ it('selects a parent from the graph and directory without collapsing its lineage
     await act(async () => branchButton.click());
     expect(onBranch).toHaveBeenCalledOnce();
     await act(async () => render('guo-degang'));
-    expect(element.querySelector('.force-tree-directory summary')?.textContent).toContain('1 / 98');
-    const disciplesTab = [...element.querySelectorAll<HTMLButtonElement>('.force-directory-modes button')].find(b => b.textContent === '弟子 · 98')!;
+    const discipleCount = loadEdgesFromDisk().filter(edge => edge.from === 'guo-degang').length;
+    expect(discipleCount).toBeGreaterThan(90);
+    expect(element.querySelector('.force-tree-directory summary')?.textContent).toContain(`1 / ${discipleCount}`);
+    const disciplesTab = [...element.querySelectorAll<HTMLButtonElement>('.force-directory-modes button')].find(b => b.textContent === `弟子 · ${discipleCount}`)!;
     await act(async () => disciplesTab.click());
     // Direct relationships come from the catalog even when most disciples are not in the collapsed graph.
-    expect(element.querySelectorAll('.force-directory-list button')).toHaveLength(98);
+    expect(element.querySelectorAll('.force-directory-list button')).toHaveLength(discipleCount);
     const disciple = element.querySelector<HTMLButtonElement>('[aria-label="岳云鹏，查看师承主线"]')!;
     const details = element.querySelector<HTMLDetailsElement>('.force-tree-directory')!;
     details.open = true;

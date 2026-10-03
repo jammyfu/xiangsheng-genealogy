@@ -1,0 +1,55 @@
+{
+  "checks": [
+    {
+      "name": "old duplicate URL preserves tree mode on canonical person",
+      "passed": true
+    },
+    {
+      "name": "traditional name search finds single canonical Liu",
+      "passed": true
+    },
+    {
+      "name": "new Taiwan branch has mentor and four verified disciples",
+      "passed": true
+    },
+    {
+      "name": "new disciple navigation and contextual return",
+      "passed": true
+    },
+    {
+      "name": "403-person catalog can fully expand",
+      "passed": true
+    },
+    {
+      "name": "view switch retains selected Wu",
+      "passed": true
+    },
+    {
+      "name": "Yao overseas branch shows corroborated ceremony and both disciples",
+      "passed": true
+    },
+    {
+      "name": "merged alias search yields only one actor",
+      "passed": true
+    },
+    {
+      "name": "ambiguous mixed-art ceremony remains visible without false mentor",
+      "passed": true
+    },
+    {
+      "name": "touch return, narrow screen, reduced-motion and year conflict",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "desktop": [
+    1440,
+    1000
+  ],
+  "mobile": [
+    390,
+    844
+  ],
+  "touch": true,
+  "reducedMotion": true
+}

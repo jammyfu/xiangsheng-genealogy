@@ -4,8 +4,16 @@
   "generation": "德",
   "generationIndex": 4,
   "school": "恩绪门下",
-  "bio": "恩绪入室弟子，按行业通行辈分归德字辈。",
-  "works": [],
-  "sources": ["src-wiki-lineage"],
-  "portraitKind": "placeholder"
+  "bio": "恩绪弟子，又名华德茂，曾在北京表演单口相声戏迷传；未据去世年代推定具体卒年。",
+  "works": [
+    "戏迷传"
+  ],
+  "sources": [
+    "src-wiki-lineage",
+    "src-chaoxing-liuhuo"
+  ],
+  "portraitKind": "placeholder",
+  "aliases": [
+    "华德茂"
+  ]
 }

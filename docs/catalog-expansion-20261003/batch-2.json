@@ -1,0 +1,72 @@
+{
+  "people": [
+    "hong-ziyan",
+    "wu-yinjie",
+    "huang-jiaqiang",
+    "yan-guijuan",
+    "li-yaoguang",
+    "su-weisheng",
+    "ji-qingrong",
+    "ai-tianyi",
+    "qiao-tianlan",
+    "wu-yongfeng",
+    "yuan-xiaoting",
+    "feng-yigang",
+    "song-shaoqing",
+    "han-laoda",
+    "yang-shibin",
+    "huang-jinzhong",
+    "chen-ruizhen",
+    "yuan-peilou",
+    "dai-shaofu",
+    "feng-lizhang",
+    "zhao-liwu",
+    "yu-shide",
+    "kang-liben",
+    "ye-dushen",
+    "fang-guoqun",
+    "zhang-wenqi",
+    "wang-shutian",
+    "bai-quanfu"
+  ],
+  "edges": [
+    "jiang-kun--huang-jiaqiang",
+    "jiang-kun--yan-guijuan",
+    "xu-huimin--li-yaoguang",
+    "yao-xinguang--su-weisheng",
+    "yao-xinguang--ji-qingrong",
+    "liu-zengkai--ai-tianyi",
+    "liu-zengkai--qiao-tianlan",
+    "hou-guanqun--wu-yongfeng",
+    "chen-yian--wang-zhenquan",
+    "hou-guanqun--yuan-xiaoting",
+    "chang-baohua--feng-yigang",
+    "chang-baohua--song-shaoqing",
+    "zhang-shouchen--yuan-peilou",
+    "zhang-shouchen--dai-shaofu",
+    "zhang-shouchen--feng-lizhang",
+    "zhang-shouchen--zhao-liwu",
+    "zhang-shouchen--yu-shide",
+    "zhang-shouchen--kang-liben",
+    "zhang-shouchen--ye-dushen",
+    "bai-quanfu--fang-guoqun",
+    "bai-quanfu--zhang-wenqi",
+    "bai-quanfu--song-yong",
+    "li-shouzeng--wang-shutian",
+    "yu-junbo--bai-quanfu"
+  ],
+  "removedAmbiguousEdges": [
+    "ye-yijun--duan-yanxi"
+  ],
+  "counts": {
+    "people": 398,
+    "edges": 382,
+    "sources": 98
+  },
+  "mergedDuplicates": {
+    "zhu-yunfeng": "shao-bing"
+  },
+  "removedDuplicateEdges": [
+    "guo-degang--zhu-yunfeng"
+  ]
+}

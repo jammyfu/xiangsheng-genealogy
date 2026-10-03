@@ -1,0 +1,18 @@
+{
+  "people": [
+    "yang-shaokui",
+    "liu-lanting",
+    "yang-changzai",
+    "chen-shutong",
+    "yang-zhigang"
+  ],
+  "edges": [
+    "yang-shaokui--liu-lanting",
+    "bai-quanfu--yang-zhigang"
+  ],
+  "counts": {
+    "people": 403,
+    "edges": 384,
+    "sources": 99
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "yuan-peilou",
+  "name": "袁佩楼",
+  "generation": null,
+  "generationIndex": 6,
+  "bio": "济南相声演员，张寿臣弟子，地方志记1919—1984，擅演四扇屏、八扇屏。",
+  "works": [
+    "四扇屏",
+    "八扇屏"
+  ],
+  "sources": [
+    "src-zcst-zhang-2015",
+    "src-sd-yuan-chorography",
+    "src-jinwan-zhang-2004"
+  ],
+  "portraitKind": "placeholder",
+  "notes": [
+    "未独立核定正式字辈，展示层级不作宗谱辈分认定。"
+  ],
+  "birthYear": 1919,
+  "deathYear": 1984
+}

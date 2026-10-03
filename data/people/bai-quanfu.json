@@ -1,0 +1,18 @@
+{
+  "id": "bai-quanfu",
+  "name": "白全福",
+  "generation": "宝",
+  "generationIndex": 6,
+  "birthYear": 1919,
+  "deathYear": 1993,
+  "bio": "相声演员，正式拜于俊波为师，与常宝霆长期合作，以捧哏见长，曾培养宋勇等后辈。",
+  "works": [
+    "道德法庭",
+    "一枝新花",
+    "不同风格"
+  ],
+  "sources": [
+    "src-enorth-bai-2012"
+  ],
+  "portraitKind": "placeholder"
+}

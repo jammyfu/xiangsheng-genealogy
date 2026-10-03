@@ -1,0 +1,20 @@
+{
+  "id": "ji-tianyu",
+  "name": "姬天语",
+  "generation": null,
+  "generationIndex": 9,
+  "bio": "台湾相声演员，本师刘增锴；傅谛为引师、叶怡均为代师，三种角色分别记录。",
+  "works": [
+    "新·文字学",
+    "楼上楼下"
+  ],
+  "sources": [
+    "src-nccu-crosstalk-2012",
+    "src-ncfta-wu-disciples"
+  ],
+  "portraitKind": "placeholder",
+  "nameHant": "姬天語",
+  "notes": [
+    "未独立核定正式字辈，展示层级不作宗谱辈分认定。"
+  ]
+}

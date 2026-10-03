@@ -1,0 +1,50 @@
+{
+  "people": [
+    "jiang-nan",
+    "hou-guanqun",
+    "lang-zuyun",
+    "liu-zengkai",
+    "liu-erjin",
+    "fan-guangyao",
+    "ji-tianyu",
+    "fu-di",
+    "wang-zhenquan",
+    "wu-siwei",
+    "chen-qingsheng",
+    "duan-yanxi",
+    "shi-tiantian",
+    "xie-xiaoling",
+    "liu-shimin",
+    "huang-yihao",
+    "song-minghan",
+    "yu-baolin",
+    "tong-youwei",
+    "ma-shuchun",
+    "liu-kuizhen",
+    "song-yong",
+    "wang-wenlin"
+  ],
+  "edges": [
+    "wu-zhaonan--jiang-nan",
+    "wu-zhaonan--hou-guanqun",
+    "wu-zhaonan--lang-zuyun",
+    "wu-zhaonan--liu-zengkai",
+    "wu-zhaonan--liu-erjin",
+    "wu-zhaonan--fan-guangyao",
+    "liu-zengkai--ji-tianyu",
+    "wei-longhao--fu-di",
+    "wang-zhenquan--wu-siwei",
+    "chen-yongquan--chen-qingsheng",
+    "ye-yijun--duan-yanxi",
+    "liu-zengkai--shi-tiantian",
+    "ma-sanli--yu-baolin",
+    "yu-baolin--tong-youwei",
+    "yu-baolin--ma-shuchun",
+    "liu-baorui--wang-wenlin"
+  ],
+  "counts": {
+    "people": 371,
+    "edges": 360,
+    "sources": 80
+  }
+}

@@ -12,7 +12,8 @@
   "sources": [
     "src-tjl-tian-2010",
     "src-wiki-tian-lihe",
-    "src-tjdaily-tian-obit-2026"
+    "src-tjdaily-tian-obit-2026",
+    "src-jinwan-zhang-2004"
   ],
   "portraitKind": "placeholder",
   "birthYear": 1935,
@@ -20,5 +21,8 @@
   "aliases": [
     "田中敏"
   ],
-  "school": "天津 / 张派"
+  "school": "天津 / 张派",
+  "notes": [
+    "2004年陈笑暇文记1951年拜师，与田立禾本人受访记1953年不同；保留本人自述及旧文异说，师承身份明确。"
+  ]
 }

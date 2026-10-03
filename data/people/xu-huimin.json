@@ -4,12 +4,18 @@
   "works": [],
   "sources": [
     "src-wiki-lineage",
-    "src-lidicity-maji-baishi-2006"
+    "src-lidicity-maji-baishi-2006",
+    "src-cover-jiang-overseas-2019",
+    "src-zaobao-xu-2020"
   ],
   "name": "徐惠民",
-  "generation": "明",
-  "generationIndex": 8,
+  "generation": null,
+  "generationIndex": 9,
   "school": "北京马季门（姜昆门）",
-  "bio": "姜昆门下，2006年12月新加坡正式拜师资料见联合报道（引师、保代完整）。",
-  "disputed": false
+  "bio": "徐惠民为新加坡相声演员、姜昆弟子。封面新闻及联合早报记2007年拜师，旧记录2006年待核。",
+  "disputed": false,
+  "notes": [
+    "旧来源记2006年12月，新读报道记2007年；师承明确，仪式年份保留冲突。",
+    "正式字辈未独立核定，展示层级不作宗谱辈分认定。"
+  ]
 }

@@ -147,6 +147,29 @@ describe("maintained catalog", () => {
     expect(cao?.aliases ?? []).not.toContain("曹云金");
   });
 
+  it("does not duplicate a person under their primary name and alias", () => {
+    const owners = new Map<string, string>();
+    for (const person of people) {
+      for (const name of new Set([person.name, person.nameHant, ...(person.aliases ?? [])])) {
+        if (!name) continue;
+        const key = name.normalize("NFKC").trim();
+        expect(owners.get(key) ?? person.id, `${key} belongs to two people`).toBe(person.id);
+        owners.set(key, person.id);
+      }
+    }
+    expect(ids.has("zhu-yunfeng")).toBe(false);
+    expect(people.find(person => person.id === "shao-bing")?.aliases).toContain("朱云峰");
+  });
+
+  it("keeps mixed-art ceremonies outside confirmed crosstalk mentor edges", () => {
+    for (const id of ["duan-yanxi", "song-minghan", "wu-yinjie"]) {
+      expect(edges.some(edge => edge.from === "ye-yijun" && edge.to === id)).toBe(false);
+    }
+    expect(edges.find(edge => edge.to === "ji-tianyu")?.from).toBe("liu-zengkai");
+    expect(edges.find(edge => edge.to === "wu-yongfeng")?.from).toBe("hou-guanqun");
+    expect(edges.find(edge => edge.to === "yao-xinguang")?.disputed).toBe(false);
+  });
+
   it("flags disputed lineage where the table is unsettled", () => {
     const disputedPeople = people.filter((person) => person.disputed);
     const disputedEdges = edges.filter((edge) => edge.disputed);
