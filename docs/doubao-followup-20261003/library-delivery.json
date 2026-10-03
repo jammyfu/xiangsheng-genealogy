@@ -1,0 +1,90 @@
+[
+  {
+    "local": "implementation-report.md",
+    "operation": "create_library_file",
+    "status": "succeeded",
+    "path": "/implementation-report(1).md",
+    "file_id": "file_000000004e548230bb60b068fb773ff1",
+    "library_file_id": "libfile_44578591add481919b09d4137a06d9cf",
+    "file_name": "implementation-report(1).md",
+    "current_version_number": 0,
+    "restored_from_version_number": null,
+    "xattrs": [
+      {
+        "name": "user.library-file-version",
+        "value": "0"
+      }
+    ],
+    "directory_id": "libdir_4263da09c8c48191afa7f8f739995946",
+    "mime_type": "text/markdown",
+    "library_artifact_type": "report",
+    "file_size_bytes": 5534,
+    "external_connectors_accessed": false
+  },
+  {
+    "local": "02-canton-desktop.png",
+    "operation": "create_library_file",
+    "status": "succeeded",
+    "path": "/02-canton-desktop.png",
+    "file_id": "file_00000000ded88230bde5b94bfb5f6da1",
+    "library_file_id": "libfile_fb176192917c8191a344627570005084",
+    "file_name": "02-canton-desktop.png",
+    "current_version_number": 0,
+    "restored_from_version_number": null,
+    "xattrs": [
+      {
+        "name": "user.library-file-version",
+        "value": "0"
+      }
+    ],
+    "directory_id": "libdir_4263da09c8c48191afa7f8f739995946",
+    "mime_type": "image/png",
+    "library_artifact_type": "image",
+    "file_size_bytes": 925803,
+    "external_connectors_accessed": false
+  },
+  {
+    "local": "04-canton-mobile.png",
+    "operation": "create_library_file",
+    "status": "succeeded",
+    "path": "/04-canton-mobile.png",
+    "file_id": "file_0000000078e88230a4998e0bc3a8d1b6",
+    "library_file_id": "libfile_54682316e49c81918995937a9e77211e",
+    "file_name": "04-canton-mobile.png",
+    "current_version_number": 0,
+    "restored_from_version_number": null,
+    "xattrs": [
+      {
+        "name": "user.library-file-version",
+        "value": "0"
+      }
+    ],
+    "directory_id": "libdir_4263da09c8c48191afa7f8f739995946",
+    "mime_type": "image/png",
+    "library_artifact_type": "image",
+    "file_size_bytes": 361622,
+    "external_connectors_accessed": false
+  },
+  {
+    "local": "12-item-merge-matrix.csv",
+    "operation": "create_library_file",
+    "status": "succeeded",
+    "path": "/12-item-merge-matrix.csv",
+    "file_id": "file_00000000d76481fd9d155cddab4ae029",
+    "library_file_id": "libfile_62323eb37928819187db519849aa8a77",
+    "file_name": "12-item-merge-matrix.csv",
+    "current_version_number": 0,
+    "restored_from_version_number": null,
+    "xattrs": [
+      {
+        "name": "user.library-file-version",
+        "value": "0"
+      }
+    ],
+    "directory_id": "libdir_4263da09c8c48191afa7f8f739995946",
+    "mime_type": "text/csv",
+    "library_artifact_type": "sheet",
+    "file_size_bytes": 3073,
+    "external_connectors_accessed": false
+  }
+]

@@ -515,7 +515,7 @@
     },
     {
       "id": "src-lnr-yang-obit-2026",
-      "title": "杨振华：大师风范 永驻辽沈",
+      "title": "笑声不息：杨振华与沈阳相声的珍贵记忆",
       "url": "https://epaper.lnd.com.cn/lnrbepaper/pc/con/202601/21/content_314817.html",
       "publisher": "辽宁日报",
       "accessed": "2026-10-03",
@@ -1061,6 +1061,46 @@
       "publisher": "中国文化报／中国作家网",
       "accessed": "2026-10-03",
       "note": "已读取李治邦署名纪念文正文，明确四徒；与2008师门文章分别记为独立报道。"
+    },
+    {
+      "id": "src-doubao-followup-zhang-obit",
+      "title": "北京德云社沉痛悼念相声泰斗张永熙先生",
+      "url": "https://www.guodegang.org/bulletin/one.php?id=3",
+      "publisher": "德云社",
+      "accessed": "2026-10-03",
+      "note": "独立检索并全文读取机构讣告，明确1923生、2015卒、9岁拜赵少舫；没有证实赵寿舫异名，也未给赵少舫上游。不是以豆包回答为史料。"
+    },
+    {
+      "id": "src-doubao-followup-zhang-phoenix",
+      "title": "相声大师张永熙去世 与侯宝林合称北侯南张",
+      "url": "https://ient.ifeng.com/c/7e1y30I97z9",
+      "publisher": "凤凰娱乐",
+      "accessed": "2026-10-03",
+      "note": "2015年7月16日16:26报道，全文读取明确1932年拜赵少舫。前段与机构讣告措辞相近，不自动视为独立采访互证。只记公开职业信息。"
+    },
+    {
+      "id": "src-doubao-canton-2012",
+      "title": "粤语相声艺术家黄俊英举行从艺六十年专场",
+      "url": "https://www.chinanews.com.cn/cul/2012/08-09/4096965.shtml",
+      "publisher": "中国新闻网",
+      "accessed": "2026-10-03",
+      "note": "记者王华、刘乐报道发布会；明确称何宝文、陈坚雄为弟子。没有两人的拜师仪式日期。罗品超师门属于粤剧。"
+    },
+    {
+      "id": "src-doubao-canton-2017",
+      "title": "羊城笑星黄俊英举办从艺六十五周年晚会",
+      "url": "https://chinese.cri.cn/chinese/145/20170814/16270.html",
+      "publisher": "国际在线",
+      "accessed": "2026-10-03",
+      "note": "记者陈惠婷报道已举办的晚会，明确何宝文、陈坚雄为弟子；另有未具名八龄童和澳大利亚友人拜师，不据照片猜姓名。"
+    },
+    {
+      "id": "src-doubao-yang-obit-2026",
+      "title": "著名相声表演艺术家杨振华逝世",
+      "url": "https://news.bjd.com.cn/2026/01/20/11534474.shtml",
+      "publisher": "京报网／沈阳日报",
+      "accessed": "2026-10-03",
+      "note": "转载沈阳日报：晚年在沈阳相声小剧场先后正式收徒崔福祥、新纪元。未给拜师年月；不是一生徒弟完整名单。新纪元与辽宁日报的纪元是否同人待核。"
     }
   ]
 }

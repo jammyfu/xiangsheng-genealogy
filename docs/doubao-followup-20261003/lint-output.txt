@@ -1,0 +1,4 @@
+
+> xiangsheng-genealogy@1.0.0 lint
+> tsc -b --pretty false
+

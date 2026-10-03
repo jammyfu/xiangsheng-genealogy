@@ -5299,6 +5299,53 @@
         "src-sparse-wei-interview"
       ],
       "note": "魏文亮本人口述武魁海为第二位正式老师，同时保留张文斌第一位正式师父；不将两师关系删成单师。"
+    },
+    {
+      "id": "zhao-shaofang--zhang-yongxi",
+      "from": "zhao-shaofang",
+      "to": "zhang-yongxi",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-doubao-followup-zhang-obit",
+        "src-doubao-followup-zhang-phoenix"
+      ],
+      "note": "机构讣告明确张永熙9岁拜赵少舫；凤凰2015年纪念报道明确1932年。未核明赵寿舫异名或上游，不据地域强接侯一尘。"
+    },
+    {
+      "id": "huang-junying--he-baowen",
+      "to": "he-baowen",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-doubao-canton-2012",
+        "src-doubao-canton-2017"
+      ],
+      "note": "两篇报道明确称相声弟子；采用报道的职业师承关系，拜师仪式、日期与宗谱字辈未核。",
+      "from": "huang-junying"
+    },
+    {
+      "id": "huang-junying--chen-jianxiong",
+      "to": "chen-jianxiong",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-doubao-canton-2012",
+        "src-doubao-canton-2017"
+      ],
+      "note": "两篇报道明确称相声弟子；采用报道的职业师承关系，拜师仪式、日期与宗谱字辈未核。",
+      "from": "huang-junying"
+    },
+    {
+      "id": "yang-zhenhua--cui-fuxiang",
+      "from": "yang-zhenhua",
+      "to": "cui-fuxiang",
+      "type": "mentor",
+      "disputed": false,
+      "sources": [
+        "src-doubao-yang-obit-2026"
+      ],
+      "note": "沈阳日报纪念报道明确称正式收徒；未载年月，不据此认定完整徒弟名单。"
     }
   ]
 }

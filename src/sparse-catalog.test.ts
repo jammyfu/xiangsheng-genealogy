@@ -22,3 +22,16 @@ it('keeps sparse-branch formal mentors distinct from relatives, ceremony proxies
   expect(pair('wu-kuihai', 'wei-wenliang')).toBeDefined();
   expect(people.find(p => p.id === 'shi-shengjie')?.deathYear).toBe(2018);
 });
+it('keeps Doubao leads separate from independently supported professional relationships', () => {
+  expect(pair('zhao-shaofang', 'zhang-yongxi')).toBeDefined();
+  expect(pair('yang-zhenhua', 'cui-fuxiang')).toBeDefined();
+  for (const id of ['he-baowen', 'chen-jianxiong']) {
+    expect(pair('huang-junying', id)?.sources).toHaveLength(2);
+    expect(pair('huang-junying', id)?.note).toContain('仪式');
+  }
+  expect(pair('luo-pinchao', 'huang-junying')).toBeUndefined();
+  expect(pair('huang-junying', 'yang-da')).toBeUndefined();
+  expect(pair('huang-junying', 'pan-hongbo')).toBeUndefined();
+  expect(people.find(p => p.id === 'ji-yuan')?.name).toBe('纪元');
+  expect(people.some(p => p.name === '新纪元')).toBe(false);
+});

@@ -1,0 +1,39 @@
+{
+  "checks": [
+    {
+      "name": "Zhao disciple navigation and contextual return",
+      "passed": true
+    },
+    {
+      "name": "Canton disciples and ceremony qualification visible",
+      "passed": true
+    },
+    {
+      "name": "new Cui keyboard lookup",
+      "passed": true
+    },
+    {
+      "name": "tree switch and repeated book switch retain Cui",
+      "passed": true
+    },
+    {
+      "name": "touch repeated tabs, navigation and return at reduced motion",
+      "passed": true
+    },
+    {
+      "name": "Escape closes keyboard search suggestions",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "desktop": [
+    1440,
+    1000
+  ],
+  "mobile": [
+    390,
+    844
+  ],
+  "touch": true,
+  "reducedMotion": true
+}
