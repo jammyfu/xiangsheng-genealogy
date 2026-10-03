@@ -6,14 +6,16 @@ import { SourceLinks } from "./SourceLinks";
 
 export function EvidencePanel({
   type,
+  initialQuery = "",
   onClose,
   onSelect,
 }: {
   type: "people" | "evidence";
+  initialQuery?: string;
   onClose: () => void;
   onSelect: (id: string) => void;
 }) {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(initialQuery);
   const list = searchPeople(query);
   const verifiedPeople = new Set(
     events.filter((e) => e.status !== "unverified").flatMap((e) => e.people),
@@ -56,7 +58,7 @@ export function EvidencePanel({
             </h2>
           </div>
           <button
-            autoFocus
+            autoFocus={type === "evidence"}
             className="icon-button"
             aria-label="关闭"
             onClick={onClose}
@@ -69,6 +71,8 @@ export function EvidencePanel({
             <label className="directory-search">
               <MagnifyingGlass size={22} />
               <input
+                autoFocus
+                aria-label="检索人物索引"
                 placeholder="输入姓名、艺名或拼音标识"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}

@@ -1743,3 +1743,15 @@ h3 {
 .ink-app.is-immersive .person-summary.is-expanded .summary-body {
   display: block;
 }
+
+/* Search and navigation retain the atlas's paper and cinnabar language. */
+.search-results [role="option"][aria-selected="true"] {
+  background: #eee6d8;
+  color: var(--red);
+  outline: 1px solid var(--red);
+  outline-offset: -1px;
+}
+.search-results [role="option"] { min-height: 44px; }
+.person-back { color: var(--red); font-size: 13px; min-height: 44px; }
+.view-bar:has(.person-back) .view-motto { display: none; }
+.studio-content { display: contents; }

@@ -3,13 +3,11 @@ import { useLocation, useNavigate, useParams } from "react-router-dom";
 import {
   ArrowRight,
   ArrowUpRight,
-  MagnifyingGlass,
   CaretDown,
-  X,
   ArrowsOut,
   ArrowsIn,
 } from "@phosphor-icons/react";
-import { peopleById, searchPeople, mentorsOf } from "../lib/catalog";
+import { peopleById, mentorsOf } from "../lib/catalog";
 import { eventsForPerson } from "../lib/events";
 import { readBrowseState, updateBrowseSearch, VIEWS } from "../lib/browsing";
 import type { BrowseState, BrowseView } from "../lib/browsing";
@@ -17,6 +15,7 @@ import { GENERATIONS } from "../types";
 import { AtlasGraph } from "./AtlasGraph";
 import { PersonBook, lifespan } from "./PersonBook";
 import { TimelineView } from "./TimelineView";
+import { PersonSearch } from "./PersonSearch";
 import { EvidencePanel } from "./EvidencePanel";
 import { useStudioMotion } from "../lib/useStudioMotion";
 
@@ -63,11 +62,12 @@ export function Studio() {
     if (state.view === "scroll" || state.view === "tree")
       setGraphMode(state.view);
   }, [state.view]);
-  const [searchOpen, setSearchOpen] = useState(false),
-    [drawer, setDrawer] = useState(false);
+  const [drawer, setDrawer] = useState(false);
+  type Stop = { url: string; name: string };
+  const trail: Stop[] = location.state?.personTrail ?? [];
+  const previousPerson = trail.at(-1);
   const [panel, setPanel] = useState<"people" | "evidence" | null>(null);
-  const searchRef = useRef<HTMLInputElement>(null),
-    openerRef = useRef<HTMLElement | null>(null);
+  const openerRef = useRef<HTMLElement | null>(null);
   const openPanel = (type: "people" | "evidence") => {
     openerRef.current = document.activeElement as HTMLElement;
     setPanel(type);
@@ -93,18 +93,22 @@ export function Studio() {
   const change = (patch: Partial<BrowseState>) =>
     navigate(
       `/p/${selected.id}?${updateBrowseSearch(location.search, patch)}`,
-      { replace: patch.query !== undefined },
+      { replace: patch.query !== undefined, state: location.state },
     );
   const select = (next: string) => {
-    navigate(`/p/${next}${location.search}`);
-    setSearchOpen(false);
+    const search = updateBrowseSearch(location.search, { query: "" });
+    const target = `/p/${next}${search ? `?${search}` : ""}`;
+    if (next !== selected.id) {
+      navigate(target, { state: { personTrail: [...trail, { url: location.pathname + location.search, name: selected.name }].slice(-12) } });
+    } else if (target !== location.pathname + location.search) {
+      navigate(target, { replace: true, state: location.state });
+    }
     setDrawer(false);
   };
   const view = (next: BrowseView) => {
     change({ view: next });
     setDrawer(false);
   };
-  const results = searchPeople(state.query).slice(0, 9);
   const graph = state.view === "scroll" || state.view === "tree";
   const mentors = mentorsOf(selected.id),
     personalEvents = eventsForPerson(selected.id);
@@ -114,6 +118,7 @@ export function Studio() {
       className={`ink-app view-${state.view}${immersive ? " is-immersive" : ""}`}
       data-transition={transitioning ? "moving" : "settled"}
     >
+      <div className="studio-content" inert={!!panel}>
       <a className="skip-link" href="#main-content">
         跳到浏览内容
       </a>
@@ -143,48 +148,14 @@ export function Studio() {
           <button onClick={() => openPanel("people")}>寻人</button>
           <button onClick={() => openPanel("evidence")}>考据</button>
         </nav>
-        <div className="search-box">
-          <MagnifyingGlass size={23} weight="light" />
-          <input
-            ref={searchRef}
-            aria-label="搜索人物"
-            placeholder="搜索姓名或艺名"
-            value={state.query}
-            onFocus={() => setSearchOpen(true)}
-            onChange={(e) => {
-              change({ query: e.target.value });
-              setSearchOpen(true);
-            }}
-            onKeyDown={(e) => {
-              if (e.nativeEvent.isComposing || e.nativeEvent.keyCode === 229)
-                return;
-              if (e.key === "Escape") setSearchOpen(false);
-              if (e.key === "Enter" && state.query.trim() && results[0])
-                select(results[0].id);
-            }}
-          />
-          {state.query && (
-            <button aria-label="清除搜索" onClick={() => change({ query: "" })}>
-              <X size={15} />
-            </button>
-          )}
-          {searchOpen && state.query && (
-            <div className="search-results">
-              <p>找到 {searchPeople(state.query).length} 位人物</p>
-              {results.map((p) => (
-                <button key={p.id} onClick={() => select(p.id)}>
-                  <span>{p.name}</span>
-                  <small>
-                    {p.generation ? `${p.generation}字辈` : "字辈待考"}
-                  </small>
-                </button>
-              ))}
-              {!results.length && <p>暂无匹配，试试其他姓名。</p>}
-            </div>
-          )}
-        </div>
+        <PersonSearch query={state.query} onQuery={query => change({ query })}
+          onSelect={select} onDirectory={() => openPanel("people")} />
       </header>
       <section className="view-bar">
+        {previousPerson && <button className="person-back" onClick={() => {
+          navigate(previousPerson.url, { state: { personTrail: trail.slice(0, -1) } });
+          setDrawer(false);
+        }}>← 返回{previousPerson.name}</button>}
         <p className="view-motto">循一脉，见传承</p>
         <nav aria-label="浏览方式" className="view-tabs">
           {VIEWS.map((v) => (
@@ -259,6 +230,7 @@ export function Studio() {
             <div className="generation-bar">
               <span>字辈</span>
               <button
+                aria-pressed={!state.generation}
                 className={!state.generation ? "active" : ""}
                 onClick={() => change({ generation: "" })}
               >
@@ -418,8 +390,9 @@ export function Studio() {
           <ArrowUpRight size={19} />
         </button>
       </footer>
+      </div>
       {panel && (
-        <EvidencePanel type={panel} onClose={closePanel} onSelect={select} />
+        <EvidencePanel initialQuery={state.query} type={panel} onClose={closePanel} onSelect={select} />
       )}
     </main>
   );
