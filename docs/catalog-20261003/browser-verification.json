@@ -1,0 +1,47 @@
+{
+  "results": [
+    {
+      "name": "alias keyboard search locates Tian Lihe",
+      "passed": true
+    },
+    {
+      "name": "verified mentor links and source scope shown",
+      "passed": true
+    },
+    {
+      "name": "mentor navigation and return",
+      "passed": true
+    },
+    {
+      "name": "Yang chain includes mentor and disciple",
+      "passed": true
+    },
+    {
+      "name": "new branch tree loads and view switch retains person",
+      "passed": true
+    },
+    {
+      "name": "birth conflict visible in biography",
+      "passed": true
+    },
+    {
+      "name": "proxy ceremony distinct from direct teaching",
+      "passed": true
+    },
+    {
+      "name": "touch narrow screen and reduced motion source access",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "desktop": [
+    1440,
+    1000
+  ],
+  "mobile": [
+    390,
+    844
+  ],
+  "touch": true,
+  "reducedMotion": true
+}

@@ -1,17 +1,18 @@
 {
   "birthYear": 1944,
-  "deathYear": 2022,
+  "deathYear": 2018,
   "portraitKind": "placeholder",
   "works": [
-    "洋相声"
+    "保卫西沙"
   ],
   "sources": [
-    "src-wiki-lineage"
+    "src-wiki-lineage",
+    "src-bjd-ding-obit-2018"
   ],
   "id": "ding-guangquan",
   "name": "丁广泉",
   "generation": "文",
   "generationIndex": 7,
   "school": "北京侯派",
-  "bio": "侯宝林弟子。以教授外国学员相声著称，门下连春建及多位国际学生。"
+  "bio": "1944年生于北京，1973年由苗培时引荐正式拜侯宝林为师。长期从事相声教育与海外文化传播，2018年1月18日逝世。"
 }

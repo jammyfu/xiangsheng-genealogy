@@ -61,6 +61,55 @@ describe("maintained catalog", () => {
     }
   });
 
+  it("keeps mentor pairs unique and lineage free of cycles", () => {
+    expect(new Set(edges.map((edge) => `${edge.from}--${edge.to}`)).size).toBe(
+      edges.length,
+    );
+    const children = new Map<string, string[]>();
+    for (const edge of edges) {
+      children.set(edge.from, [...(children.get(edge.from) ?? []), edge.to]);
+    }
+    const visited = new Set<string>();
+    const active = new Set<string>();
+    const visit = (id: string) => {
+      expect(active.has(id), `mentor cycle at ${id}`).toBe(false);
+      if (visited.has(id)) return;
+      active.add(id);
+      for (const child of children.get(id) ?? []) visit(child);
+      active.delete(id);
+      visited.add(id);
+    };
+    for (const id of ids) visit(id);
+  });
+
+  it("separates verified apprenticeship from guidance, partnership and other arts", () => {
+    const has = (from: string, to: string) =>
+      edges.some((edge) => edge.from === from && edge.to === to);
+    expect(has("zhang-shouchen", "tian-lihe")).toBe(true);
+    expect(has("liu-baorui", "xing-wenzhao")).toBe(true);
+    expect(has("yang-haiquan", "yang-zhenhua")).toBe(true);
+    expect(has("yang-zhenhua", "ji-yuan")).toBe(true);
+    expect(has("chen-yian", "ye-yijun")).toBe(true);
+    expect(has("wei-wenliang", "zhu-degang")).toBe(true);
+    expect(edges.some((edge) => edge.to === "wei-longhao")).toBe(false);
+    expect(has("wu-zhaonan", "chen-yian")).toBe(false);
+    expect(has("tian-lianyuan", "ye-yijun")).toBe(false);
+    const wu = people.find((person) => person.id === "wu-zhaonan");
+    expect(wu?.birthYear).toBeNull();
+    expect(wu?.bio).toContain("出生年有异说");
+    expect(
+      people.find((person) => person.id === "ding-guangquan")?.deathYear,
+    ).toBe(2018);
+    expect(edges.find((edge) => edge.to === "zhu-degang")?.note).toContain(
+      "年份本次未核定",
+    );
+    expect(
+      edges.find(
+        (edge) => edge.from === "zhu-kuoquan" && edge.to === "ma-zhiming",
+      )?.note,
+    ).toContain("不表示朱阔泉直接面授");
+  });
+
   it("cites a source on every person and never hosts audio", () => {
     for (const person of people) {
       expect(person.sources.length).toBeGreaterThan(0);

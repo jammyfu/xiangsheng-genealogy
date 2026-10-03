@@ -1777,8 +1777,10 @@
       "type": "mentor",
       "disputed": false,
       "sources": [
-        "src-wiki-lineage"
-      ]
+        "src-wiki-lineage",
+        "src-bjd-ding-obit-2018"
+      ],
+      "note": "北京日报记1973年正式拜师；1964年应考及后续书信不是正式拜师年份。"
     },
     {
       "id": "hou-baolin--hao-aimin",
@@ -1837,8 +1839,10 @@
       "type": "mentor",
       "disputed": false,
       "sources": [
-        "src-wiki-lineage"
-      ]
+        "src-wiki-lineage",
+        "src-merit-wu-2009"
+      ],
+      "note": "1982年香港演出期间完成拜师仪式；1979年意愿与正式仪式分别记录。"
     },
     {
       "id": "hou-baolin--yang-ziyang",
@@ -2920,8 +2924,10 @@
       "type": "mentor",
       "disputed": false,
       "sources": [
-        "src-wiki-lineage"
-      ]
+        "src-wiki-lineage",
+        "src-cctv-hou-yaowen-2007"
+      ],
+      "note": "1994年李伯祥代已故赵佩茹收徒；门内师承不表示赵佩茹本人直接面授。具体月日为受访者带记忆限定的说法，暂不定日。"
     },
     {
       "id": "zhao-peiru--li-boxiang",
@@ -2930,8 +2936,10 @@
       "type": "mentor",
       "disputed": false,
       "sources": [
-        "src-wiki-lineage"
-      ]
+        "src-wiki-lineage",
+        "src-cctv-hou-yaowen-2007"
+      ],
+      "note": "李伯祥本人采访称赵佩茹为恩师。"
     },
     {
       "id": "zhao-shizhong--kang-guisheng",
@@ -3048,11 +3056,12 @@
       "from": "zhu-kuoquan",
       "to": "ma-zhiming",
       "type": "mentor",
-      "disputed": true,
+      "disputed": false,
       "sources": [
-        "src-wiki-lineage"
+        "src-wiki-lineage",
+        "src-bjnews-ma-zhiming-2006"
       ],
-      "note": "马三立之子；谱表记拜朱阔泉。"
+      "note": "马志明本人回忆1986年由侯宝林代朱阔泉收徒。记录门内师承，不表示朱阔泉直接面授；父亲马三立家庭传艺另述。"
     },
     {
       "id": "zhu-kuoquan--wang-fengshan",
@@ -3620,6 +3629,67 @@
         "src-wiki-lineage"
       ],
       "note": "公开谱系中出现，未检到单独拜师细节。"
+    },
+    {
+      "id": "zhang-shouchen--tian-lihe",
+      "to": "tian-lihe",
+      "type": "mentor",
+      "sources": [
+        "src-tjl-tian-2010"
+      ],
+      "note": "1953年由富寿岩介绍正式拜师；1950年随杨少奎、富寿岩学习属早期指导。",
+      "from": "zhang-shouchen"
+    },
+    {
+      "id": "liu-baorui--xing-wenzhao",
+      "to": "xing-wenzhao",
+      "type": "mentor",
+      "sources": [
+        "src-deyunshe-xing-obit",
+        "src-xikao-xing"
+      ],
+      "note": "讣告及人物条目记1961年拜师；两者可能同源，不视为独立档案双证。",
+      "from": "liu-baorui"
+    },
+    {
+      "id": "yang-haiquan--yang-zhenhua",
+      "to": "yang-zhenhua",
+      "type": "mentor",
+      "sources": [
+        "src-lnr-yang-obit-2026"
+      ],
+      "note": "辽宁日报讣告明确1957年拜师；与金炳昶是搭档。",
+      "from": "yang-haiquan"
+    },
+    {
+      "id": "yang-zhenhua--ji-yuan",
+      "to": "ji-yuan",
+      "type": "mentor",
+      "sources": [
+        "src-lnr-yang-obit-2026"
+      ],
+      "note": "纪元本人在2026年采访回忆2004年拜师。",
+      "from": "yang-zhenhua"
+    },
+    {
+      "id": "chen-yian--ye-yijun",
+      "to": "ye-yijun",
+      "type": "mentor",
+      "sources": [
+        "src-ncfta-ye-2020"
+      ],
+      "note": "已确认相声师承；叶怡均另向田连元学评书，不混入本相声谱。",
+      "from": "chen-yian"
+    },
+    {
+      "id": "wei-wenliang--zhu-degang",
+      "to": "zhu-degang",
+      "type": "mentor",
+      "sources": [
+        "src-ncfta-ye-2020"
+      ],
+      "note": "国立传统艺术中心称台湾正式弟子；关系确认，拜师年份本次未核定。",
+      "from": "wei-wenliang"
     }
   ]
 }

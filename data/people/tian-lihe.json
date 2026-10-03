@@ -1,0 +1,24 @@
+{
+  "id": "tian-lihe",
+  "name": "田立禾",
+  "generation": "宝",
+  "generationIndex": 6,
+  "bio": "天津相声演员、曲艺教师，原名田中敏。1953年正式拜张寿臣为师；此前随杨少奎、富寿岩学习，指导与正式师承分别记录。",
+  "works": [
+    "哭的艺术",
+    "窝头论",
+    "大保镖"
+  ],
+  "sources": [
+    "src-tjl-tian-2010",
+    "src-wiki-tian-lihe",
+    "src-tjdaily-tian-obit-2026"
+  ],
+  "portraitKind": "placeholder",
+  "birthYear": 1935,
+  "deathYear": 2026,
+  "aliases": [
+    "田中敏"
+  ],
+  "school": "天津 / 张派"
+}

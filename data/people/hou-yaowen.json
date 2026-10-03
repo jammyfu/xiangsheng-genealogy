@@ -3,19 +3,20 @@
   "deathYear": 2007,
   "portraitKind": "placeholder",
   "notes": [
-    "家庭传承与正式拜师表并不等同，本库以维基师承表为准。"
+    "李伯祥本人采访对1994年仪式月日带记忆限定，故不写死具体日期。"
   ],
   "works": [
     "京九演义",
     "糖醋活鱼"
   ],
   "sources": [
-    "src-wiki-lineage"
+    "src-wiki-lineage",
+    "src-cctv-hou-yaowen-2007"
   ],
   "id": "hou-yaowen",
   "name": "侯耀文",
   "generation": "文",
   "generationIndex": 7,
   "school": "北京侯派",
-  "bio": "侯宝林之子，谱表记为赵佩茹弟子。传郭德纲、奇志、陈寒柏等。是默认路径通向当代的关键节点。"
+  "bio": "侯宝林之子，自幼受家庭传艺。1994年由李伯祥代师收徒入赵佩茹门，正式师承与家庭传承分别记录。与石富宽长期搭档。"
 }

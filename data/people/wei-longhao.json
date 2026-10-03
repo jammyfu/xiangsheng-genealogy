@@ -1,0 +1,27 @@
+{
+  "id": "wei-longhao",
+  "name": "魏龙豪",
+  "generation": null,
+  "generationIndex": 7,
+  "bio": "北京出生、赴台湾发展的相声演员，原名魏贵宽，曾用名魏甦。与吴兆南长期合作录制相声。已核对资料未确认正式师承，搭档不连作师徒。",
+  "works": [
+    "相声集锦",
+    "相声选粹"
+  ],
+  "sources": [
+    "src-wiki-wei-longhao",
+    "src-cna-wu-obit-2018"
+  ],
+  "portraitKind": "placeholder",
+  "nameHant": "魏龍豪",
+  "birthYear": 1927,
+  "deathYear": 1999,
+  "aliases": [
+    "魏贵宽",
+    "魏甦",
+    "魏苏"
+  ],
+  "notes": [
+    "本次资料未确认正式字辈；图中层级仅用于展示，不作宗谱辈分认定。"
+  ]
+}

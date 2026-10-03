@@ -1,17 +1,26 @@
 {
-  "birthYear": 1929,
+  "birthYear": null,
   "deathYear": 2018,
   "portraitKind": "placeholder",
   "works": [
-    "吴兆南相声剧场"
+    "相声集锦",
+    "相声选粹"
   ],
   "sources": [
-    "src-wiki-lineage"
+    "src-wiki-lineage",
+    "src-cna-wu-obit-2018",
+    "src-wiki-wu-zhaonan-2026",
+    "src-merit-wu-2009"
   ],
   "id": "wu-zhaonan",
   "name": "吴兆南",
   "generation": "文",
   "generationIndex": 7,
   "school": "台湾 / 侯派",
-  "bio": "侯宝林弟子，把相声带到台湾与海外。郎祖筠、侯冠群等出其门。"
+  "bio": "赴台湾与海外发展的相声演员，原名照南，1982年在香港正式拜侯宝林为师。与魏龙豪、陈逸安为搭档。出生年有异说：中央社记1924年，维基百科记1926年，暂不定年。",
+  "aliases": [
+    "照南",
+    "吳兆南"
+  ],
+  "floruit": "出生年待考 — 2018"
 }

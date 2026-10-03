@@ -1,0 +1,22 @@
+{
+  "id": "xing-wenzhao",
+  "name": "邢文昭",
+  "generation": "文",
+  "generationIndex": 7,
+  "bio": "北京相声演员，原名邢克昭。1961年拜刘宝瑞为师，擅长单口及传统相声；德云社讣告与人物条目均记其2019年逝世。",
+  "works": [
+    "官场斗",
+    "假行家",
+    "包厨"
+  ],
+  "sources": [
+    "src-deyunshe-xing-obit",
+    "src-xikao-xing"
+  ],
+  "portraitKind": "placeholder",
+  "birthYear": 1937,
+  "deathYear": 2019,
+  "aliases": [
+    "邢克昭"
+  ]
+}

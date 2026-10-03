@@ -6,7 +6,7 @@ const fs=require('fs');
  await page.goto('http://127.0.0.1:4311/p/guo-degang?view=tree');
  await page.waitForTimeout(2000); console.log('INITIAL', await page.locator('body').innerText(), errors); await page.screenshot({path:'/tmp/xiangsheng-debug.png'}); await page.locator('.force-label-stats').waitFor({state:'attached',timeout:5000});await page.waitForTimeout(500);
  console.log(await page.locator('.force-label-stats').innerText());
- await page.getByRole('button',{name:'展开全谱 · 338 人',exact:true}).click();await page.waitForTimeout(2000);
+ await page.getByRole('button',{name:/展开全谱 · \d+ 人/}).click();await page.waitForTimeout(2000);
  const evidence=__dirname+'/';
  await page.screenshot({path:evidence+'14-rotation-front.png'});
  const canvas=page.locator('.force-tree-canvas canvas'), rect=await canvas.boundingBox();
