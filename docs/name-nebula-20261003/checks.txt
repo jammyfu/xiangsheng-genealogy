@@ -1,0 +1,9 @@
+PASS lint/type
+PASS 34 files / 232 tests; maxWorkers=1, same 20000ms timeout
+PASS production build, 31.11s; existing >500kB chunks warning
+PASS browser 8 checks / 0 page errors
+PASS desktop 1440x1000, side/tilt/reverse, actual multiple-button zoom
+PASS independently recognized Yang Haiquan text click -> canonical yang-haiquan route and return
+PASS 390x844 touch/reduced-motion, full directory keyboard selection, Escape, no overflow
+Initial 2-worker suite: 2 unrelated ScrollScene timeouts / 229 passed; complete final single-worker suite passed without raising timeout
+Not run: deployment, main merge, unrelated branch-wide historical data research

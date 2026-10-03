@@ -1,0 +1,88 @@
+{
+  "checks": [
+    {
+      "name": "real-name cloud shows over 350 catalog names without background galaxy",
+      "passed": true
+    },
+    {
+      "name": "03-side rotation keeps current person and readable main names",
+      "passed": true
+    },
+    {
+      "name": "04-tilt rotation keeps current person and readable main names",
+      "passed": true
+    },
+    {
+      "name": "05-reverse rotation keeps current person and readable main names",
+      "passed": true
+    },
+    {
+      "name": "far and near scales retain actual name cloud",
+      "passed": true
+    },
+    {
+      "name": "all cloud names are keyboard reachable and search switches current lineage",
+      "passed": true
+    },
+    {
+      "name": "other reading modes preserve the current person",
+      "passed": true
+    },
+    {
+      "name": "390px touch and reduced motion keep names, navigation and no overflow",
+      "passed": true
+    }
+  ],
+  "observations": [
+    {
+      "name": "02-after-desktop",
+      "labels": "主线姓名 10/10 · 字云 414/517 人 · 放大读姓名"
+    },
+    {
+      "name": "03-side",
+      "labels": "主线姓名 10/10 · 字云 436/517 人 · 放大读姓名"
+    },
+    {
+      "name": "04-tilt",
+      "labels": "主线姓名 10/10 · 字云 404/517 人 · 放大读姓名"
+    },
+    {
+      "name": "05-reverse",
+      "labels": "主线姓名 10/10 · 字云 389/517 人 · 放大读姓名"
+    },
+    {
+      "name": "06-far",
+      "labels": "主线姓名 10/10 · 字云 378/517 人 · 放大读姓名"
+    },
+    {
+      "name": "07-near",
+      "labels": "主线姓名 1/1 · 字云 208/517 人 · 放大读姓名"
+    },
+    {
+      "name": "screenshot-recognized-name",
+      "y": 375.50000014697383,
+      "text": "杨海荃",
+      "x": 732.5581398139535,
+      "confidence": 1
+    },
+    {
+      "name": "visible-cloud-name-click",
+      "url": "http://127.0.0.1:4311/p/yang-haiquan?view=tree"
+    },
+    {
+      "name": "08-mobile-reduced",
+      "labels": "主线姓名 10/10 · 字云 144/517 人 · 放大读姓名"
+    }
+  ],
+  "errors": [],
+  "desktop": [
+    1440,
+    1000
+  ],
+  "mobile": [
+    390,
+    844
+  ],
+  "touch": true,
+  "reducedMotion": true
+}

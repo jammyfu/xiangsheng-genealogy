@@ -697,7 +697,7 @@ export function AtlasGraph({
           <p className="atlas-result" role="status">
             {graph.hasFilter
               ? `${graph.matchCount} 人符合筛选 · 浅墨保留师承上下文`
-              : mode === 'scroll' && readable ? '主线表示师承 · 周围位置不代表辈分' : `已展 ${graph.nodes.length} 人 · 历史师承不等同组织归属`}
+              : mode === 'scroll' && readable ? '主线表示师承 · 周围位置不代表辈分' : mode === 'tree' && spatialTree ? `已展师承 ${graph.nodes.length} 人 · 周围姓名为全谱上下文` : `已展 ${graph.nodes.length} 人 · 历史师承不等同组织归属`}
           </p>
         </div>
         <div className="atlas-camera" role="group" aria-label="图谱视角">

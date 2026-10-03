@@ -22,11 +22,12 @@ it('selects a parent from the graph and directory without collapsing its lineage
   const scene = new Scene(), camera = new PerspectiveCamera(38, 2);
   mocked.handlers.clear();
   const cameraPosition = vi.fn();
+  const forceCalls: unknown[][] = [];
   const api = new Proxy({}, { get: (_, name: string) => {
     if (name === 'scene') return () => scene;
     if (name === 'camera') return () => camera;
     if (name === 'cameraPosition') return (...args: unknown[]) => { cameraPosition(...args); return args.length ? api : new Vector3(0,0,1000); };
-    if (name === 'd3Force') return () => api;
+    if (name === 'd3Force') return (...args:unknown[]) => { forceCalls.push(args); return api; };
     return (...args: unknown[]) => { if (!args.length) return mocked.handlers.get(name); mocked.handlers.set(name, args[0]); return api; };
   } });
   mocked.api = api;
@@ -37,6 +38,7 @@ it('selects a parent from the graph and directory without collapsing its lineage
   const render = (selectedId: string) => root.render(<SpatialTree graph={buildAtlas({ people: loadPeopleFromDisk(), edges: loadEdgesFromDisk(), selectedId, mode:'tree' })} viewport={{width:1200,height:600}} selectedId={selectedId} active onSelect={onSelect} onBranch={onBranch} onFailure={vi.fn()} controlsRef={{current:null}} />);
   try {
     await act(async () => render('yin-shoushan'));
+    expect(forceCalls).toContainEqual(['center',null]);
     const parent = graph.nodes.find(n => n.person.id === 'ma-delu')!;
     expect(parent.childCount).toBeGreaterThan(0);
     await act(async () => (mocked.handlers.get('onNodeClick') as (n: {id:string}) => void)({ id:'ma-delu' }));

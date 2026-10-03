@@ -1,0 +1,70 @@
+
+> xiangsheng-genealogy@1.0.0 test
+> vitest run --maxWorkers=1 --testTimeout=20000
+
+
+ RUN  v3.2.7 /Users/jammyfu/Documents/Codex/2026-10-03/task/xiangsheng-genealogy
+
+ ✓ src/lib/focus-cloud.test.ts (27 tests) 13721ms
+   ✓ packs hou-baolin inside 1600 × 900 without overlaps  3201ms
+   ✓ packs yu-qian inside 1100 × 550 without overlaps  328ms
+   ✓ packs yu-qian inside 1600 × 900 without overlaps  2889ms
+   ✓ packs guo-degang inside 1600 × 900 without overlaps  3021ms
+   ✓ packs ma-delu inside 1600 × 900 without overlaps  2225ms
+   ✓ reserves the spine for real consecutive teacher–disciple relationships  403ms
+ ✓ src/components/ScrollScene.test.tsx (18 tests) 9360ms
+   ✓ spatial scroll scene integration (without GPU) > moves a newly selected name continuously and retargets from its visible position  388ms
+   ✓ animates a clickable rear branch into the front depth plane  2052ms
+   ✓ rotates a generation cloud in depth while keeping every person in the scene  2307ms
+   ✓ matches parallax.js inverted axes from cursor through projection (fixed=true)  1719ms
+   ✓ moves scenery and fixed-scroll names in both axes while keeping distant ink opacity constant  1726ms
+ ✓ src/lib/name-nebula.test.ts (4 tests) 635ms
+   ✓ places more than eighteen context names locally without overlaps or control collisions  550ms
+ ✓ src/catalog.test.ts (12 tests) 391ms
+ ✓ src/lib/atlas.test.ts (18 tests) 430ms
+ ✓ src/lib/genealogy-stars.test.ts (4 tests) 189ms
+ ✓ src/lib/branch-layout.test.ts (2 tests) 242ms
+ ✓ src/lib/force-tree.test.ts (6 tests) 218ms
+ ✓ src/lib/scroll-space.test.ts (15 tests) 176ms
+ ✓ src/lib/tree-label-layout.test.ts (2 tests) 409ms
+   ✓ repositions a dense branch without dropping its names  402ms
+ ✓ src/lib/fixed-scroll.test.ts (6 tests) 166ms
+ ✓ src/lib/layout.test.ts (1 test) 157ms
+ ✓ src/lib/visibility.test.ts (2 tests) 58ms
+ ✓ src/lib/cluster-layout.test.ts (3 tests) 86ms
+ ✓ src/lib/events.test.ts (52 tests) 57ms
+ ✓ src/lib/immersive-space.test.ts (2 tests) 34ms
+ ✓ src/lib/motion.test.ts (4 tests) 22ms
+ ✓ src/lib/browsing.test.ts (3 tests) 19ms
+ ✓ src/lib/scenery-layout.test.ts (7 tests) 25ms
+ ✓ src/sparse-catalog.test.ts (2 tests) 14ms
+ ✓ src/lineage-audit.test.ts (7 tests) 15ms
+ ✓ src/lib/timeline-state.test.ts (2 tests) 6ms
+ ✓ src/lib/scroll-paper.test.ts (2 tests) 23ms
+ ✓ src/lib/tree-label-style.test.ts (2 tests) 16ms
+ ✓ src/lib/lineage-focus.test.ts (3 tests) 10ms
+ ✓ src/lib/cluster-space.test.ts (2 tests) 13ms
+ ✓ src/components/SpatialTree.test.tsx (1 test) 1454ms
+   ✓ selects a parent from the graph and directory without collapsing its lineage  1452ms
+ ✓ src/components/TimelineView.test.tsx (2 tests) 883ms
+   ✓ restores deep links, event history and the same event after view unmount  736ms
+stderr | src/components/ScrollScene.dom.test.tsx
+WARNING: Multiple instances of Three.js being imported.
+
+ ✓ src/components/ScrollScene.dom.test.tsx (7 tests) 560ms
+ ✓ src/components/Studio.navigation.test.tsx (2 tests) 544ms
+   ✓ clears a completed search, retains generation, and returns to the previous person and view after switching views  432ms
+ ✓ src/components/InkWorld.test.tsx (6 tests) 1983ms
+   ✓ builds a real thick ribbon, alpha mountain planes and interior sky sphere  607ms
+   ✓ keeps uncertain relationships dashed and cleans GPU resources on unmount  470ms
+   ✓ WebGL failure leaves semantic events and an explicit simplified-preview status  374ms
+   ✓ removes past event papers from the reading window and keyboard focus  400ms
+ ✓ src/components/TimelineJourney.test.tsx (3 tests) 396ms
+   ✓ rapid next/previous navigation retains one current event and matching evidence  320ms
+ ✓ src/lib/useStudioMotion.test.tsx (2 tests) 208ms
+ ✓ src/components/PersonSearch.test.tsx (1 test) 140ms
+
+ Test Files  34 passed (34)
+      Tests  232 passed (232)
+   Start at  23:09:23
+   Duration  247.05s (transform 12.49s, setup 0ms, collect 160.95s, tests 32.66s, environment 14.70s, prepare 8.38s)

@@ -70,3 +70,5 @@
 }
 .force-label-stats { display:block; width:100%; color:#a0aec3; font-size:10px; text-align:right; }
 .force-comparison .force-label-stats::before { display:none; }
+/* The shared narrow-screen toolbar needs the name-cloud palette as well. */
+.graph-stage .atlas-graph--cosmic .atlas-bottomline { background:#080c15eb; }

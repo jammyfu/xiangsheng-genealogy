@@ -1,0 +1,112 @@
+[
+  {
+    "local": "01-before-desktop.png",
+    "operation": "create_library_file",
+    "status": "succeeded",
+    "path": "/01-before-desktop.png",
+    "file_id": "file_00000000a1d481fda7d5c806f521d0e8",
+    "library_file_id": "libfile_48a5dc3f9c3c8191be967314e2eed03c",
+    "file_name": "01-before-desktop.png",
+    "current_version_number": 0,
+    "restored_from_version_number": null,
+    "xattrs": [
+      {
+        "name": "user.library-file-version",
+        "value": "0"
+      }
+    ],
+    "directory_id": "libdir_4263da09c8c48191afa7f8f739995946",
+    "mime_type": "image/png",
+    "library_artifact_type": "image",
+    "file_size_bytes": 783039,
+    "external_connectors_accessed": false
+  },
+  {
+    "local": "02-after-desktop.png",
+    "operation": "create_library_file",
+    "status": "succeeded",
+    "path": "/02-after-desktop(1).png",
+    "file_id": "file_00000000dd8481fd888ab7e5a5c91db7",
+    "library_file_id": "libfile_b4e1b6884d6c8191a16ed10ea884b4fb",
+    "file_name": "02-after-desktop(1).png",
+    "current_version_number": 0,
+    "restored_from_version_number": null,
+    "xattrs": [
+      {
+        "name": "user.library-file-version",
+        "value": "0"
+      }
+    ],
+    "directory_id": "libdir_4263da09c8c48191afa7f8f739995946",
+    "mime_type": "image/png",
+    "library_artifact_type": "image",
+    "file_size_bytes": 224536,
+    "external_connectors_accessed": false
+  },
+  {
+    "local": "07-near.png",
+    "operation": "create_library_file",
+    "status": "succeeded",
+    "path": "/07-near.png",
+    "file_id": "file_0000000081c082308e55f8aa78e5f11d",
+    "library_file_id": "libfile_f30515495de0819190b47096ffa43d07",
+    "file_name": "07-near.png",
+    "current_version_number": 0,
+    "restored_from_version_number": null,
+    "xattrs": [
+      {
+        "name": "user.library-file-version",
+        "value": "0"
+      }
+    ],
+    "directory_id": "libdir_4263da09c8c48191afa7f8f739995946",
+    "mime_type": "image/png",
+    "library_artifact_type": "image",
+    "file_size_bytes": 265264,
+    "external_connectors_accessed": false
+  },
+  {
+    "local": "08-mobile-reduced.png",
+    "operation": "create_library_file",
+    "status": "succeeded",
+    "path": "/08-mobile-reduced(1).png",
+    "file_id": "file_000000003c3081fdba0a0c2f65d36585",
+    "library_file_id": "libfile_ce53537d2074819181fc094f5076baa3",
+    "file_name": "08-mobile-reduced(1).png",
+    "current_version_number": 0,
+    "restored_from_version_number": null,
+    "xattrs": [
+      {
+        "name": "user.library-file-version",
+        "value": "0"
+      }
+    ],
+    "directory_id": "libdir_4263da09c8c48191afa7f8f739995946",
+    "mime_type": "image/png",
+    "library_artifact_type": "image",
+    "file_size_bytes": 94476,
+    "external_connectors_accessed": false
+  },
+  {
+    "local": "implementation-report.md",
+    "operation": "create_library_file",
+    "status": "succeeded",
+    "path": "/implementation-report(2).md",
+    "file_id": "file_0000000043e482309a05c6e01957a826",
+    "library_file_id": "libfile_31e61002b3d481919d7c18084dcbe0e7",
+    "file_name": "implementation-report(2).md",
+    "current_version_number": 0,
+    "restored_from_version_number": null,
+    "xattrs": [
+      {
+        "name": "user.library-file-version",
+        "value": "0"
+      }
+    ],
+    "directory_id": "libdir_4263da09c8c48191afa7f8f739995946",
+    "mime_type": "text/markdown",
+    "library_artifact_type": "report",
+    "file_size_bytes": 3860,
+    "external_connectors_accessed": false
+  }
+]
