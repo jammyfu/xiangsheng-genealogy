@@ -56,3 +56,12 @@ it('reserves the spine for real consecutive teacher–disciple relationships', (
   expect(spine.map(([id]) => id)).toContain('gao-deliang');
   expect(spine.map(([id]) => id)).not.toContain('cao-dekui');
 });
+
+it('keeps narrow-screen names above travel, zoom and generation controls', () => {
+  const graph = buildFixedScroll({ people, edges, selectedId: 'guo-degang', mode: 'scroll' });
+  const layout = focusCloud(graph, lineageFocus('guo-degang', graph.edges).nodes, { width: 390, height: 600 });
+  for (const slot of layout.slots.values()) {
+    expect(slot.y - slot.height / 2).toBeGreaterThanOrEqual(190);
+    expect(slot.y + slot.height / 2).toBeLessThanOrEqual(380);
+  }
+});

@@ -7,7 +7,7 @@ import {
   ArrowsOut,
   ArrowsIn,
 } from "@phosphor-icons/react";
-import { peopleById, mentorsOf } from "../lib/catalog";
+import { peopleById, mentorsOf, searchPeople } from "../lib/catalog";
 import { eventsForPerson } from "../lib/events";
 import { readBrowseState, updateBrowseSearch, VIEWS } from "../lib/browsing";
 import type { BrowseState, BrowseView } from "../lib/browsing";
@@ -27,6 +27,10 @@ export function Studio() {
   const knownPerson = id !== undefined && Object.hasOwn(peopleById, id);
   const selected = knownPerson ? peopleById[id] : peopleById["hou-baolin"];
   const motionRoot = useRef<HTMLElement>(null);
+  const summaryRef = useRef<HTMLElement>(null);
+  useEffect(() => {
+    if (summaryRef.current) summaryRef.current.scrollTop = 0;
+  }, [selected.id]);
   const [immersive, setImmersive] = useState(false);
   useEffect(() => {
     const sync = () =>
@@ -68,14 +72,19 @@ export function Studio() {
   const previousPerson = trail.at(-1);
   const [panel, setPanel] = useState<"people" | "evidence" | null>(null);
   const openerRef = useRef<HTMLElement | null>(null);
-  const openPanel = (type: "people" | "evidence") => {
-    openerRef.current = document.activeElement as HTMLElement;
+  const openPanel = (type: "people" | "evidence", opener?: HTMLElement) => {
+    openerRef.current = opener ?? document.activeElement as HTMLElement;
     setPanel(type);
   };
   const closePanel = () => {
     setPanel(null);
-    openerRef.current?.focus();
   };
+  useEffect(() => {
+    if (!panel && openerRef.current) {
+      openerRef.current.focus();
+      openerRef.current = null;
+    }
+  }, [panel]);
   useEffect(() => {
     if (!id) navigate(`/p/hou-baolin${location.search}`, { replace: true });
   }, [id, navigate, location.search]);
@@ -106,9 +115,12 @@ export function Studio() {
     setDrawer(false);
   };
   const view = (next: BrowseView) => {
+    if (next === state.view) return;
     change({ view: next });
     setDrawer(false);
   };
+  const matchingPeople = searchPeople(state.query).filter(person => !state.generation || person.generation === state.generation);
+  const selectedMatches = matchingPeople.some(person => person.id === selected.id);
   const graph = state.view === "scroll" || state.view === "tree";
   const mentors = mentorsOf(selected.id),
     personalEvents = eventsForPerson(selected.id);
@@ -145,8 +157,8 @@ export function Studio() {
           >
             览谱
           </button>
-          <button onClick={() => openPanel("people")}>寻人</button>
-          <button onClick={() => openPanel("evidence")}>考据</button>
+          <button onClick={event => openPanel("people", event.currentTarget)}>寻人</button>
+          <button onClick={event => openPanel("evidence", event.currentTarget)}>考据</button>
         </nav>
         <PersonSearch query={state.query} onQuery={query => change({ query })}
           onSelect={select} onDirectory={() => openPanel("people")} />
@@ -180,9 +192,16 @@ export function Studio() {
       {id && !knownPerson && (
         <div className="notice">
           没有找到该人物，已为你打开侯宝林。
-          <button onClick={() => openPanel("people")}>查看人物索引</button>
+          <button onClick={event => openPanel("people", event.currentTarget)}>查看人物索引</button>
         </div>
       )}
+      {graph && (state.query || state.generation) && <div className="filter-feedback">
+        <p role="status">{state.query && `检索“${state.query}” · `}{state.generation && `${state.generation}字辈 · `}
+          {matchingPeople.length ? `${matchingPeople.length} 位匹配` : "没有匹配人物"}
+          {!selectedMatches && ` · ${selected.name}作为当前人物保留`}
+        </p>
+        <button onClick={() => change({ generation: "", query: "" })}>重置筛选</button>
+      </div>}
       <div id="main-content" className="main-content">
         <div className="exploration" hidden={!graph}>
           <section className="graph-stage" aria-label="师承浏览">
@@ -259,6 +278,7 @@ export function Studio() {
             </div>
           </section>
           <aside
+            ref={summaryRef}
             className={`person-summary ${drawer ? "is-expanded" : ""}`}
             aria-label="人物摘要"
           >
@@ -385,7 +405,7 @@ export function Studio() {
           {immersive ? <ArrowsIn size={18} /> : <ArrowsOut size={18} />}
           {immersive ? "退出全屏" : "全屏阅读"}
         </button>
-        <button onClick={() => openPanel("evidence")}>
+        <button onClick={event => openPanel("evidence", event.currentTarget)}>
           查看出处
           <ArrowUpRight size={19} />
         </button>

@@ -10,7 +10,7 @@ export function focusCloud(graph: AtlasLayout, highlighted: Set<string>, viewpor
   const slots = new Map<string, ReadingSlot>();
   const { width, height } = viewport;
   const margin = width < 600 ? 18 : 32;
-  const top = Math.min(170, height * .31), bottom = height - 112;
+  const top = width < 600 ? 190 : Math.min(170, height * .31), bottom = height - (width < 600 ? 220 : 140);
   const cx = width / 2, cy = (top + bottom) / 2;
   const rx = Math.max(30, cx - margin), ry = Math.max(35, (bottom - top) / 2);
   const magnify = Math.max(.95, Math.min(1.25, zoom));

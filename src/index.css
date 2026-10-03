@@ -1755,3 +1755,37 @@ h3 {
 .person-back { color: var(--red); font-size: 13px; min-height: 44px; }
 .view-bar:has(.person-back) .view-motto { display: none; }
 .studio-content { display: contents; }
+.search-results { max-height: min(65dvh, 520px); overflow-y: auto; overscroll-behavior: contain; }
+.filter-feedback { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 0 4% 8px; padding: 0 12px; background: #eee8dc; color: #615848; font-size: 12px; flex-shrink: 0; }
+.filter-feedback p { margin: 6px 0; line-height: 1.6; }
+.filter-feedback button { color: var(--red); white-space: nowrap; min-height: 44px; }
+@media (max-width: 600px) {
+  .search-box { min-height: 44px; }
+  .view-tabs button { margin: 0 8px; min-height: 44px; }
+  .view-tabs button + button::before { left: -8px; }
+  .person-back { width: 100%; text-align: left; }
+  .ink-app:is(.view-scroll,.view-tree) .view-bar:has(.person-back) { padding-top: 8px; gap: 5px; }
+  .generation-bar { gap: 12px; }
+  .generation-bar button { min-width: 32px; min-height: 44px; }
+  .filter-feedback { margin: 0 4% 8px; }
+  .graph-stage .atlas-bottomline { bottom: 52px; display: grid; gap: 4px; background: #f8f5eeeb; padding: 4px 8px; }
+  .graph-stage .atlas-notes { max-width: none; font-size: 10px; }
+  .graph-stage .atlas-notes p { margin: 2px 0; }
+  .graph-stage .atlas-legend { display: none; }
+  .graph-stage .atlas-camera { justify-self: end; }
+  .graph-stage .atlas-camera button { min-width: 44px; min-height: 44px; }
+  .graph-stage .scroll-travel-controls { bottom: 148px; width: calc(100% - 20px); justify-content: space-between; box-sizing: border-box; }
+  .graph-stage .scroll-travel-controls button { padding: 5px 6px; min-height: 44px; }
+  .graph-stage .scroll-motion-toggle { top: 100px; right: 8px; padding: 4px; min-height: 44px; }
+  .graph-stage .atlas-reading { left: 18px; transform: none; top: 100px; }
+  .graph-stage .atlas-reading button { min-height: 44px; }
+  .graph-stage .atlas-names { top: 60px; right: 8px; }
+  .graph-stage .atlas-names summary { min-height: 44px; display: flex; align-items: center; }
+  .graph-stage .focus-cloud-guide { top: 154px; }
+  .graph-stage .focus-cloud-count { top: 174px; }
+}
+
+@media (max-width: 600px) { .ink-app:is(.view-scroll,.view-tree) .graph-stage .atlas-graph { height: max(560px, calc(100dvh - 260px)); } }
+@media (min-width: 601px) {
+  .atlas-graph--scroll .scroll-travel-controls { bottom: 56px; }
+}

@@ -1,0 +1,17 @@
+
+> xiangsheng-genealogy@1.0.0 test
+> vitest run --reporter=dot
+
+
+ RUN  v3.2.7 /Users/jammyfu/Documents/Codex/2026-10-03/task/xiangsheng-genealogy
+
+·············································································································stderr | src/components/ScrollScene.dom.test.tsx
+WARNING: Multiple instances of Three.js being imported.
+
+···············································································································
+
+ Test Files  31 passed (31)
+      Tests  220 passed (220)
+   Start at  11:11:53
+   Duration  7.29s (transform 3.23s, setup 0ms, collect 34.12s, tests 8.62s, environment 4.72s, prepare 2.85s)
+
