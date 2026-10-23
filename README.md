@@ -2,6 +2,10 @@
 
 # 相声家谱 · Xiangsheng Genealogy
 
+<!-- geo:badges -->
+[![License](https://img.shields.io/github/license/jammyfu/xiangsheng-genealogy)](LICENSE) [![CI](https://github.com/jammyfu/xiangsheng-genealogy/actions/workflows/ci.yml/badge.svg)](https://github.com/jammyfu/xiangsheng-genealogy/actions/workflows/ci.yml) [![React + Three.js](https://img.shields.io/badge/React-Three.js-61DAFB)](package.json) [![Release](https://img.shields.io/github/v/release/jammyfu/xiangsheng-genealogy)](https://github.com/jammyfu/xiangsheng-genealogy/releases)
+
+
 **Xiangsheng Genealogy** is an open-source, source-aware atlas of Chinese
 crosstalk (相声) master–disciple lineages. It turns people, relationships,
 generation names, and their supporting records into an explorable ink-wash
