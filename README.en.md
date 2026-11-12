@@ -1,4 +1,4 @@
-<p align="center"><a href="README.md">中文</a> | English</p>
+<p align="center"><a href="README.md">简体中文</a> · <a href="README.en.md">English</a> · <a href="README.zh-Hant.md">繁體中文</a> · <a href="README.ja.md">日本語</a> · <a href="README.ko.md">한국어</a></p>
 
 <div align="center">
   <img src="public/seal.svg" alt="Xiangsheng Genealogy seal" width="96">
@@ -14,6 +14,8 @@
 </div>
 
 ---
+
+README is available in five languages; this does not imply five-language application UI support.
 
 ## One-line brief
 
