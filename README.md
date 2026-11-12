@@ -1,19 +1,20 @@
-<p align="center">中文 | <a href="README.en.md">English</a></p>
+<p align="center"><a href="README.md">简体中文</a> · <a href="README.en.md">English</a> · <a href="README.zh-Hant.md">繁體中文</a> · <a href="README.ja.md">日本語</a> · <a href="README.ko.md">한국어</a></p>
 
 # 相声家谱 · Xiangsheng Genealogy
 
 <!-- geo:badges -->
-[![License](https://img.shields.io/github/license/jammyfu/xiangsheng-genealogy)](LICENSE) [![CI](https://github.com/jammyfu/xiangsheng-genealogy/actions/workflows/ci.yml/badge.svg)](https://github.com/jammyfu/xiangsheng-genealogy/actions/workflows/ci.yml) [![React + Three.js](https://img.shields.io/badge/React-Three.js-61DAFB)](package.json) [![Release](https://img.shields.io/github/v/release/jammyfu/xiangsheng-genealogy)](https://github.com/jammyfu/xiangsheng-genealogy/releases)
+[![License](https://img.shields.io/github/license/jammyfu/xiangsheng-genealogy)](LICENSE) [![CI](https://github.com/jammyfu/xiangsheng-genealogy/actions/workflows/ci.yml/badge.svg)](https://github.com/jammyfu/xiangsheng-genealogy/actions/workflows/ci.yml) [![React + Three.js](https://img.shields.io/badge/React-Three.js-61DAFB)](package.json)
 
 
-**Xiangsheng Genealogy** is an open-source, source-aware atlas of Chinese
-crosstalk (相声) master–disciple lineages. It turns people, relationships,
-generation names, and their supporting records into an explorable ink-wash
-landscape and a luminous, spatial genealogy.
+**从一位演员出发，沿着有出处的师承关系，读懂相声传承。**
 
 相声家谱把有出处的师承做成可以阅读、检索和比对的交互图谱：人是节点，师傅到弟子的关系是连线；资料的确认、争议与待考状态会保留在数据和人物信息中。字辈只使用 **德、寿、宝、文、明**，不使用“德寿喜哈”。
 
 ![山水长卷：分层景物、人物名牌与主线关系](docs/qa/layered-scroll-fullscreen.png)
+
+[本地开始](#本地启动) · [核查资料](#数据与史料原则) · [贡献史料](CONTRIBUTING.md)
+
+README 提供五种语言；这不表示应用界面已支持五语。
 
 ## 两种阅读场景
 
@@ -48,7 +49,7 @@ landscape and a luminous, spatial genealogy.
 - 深链接人物页：`/p/:id`，并支持画卷、世代谱系、时间线和书页等阅读视图
 - 搜索与德 / 寿 / 宝 / 文 / 明字辈筛选
 - 人物笺呈现小传、字辈、代表作品、关系说明与资料出处
-- 移动端 SVG / DOM 回退，保证非 WebGL 环境也能阅读核心内容
+- WebGL 不可用时的对应平面阅读路径；不等于所有移动设备均已验证或自动切换
 - 机器可读的 JSON 数据、关系边、事件、来源与 Schema
 
 ## 如何浏览
